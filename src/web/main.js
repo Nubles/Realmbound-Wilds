@@ -412,10 +412,78 @@ async function init() {
   const canvas = document.getElementById('world-map');
   renderer = new MapRenderer(canvas);
 
+  // Keyboard navigation listeners (WASD / Arrows to pan, +/- to zoom)
+  window.addEventListener('keydown', (e) => {
+    const step = 25 / renderer.zoom;
+    let keyHandled = false;
+    
+    switch (e.key.toLowerCase()) {
+      case 'w':
+      case 'arrowup':
+        renderer.targetPanY += step;
+        keyHandled = true;
+        break;
+      case 's':
+      case 'arrowdown':
+        renderer.targetPanY -= step;
+        keyHandled = true;
+        break;
+      case 'a':
+      case 'arrowleft':
+        renderer.targetPanX += step;
+        keyHandled = true;
+        break;
+      case 'd':
+      case 'arrowright':
+        renderer.targetPanX -= step;
+        keyHandled = true;
+        break;
+      case '+':
+      case '=':
+        renderer.zoomIn();
+        keyHandled = true;
+        break;
+      case '-':
+      case '_':
+        renderer.zoomOut();
+        keyHandled = true;
+        break;
+    }
+    
+    if (keyHandled) {
+      e.preventDefault();
+    }
+  });
+
+  // Modal Help / Chronicle Guide Toggle
+  const helpBtn = document.getElementById('help-btn');
+  const helpModal = document.getElementById('help-modal');
+  const closeHelpBtn = document.getElementById('close-help-btn');
+
+  if (helpBtn && helpModal && closeHelpBtn) {
+    helpBtn.addEventListener('click', () => {
+      helpModal.classList.remove('hidden');
+      if (window.synth) window.synth.playClick();
+    });
+    closeHelpBtn.addEventListener('click', () => {
+      helpModal.classList.add('hidden');
+      if (window.synth) window.synth.playClick();
+    });
+    // Close modal if user clicks outside content card
+    helpModal.addEventListener('click', (e) => {
+      if (e.target === helpModal) {
+        helpModal.classList.add('hidden');
+      }
+    });
+  }
+
   // Bind active Realm dropdown
   const realmSelector = document.getElementById('realm-selector');
   realmSelector.addEventListener('change', (e) => {
     renderer.setRealm(e.target.value);
+    if (window.synth) {
+      window.synth.playPortalTravel();
+    }
   });
 
   // Global portal travel teleportation function
@@ -423,9 +491,13 @@ async function init() {
     realmSelector.value = realm;
     renderer.setRealm(realm);
     
-    // Pan camera to target coordinates
-    renderer.panX = renderer.canvas.width / 2 - x * renderer.tileSize * renderer.zoom;
-    renderer.panY = renderer.canvas.height / 2 - y * renderer.tileSize * renderer.zoom;
+    if (window.synth) {
+      window.synth.playPortalTravel();
+    }
+    
+    // Pan camera to target coordinates smoothly using targetPan parameters
+    renderer.targetPanX = renderer.canvas.width / 2 - x * renderer.tileSize * renderer.targetZoom;
+    renderer.targetPanY = renderer.canvas.height / 2 - y * renderer.tileSize * renderer.targetZoom;
     
     // Auto inspect
     const key = `${realm}:${x},${y}`;
@@ -439,7 +511,6 @@ async function init() {
     
     renderer.selectedCell = cell;
     inspectCell(cell);
-    renderer.draw();
   };
 
   // Set callback for cell inspection
@@ -456,13 +527,23 @@ async function init() {
       
       const mode = btn.id.replace('view-', '');
       renderer.setViewMode(mode);
+      if (window.synth) window.synth.playClick();
     });
   });
 
   // Map Navigation zoom binds
-  document.getElementById('zoom-in').addEventListener('click', () => renderer.zoomIn());
-  document.getElementById('zoom-out').addEventListener('click', () => renderer.zoomOut());
-  document.getElementById('reset-view').addEventListener('click', () => renderer.resetView());
+  document.getElementById('zoom-in').addEventListener('click', () => {
+    renderer.zoomIn();
+    if (window.synth) window.synth.playClick();
+  });
+  document.getElementById('zoom-out').addEventListener('click', () => {
+    renderer.zoomOut();
+    if (window.synth) window.synth.playClick();
+  });
+  document.getElementById('reset-view').addEventListener('click', () => {
+    renderer.resetView();
+    if (window.synth) window.synth.playClick();
+  });
 
   // Slider change binds
   timelineSlider.addEventListener('input', (e) => {

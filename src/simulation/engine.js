@@ -348,13 +348,16 @@ export function advanceSimulation(world) {
     // Weather drift
     cell.temperature = Math.max(0, Math.min(1.0, cell.temperature + world.globalTempOffset * 0.1));
 
-    // Fires
+    // Wildfire rules with Oakhaven Druid trait
     if (cell.fireTicksLeft > 0) {
       cell.fireTicksLeft--;
       cell.vegetation = Math.max(0, cell.vegetation - 0.35);
       
       if (cell.settlement) {
-        cell.settlement.size = Math.floor(cell.settlement.size * 0.5);
+        // Oakhaven Druids take half damage from forest fires
+        const dmgRate = cell.settlement.faction === 'Oakhaven' ? 0.75 : 0.5;
+        cell.settlement.size = Math.floor(cell.settlement.size * dmgRate);
+        
         if (cell.settlement.size < 12) {
           world.chronicle.push(`${logPrefix} Disaster: ${cell.settlement.name} was reduced to smoldering ash by a wildfire in ${realm} at [${cx}, ${cy}].`);
           cell.ruin = {
@@ -371,16 +374,19 @@ export function advanceSimulation(world) {
       if (cell.vegetation > 0.1) {
         getNeighbors(cx, cy).forEach(n => {
           const nc = getCell(world, realm, n.x, n.y);
-          if (nc.fireTicksLeft === 0 && nc.vegetation > 0.45 && random() < 0.25) {
+          // Oakhaven tiles resist wildfire spreading
+          const spreadChance = nc.settlement && nc.settlement.faction === 'Oakhaven' ? 0.12 : 0.25;
+          if (nc.fireTicksLeft === 0 && nc.vegetation > 0.45 && random() < spreadChance) {
             nc.fireTicksLeft = Math.floor(random() * 3) + 2;
             cellsToSave.push(nc);
           }
         });
       }
     } else {
-      // Veg growth
-      if (cell.biome.includes('forest') || cell.biome.includes('woods')) cell.vegetation = Math.min(1.0, cell.vegetation + 0.04);
-      else cell.vegetation = Math.min(0.5, cell.vegetation + 0.01);
+      // Vegetation growth (Druids grow forests faster)
+      const growthFactor = cell.settlement && cell.settlement.faction === 'Oakhaven' ? 0.08 : 0.04;
+      if (cell.biome.includes('forest') || cell.biome.includes('woods')) cell.vegetation = Math.min(1.0, cell.vegetation + growthFactor);
+      else cell.vegetation = Math.min(0.5, cell.vegetation + 0.015);
     }
 
     cellsToSave.push(cell);
@@ -389,14 +395,38 @@ export function advanceSimulation(world) {
   // Commit dynamic environment cells
   cellsToSave.forEach(c => saveCell(world, c));
 
-  // Sim Faction expansions
+  // Sim Faction expansions with Trait buffs
   world.factions.forEach(faction => {
     let factionPower = 0;
     faction.settlements.forEach(sCoord => {
       const cell = getCell(world, sCoord.realm, sCoord.x, sCoord.y);
       if (!cell.settlement) return;
 
-      cell.settlement.size += Math.floor(cell.settlement.size * 0.08);
+      let growthModifier = 0.08;
+      
+      // Valoria Expansionist Trait
+      if (faction.name === 'Valoria') growthModifier = 0.11;
+      // Ironclad Industrialist Trait: grows faster on mineral-rich cells
+      if (faction.name === 'Ironclad' && (cell.resources.includes('iron') || cell.resources.includes('gold'))) {
+        growthModifier += 0.05;
+      }
+
+      // Space Life-Support mechanics
+      let isSpaceDecay = false;
+      if (sCoord.realm === REALMS.SPACE) {
+        if (cell.settlement.size < 200 && !cell.settlement.dome) {
+          isSpaceDecay = true;
+          cell.settlement.size -= Math.max(1, Math.floor(cell.settlement.size * 0.04));
+        } else if (cell.settlement.size >= 200 && !cell.settlement.dome) {
+          cell.settlement.dome = true;
+          world.chronicle.push(`${logPrefix} UPGRADE: Space outpost ${cell.settlement.name} completed its Life Support Dome! Atmospheric pressure stabilized.`);
+        }
+      }
+
+      if (!isSpaceDecay) {
+        cell.settlement.size += Math.floor(cell.settlement.size * growthModifier);
+      }
+      
       factionPower += cell.settlement.size;
 
       // Classify type
@@ -405,7 +435,8 @@ export function advanceSimulation(world) {
       else cell.settlement.type = 'village';
 
       // Settlement Expansion
-      if (cell.settlement.size > 600 && random() < 0.09 && faction.settlements.length < 10) {
+      const expandRate = faction.name === 'Valoria' ? 0.13 : 0.08;
+      if (cell.settlement.size > 650 && random() < expandRate && faction.settlements.length < 12) {
         const neighbors = getNeighbors(sCoord.x, sCoord.y);
         const candidates = neighbors.filter(n => {
           const nc = getCell(world, sCoord.realm, n.x, n.y);
@@ -415,7 +446,7 @@ export function advanceSimulation(world) {
         if (candidates.length > 0) {
           const target = candidates[Math.floor(random() * candidates.length)];
           const newCell = getCell(world, sCoord.realm, target.x, target.y);
-          const names = ["Crossroads", "Stonefort", "Oakhaven", "Goldpeak", "Riverbend", "Aethercliff", "Deepmine", "OrbitStation"];
+          const names = ["Crossroads", "Stonefort", "Evergreen", "Goldpeak", "Riverbend", "Aethercliff", "Deepmine", "OrbitStation"];
           const nName = `${names[Math.floor(random() * names.length)]} of ${faction.name}`;
 
           newCell.settlement = {
@@ -428,7 +459,7 @@ export function advanceSimulation(world) {
           saveCell(world, newCell);
           faction.settlements.push({ realm: sCoord.realm, x: target.x, y: target.y });
           
-          world.chronicle.push(`${logPrefix} ${faction.name} expanded to [${target.x}, ${target.y}] in ${sCoord.realm}, building ${nName}.`);
+          world.chronicle.push(`${logPrefix} EXPANSION: ${faction.name} expanded to [${target.x}, ${target.y}] in ${sCoord.realm}, building ${nName}.`);
         }
       }
       
@@ -438,39 +469,189 @@ export function advanceSimulation(world) {
     faction.power = factionPower;
   });
 
-  // Dynamic discovery radii for Fog of War updates
+  // Calculate Trade Routes
+  world.tradeRoutes = [];
+  for (let i = 0; i < world.factions.length; i++) {
+    const f1 = world.factions[i];
+    for (let j = i + 1; j < world.factions.length; j++) {
+      const f2 = world.factions[j];
+      const rel = f1.status[f2.name] || 'peace';
+      if (rel === 'peace' || rel === 'alliance') {
+        f1.settlements.forEach(s1 => {
+          f2.settlements.forEach(s2 => {
+            if (s1.realm === s2.realm) {
+              const dist = Math.hypot(s1.x - s2.x, s1.y - s2.y);
+              if (dist < 14) {
+                world.tradeRoutes.push({
+                  from: { x: s1.x, y: s1.y },
+                  to: { x: s2.x, y: s2.y },
+                  f1: f1.name,
+                  f2: f2.name
+                });
+                const c1 = getCell(world, s1.realm, s1.x, s1.y);
+                const c2 = getCell(world, s2.realm, s2.x, s2.y);
+                if (c1.settlement) c1.settlement.size += rel === 'alliance' ? 12 : 6;
+                if (c2.settlement) c2.settlement.size += rel === 'alliance' ? 12 : 6;
+                saveCell(world, c1);
+                saveCell(world, c2);
+              }
+            }
+          });
+        });
+      }
+    }
+  }
+
+  // Diplomatic Relations & Wars with Sunspire Scholar alliance traits
+  for (let i = 0; i < world.factions.length; i++) {
+    const f1 = world.factions[i];
+    for (let j = i + 1; j < world.factions.length; j++) {
+      const f2 = world.factions[j];
+      const rel = f1.status[f2.name] || 'peace';
+
+      if (rel === 'peace') {
+        // Sunspire is twice as likely to form defensive alliances
+        const allianceChance = (f1.name === 'Sunspire' || f2.name === 'Sunspire') ? 0.10 : 0.04;
+        const warChance = 0.02;
+        
+        if (random() < allianceChance) {
+          f1.status[f2.name] = 'alliance';
+          f2.status[f1.name] = 'alliance';
+          world.chronicle.push(`${logPrefix} DIPLOMACY: Alliances forged between ${f1.name} and ${f2.name}!`);
+        } else if (random() < warChance) {
+          f1.status[f2.name] = 'war';
+          f2.status[f1.name] = 'war';
+          world.chronicle.push(`${logPrefix} DECLARATION OF WAR: ${f1.name} declared war on ${f2.name}!`);
+          
+          // Summon allies
+          world.factions.forEach(ally => {
+            if (ally.name !== f1.name && ally.status[f1.name] === 'alliance' && ally.status[f2.name] !== 'war') {
+              ally.status[f2.name] = 'war';
+              f2.status[ally.name] = 'war';
+              world.chronicle.push(`${logPrefix} CALL TO ARMS: ${ally.name} joins war against ${f2.name} to defend ally ${f1.name}.`);
+            }
+          });
+        }
+      } else if (rel === 'war') {
+        // Resolve battles
+        let battleSettlement = null;
+        f1.settlements.forEach(s1 => {
+          f2.settlements.forEach(s2 => {
+            if (s1.realm === s2.realm && Math.hypot(s1.x - s2.x, s1.y - s2.y) < 10 && random() < 0.3) {
+              battleSettlement = f1.power > f2.power ? s2 : s1;
+            }
+          });
+        });
+
+        if (battleSettlement) {
+          const cell = getCell(world, battleSettlement.realm, battleSettlement.x, battleSettlement.y);
+          if (cell.settlement) {
+            cell.settlement.size = Math.floor(cell.settlement.size * 0.5);
+            if (cell.settlement.size < 20) {
+              world.chronicle.push(`${logPrefix} BATTLE LOSS: Settlement ${cell.settlement.name} was razed during combat.`);
+              cell.ruin = {
+                name: `Ruins of ${cell.settlement.name}`,
+                description: `Destroyed in the great war.`,
+                age: world.year
+              };
+              const def = world.factions.find(fac => fac.name === cell.settlement.faction);
+              if (def) def.settlements = def.settlements.filter(s => s.x !== battleSettlement.x || s.y !== battleSettlement.y || s.realm !== battleSettlement.realm);
+              cell.settlement = null;
+            }
+            saveCell(world, cell);
+          }
+        }
+
+        if (random() < 0.15) {
+          f1.status[f2.name] = 'peace';
+          f2.status[f1.name] = 'peace';
+          world.chronicle.push(`${logPrefix} PEACE TREATY: Armistice signed between ${f1.name} and ${f2.name}.`);
+        }
+      }
+    }
+  }
+
+  // Migrate legendary beasts and trigger sieges
+  const beasts = [];
+  Object.keys(world.modifiedCells).forEach(key => {
+    const cell = world.modifiedCells[key];
+    const bIdx = cell.wildlife.findIndex(w => w.species === 'legendary_beast');
+    if (bIdx !== -1) {
+      beasts.push({ realm: cell.realm, x: cell.x, y: cell.y, beast: cell.wildlife[bIdx] });
+    }
+  });
+
+  beasts.forEach(({ realm, x, y, beast }) => {
+    // Find closest settlement in same realm
+    let closest = null;
+    let minDist = 999;
+    Object.keys(world.modifiedCells).forEach(key => {
+      const cell = world.modifiedCells[key];
+      if (cell.realm === realm && cell.settlement) {
+        const d = Math.hypot(x - cell.x, y - cell.y);
+        if (d < minDist) {
+          minDist = d;
+          closest = { x: cell.x, y: cell.y, name: cell.settlement.name };
+        }
+      }
+    });
+
+    if (closest) {
+      const neighbors = getNeighbors(x, y);
+      let bestN = null;
+      let bestD = minDist;
+      neighbors.forEach(n => {
+        const d = Math.hypot(n.x - closest.x, n.y - closest.y);
+        if (d < bestD) {
+          bestD = d;
+          bestN = n;
+        }
+      });
+
+      if (bestN) {
+        const oldCell = getCell(world, realm, x, y);
+        const newCell = getCell(world, realm, bestN.x, bestN.y);
+
+        oldCell.wildlife = oldCell.wildlife.filter(w => w.species !== 'legendary_beast');
+        saveCell(world, oldCell);
+
+        if (newCell.settlement) {
+          // Siege event
+          if (random() < 0.45) {
+            world.chronicle.push(`${logPrefix} SIEGE DEFEAT: Garrison at ${newCell.settlement.name} slew the beast ${beast.name}!`);
+            if (!newCell.resources.includes('trophy')) newCell.resources.push('trophy');
+          } else {
+            newCell.settlement.size = Math.floor(newCell.settlement.size * 0.6);
+            world.chronicle.push(`${logPrefix} RAMPAGE: Legendary beast ${beast.name} ransacked ${newCell.settlement.name}!`);
+            newCell.wildlife.push(beast);
+          }
+        } else {
+          newCell.wildlife.push(beast);
+        }
+        saveCell(world, newCell);
+      }
+    }
+  });
+
+  // Dynamic discovery updates
   world.discoveredCenters = [];
-  
-  // Faction cities reveal map areas
   world.factions.forEach(f => {
     f.settlements.forEach(s => {
       const cell = getCell(world, s.realm, s.x, s.y);
       if (cell.settlement) {
         const rad = cell.settlement.size > 1000 ? 10 : (cell.settlement.size > 500 ? 8 : 6);
-        world.discoveredCenters.push({
-          realm: s.realm,
-          x: s.x,
-          y: s.y,
-          radius: rad
-        });
+        world.discoveredCenters.push({ realm: s.realm, x: s.x, y: s.y, radius: rad });
       }
     });
   });
 
-  // Re-establish Portals discovery centers
   Object.keys(world.modifiedCells).forEach(key => {
     const cell = world.modifiedCells[key];
     if (cell.ruin && cell.ruin.portalTarget) {
-      world.discoveredCenters.push({
-        realm: cell.realm,
-        x: cell.x,
-        y: cell.y,
-        radius: 4
-      });
+      world.discoveredCenters.push({ realm: cell.realm, x: cell.x, y: cell.y, radius: 4 });
     }
   });
 
-  // Cap logs
   if (world.chronicle.length > 500) {
     world.chronicle = world.chronicle.slice(world.chronicle.length - 500);
   }

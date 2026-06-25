@@ -1,6 +1,119 @@
 // Infinite procedural Map Canvas Renderer with Fog of War for Realmbound Wilds
 import { generateCell, REALMS } from '../simulation/engine.js';
 
+export class CosmicSynth {
+  constructor() {
+    this.ctx = null;
+    this.muted = false;
+  }
+
+  init() {
+    if (this.ctx) return;
+    this.ctx = new (window.AudioContext || window.webkitAudioContext)();
+  }
+
+  playClick() {
+    this.init();
+    if (this.muted || !this.ctx) return;
+    
+    const osc = this.ctx.createOscillator();
+    const gainNode = this.ctx.createGain();
+    
+    osc.type = 'triangle';
+    osc.frequency.setValueAtTime(330, this.ctx.currentTime); // E4 pluck
+    osc.frequency.exponentialRampToValueAtTime(110, this.ctx.currentTime + 0.15);
+    
+    gainNode.gain.setValueAtTime(0.18, this.ctx.currentTime);
+    gainNode.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + 0.18);
+    
+    osc.connect(gainNode);
+    gainNode.connect(this.ctx.destination);
+    
+    osc.start();
+    osc.stop(this.ctx.currentTime + 0.2);
+  }
+
+  playPortalTravel() {
+    this.init();
+    if (this.muted || !this.ctx) return;
+
+    const osc = this.ctx.createOscillator();
+    const gainNode = this.ctx.createGain();
+    const filter = this.ctx.createBiquadFilter();
+
+    osc.type = 'sawtooth';
+    osc.frequency.setValueAtTime(120, this.ctx.currentTime);
+    osc.frequency.exponentialRampToValueAtTime(800, this.ctx.currentTime + 0.65);
+
+    filter.type = 'bandpass';
+    filter.Q.value = 4.0;
+    filter.frequency.setValueAtTime(200, this.ctx.currentTime);
+    filter.frequency.exponentialRampToValueAtTime(1000, this.ctx.currentTime + 0.65);
+
+    gainNode.gain.setValueAtTime(0.12, this.ctx.currentTime);
+    gainNode.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + 0.7);
+
+    osc.connect(filter);
+    filter.connect(gainNode);
+    gainNode.connect(this.ctx.destination);
+
+    osc.start();
+    osc.stop(this.ctx.currentTime + 0.72);
+  }
+
+  playBell() {
+    this.init();
+    if (this.muted || !this.ctx) return;
+
+    const o1 = this.ctx.createOscillator();
+    const o2 = this.ctx.createOscillator();
+    const gainNode = this.ctx.createGain();
+
+    o1.type = 'sine';
+    o1.frequency.value = 160;
+    o2.type = 'triangle';
+    o2.frequency.value = 161.5;
+
+    gainNode.gain.setValueAtTime(0.22, this.ctx.currentTime);
+    gainNode.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + 1.1);
+
+    o1.connect(gainNode);
+    o2.connect(gainNode);
+    gainNode.connect(this.ctx.destination);
+
+    o1.start();
+    o2.start();
+    o1.stop(this.ctx.currentTime + 1.2);
+    o2.stop(this.ctx.currentTime + 1.2);
+  }
+
+  playAlliance() {
+    this.init();
+    if (this.muted || !this.ctx) return;
+
+    const freqs = [330, 440, 554, 660];
+    freqs.forEach(f => {
+      const osc = this.ctx.createOscillator();
+      const gainNode = this.ctx.createGain();
+
+      osc.type = 'sine';
+      osc.frequency.value = f;
+
+      gainNode.gain.setValueAtTime(0.06, this.ctx.currentTime);
+      gainNode.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + 0.7);
+
+      osc.connect(gainNode);
+      gainNode.connect(this.ctx.destination);
+
+      osc.start();
+      osc.stop(this.ctx.currentTime + 0.85);
+    });
+  }
+}
+
+window.synth = new CosmicSynth();
+
+
 export const BIOME_LABELS = {
   ocean: 'Ocean',
   coast: 'Coast',
@@ -62,8 +175,11 @@ export class MapRenderer {
     
     // Viewport Zoom & Pan
     this.zoom = 1.0;
+    this.targetZoom = 1.0; // Added for smooth zoom interpolation
     this.panX = 0;
+    this.targetPanX = 0; // Added for smooth pan interpolation
     this.panY = 0;
+    this.targetPanY = 0; // Added for smooth pan interpolation
     
     this.selectedCell = null;
     this.hoveredCell = null;
@@ -82,6 +198,7 @@ export class MapRenderer {
     
     this.animTime = 0;
     this.particles = [];
+    this.atmosphericParticles = []; // Custom atmospheric elements per realm
     
     this.discoveryCache = new Set();
     this.setupEvents();
@@ -115,6 +232,10 @@ export class MapRenderer {
     this.rebuildDiscoveryCache();
     this.resize();
     this.resetView();
+    // Immediate zoom/pan without lerping initially
+    this.zoom = this.targetZoom;
+    this.panX = this.targetPanX;
+    this.panY = this.targetPanY;
   }
 
   setHistoricalState(state) {
@@ -132,6 +253,7 @@ export class MapRenderer {
     this.activeRealm = realm;
     this.selectedCell = null;
     this.hoveredCell = null;
+    this.atmosphericParticles = []; // Clear current atmospheric particles
     this.rebuildDiscoveryCache();
     this.draw();
   }
@@ -144,23 +266,20 @@ export class MapRenderer {
   }
 
   resetView() {
-    this.zoom = 1.0;
-    this.panX = this.canvas.width / 2;
-    this.panY = this.canvas.height / 2;
+    this.targetZoom = 1.0;
+    this.targetPanX = this.canvas.width / 2;
+    this.targetPanY = this.canvas.height / 2;
     this.vx = 0;
     this.vy = 0;
-    this.draw();
   }
 
   zoomIn() {
-    this.zoom = Math.min(3.5, this.zoom * 1.25);
-    this.draw();
+    this.targetZoom = Math.min(3.5, this.targetZoom * 1.25);
   }
 
   zoomOut() {
     // Enforce reasonable zoom limit to avoid canvas scaling overhead
-    this.zoom = Math.max(0.3, this.zoom / 1.25);
-    this.draw();
+    this.targetZoom = Math.max(0.3, this.targetZoom / 1.25);
   }
 
   // Check if coordinate is discovered under current Fog of War centers
@@ -223,8 +342,8 @@ export class MapRenderer {
 
     this.canvas.addEventListener('mousedown', (e) => {
       this.isDragging = true;
-      startX = e.clientX - this.panX;
-      startY = e.clientY - this.panY;
+      startX = e.clientX - this.targetPanX;
+      startY = e.clientY - this.targetPanY;
       lastX = e.clientX;
       lastY = e.clientY;
       this.vx = 0;
@@ -237,20 +356,17 @@ export class MapRenderer {
       const clientY = e.clientY - rect.top;
 
       if (this.isDragging) {
-        this.panX = e.clientX - startX;
-        this.panY = e.clientY - startY;
+        this.targetPanX = e.clientX - startX;
+        this.targetPanY = e.clientY - startY;
         
         this.vx = e.clientX - lastX;
         this.vy = e.clientY - lastY;
         lastX = e.clientX;
         lastY = e.clientY;
-        
-        this.draw();
       } else {
         const cell = this.screenToCell(clientX, clientY);
         if (cell !== this.hoveredCell) {
           this.hoveredCell = cell;
-          this.draw();
         }
       }
     });
@@ -268,7 +384,11 @@ export class MapRenderer {
       
       const cell = this.screenToCell(clickX, clickY);
       this.selectedCell = cell;
-      this.draw();
+      
+      // Play a click sound profile when selecting cells
+      if (window.synth && !cell.undiscovered) {
+        window.synth.playClick();
+      }
       
       if (this.onSelectCell) {
         this.onSelectCell(cell);
@@ -281,16 +401,14 @@ export class MapRenderer {
       const mouseX = e.clientX - rect.left;
       const mouseY = e.clientY - rect.top;
       
-      const mapX = (mouseX - this.panX) / this.zoom;
-      const mapY = (mouseY - this.panY) / this.zoom;
+      const mapX = (mouseX - this.targetPanX) / this.targetZoom;
+      const mapY = (mouseY - this.targetPanY) / this.targetZoom;
       
       const zoomFactor = e.deltaY < 0 ? 1.18 : 0.82;
-      this.zoom = Math.max(0.1, Math.min(6.0, this.zoom * zoomFactor));
+      this.targetZoom = Math.max(0.1, Math.min(6.0, this.targetZoom * zoomFactor));
       
-      this.panX = mouseX - mapX * this.zoom;
-      this.panY = mouseY - mapY * this.zoom;
-      
-      this.draw();
+      this.targetPanX = mouseX - mapX * this.targetZoom;
+      this.targetPanY = mouseY - mapY * this.targetZoom;
     });
   }
 
@@ -298,15 +416,44 @@ export class MapRenderer {
     const loop = () => {
       this.animTime += 0.04;
       
+      let changed = false;
+
+      // Smooth zoom lerp
+      if (Math.abs(this.zoom - this.targetZoom) > 0.001) {
+        this.zoom += (this.targetZoom - this.zoom) * 0.15;
+        changed = true;
+      } else if (this.zoom !== this.targetZoom) {
+        this.zoom = this.targetZoom;
+        changed = true;
+      }
+
+      // Kinetic physics applied to targets
       if (!this.isDragging && (Math.abs(this.vx) > 0.1 || Math.abs(this.vy) > 0.1)) {
-        this.panX += this.vx;
-        this.panY += this.vy;
+        this.targetPanX += this.vx;
+        this.targetPanY += this.vy;
         this.vx *= 0.88;
         this.vy *= 0.88;
-        this.draw();
+      }
+
+      // Smooth pan lerp
+      if (Math.abs(this.panX - this.targetPanX) > 0.05) {
+        this.panX += (this.targetPanX - this.panX) * 0.2;
+        changed = true;
+      } else if (this.panX !== this.targetPanX) {
+        this.panX = this.targetPanX;
+        changed = true;
+      }
+
+      if (Math.abs(this.panY - this.targetPanY) > 0.05) {
+        this.panY += (this.targetPanY - this.panY) * 0.2;
+        changed = true;
+      } else if (this.panY !== this.targetPanY) {
+        this.panY = this.targetPanY;
+        changed = true;
       }
 
       this.updateParticles();
+      // Always draw to make sure animated particles and waves render smoothly
       this.draw();
       
       this.animationFrameId = requestAnimationFrame(loop);
@@ -352,6 +499,21 @@ export class MapRenderer {
           }
         }
       }
+
+      // Generate atmospheric particles in screen space to cover the viewport nicely
+      const maxAtmosphere = 30;
+      while (this.atmosphericParticles.length < maxAtmosphere) {
+        this.atmosphericParticles.push({
+          x: Math.random() * this.canvas.width,
+          y: Math.random() * this.canvas.height,
+          vx: this.activeRealm === 'overworld' ? Math.random() * 0.5 - 0.2 : (this.activeRealm === 'space' ? Math.random() * 0.15 - 0.07 : Math.random() * 0.4 - 0.1),
+          vy: this.activeRealm === 'underworld' ? -Math.random() * 0.4 - 0.1 : (this.activeRealm === 'overworld' ? Math.random() * 0.3 + 0.2 : Math.random() * 0.15 - 0.05),
+          size: Math.random() * 3 + 1,
+          life: Math.random() * 0.5 + 0.5,
+          angle: Math.random() * Math.PI * 2,
+          spin: Math.random() * 0.02 - 0.01
+        });
+      }
     }
 
     this.particles.forEach(p => {
@@ -360,6 +522,19 @@ export class MapRenderer {
       p.life -= 0.035;
     });
     this.particles = this.particles.filter(p => p.life > 0);
+
+    // Update atmospheric particles
+    this.atmosphericParticles.forEach(p => {
+      p.x += p.vx;
+      p.y += p.vy;
+      p.angle += p.spin;
+      
+      // Wrap around canvas boundaries
+      if (p.x < 0) p.x = this.canvas.width;
+      if (p.x > this.canvas.width) p.x = 0;
+      if (p.y < 0) p.y = this.canvas.height;
+      if (p.y > this.canvas.height) p.y = 0;
+    });
   }
 
   // Draw visible grid
@@ -418,6 +593,142 @@ export class MapRenderer {
     });
 
     this.ctx.restore();
+
+    // 6. Draw Atmosphere overlay (screen-space weather elements)
+    this.drawAtmosphere();
+
+    // 7. Draw Minimap overlay
+    this.drawMinimap();
+  }
+
+  drawAtmosphere() {
+    this.ctx.save();
+    this.atmosphericParticles.forEach(p => {
+      if (this.activeRealm === 'overworld') {
+        // Soft green drifting leaves
+        this.ctx.fillStyle = `rgba(34, 197, 94, ${p.life * 0.45})`;
+        this.ctx.save();
+        this.ctx.translate(p.x, p.y);
+        this.ctx.rotate(p.angle);
+        this.ctx.beginPath();
+        this.ctx.ellipse(0, 0, p.size * 1.5, p.size * 0.8, 0, 0, Math.PI * 2);
+        this.ctx.fill();
+        this.ctx.restore();
+      } else if (this.activeRealm === 'underworld') {
+        // Reddish cavern embers / steam
+        this.ctx.fillStyle = `rgba(239, 68, 68, ${p.life * 0.35})`;
+        this.ctx.beginPath();
+        this.ctx.arc(p.x, p.y, p.size * 0.8, 0, Math.PI * 2);
+        this.ctx.fill();
+      } else if (this.activeRealm === 'aether') {
+        // Fluffy light blue sky clouds
+        this.ctx.fillStyle = `rgba(255, 255, 255, ${p.life * 0.15})`;
+        this.ctx.beginPath();
+        this.ctx.arc(p.x, p.y, p.size * 4, 0, Math.PI * 2);
+        this.ctx.arc(p.x + p.size * 2, p.y, p.size * 3, 0, Math.PI * 2);
+        this.ctx.arc(p.x - p.size * 2, p.y, p.size * 3, 0, Math.PI * 2);
+        this.ctx.fill();
+      } else if (this.activeRealm === 'space') {
+        // Drifting space stardust
+        this.ctx.fillStyle = `rgba(255, 255, 255, ${p.life * 0.75})`;
+        this.ctx.beginPath();
+        this.ctx.arc(p.x, p.y, p.size * 0.5, 0, Math.PI * 2);
+        this.ctx.fill();
+      }
+    });
+    this.ctx.restore();
+  }
+
+  drawMinimap() {
+    const size = 120;
+    const padding = 15;
+    const x = this.canvas.width - size - padding;
+    const y = padding;
+
+    const ctx = this.ctx;
+    ctx.save();
+
+    // Map frame background
+    ctx.fillStyle = 'rgba(15, 17, 26, 0.85)';
+    ctx.strokeStyle = '#dfb15b';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.roundRect(x, y, size, size, 8);
+    ctx.fill();
+    ctx.stroke();
+
+    // Radar grids
+    ctx.strokeStyle = 'rgba(223, 177, 91, 0.2)';
+    ctx.lineWidth = 0.5;
+    ctx.beginPath();
+    ctx.arc(x + size / 2, y + size / 2, size / 2.5, 0, Math.PI * 2);
+    ctx.arc(x + size / 2, y + size / 2, size / 5, 0, Math.PI * 2);
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.moveTo(x + size / 2, y);
+    ctx.lineTo(x + size / 2, y + size);
+    ctx.moveTo(x, y + size / 2);
+    ctx.lineTo(x + size, y + size / 2);
+    ctx.stroke();
+
+    // Plot discovered centers inside the radar space
+    const centers = this.historicalState ? this.historicalState.discoveredCenters : (this.world ? this.world.discoveredCenters : []);
+    if (centers && centers.length > 0) {
+      // Find bounding limits for centers to center the map viewport appropriately
+      let minCx = Infinity, maxCx = -Infinity, minCy = Infinity, maxCy = -Infinity;
+      const relevant = centers.filter(c => c.realm === this.activeRealm);
+      
+      if (relevant.length > 0) {
+        relevant.forEach(c => {
+          if (c.x < minCx) minCx = c.x;
+          if (c.x > maxCx) maxCx = c.x;
+          if (c.y < minCy) minCy = c.y;
+          if (c.y > maxCy) maxCy = c.y;
+        });
+
+        const spanX = Math.max(1, maxCx - minCx);
+        const spanY = Math.max(1, maxCy - minCy);
+        const maxSpan = Math.max(spanX, spanY, 20);
+
+        const midX = (minCx + maxCx) / 2;
+        const midY = (minCy + maxCy) / 2;
+
+        ctx.fillStyle = 'rgba(16, 185, 129, 0.4)';
+        relevant.forEach(c => {
+          // Map to local minimap coordinates
+          const mapLocX = x + size/2 + ((c.x - midX) / maxSpan) * (size - 20);
+          const mapLocY = y + size/2 + ((c.y - midY) / maxSpan) * (size - 20);
+          const drawRadius = Math.max(2, (c.radius / maxSpan) * (size - 20));
+
+          ctx.beginPath();
+          ctx.arc(mapLocX, mapLocY, drawRadius, 0, Math.PI * 2);
+          ctx.fill();
+        });
+
+        // Draw camera position indicator
+        // Reconstruct map coordinates of the camera viewport center
+        const camX = (this.canvas.width / 2 - this.panX) / (this.zoom * this.tileSize);
+        const camY = (this.canvas.height / 2 - this.panY) / (this.zoom * this.tileSize);
+
+        const camLocX = x + size/2 + ((camX - midX) / maxSpan) * (size - 20);
+        const camLocY = y + size/2 + ((camY - midY) / maxSpan) * (size - 20);
+
+        if (camLocX >= x + 2 && camLocX <= x + size - 2 && camLocY >= y + 2 && camLocY <= y + size - 2) {
+          ctx.fillStyle = '#ffffff';
+          ctx.beginPath();
+          ctx.arc(camLocX, camLocY, 3, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.strokeStyle = '#ef4444';
+          ctx.lineWidth = 1;
+          ctx.beginPath();
+          ctx.arc(camLocX, camLocY, 6, 0, Math.PI * 2);
+          ctx.stroke();
+        }
+      }
+    }
+
+    ctx.restore();
   }
 
   // Draw procedural biome cell

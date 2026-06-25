@@ -512,3 +512,124 @@ canvas:active {
   border-color: var(--gold);
   box-shadow: 0 0 8px var(--gold-glow);
 }
+
+/* Modal Overlay & Help Dialog */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  transition: opacity 0.25s ease;
+}
+
+.modal-overlay.hidden {
+  display: none;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal-content {
+  width: 90%;
+  max-width: 520px;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  animation: slide-up 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.close-btn:hover {
+  color: var(--accent);
+}
+
+.modal-body {
+  overflow-y: auto;
+  padding-right: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.guide-section h3 {
+  color: var(--gold);
+  font-family: var(--font-fantasy);
+  margin-bottom: 8px;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.guide-section p {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.guide-section ul {
+  list-style: none;
+}
+
+.guide-section li {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin-bottom: 6px;
+  position: relative;
+  padding-left: 14px;
+}
+
+.guide-section li::before {
+  content: "•";
+  color: var(--gold);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+kbd {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 0.8rem;
+  font-family: monospace;
+  color: var(--gold);
+  margin: 0 2px;
+}
+

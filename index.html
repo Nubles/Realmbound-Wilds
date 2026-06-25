@@ -46,11 +46,49 @@
         </div>
       </div>
       <div class="action-buttons">
+        <button class="btn btn-secondary" id="help-btn" style="margin-right: 8px;">
+          <span class="btn-icon">📜</span> Chronicle Guide
+        </button>
         <a href="https://github.com/${github_user}/${github_repo}/issues/new?template=expedition.yml" target="_blank" class="btn btn-primary btn-glow" id="expedition-link">
           <span class="btn-icon">🗡️</span> Launch Expedition
         </a>
       </div>
     </header>
+
+    <!-- Help & Tutorial Modal Overlay -->
+    <div id="help-modal" class="modal-overlay hidden">
+      <div class="modal-content card">
+        <header class="modal-header">
+          <h2 class="font-fantasy">📜 Realmbound Wilds Chronicle Guide</h2>
+          <button id="close-help-btn" class="close-btn">&times;</button>
+        </header>
+        <div class="modal-body">
+          <section class="guide-section">
+            <h3>🎮 Controls</h3>
+            <p><strong>Mouse:</strong> Left click + Drag to pan. Scroll wheel to zoom. Click individual cells to inspect them.</p>
+            <p><strong>Keyboard:</strong> Use <kbd>W</kbd> <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd> or the arrow keys to pan around. Use <kbd>+</kbd> and <kbd>-</kbd> to zoom in and out.</p>
+          </section>
+          <section class="guide-section">
+            <h3>🌌 Realm Dimensions</h3>
+            <ul>
+              <li><strong>🌳 Overworld:</strong> Standard continent layout with oceans, plains, forests, mountains, and trade routes.</li>
+              <li><strong>🌋 Underworld:</strong> Cavern systems filled with solid stone, deep lakes, crystals, and magma vents.</li>
+              <li><strong>☁️ Aether:</strong> Floating sky islands surrounded by starlight woods and storm peaks.</li>
+              <li><strong>☄️ Space:</strong> Dark space orbit hosting asteroid belts, nebulas, and comet tails. Outposts require Life Support Domes!</li>
+            </ul>
+          </section>
+          <section class="guide-section">
+            <h3>👑 Factions</h3>
+            <ul>
+              <li><strong>Valoria:</strong> Expansionists (expands settlements 30% faster).</li>
+              <li><strong>Oakhaven:</strong> Forest Wardens (forest fire durations halved; faster vegetation growth).</li>
+              <li><strong>Ironclad:</strong> Miner Faction (doubled speed of iron/gold mining).</li>
+              <li><strong>Sunspire:</strong> Diplomat Faction (alliance formation rate doubled).</li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </div>
 
     <!-- Main Workspace -->
     <div class="workspace">

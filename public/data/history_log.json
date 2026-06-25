@@ -1730,5 +1730,239 @@
       ],
       "tradeRoutes": []
     }
+  },
+  {
+    "year": 1,
+    "globalTempOffset": 0,
+    "stats": {
+      "deer": 22,
+      "wolf": 0,
+      "elk": 0,
+      "bear": 0,
+      "beasts": 0,
+      "population": 480
+    },
+    "factions": {
+      "Valoria": 120,
+      "Oakhaven": 120,
+      "Ironclad": 120,
+      "Sunspire": 120
+    },
+    "events": [
+      "The multi-dimensional cosmos awakens.",
+      "The faction of Valoria established their capital Valoria Prime on the Overworld at [-8, -6].",
+      "The faction of Oakhaven established their capital Oakhaven Prime on the Overworld at [12, -8].",
+      "The faction of Ironclad established their capital Ironclad Prime on the Overworld at [12, 2].",
+      "The faction of Sunspire established their capital Sunspire Prime on the Overworld at [0, -18]."
+    ],
+    "discoveredCenters": [
+      {
+        "realm": "overworld",
+        "x": -8,
+        "y": -6,
+        "radius": 6
+      },
+      {
+        "realm": "overworld",
+        "x": 12,
+        "y": -8,
+        "radius": 6
+      },
+      {
+        "realm": "overworld",
+        "x": 12,
+        "y": 2,
+        "radius": 6
+      },
+      {
+        "realm": "overworld",
+        "x": 0,
+        "y": -18,
+        "radius": 6
+      },
+      {
+        "realm": "overworld",
+        "x": 5,
+        "y": 5,
+        "radius": 4
+      },
+      {
+        "realm": "underworld",
+        "x": 0,
+        "y": 0,
+        "radius": 4
+      },
+      {
+        "realm": "overworld",
+        "x": -15,
+        "y": 10,
+        "radius": 4
+      },
+      {
+        "realm": "aether",
+        "x": 0,
+        "y": 0,
+        "radius": 4
+      },
+      {
+        "realm": "overworld",
+        "x": 20,
+        "y": -15,
+        "radius": 4
+      },
+      {
+        "realm": "space",
+        "x": 0,
+        "y": 0,
+        "radius": 4
+      }
+    ],
+    "mapState": {
+      "modifiedCells": [
+        {
+          "r": "overworld",
+          "x": -8,
+          "y": -6,
+          "f": "Valoria",
+          "t": "capital",
+          "s": 120,
+          "ruin": null,
+          "fire": false
+        },
+        {
+          "r": "overworld",
+          "x": 12,
+          "y": -8,
+          "f": "Oakhaven",
+          "t": "capital",
+          "s": 120,
+          "ruin": null,
+          "fire": false
+        },
+        {
+          "r": "overworld",
+          "x": 12,
+          "y": 2,
+          "f": "Ironclad",
+          "t": "capital",
+          "s": 120,
+          "ruin": null,
+          "fire": false
+        },
+        {
+          "r": "overworld",
+          "x": 0,
+          "y": -18,
+          "f": "Sunspire",
+          "t": "capital",
+          "s": 120,
+          "ruin": null,
+          "fire": false
+        },
+        {
+          "r": "overworld",
+          "x": 5,
+          "y": 5,
+          "f": null,
+          "t": null,
+          "s": 0,
+          "ruin": {
+            "name": "Ancient Cavern Portal",
+            "portalTarget": {
+              "realm": "underworld",
+              "x": 0,
+              "y": 0
+            }
+          },
+          "fire": false
+        },
+        {
+          "r": "underworld",
+          "x": 0,
+          "y": 0,
+          "f": null,
+          "t": null,
+          "s": 0,
+          "ruin": {
+            "name": "Ancient Cavern Portal Link",
+            "portalTarget": {
+              "realm": "overworld",
+              "x": 5,
+              "y": 5
+            }
+          },
+          "fire": false
+        },
+        {
+          "r": "overworld",
+          "x": -15,
+          "y": 10,
+          "f": null,
+          "t": null,
+          "s": 0,
+          "ruin": {
+            "name": "Sky Gate of Aether",
+            "portalTarget": {
+              "realm": "aether",
+              "x": 0,
+              "y": 0
+            }
+          },
+          "fire": false
+        },
+        {
+          "r": "aether",
+          "x": 0,
+          "y": 0,
+          "f": null,
+          "t": null,
+          "s": 0,
+          "ruin": {
+            "name": "Sky Gate of Aether Link",
+            "portalTarget": {
+              "realm": "overworld",
+              "x": -15,
+              "y": 10
+            }
+          },
+          "fire": false
+        },
+        {
+          "r": "overworld",
+          "x": 20,
+          "y": -15,
+          "f": null,
+          "t": null,
+          "s": 0,
+          "ruin": {
+            "name": "Celestial Launchpad",
+            "portalTarget": {
+              "realm": "space",
+              "x": 0,
+              "y": 0
+            }
+          },
+          "fire": false
+        },
+        {
+          "r": "space",
+          "x": 0,
+          "y": 0,
+          "f": null,
+          "t": null,
+          "s": 0,
+          "ruin": {
+            "name": "Celestial Launchpad Link",
+            "portalTarget": {
+              "realm": "overworld",
+              "x": 20,
+              "y": -15
+            }
+          },
+          "fire": false
+        }
+      ],
+      "tradeRoutes": []
+    }
   }
 ]
