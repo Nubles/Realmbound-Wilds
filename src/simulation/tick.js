@@ -12,9 +12,11 @@ if (!fs.existsSync(DATA_DIR)) {
 }
 
 function getSummary(world) {
-  let deer = 0, wolf = 0, elk = 0, bear = 0, beasts = 0;
-  let population = 0;
-  
+  const biomeCodes = { ocean: 'O', coast: 'C', lake: 'L', plains: 'P', forest: 'F', mountain: 'M', desert: 'D', tundra: 'T' };
+  let mapStr = '';
+  const specials = {};
+  let deer = 0, wolf = 0, elk = 0, bear = 0, beasts = 0, population = 0;
+
   for (let y = 0; y < world.height; y++) {
     for (let x = 0; x < world.width; x++) {
       const cell = world.grid[y][x];
@@ -28,6 +30,39 @@ function getSummary(world) {
         if (w.species === 'bear') bear += w.count;
         if (w.species === 'legendary_beast') beasts += w.count;
       });
+
+      // Compress grid cell
+      const bCode = biomeCodes[cell.biome] || 'O';
+      let fCode = '.';
+      
+      if (cell.settlement) {
+        const idx = world.factions.findIndex(f => f.name === cell.settlement.faction);
+        fCode = idx !== -1 ? idx.toString() : 'P';
+      } else {
+        // Soft border coloring
+        let minDistance = 999;
+        let bestFactionIdx = -1;
+        world.factions.forEach((f, fIdx) => {
+          f.settlements.forEach(s => {
+            const dist = Math.hypot(cell.x - s.x, cell.y - s.y);
+            if (dist < minDistance && dist < 8) {
+              minDistance = dist;
+              bestFactionIdx = fIdx;
+            }
+          });
+        });
+        if (bestFactionIdx !== -1 && cell.biome !== 'ocean') {
+          fCode = bestFactionIdx.toString();
+        }
+      }
+
+      mapStr += bCode + fCode;
+
+      // Special overlay tile markers
+      const key = `${y},${x}`;
+      if (cell.fireTicksLeft > 0) specials[key] = 'fire';
+      else if (cell.ruin) specials[key] = { type: 'ruin', name: cell.ruin.name };
+      else if (cell.wildlife.some(w => w.species === 'legendary_beast')) specials[key] = 'beast';
     }
   }
 
@@ -41,7 +76,17 @@ function getSummary(world) {
     globalTempOffset: world.globalTempOffset,
     stats: { deer, wolf, elk, bear, beasts, population },
     factions: factionPowers,
-    events: [...world.chronicle.slice(-10)] // Grab recent events
+    events: [...world.chronicle.slice(-10)], // Grab recent events
+    mapState: {
+      grid: mapStr,
+      specials,
+      tradeRoutes: (world.tradeRoutes || []).map(tr => ({
+        from: tr.from,
+        to: tr.to,
+        f1: tr.f1,
+        f2: tr.f2
+      }))
+    }
   };
 }
 

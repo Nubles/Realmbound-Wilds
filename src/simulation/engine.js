@@ -190,7 +190,8 @@ export function createNewWorld(width = 50, height = 50, seed = "realmbound") {
     factions,
     chronicle,
     globalTempOffset: 0.0,
-    rareEventActive: null
+    rareEventActive: null,
+    tradeRoutes: []
   };
 }
 
@@ -391,7 +392,40 @@ export function advanceSimulation(world) {
     faction.power = factionPower;
   });
 
-  // 4. Diplomatic Actions / Wars
+  // 3.5 Trade Routes calculation
+  world.tradeRoutes = [];
+  for (let i = 0; i < world.factions.length; i++) {
+    const f1 = world.factions[i];
+    for (let j = i + 1; j < world.factions.length; j++) {
+      const f2 = world.factions[j];
+      const rel = f1.status[f2.name] || 'peace';
+      if (rel === 'peace' || rel === 'alliance') {
+        // Establish trade routes between close settlements
+        f1.settlements.forEach(s1 => {
+          f2.settlements.forEach(s2 => {
+            const dist = Math.hypot(s1.x - s2.x, s1.y - s2.y);
+            if (dist < 12) {
+              // Add trade route
+              world.tradeRoutes.push({
+                from: { x: s1.x, y: s1.y },
+                to: { x: s2.x, y: s2.y },
+                f1: f1.name,
+                f2: f2.name
+              });
+              
+              // Boost settlement growth
+              const c1 = world.grid[s1.y][s1.x];
+              const c2 = world.grid[s2.y][s2.x];
+              if (c1.settlement) c1.settlement.size += rel === 'alliance' ? 15 : 8;
+              if (c2.settlement) c2.settlement.size += rel === 'alliance' ? 15 : 8;
+            }
+          });
+        });
+      }
+    }
+  }
+
+  // 4. Diplomatic Actions / Wars / Alliances
   for (let i = 0; i < world.factions.length; i++) {
     const f1 = world.factions[i];
     for (let j = i + 1; j < world.factions.length; j++) {
@@ -400,17 +434,33 @@ export function advanceSimulation(world) {
       const currentStatus = f1.status[f2.name] || 'peace';
 
       if (currentStatus === 'peace') {
-        // High difference in power or close proximity can trigger war
         const dist = Math.hypot(f1.capital.x - f2.capital.x, f1.capital.y - f2.capital.y);
-        const powerDiff = Math.abs(f1.power - f2.power);
         
-        if (dist < 20 && random() < 0.03) {
+        // 5% chance to form alliance if close and peaceful
+        if (dist < 20 && random() < 0.05) {
+          f1.status[f2.name] = 'alliance';
+          f2.status[f1.name] = 'alliance';
+          world.chronicle.push(`${logPrefix} DIPLOMACY: ${f1.name} and ${f2.name} have formed a military alliance!`);
+        } else if (dist < 15 && random() < 0.03) {
           f1.status[f2.name] = 'war';
           f2.status[f1.name] = 'war';
-          world.chronicle.push(`${logPrefix} Factions declare war! Conflict has erupted between ${f1.name} and ${f2.name} over regional dominance.`);
+          world.chronicle.push(`${logPrefix} Factions declare war! Conflict has erupted between ${f1.name} and ${f2.name} over borders.`);
+          
+          // Call in allies
+          world.factions.forEach(ally => {
+            if (ally.name !== f1.name && ally.status[f1.name] === 'alliance' && ally.status[f2.name] !== 'war') {
+              ally.status[f2.name] = 'war';
+              f2.status[ally.name] = 'war';
+              world.chronicle.push(`${logPrefix} ALLIANCE CALL: ${ally.name} declared war on ${f2.name} to defend their ally ${f1.name}.`);
+            }
+            if (ally.name !== f2.name && ally.status[f2.name] === 'alliance' && ally.status[f1.name] !== 'war') {
+              ally.status[f1.name] = 'war';
+              f1.status[ally.name] = 'war';
+              world.chronicle.push(`${logPrefix} ALLIANCE CALL: ${ally.name} declared war on ${f1.name} to defend their ally ${f2.name}.`);
+            }
+          });
         }
       } else if (currentStatus === 'war') {
-        // Battle resolution: choose random settlements near each other
         let battleSettlement = null;
         let attacker = null;
         let defender = null;
@@ -419,7 +469,6 @@ export function advanceSimulation(world) {
           f2.settlements.forEach(s2 => {
             const dist = Math.hypot(s1.x - s2.x, s1.y - s2.y);
             if (dist < 10 && random() < 0.4) {
-              // We have a combat candidate
               if (f1.power > f2.power) {
                 attacker = f1; defender = f2; battleSettlement = s2;
               } else {
@@ -433,10 +482,8 @@ export function advanceSimulation(world) {
           const cell = world.grid[battleSettlement.y][battleSettlement.x];
           const settlement = cell.settlement;
           if (settlement) {
-            // Damage settlement, maybe change faction or destroy it
             settlement.size = Math.floor(settlement.size * 0.4);
             if (settlement.size < 30) {
-              // Destroyed!
               world.chronicle.push(`${logPrefix} War Outcome: Settlement ${settlement.name} was razed to the ground during a siege by ${attacker.name}.`);
               cell.ruin = {
                 name: `Smoldering ruins of ${settlement.name}`,
@@ -446,7 +493,6 @@ export function advanceSimulation(world) {
               defender.settlements = defender.settlements.filter(s => s.x !== battleSettlement.x || s.y !== battleSettlement.y);
               cell.settlement = null;
             } else {
-              // Captured!
               world.chronicle.push(`${logPrefix} War Outcome: ${attacker.name} captured the settlement ${settlement.name} from ${defender.name}.`);
               settlement.faction = attacker.name;
               defender.settlements = defender.settlements.filter(s => s.x !== battleSettlement.x || s.y !== battleSettlement.y);
@@ -455,7 +501,6 @@ export function advanceSimulation(world) {
           }
         }
 
-        // Chance to sign peace treaty
         if (random() < 0.15) {
           f1.status[f2.name] = 'peace';
           f2.status[f1.name] = 'peace';
@@ -465,6 +510,76 @@ export function advanceSimulation(world) {
     }
   }
 
+  // 4.5 Migrate Legendary Beasts & Siege settlements
+  const beastsToMove = [];
+  for (let y = 0; y < world.height; y++) {
+    for (let x = 0; x < world.width; x++) {
+      const cell = world.grid[y][x];
+      const beastIndex = cell.wildlife.findIndex(w => w.species === 'legendary_beast');
+      if (beastIndex !== -1) {
+        beastsToMove.push({ x, y, beast: cell.wildlife[beastIndex] });
+      }
+    }
+  }
+
+  beastsToMove.forEach(({ x, y, beast }) => {
+    // Find closest settlement
+    let closestSet = null;
+    let minDist = 999;
+    for (let sy = 0; sy < world.height; sy++) {
+      for (let sx = 0; sx < world.width; sx++) {
+        const sc = world.grid[sy][sx];
+        if (sc.settlement) {
+          const d = Math.hypot(x - sx, y - sy);
+          if (d < minDist) {
+            minDist = d;
+            closestSet = { x: sx, y: sy, name: sc.settlement.name };
+          }
+        }
+      }
+    }
+
+    if (closestSet) {
+      // Find neighbor step that reduces distance
+      const neighbors = getNeighbors(x, y, world.width, world.height);
+      let bestN = null;
+      let bestD = minDist;
+      
+      neighbors.forEach(n => {
+        const d = Math.hypot(n.x - closestSet.x, n.y - closestSet.y);
+        if (d < bestD) {
+          bestD = d;
+          bestN = n;
+        }
+      });
+
+      if (bestN) {
+        const oldCell = world.grid[y][x];
+        const newCell = world.grid[bestN.y][bestN.x];
+
+        // Move beast in memory
+        oldCell.wildlife = oldCell.wildlife.filter(w => w.species !== 'legendary_beast');
+        
+        if (newCell.settlement) {
+          // Siege!
+          if (random() < 0.4) {
+            // Defeated
+            world.chronicle.push(`${logPrefix} SIEGE DEFEAT: The garrison of ${newCell.settlement.name} fought bravely and slew the legendary beast ${beast.name}!`);
+            if (!newCell.resources.includes('trophy')) newCell.resources.push('trophy');
+          } else {
+            // Rampage
+            newCell.settlement.size = Math.floor(newCell.settlement.size * 0.65);
+            world.chronicle.push(`${logPrefix} SIEGE RAMPAGE: The legendary beast ${beast.name} broke through gates at ${newCell.settlement.name}, leaving devestation!`);
+            // Beast stays in adjacent cell
+            newCell.wildlife.push(beast);
+          }
+        } else {
+          newCell.wildlife.push(beast);
+        }
+      }
+    }
+  });
+
   // 5. Rare Events
   if (random() < 0.05) {
     const rx = Math.floor(random() * world.width);
@@ -473,7 +588,6 @@ export function advanceSimulation(world) {
     const eventType = random();
 
     if (eventType < 0.25 && cell.biome !== CELL_BIOMES.OCEAN) {
-      // Meteor impact
       cell.biome = CELL_BIOMES.LAKE;
       cell.elevation = 0.1;
       cell.settlement = null;
@@ -487,7 +601,6 @@ export function advanceSimulation(world) {
       }
       world.chronicle.push(`${logPrefix} RARE EVENT: A burning star crashed from the heavens at [${rx}, ${ry}], forming a stellar crater!`);
     } else if (eventType < 0.5 && cell.biome !== CELL_BIOMES.OCEAN) {
-      // Volcano eruption
       cell.biome = CELL_BIOMES.MOUNTAIN;
       cell.elevation = 0.95;
       cell.settlement = null;
@@ -496,7 +609,6 @@ export function advanceSimulation(world) {
         description: "An active tectonic vent created during the Great Upheaval.",
         age: world.year
       };
-      // Cause fires around it
       const neighbors = getNeighbors(rx, ry, world.width, world.height);
       neighbors.forEach(n => {
         const nc = world.grid[n.y][n.x];
@@ -504,7 +616,6 @@ export function advanceSimulation(world) {
       });
       world.chronicle.push(`${logPrefix} RARE EVENT: An active volcano erupted at [${rx}, ${ry}], filling the region with ash and magma!`);
     } else if (eventType < 0.75) {
-      // Plague
       world.factions.forEach(f => {
         f.settlements.forEach(s => {
           const c = world.grid[s.y][s.x];
@@ -515,7 +626,6 @@ export function advanceSimulation(world) {
       });
       world.chronicle.push(`${logPrefix} RARE EVENT: A devastating plague swept across the civilized kingdoms, decimating populations.`);
     } else {
-      // Legendary Beast arises
       const beastNames = ["Ignis the Fire Drake", "Gargantua the Behemoth", "Aethelgard Voidwalker", "Tiamat the Hydra"];
       const chosenBeast = beastNames[Math.floor(random() * beastNames.length)];
       cell.wildlife.push({ species: 'legendary_beast', name: chosenBeast, count: 1 });

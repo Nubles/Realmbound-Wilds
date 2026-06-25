@@ -252,7 +252,7 @@ function inspectCell(cell) {
   `;
 }
 
-// Setup Timeline Slider & Sparklines
+// Setup Timeline Slider & Sparklines (SVG Chart)
 function setupTimeline() {
   if (historyLog.length === 0) return;
 
@@ -265,49 +265,64 @@ function setupTimeline() {
   timelineSlider.disabled = false;
   sliderYearVal.innerText = `Year ${maxYear}`;
 
-  // Build sparkline chart
+  // Build SVG multi-line charts
   statsSparkline.innerHTML = '';
-  const maxPop = Math.max(...historyLog.map(h => h.stats.population), 10);
   
-  historyLog.forEach((hist, idx) => {
-    const bar = document.createElement('div');
-    bar.className = `sparkline-bar ${idx === historyLog.length - 1 ? 'active' : ''}`;
-    // height between 10% and 100%
-    const h = 10 + (hist.stats.population / maxPop) * 90;
-    bar.style.height = `${h}%`;
-    bar.title = `Year ${hist.year} | World Pop: ${hist.stats.population.toLocaleString()}`;
+  let svgContent = `<svg viewBox="0 0 500 48" width="100%" height="100%" preserveAspectRatio="none" style="overflow: visible; display: block;">`;
+  
+  const factionNames = ["Valoria", "Oakhaven", "Ironclad", "Sunspire", "Players"];
+  const factionColors = ["#3b82f6", "#10b981", "#6b7280", "#f59e0b", "#ef4444"];
+  
+  // Plot each faction power line
+  factionNames.forEach((facName, facIdx) => {
+    const points = [];
+    let maxVal = 100;
     
-    // Allow clicking the sparkline bar to travel to that year
-    bar.addEventListener('click', () => {
-      timelineSlider.value = hist.year;
-      onTimelineTravel(hist.year);
+    historyLog.forEach(hist => {
+      const pVal = hist.factions[facName] || 0;
+      if (pVal > maxVal) maxVal = pVal;
     });
-
-    statsSparkline.appendChild(bar);
+    
+    historyLog.forEach((hist, index) => {
+      const x = (index / (historyLog.length - 1)) * 500;
+      const pVal = hist.factions[facName] || 0;
+      const y = 48 - (pVal / maxVal) * 40 - 2; // scale y
+      points.push(`${x},${y}`);
+    });
+    
+    if (points.length > 1) {
+      svgContent += `<polyline fill="none" stroke="${factionColors[facIdx]}" stroke-width="1.5" points="${points.join(' ')}" style="vector-effect: non-scaling-stroke; stroke-linecap: round;" />`;
+    }
   });
+
+  // Plot world population line
+  const popPoints = [];
+  const maxPop = Math.max(...historyLog.map(h => h.stats.population), 100);
+  historyLog.forEach((hist, index) => {
+    const x = (index / (historyLog.length - 1)) * 500;
+    const y = 48 - (hist.stats.population / maxPop) * 38 - 3;
+    popPoints.push(`${x},${y}`);
+  });
+  if (popPoints.length > 1) {
+    svgContent += `<polyline fill="none" stroke="#dfb15b" stroke-dasharray="3,3" stroke-width="1.5" points="${popPoints.join(' ')}" style="vector-effect: non-scaling-stroke;" />`;
+  }
+
+  svgContent += `</svg>`;
+  statsSparkline.innerHTML = svgContent;
 }
 
 // Time-travel action
 async function onTimelineTravel(year) {
   sliderYearVal.innerText = `Year ${year}`;
 
-  // Highlight corresponding sparkline bar
-  const bars = statsSparkline.querySelectorAll('.sparkline-bar');
   const index = historyLog.findIndex(h => h.year === parseInt(year, 10));
-  bars.forEach((bar, idx) => {
-    if (idx === index) bar.classList.add('active');
-    else bar.classList.remove('active');
-  });
+  if (index === -1) return;
 
-  // If traveling back in time, we fetch the world representation at that specific git commit
-  // or we display a static message since grid states are not preserved in the light history log,
-  // OR we can reconstruct a simple/compact version of the world state for statistics and show historical events!
-  // Wait, if it is the current year, load the current world. If it's a past year, show the stats.
-  if (currentWorld && year === currentWorld.year) {
+  // If traveling back in time, we load the compressed grid snapshot
+  if (currentWorld && parseInt(year, 10) === currentWorld.year) {
     updateUI(currentWorld);
     renderer.setWorld(currentWorld);
   } else {
-    // Fetch historical events for display in chronicle
     const histState = historyLog[index];
     if (histState) {
       currentYearEl.innerText = `Year ${histState.year} (Historical)`;
@@ -315,17 +330,28 @@ async function onTimelineTravel(year) {
       const tempOffset = histState.globalTempOffset;
       const tempSign = tempOffset >= 0 ? '+' : '';
       climateOffsetEl.innerText = `${tempSign}${Math.round(tempOffset * 100)}% Dev`;
+      climateOffsetEl.style.color = tempOffset >= 0 ? '#ef4444' : '#60a5fa';
       
       globalPopEl.innerText = histState.stats.population.toLocaleString();
 
       // Show faction power breakdown at that time
       factionListEl.innerHTML = '';
-      Object.entries(histState.factions).forEach(([name, power]) => {
+      
+      const factionNames = ["Valoria", "Oakhaven", "Ironclad", "Sunspire", "Players"];
+      const factionColors = ["#3b82f6", "#10b981", "#6b7280", "#f59e0b", "#ef4444"];
+      
+      factionNames.forEach((name, facIdx) => {
+        const power = histState.factions[name] || 0;
+        const color = factionColors[facIdx];
+        
         const factionItem = document.createElement('div');
         factionItem.className = 'faction-item';
         factionItem.innerHTML = `
           <div class="faction-header">
-            <span class="faction-name">${name}</span>
+            <span class="faction-name">
+              <span class="faction-color-dot" style="background-color: ${color}"></span>
+              ${name}
+            </span>
             <span class="faction-power">Power: ${power}</span>
           </div>
         `;
@@ -340,6 +366,9 @@ async function onTimelineTravel(year) {
         entry.innerText = evt;
         chronicleBoxEl.appendChild(entry);
       });
+
+      // Trigger map updates with historical state
+      renderer.setHistoricalState(histState);
     }
   }
 }
