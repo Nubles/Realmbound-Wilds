@@ -507,6 +507,20 @@ async function init() {
     });
   }
 
+  // Sound Mute Toggle
+  const soundToggle = document.getElementById('sound-toggle');
+  if (soundToggle) {
+    soundToggle.addEventListener('click', () => {
+      if (window.synth) {
+        window.synth.muted = !window.synth.muted;
+        soundToggle.innerText = window.synth.muted ? '🔇' : '🔊';
+        if (!window.synth.muted) {
+          window.synth.playClick();
+        }
+      }
+    });
+  }
+
   // Bind active Realm dropdown
   const realmSelector = document.getElementById('realm-selector');
   realmSelector.addEventListener('change', (e) => {

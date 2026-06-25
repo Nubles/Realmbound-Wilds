@@ -257,54 +257,52 @@ export function createNewWorld(seed = "realmbound") {
     globalTempOffset: 0.0
   };
 
-  // Place capital cities for initial factions in Overworld
-  for (let i = 0; i < 4; i++) {
-    const name = FACTION_NAMES[i];
-    const color = FACTION_COLORS[i];
-    
-    // Find a solid Overworld land coordinate near origin
-    let cx = 0, cy = 0;
-    for (let attempts = 0; attempts < 100; attempts++) {
-      cx = Math.floor(random() * 40) - 20;
-      cy = Math.floor(random() * 40) - 20;
-      const cell = getCell(world, REALMS.OVERWORLD, cx, cy);
-      if (cell.biome !== 'ocean' && cell.biome !== 'mountain' && !cell.settlement) {
-        break;
-      }
-    }
-
-    const capitalName = `${name} Prime`;
+  // Place a single starting settlement to grow and explore the world from scratch
+  const name = "Valoria";
+  const color = FACTION_COLORS[0];
+  
+  // Find a solid Overworld land coordinate near origin
+  let cx = 0, cy = 0;
+  for (let attempts = 0; attempts < 100; attempts++) {
+    cx = Math.floor(random() * 40) - 20;
+    cy = Math.floor(random() * 40) - 20;
     const cell = getCell(world, REALMS.OVERWORLD, cx, cy);
-    cell.settlement = {
-      name: capitalName,
-      faction: name,
-      size: 120,
-      type: 'capital',
-      resources: [...cell.resources]
-    };
-    saveCell(world, cell);
-
-    world.factions.push({
-      name,
-      color,
-      capital: { realm: REALMS.OVERWORLD, x: cx, y: cy },
-      settlements: [{ realm: REALMS.OVERWORLD, x: cx, y: cy }],
-      status: {},
-      power: 120,
-      resources: { gold: 50, wood: 50, iron: 10 }, // Resource stockpile for tech research
-      technologies: [] // Discovered technology IDs
-    });
-
-    // Setup initial Fog of War discovery boundary around capital
-    world.discoveredCenters.push({
-      realm: REALMS.OVERWORLD,
-      x: cx,
-      y: cy,
-      radius: 6
-    });
-
-    world.chronicle.push(`The faction of ${name} established their capital ${capitalName} on the Overworld at [${cx}, ${cy}].`);
+    if (cell.biome !== 'ocean' && cell.biome !== 'mountain' && !cell.settlement) {
+      break;
+    }
   }
+
+  const capitalName = `${name} Prime`;
+  const cell = getCell(world, REALMS.OVERWORLD, cx, cy);
+  cell.settlement = {
+    name: capitalName,
+    faction: name,
+    size: 150,
+    type: 'capital',
+    resources: [...cell.resources]
+  };
+  saveCell(world, cell);
+
+  world.factions.push({
+    name,
+    color,
+    capital: { realm: REALMS.OVERWORLD, x: cx, y: cy },
+    settlements: [{ realm: REALMS.OVERWORLD, x: cx, y: cy }],
+    status: {},
+    power: 150,
+    resources: { gold: 100, wood: 100, iron: 20 },
+    technologies: []
+  });
+
+  // Setup initial Fog of War discovery boundary around capital
+  world.discoveredCenters.push({
+    realm: REALMS.OVERWORLD,
+    x: cx,
+    y: cy,
+    radius: 7
+  });
+
+  world.chronicle.push(`The founding capital of ${capitalName} was established on the Overworld at [${cx}, ${cy}]. Exploring the uncharted realms begins...`);
 
   // Relations init
   world.factions.forEach(f1 => {
@@ -511,6 +509,51 @@ export function advanceSimulation(world) {
           faction.settlements.push({ realm: sCoord.realm, x: target.x, y: target.y });
           
           world.chronicle.push(`${logPrefix} EXPANSION: ${faction.name} expanded to [${target.x}, ${target.y}] in ${sCoord.realm}, building ${nName}.`);
+        }
+      }
+
+      // Dynamic Faction Rebellion/Splits for massive scale
+      if (cell.settlement.size > 1800 && faction.settlements.length >= 3 && random() < 0.18) {
+        // Find a faction name that is not currently active in the world
+        const activeNames = world.factions.map(f => f.name);
+        const availableName = FACTION_NAMES.find(n => !activeNames.includes(n));
+        
+        if (availableName) {
+          const newColor = FACTION_COLORS[world.factions.length % FACTION_COLORS.length];
+          
+          // Re-assign the settlement to the new breakaway faction
+          const breakawaySettlement = sCoord;
+          cell.settlement.faction = availableName;
+          cell.settlement.type = 'capital';
+          cell.settlement.name = `${availableName} Breakaway`;
+          
+          // Remove from old faction
+          faction.settlements = faction.settlements.filter(s => s.x !== breakawaySettlement.x || s.y !== breakawaySettlement.y || s.realm !== breakawaySettlement.realm);
+          
+          // Register new faction
+          world.factions.push({
+            name: availableName,
+            color: newColor,
+            capital: { realm: breakawaySettlement.realm, x: breakawaySettlement.x, y: breakawaySettlement.y },
+            settlements: [breakawaySettlement],
+            status: {},
+            power: cell.settlement.size,
+            resources: { gold: 120, wood: 100, iron: 15 },
+            technologies: [...faction.technologies] // Inherit technological advances
+          });
+
+          // Set initial diplomacy stance to war
+          world.factions.forEach(fac => {
+            if (fac.name !== availableName) {
+              fac.status[availableName] = 'war';
+              // Breakaway hates former parent
+              if (fac.name === faction.name) {
+                fac.status[availableName] = 'war';
+              }
+            }
+          });
+
+          world.chronicle.push(`${logPrefix} REBELLION: Outpost ${cell.settlement.name} rebelled against ${faction.name}, forming the independent state of ${availableName}!`);
         }
       }
       
