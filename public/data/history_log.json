@@ -104,5 +104,36 @@
       "[Year 2] Wildfire erupted in the dense forest at [15, 38].",
       "[Year 2] Factions declare war! Conflict has erupted between Valoria and Players over regional dominance."
     ]
+  },
+  {
+    "year": 3,
+    "globalTempOffset": 0.02313085676644793,
+    "stats": {
+      "deer": 31610,
+      "wolf": 925,
+      "elk": 1054,
+      "bear": 0,
+      "beasts": 0,
+      "population": 566
+    },
+    "factions": {
+      "Valoria": 121,
+      "Oakhaven": 116,
+      "Ironclad": 116,
+      "Sunspire": 121,
+      "Players": 92
+    },
+    "events": [
+      "The faction of Ironclad is established. Capital founded at [41, 30] named Ironclad Prime.",
+      "The faction of Sunspire is established. Capital founded at [54, 5] named Sunspire Prime.",
+      "[Year 1] Player Alexander established a new settlement: Aethelgard Outpost at [15, 10].",
+      "[Year 2] Wildfire erupted in the dense forest at [8, 25].",
+      "[Year 2] Wildfire erupted in the dense forest at [25, 30].",
+      "[Year 2] Wildfire erupted in the dense forest at [15, 38].",
+      "[Year 2] Factions declare war! Conflict has erupted between Valoria and Players over regional dominance.",
+      "[Year 3] Wildfire erupted in the dense forest at [12, 22].",
+      "[Year 3] Wildfire erupted in the dense forest at [19, 24].",
+      "[Year 3] Wildfire erupted in the dense forest at [8, 28]."
+    ]
   }
 ]
