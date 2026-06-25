@@ -439,6 +439,15 @@ export function advanceSimulation(world) {
   // Sim Faction expansions with Trait buffs
   world.factions.forEach(faction => {
     let factionPower = 0;
+    
+    // Ensure backwards compatibility with old database world state saves
+    if (!faction.resources) {
+      faction.resources = { gold: 50, wood: 50, iron: 10 };
+    }
+    if (!faction.technologies) {
+      faction.technologies = [];
+    }
+
     faction.settlements.forEach(sCoord => {
       const cell = getCell(world, sCoord.realm, sCoord.x, sCoord.y);
       if (!cell.settlement) return;
@@ -517,7 +526,6 @@ export function advanceSimulation(world) {
     });
 
     // Tech tree research progression check
-    if (!faction.technologies) faction.technologies = [];
     const nextTech = TECH_TREE.find(t => !faction.technologies.includes(t.id) && t.requires.every(req => faction.technologies.includes(req)));
     if (nextTech && faction.resources.gold >= nextTech.cost) {
       faction.resources.gold -= nextTech.cost;
