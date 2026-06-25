@@ -1,0 +1,78 @@
+name: Player Expedition
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: write
+  issues: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "simulation"
+  cancel-in-progress: false
+
+jobs:
+  expedition:
+    if: contains(github.event.issue.labels.*.name, 'expedition')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci || npm install
+
+      - name: Run Expedition Command
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+        run: npm run expedition
+
+      - name: Post Outcome Comment
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const outcome = fs.readFileSync('public/data/expedition_outcome.md', 'utf8');
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: outcome
+            });
+            await github.rest.issues.update({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              state: 'closed'
+            });
+
+      - name: Build Web Application
+        run: npm run build
+
+      - name: Commit & Push Changes
+        run: |
+          git config --global user.name "Realmbound Wilds Bot"
+          git config --global user.email "bot@realmboundwilds.local"
+          git add public/data/world.json
+          git diff-index --quiet HEAD || (git commit -m "Expedition by @${{ github.event.issue.user.login }} processed" && git push)
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

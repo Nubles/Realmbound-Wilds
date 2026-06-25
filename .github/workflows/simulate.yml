@@ -1,0 +1,56 @@
+name: Simulation Tick
+
+on:
+  schedule:
+    - cron: '0 * * * *' # Run hourly
+  workflow_dispatch: # Enable manual run from Actions tab
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "simulation"
+  cancel-in-progress: false
+
+jobs:
+  tick:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci || npm install
+
+      - name: Run Simulation Tick
+        run: npm run tick
+
+      - name: Build Web Application
+        run: npm run build
+
+      - name: Commit & Push Changes
+        run: |
+          git config --global user.name "Realmbound Wilds Bot"
+          git config --global user.email "bot@realmboundwilds.local"
+          git add public/data/world.json public/data/history_log.json
+          git diff-index --quiet HEAD || (git commit -m "Simulation Tick: Year $(node -e "import('fs').then(fs => console.log(JSON.parse(fs.readFileSync('public/data/world.json')).year))")" && git push)
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

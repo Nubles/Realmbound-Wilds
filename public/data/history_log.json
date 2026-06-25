@@ -1,0 +1,77 @@
+[
+  {
+    "year": 1,
+    "globalTempOffset": 0,
+    "stats": {
+      "deer": 25699,
+      "wolf": 1300,
+      "elk": 1511,
+      "bear": 35,
+      "beasts": 0,
+      "population": 400
+    },
+    "factions": {
+      "Valoria": 100,
+      "Oakhaven": 100,
+      "Ironclad": 100,
+      "Sunspire": 100
+    },
+    "events": [
+      "The world is forged from the primal wildlands.",
+      "The faction of Valoria is established. Capital founded at [17, 32] named Valoria Prime.",
+      "The faction of Oakhaven is established. Capital founded at [30, 25] named Oakhaven Prime.",
+      "The faction of Ironclad is established. Capital founded at [46, 6] named Ironclad Prime.",
+      "The faction of Sunspire is established. Capital founded at [37, 16] named Sunspire Prime."
+    ]
+  },
+  {
+    "year": 1,
+    "globalTempOffset": 0,
+    "stats": {
+      "deer": 25964,
+      "wolf": 1428,
+      "elk": 1292,
+      "bear": 33,
+      "beasts": 0,
+      "population": 400
+    },
+    "factions": {
+      "Valoria": 100,
+      "Oakhaven": 100,
+      "Ironclad": 100,
+      "Sunspire": 100
+    },
+    "events": [
+      "The world is forged from the primal wildlands.",
+      "The faction of Valoria is established. Capital founded at [53, 12] named Valoria Prime.",
+      "The faction of Oakhaven is established. Capital founded at [48, 11] named Oakhaven Prime.",
+      "The faction of Ironclad is established. Capital founded at [45, 33] named Ironclad Prime.",
+      "The faction of Sunspire is established. Capital founded at [23, 21] named Sunspire Prime."
+    ]
+  },
+  {
+    "year": 1,
+    "globalTempOffset": 0,
+    "stats": {
+      "deer": 25251,
+      "wolf": 1260,
+      "elk": 1269,
+      "bear": 33,
+      "beasts": 0,
+      "population": 400
+    },
+    "factions": {
+      "Valoria": 100,
+      "Oakhaven": 100,
+      "Ironclad": 100,
+      "Sunspire": 100
+    },
+    "events": [
+      "The world is forged from the primal wildlands.",
+      "The faction of Valoria is established. Capital founded at [21, 27] named Valoria Prime.",
+      "The faction of Oakhaven is established. Capital founded at [28, 20] named Oakhaven Prime.",
+      "The faction of Ironclad is established. Capital founded at [41, 30] named Ironclad Prime.",
+      "The faction of Sunspire is established. Capital founded at [54, 5] named Sunspire Prime."
+    ]
+  }
+]

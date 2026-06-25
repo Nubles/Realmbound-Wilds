@@ -1,0 +1,17 @@
+{
+  "name": "realmbound-wilds",
+  "version": "1.0.0",
+  "description": "Realmbound Wilds: A living world simulation running in GitHub Actions and Pages",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "tick": "node src/simulation/tick.js",
+    "expedition": "node src/simulation/expedition.js",
+    "test": "node src/simulation/test.js"
+  },
+  "devDependencies": {
+    "vite": "^5.2.0"
+  }
+}

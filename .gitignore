@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.DS_Store
+.env
+.gemini/
+.agents/
+public/data/expedition_outcome.md
+*.log

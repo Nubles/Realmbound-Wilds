@@ -1,0 +1,50 @@
+name: Launch an Expedition
+description: Send an expedition team to explore, settle or hunt in the Realmbound Wilds.
+title: "[Expedition] "
+labels: ["expedition"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Welcome to the **Realmbound Wilds** expedition launcher.
+        Your instructions will be validated, and the world simulator will run your action.
+        The map will be updated on GitHub Pages!
+
+  - type: input
+    id: coordinates
+    attributes:
+      label: Coordinates (X, Y)
+      description: Enter the coordinates you wish to target (e.g. 15, 22). Max bounds depend on map dimensions (usually 0-59 for X, 0-39 for Y).
+      placeholder: "e.g., 25, 12"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: action
+    attributes:
+      label: Action / Command
+      description: Select what your expedition team will perform at the coordinate.
+      options:
+        - Explore (Survey the land for resources, ruins, or secrets)
+        - Settle (Establish a new outpost belonging to the Player Faction)
+        - Hunt (Hunt local wildlife or battle legendary beasts)
+    validations:
+      required: true
+
+  - type: input
+    id: settlement_name
+    attributes:
+      label: Settlement Name (Optional)
+      description: If you selected "Settle", specify the name of your new outpost.
+      placeholder: "e.g., New Hope, Valoria's Edge"
+    validations:
+      required: false
+
+  - type: input
+    id: player_name
+    attributes:
+      label: Player Name
+      description: Your adventurer name or GitHub handle.
+      placeholder: "e.g., Sir Galahad"
+    validations:
+      required: true

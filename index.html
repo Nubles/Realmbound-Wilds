@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Realmbound Wilds | A Living World Chronicle</title>
+  <meta name="description" content="Explore an evolving simulation world running autonomously via GitHub Actions. Submit expeditions, grow empires, and track the universe's history.">
+  
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="/src/web/style.css">
+</head>
+<body>
+  <div id="app" class="glass-layout">
+    
+    <!-- Top Header -->
+    <header class="main-header">
+      <div class="brand">
+        <h1 class="fantasy-title">Realmbound Wilds</h1>
+        <span class="subtitle">A Living World Simulation</span>
+      </div>
+      <div class="global-stats">
+        <div class="stat-card">
+          <span class="stat-label">Timeline</span>
+          <span id="current-year" class="stat-value">Year ---</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Global Climate</span>
+          <span id="climate-offset" class="stat-value">---</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Global Pop</span>
+          <span id="global-pop" class="stat-value">---</span>
+        </div>
+      </div>
+      <div class="action-buttons">
+        <a href="https://github.com/${github_user}/${github_repo}/issues/new?template=expedition.yml" target="_blank" class="btn btn-primary btn-glow" id="expedition-link">
+          <span class="btn-icon">🗡️</span> Launch Expedition
+        </a>
+      </div>
+    </header>
+
+    <!-- Main Workspace -->
+    <div class="workspace">
+      
+      <!-- Faction & Legend Sidebar -->
+      <aside class="sidebar left-sidebar card">
+        <h2 class="card-title font-fantasy">👑 Factions & Kingdoms</h2>
+        <div class="faction-list" id="faction-list">
+          <div class="loading">Loading factions...</div>
+        </div>
+
+        <h2 class="card-title font-fantasy mt-4">📜 Historical Chronicle</h2>
+        <div class="chronicle-box" id="chronicle-box">
+          <div class="loading">Reading the chronicles...</div>
+        </div>
+      </aside>
+
+      <!-- Map Display (Center) -->
+      <main class="map-container">
+        <div class="canvas-wrapper">
+          <canvas id="world-map"></canvas>
+          <div class="map-controls">
+            <button id="zoom-in" class="ctrl-btn" title="Zoom In">+</button>
+            <button id="zoom-out" class="ctrl-btn" title="Zoom Out">-</button>
+            <button id="reset-view" class="ctrl-btn" title="Reset View">⟲</button>
+          </div>
+          <!-- Map Overlay Guide -->
+          <div class="map-view-toggle">
+            <button id="view-terrain" class="toggle-btn active">Terrain</button>
+            <button id="view-factions" class="toggle-btn">Factions</button>
+            <button id="view-wildlife" class="toggle-btn">Wildlife</button>
+            <button id="view-temperature" class="toggle-btn">Temperature</button>
+          </div>
+        </div>
+
+        <!-- Timeline scrubbing and charts -->
+        <section class="timeline-container card">
+          <h3 class="card-title font-fantasy">⏳ Time Travel & History</h3>
+          <div class="timeline-controls">
+            <span class="timeline-label">Select Year:</span>
+            <input type="range" id="timeline-slider" min="1" max="1" value="1" step="1" disabled>
+            <span id="slider-year-val" class="slider-val">---</span>
+          </div>
+          <div class="sparklines" id="stats-sparkline">
+            <!-- Sparkline charts will render here -->
+          </div>
+        </section>
+      </main>
+
+      <!-- Cell Detail Sidebar -->
+      <aside class="sidebar right-sidebar card">
+        <h2 class="card-title font-fantasy">📍 Survey Inspector</h2>
+        <div id="inspector-content">
+          <div class="placeholder-text">Click any tile on the map to inspect its terrain, wildlife, settlements, and history.</div>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+
+  <script type="module" src="/src/web/main.js"></script>
+</body>
+</html>
