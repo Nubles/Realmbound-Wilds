@@ -1,7 +1,7 @@
 import { execSync } from 'child_process';
 import fs from 'fs';
 import path from 'path';
-import { createNewWorld, advanceSimulation } from './engine.js';
+import { createNewWorld, advanceSimulation, getCell } from './engine.js';
 
 const DATA_DIR = path.resolve('public/data');
 const WORLD_FILE = path.join(DATA_DIR, 'world.json');
@@ -11,9 +11,9 @@ console.log('--- STARTING DIAGNOSTIC VERIFICATION ---');
 
 // 1. Verify Simulation Engine Initialization
 console.log('Testing world generation...');
-const world = createNewWorld(30, 20, 'test-seed');
-if (!world || world.grid.length !== 20 || world.grid[0].length !== 30) {
-  throw new Error('World generation returned invalid dimensions.');
+const world = createNewWorld('test-seed');
+if (!world || !world.modifiedCells) {
+  throw new Error('World generation returned invalid output.');
 }
 console.log('✅ World initialization successful.');
 
@@ -28,7 +28,6 @@ console.log('✅ 5 simulation ticks executed without errors.');
 // 3. Setup CLI Tick Runner Verification
 console.log('Testing tick.js script via child process...');
 try {
-  // Clean database if exists to start fresh
   if (fs.existsSync(WORLD_FILE)) fs.unlinkSync(WORLD_FILE);
   
   execSync('node src/simulation/tick.js', { stdio: 'inherit' });
@@ -45,8 +44,11 @@ try {
 // 4. Setup CLI Expedition Runner Verification
 console.log('Testing expedition.js script via child process...');
 try {
-  // Mock issue body content
+  // Mock issue body content specifying a realm
   const mockIssueBody = `
+### Target Realm / Dimension
+Underworld
+
 ### Coordinates
 15, 10
 
@@ -60,7 +62,6 @@ Aethelgard Outpost
 Alexander
 `;
   
-  // Set env variable
   process.env.ISSUE_BODY = mockIssueBody;
   
   execSync('node src/simulation/expedition.js', { stdio: 'inherit' });
@@ -76,11 +77,11 @@ Alexander
     throw new Error('Expedition outcome does not mention settlement success.');
   }
 
-  // Load world state to make sure faction is updated
+  // Load world state to make sure faction is updated in the correct realm key
   const worldData = JSON.parse(fs.readFileSync(WORLD_FILE, 'utf8'));
-  const cell = worldData.grid[10][15];
-  if (!cell.settlement || cell.settlement.name !== 'Aethelgard Outpost') {
-    throw new Error('Expedition did not apply settlement coordinates in world database.');
+  const cell = worldData.modifiedCells['underworld:15,10'];
+  if (!cell || !cell.settlement || cell.settlement.name !== 'Aethelgard Outpost') {
+    throw new Error('Expedition did not apply settlement coordinates in underworld database key.');
   }
 
   console.log('✅ CLI expedition.js processed player input successfully.');

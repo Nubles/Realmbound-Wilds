@@ -1,18 +1,7 @@
-// Custom Map Canvas Renderer with Animations & Physics for Realmbound Wilds
+// Infinite procedural Map Canvas Renderer with Fog of War for Realmbound Wilds
+import { generateCell, REALMS } from '../simulation/engine.js';
 
-// Biome color scheme
-const BIOME_COLORS = {
-  ocean: '#0c1524',
-  coast: '#1b324d',
-  lake: '#244e76',
-  plains: '#455e3c',
-  forest: '#264228',
-  mountain: '#4a4d53',
-  desert: '#8a7959',
-  tundra: '#5a6b6c'
-};
-
-const BIOME_LABELS = {
+export const BIOME_LABELS = {
   ocean: 'Ocean',
   coast: 'Coast',
   lake: 'Lake',
@@ -20,7 +9,48 @@ const BIOME_LABELS = {
   forest: 'Dense Forest',
   mountain: 'Mountain Range',
   desert: 'Desert Wasteland',
-  tundra: 'Tundra'
+  tundra: 'Tundra',
+  deep_lake: 'Deep Cavern Lake',
+  solid_rock: 'Solid Cave Rock',
+  magma_vent: 'Volcanic Magma Vent',
+  mushroom_forest: 'Spore Mushroom Forest',
+  crystal_cave: 'Subterranean Crystal Cave',
+  cavern: 'Cavernous Wilderness',
+  void: 'Aetherial Sky Void',
+  storm_peaks: 'Aetherial Storm Peaks',
+  starlight_woods: 'Starlight Sky Woods',
+  cloud_fields: 'Fluffy Cloud Fields',
+  sky_island: 'Floating Sky Island',
+  void_space: 'Empty Void Space',
+  comet_tail: 'Glowing Comet Tail',
+  nebula: 'Cosmic Nebula Cloud',
+  asteroid_belt: 'Rocky Asteroid Belt'
+};
+
+// Biome color schemes for different realms
+const REALM_BIOME_COLORS = {
+  overworld: {
+    ocean: '#0c1524', coast: '#1b324d', lake: '#244e76', plains: '#455e3c',
+    forest: '#264228', mountain: '#4a4d53', desert: '#8a7959', tundra: '#5a6b6c'
+  },
+  underworld: {
+    deep_lake: '#0c0f1d', solid_rock: '#1e1c22', magma_vent: '#b91c1c',
+    mushroom_forest: '#18382c', crystal_cave: '#4c2e6b', cavern: '#2d2b33'
+  },
+  aether: {
+    void: '#0b0c16', storm_peaks: '#4d5162', starlight_woods: '#1d3e56',
+    cloud_fields: '#65779c', sky_island: '#3a6b7e'
+  },
+  space: {
+    void_space: '#020205', comet_tail: '#29435c', nebula: '#3f1f51', asteroid_belt: '#1b1d22'
+  }
+};
+
+const FOW_COLORS = {
+  overworld: '#0b0c10',
+  underworld: '#030305',
+  aether: '#101424',
+  space: '#010103'
 };
 
 const FACTION_COLORS = ["#3b82f6", "#10b981", "#6b7280", "#f59e0b", "#8b5cf6", "#ec4899"];
@@ -30,31 +60,28 @@ export class MapRenderer {
     this.canvas = canvas;
     this.ctx = canvas.getContext('2d');
     
-    // View state
+    // Viewport Zoom & Pan
     this.zoom = 1.0;
     this.panX = 0;
     this.panY = 0;
     
-    // Selection state
     this.selectedCell = null;
     this.hoveredCell = null;
     
-    // Render modes: 'terrain', 'factions', 'wildlife', 'temperature'
-    this.viewMode = 'terrain';
+    this.viewMode = 'terrain'; // 'terrain' | 'factions' | 'wildlife' | 'temperature'
+    this.activeRealm = REALMS.OVERWORLD; // Current rendering dimension
     
     this.world = null;
-    this.historicalState = null; // Stored if looking at history
-    this.tileSize = 26; 
+    this.historicalState = null;
+    this.tileSize = 28;
     
-    // Animation elements
-    this.animationFrameId = null;
-    this.animTime = 0;
-    this.particles = [];
-    
-    // Kinetic physics state
+    // Kinetic physics
     this.vx = 0;
     this.vy = 0;
     this.isDragging = false;
+    
+    this.animTime = 0;
+    this.particles = [];
     
     this.setupEvents();
     this.startAnimationLoop();
@@ -77,6 +104,13 @@ export class MapRenderer {
     this.draw();
   }
 
+  setRealm(realm) {
+    this.activeRealm = realm;
+    this.selectedCell = null;
+    this.hoveredCell = null;
+    this.draw();
+  }
+
   resize() {
     const rect = this.canvas.parentElement.getBoundingClientRect();
     this.canvas.width = rect.width;
@@ -85,30 +119,40 @@ export class MapRenderer {
   }
 
   resetView() {
-    if (!this.world) return;
-    const mapW = this.world.width * this.tileSize;
-    const mapH = this.world.height * this.tileSize;
-    
-    this.zoom = Math.min(this.canvas.width / mapW, this.canvas.height / mapH) * 0.95;
-    this.zoom = Math.max(0.5, Math.min(2.5, this.zoom));
-    
-    this.panX = (this.canvas.width - mapW * this.zoom) / 2;
-    this.panY = (this.canvas.height - mapH * this.zoom) / 2;
+    this.zoom = 1.0;
+    this.panX = this.canvas.width / 2;
+    this.panY = this.canvas.height / 2;
     this.vx = 0;
     this.vy = 0;
     this.draw();
   }
 
   zoomIn() {
-    this.zoom = Math.min(4.0, this.zoom * 1.2);
+    this.zoom = Math.min(3.5, this.zoom * 1.25);
     this.draw();
   }
 
   zoomOut() {
-    this.zoom = Math.max(0.2, this.zoom / 1.2);
+    this.zoom = Math.max(0.15, this.zoom / 1.25);
     this.draw();
   }
 
+  // Check if coordinate is discovered under current Fog of War centers
+  isCoordinateDiscovered(x, y) {
+    const centers = this.historicalState ? this.historicalState.discoveredCenters : (this.world ? this.world.discoveredCenters : []);
+    if (!centers) return false;
+    
+    for (let i = 0; i < centers.length; i++) {
+      const c = centers[i];
+      if (c.realm === this.activeRealm) {
+        const d = Math.hypot(x - c.x, y - c.y);
+        if (d <= c.radius) return true;
+      }
+    }
+    return false;
+  }
+
+  // Get active cell from coordinates
   screenToCell(screenX, screenY) {
     if (!this.world) return null;
     const mapX = (screenX - this.panX) / this.zoom;
@@ -117,70 +161,42 @@ export class MapRenderer {
     const cx = Math.floor(mapX / this.tileSize);
     const cy = Math.floor(mapY / this.tileSize);
     
-    if (cx >= 0 && cx < this.world.width && cy >= 0 && cy < this.world.height) {
-      if (this.historicalState) {
-        // Return a mock cell reconstructed from historical mapState
-        return this.getReconstructedCell(cx, cy);
-      }
-      return this.world.grid[cy][cx];
+    // Check if discovered. Undiscovered tiles cannot be clicked/inspected
+    if (!this.isCoordinateDiscovered(cx, cy)) {
+      return { x: cx, y: cy, undiscovered: true, realm: this.activeRealm };
     }
-    return null;
+
+    if (this.historicalState) {
+      return this.getReconstructedCell(cx, cy);
+    }
+
+    // Live mode coordinate resolution
+    const key = `${this.activeRealm}:${cx},${cy}`;
+    if (this.world.modifiedCells[key]) {
+      return this.world.modifiedCells[key];
+    }
+    return generateCell(cx, cy, this.activeRealm, this.world.seed);
   }
 
-  // Decompresses cell data on the fly for history inspection
+  // Reconstruct dynamic cell state from historical logs
   getReconstructedCell(cx, cy) {
-    if (!this.historicalState) return null;
-    const idx = (cy * this.world.width + cx) * 2;
-    const gridStr = this.historicalState.mapState.grid;
-    const bCode = gridStr[idx];
-    const fCode = gridStr[idx + 1];
+    const baseCell = generateCell(cx, cy, this.activeRealm, this.world.seed);
+    const cells = this.historicalState.mapState.modifiedCells || [];
+    const keyCell = cells.find(c => c.r === this.activeRealm && c.x === cx && c.y === cy);
 
-    const codesToBiome = { O: 'ocean', C: 'coast', L: 'lake', P: 'plains', F: 'forest', M: 'mountain', D: 'desert', T: 'tundra' };
-    const biome = codesToBiome[bCode] || 'ocean';
-
-    // Faction owner
-    let settlement = null;
-    if (fCode !== '.') {
-      let factionName = 'Players';
-      if (fCode !== 'P') {
-        const fIdx = parseInt(fCode, 10);
-        if (this.world.factions[fIdx]) factionName = this.world.factions[fIdx].name;
-      }
-      settlement = {
-        name: factionName === 'Players' ? 'Player Settlement' : `${factionName} Outpost`,
-        faction: factionName,
-        size: this.historicalState.factions[factionName] || 100,
-        type: 'village'
-      };
+    if (keyCell) {
+      baseCell.settlement = keyCell.f ? {
+        name: keyCell.f === 'Players' ? 'Player Settlement' : `${keyCell.f} Outpost`,
+        faction: keyCell.f,
+        size: keyCell.s,
+        type: keyCell.t
+      } : null;
+      baseCell.ruin = keyCell.ruin ? { name: keyCell.ruin.name, portalTarget: keyCell.ruin.portalTarget } : null;
+      baseCell.fireTicksLeft = keyCell.fire ? 1 : 0;
+      baseCell.history = [`Observed in the archives of Year ${this.historicalState.year}.`];
     }
 
-    // Check special overlays
-    const key = `${cy},${cx}`;
-    const spec = this.historicalState.mapState.specials[key];
-    let fireTicksLeft = 0;
-    let ruin = null;
-    let wildlife = [];
-
-    if (spec) {
-      if (spec === 'fire') fireTicksLeft = 1;
-      else if (spec.type === 'ruin') ruin = { name: spec.name, description: 'Ruins of a past empire.' };
-      else if (spec === 'beast') wildlife.push({ species: 'legendary_beast', name: 'Legendary Beast', count: 1 });
-    }
-
-    return {
-      x: cx,
-      y: cy,
-      biome,
-      elevation: 0.5,
-      temperature: 0.5,
-      settlement,
-      fireTicksLeft,
-      ruin,
-      wildlife,
-      vegetation: biome === 'forest' ? 0.8 : 0.2,
-      resources: [],
-      history: [`Observed in the archives of Year ${this.historicalState.year}.`]
-    };
+    return baseCell;
   }
 
   setupEvents() {
@@ -208,7 +224,6 @@ export class MapRenderer {
         this.panX = e.clientX - startX;
         this.panY = e.clientY - startY;
         
-        // Track dragging velocity for physics
         this.vx = e.clientX - lastX;
         this.vy = e.clientY - lastY;
         lastX = e.clientX;
@@ -229,7 +244,6 @@ export class MapRenderer {
     });
 
     this.canvas.addEventListener('click', (e) => {
-      // Don't select if they were dragging
       if (Math.hypot(this.vx, this.vy) > 3) return;
 
       const rect = this.canvas.getBoundingClientRect();
@@ -254,8 +268,8 @@ export class MapRenderer {
       const mapX = (mouseX - this.panX) / this.zoom;
       const mapY = (mouseY - this.panY) / this.zoom;
       
-      const zoomFactor = e.deltaY < 0 ? 1.15 : 0.85;
-      this.zoom = Math.max(0.2, Math.min(5.0, this.zoom * zoomFactor));
+      const zoomFactor = e.deltaY < 0 ? 1.18 : 0.82;
+      this.zoom = Math.max(0.1, Math.min(6.0, this.zoom * zoomFactor));
       
       this.panX = mouseX - mapX * this.zoom;
       this.panY = mouseY - mapY * this.zoom;
@@ -266,21 +280,17 @@ export class MapRenderer {
 
   startAnimationLoop() {
     const loop = () => {
-      this.animTime += 0.05;
+      this.animTime += 0.04;
       
-      // Update kinetic velocity panning
       if (!this.isDragging && (Math.abs(this.vx) > 0.1 || Math.abs(this.vy) > 0.1)) {
         this.panX += this.vx;
         this.panY += this.vy;
-        this.vx *= 0.85; // Decelerate
-        this.vy *= 0.85;
+        this.vx *= 0.88;
+        this.vy *= 0.88;
         this.draw();
       }
 
-      // Update particles
       this.updateParticles();
-      
-      // We only redraw regularly if there are active embers, waves, or animations
       this.draw();
       
       this.animationFrameId = requestAnimationFrame(loop);
@@ -289,47 +299,56 @@ export class MapRenderer {
   }
 
   updateParticles() {
-    // Generate new embers on fire tiles
+    // Generate active wildfire ember particles
     if (this.world) {
-      for (let y = 0; y < this.world.height; y++) {
-        for (let x = 0; x < this.world.width; x++) {
-          const cell = this.world.grid[y][x];
-          
-          let isOnFire = cell.fireTicksLeft > 0;
+      const ts = this.tileSize;
+      
+      // We gather visible cells to check for fires
+      const startX = Math.floor(-this.panX / (this.zoom * ts)) - 1;
+      const endX = Math.ceil((this.canvas.width - this.panX) / (this.zoom * ts)) + 1;
+      const startY = Math.floor(-this.panY / (this.zoom * ts)) - 1;
+      const endY = Math.ceil((this.canvas.height - this.panY) / (this.zoom * ts)) + 1;
+
+      for (let y = startY; y <= endY; y++) {
+        for (let x = startX; x <= endX; x++) {
+          if (!this.isCoordinateDiscovered(x, y)) continue;
+
+          let onFire = false;
           if (this.historicalState) {
-            const key = `${y},${x}`;
-            isOnFire = this.historicalState.mapState.specials[key] === 'fire';
+            const cells = this.historicalState.mapState.modifiedCells || [];
+            onFire = cells.some(c => c.r === this.activeRealm && c.x === x && c.y === y && c.fire);
+          } else {
+            const key = `${this.activeRealm}:${x},${y}`;
+            const cell = this.world.modifiedCells[key];
+            onFire = cell && cell.fireTicksLeft > 0;
           }
 
-          if (isOnFire && Math.random() < 0.15) {
+          if (onFire && Math.random() < 0.15) {
             this.particles.push({
-              x: x * this.tileSize + Math.random() * this.tileSize,
-              y: y * this.tileSize + this.tileSize,
+              x: x * ts + Math.random() * ts,
+              y: y * ts + ts,
               vx: Math.random() * 0.4 - 0.2,
-              vy: -Math.random() * 0.6 - 0.4,
+              vy: -Math.random() * 0.7 - 0.5,
               life: 1.0,
-              size: Math.random() * 2 + 1,
-              color: `rgba(${200 + Math.floor(Math.random() * 55)}, ${80 + Math.floor(Math.random() * 50)}, 0, `
+              size: Math.random() * 2.5 + 1,
+              color: `rgba(${220 + Math.floor(Math.random() * 35)}, ${100 + Math.floor(Math.random() * 40)}, 0, `
             });
           }
         }
       }
     }
 
-    // Move particles
     this.particles.forEach(p => {
       p.x += p.vx;
       p.y += p.vy;
-      p.life -= 0.02;
+      p.life -= 0.035;
     });
-
     this.particles = this.particles.filter(p => p.life > 0);
   }
 
-  // Draw the entire map viewport
+  // Draw visible grid
   draw() {
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-    
     if (!this.world) return;
 
     this.ctx.save();
@@ -338,37 +357,45 @@ export class MapRenderer {
 
     const ts = this.tileSize;
 
-    // Draw Grid Cells
-    for (let y = 0; y < this.world.height; y++) {
-      for (let x = 0; x < this.world.width; x++) {
+    // Calculate currently visible viewport coordinate range
+    const startX = Math.floor(-this.panX / (this.zoom * ts)) - 1;
+    const endX = Math.ceil((this.canvas.width - this.panX) / (this.zoom * ts)) + 1;
+    const startY = Math.floor(-this.panY / (this.zoom * ts)) - 1;
+    const endY = Math.ceil((this.canvas.height - this.panY) / (this.zoom * ts)) + 1;
+
+    // 1. Draw biomes / bases
+    for (let y = startY; y <= endY; y++) {
+      for (let x = startX; x <= endX; x++) {
         this.drawCell(x, y, x * ts, y * ts, ts);
       }
     }
 
-    // Draw Trade Routes
-    this.drawTradeRoutes(ts);
+    // 2. Draw Trade routes if on Overworld
+    if (this.activeRealm === REALMS.OVERWORLD) {
+      this.drawTradeRoutes(ts);
+    }
 
-    // Draw Overlays and procedural details
-    for (let y = 0; y < this.world.height; y++) {
-      for (let x = 0; x < this.world.width; x++) {
+    // 3. Draw structures, portals, overlays
+    for (let y = startY; y <= endY; y++) {
+      for (let x = startX; x <= endX; x++) {
         this.drawCellOverlay(x, y, x * ts, y * ts, ts);
       }
     }
 
-    // Draw selection highlights
-    if (this.selectedCell) {
+    // 4. Draw focus brackets
+    if (this.selectedCell && !this.selectedCell.undiscovered) {
       this.ctx.strokeStyle = '#dfb15b';
       this.ctx.lineWidth = 2.5;
       this.ctx.strokeRect(this.selectedCell.x * ts, this.selectedCell.y * ts, ts, ts);
     }
 
-    if (this.hoveredCell && this.hoveredCell !== this.selectedCell) {
-      this.ctx.strokeStyle = 'rgba(255, 255, 255, 0.5)';
+    if (this.hoveredCell && this.hoveredCell !== this.selectedCell && !this.hoveredCell.undiscovered) {
+      this.ctx.strokeStyle = 'rgba(255, 255, 255, 0.4)';
       this.ctx.lineWidth = 1;
       this.ctx.strokeRect(this.hoveredCell.x * ts, this.hoveredCell.y * ts, ts, ts);
     }
 
-    // Draw Particles
+    // 5. Draw fires
     this.particles.forEach(p => {
       this.ctx.fillStyle = p.color + p.life + ')';
       this.ctx.fillRect(p.x, p.y, p.size, p.size);
@@ -377,70 +404,55 @@ export class MapRenderer {
     this.ctx.restore();
   }
 
-  // Helper to color grid cell
+  // Draw procedural biome cell
   drawCell(x, y, cx, cy, ts) {
-    let cell = this.world.grid[y][x];
-    let biome = cell.biome;
+    if (!this.isCoordinateDiscovered(x, y)) {
+      // Undiscovered cell: cover with Realm-specific Fog of War
+      const fowColor = FOW_COLORS[this.activeRealm] || '#050505';
+      this.ctx.fillStyle = fowColor;
+      this.ctx.fillRect(cx, cy, ts, ts);
+      return;
+    }
+
+    const baseCell = generateCell(x, y, this.activeRealm, this.world.seed);
+    let biome = baseCell.biome;
     let factionIdx = -1;
 
-    // Reconstruct grid status if rendering time-travel archives
+    // Load overlays from dynamic cell registry
     if (this.historicalState) {
-      const idx = (y * this.world.width + x) * 2;
-      const bCode = this.historicalState.mapState.grid[idx];
-      const fCode = this.historicalState.mapState.grid[idx + 1];
-      
-      const codesToBiome = { O: 'ocean', C: 'coast', L: 'lake', P: 'plains', F: 'forest', M: 'mountain', D: 'desert', T: 'tundra' };
-      biome = codesToBiome[bCode] || 'ocean';
-
-      if (fCode !== '.') {
-        factionIdx = fCode === 'P' ? 4 : parseInt(fCode, 10);
+      const cells = this.historicalState.mapState.modifiedCells || [];
+      const keyCell = cells.find(c => c.r === this.activeRealm && c.x === x && c.y === y);
+      if (keyCell && keyCell.f) {
+        factionIdx = keyCell.f === 'Players' ? 4 : this.world.factions.findIndex(f => f.name === keyCell.f);
       }
     } else {
-      if (cell.settlement) {
+      const key = `${this.activeRealm}:${x},${y}`;
+      const cell = this.world.modifiedCells[key];
+      if (cell && cell.settlement) {
         factionIdx = this.world.factions.findIndex(f => f.name === cell.settlement.faction);
         if (factionIdx === -1 && cell.settlement.faction === 'Players') factionIdx = 4;
-      } else {
-        // Soft border index matching
-        let minDistance = 999;
-        this.world.factions.forEach((f, fIdx) => {
-          f.settlements.forEach(s => {
-            const dist = Math.hypot(x - s.x, y - s.y);
-            if (dist < minDistance && dist < 8) {
-              minDistance = dist;
-              factionIdx = fIdx;
-            }
-          });
-        });
-        if (minDistance >= 8) factionIdx = -1;
       }
     }
 
-    let color = BIOME_COLORS[biome] || BIOME_COLORS.ocean;
+    let color = (REALM_BIOME_COLORS[this.activeRealm] && REALM_BIOME_COLORS[this.activeRealm][biome]) || '#111115';
 
-    // Ocean ripple logic
-    if (biome === 'ocean' || biome === 'coast') {
-      const ripple = Math.sin(this.animTime + (x * 0.2) + (y * 0.1)) * 3;
-      if (ripple > 1.5) {
-        color = biome === 'ocean' ? '#0f1b2d' : '#213a57';
+    // Ocean waves ripple
+    if (biome === 'ocean' || biome === 'coast' || biome === 'void_space' || biome === 'void') {
+      const ripple = Math.sin(this.animTime + (x * 0.15) + (y * 0.08)) * 3;
+      if (ripple > 1.8) {
+        color = biome === 'ocean' ? '#111b2d' : (biome === 'coast' ? '#203957' : '#07070b');
       }
     }
 
     if (this.viewMode === 'factions') {
       if (factionIdx !== -1) {
-        const hex = FACTION_COLORS[factionIdx] || '#ffffff';
-        color = this.hexToRgba(hex, 0.35);
+        const hex = FACTION_COLORS[factionIdx] || '#ef4444';
+        color = this.hexToRgba(hex, 0.4);
       } else {
         color = '#111216';
       }
     } else if (this.viewMode === 'wildlife') {
-      let count = 0;
-      if (this.historicalState) {
-        const key = `${y},${x}`;
-        if (this.historicalState.mapState.specials[key] === 'beast') count = 25;
-      } else {
-        count = cell.wildlife.reduce((sum, w) => sum + w.count, 0);
-      }
-      
+      let count = baseCell.wildlife.reduce((sum, w) => sum + w.count, 0);
       if (count > 0) {
         const intensity = Math.min(255, Math.floor((count / 40) * 150) + 50);
         color = `rgb(16, ${intensity}, 80)`;
@@ -448,7 +460,7 @@ export class MapRenderer {
         color = '#111216';
       }
     } else if (this.viewMode === 'temperature') {
-      const temp = cell.temperature;
+      const temp = baseCell.temperature;
       const r = Math.floor(temp * 220);
       const b = Math.floor((1 - temp) * 220);
       color = `rgb(${r}, 40, ${b})`;
@@ -462,101 +474,115 @@ export class MapRenderer {
     this.ctx.strokeRect(cx, cy, ts, ts);
   }
 
-  // Overlay structures (smoke, castles, paths, ruins)
+  // Draw overlay structures (castles, portals, fires)
   drawCellOverlay(x, y, cx, cy, ts) {
+    if (!this.isCoordinateDiscovered(x, y)) return;
+
     const ctx = this.ctx;
-    let cell = this.world.grid[y][x];
-
-    let hasSettlement = cell.settlement !== null;
+    
+    // Fetch state
+    let hasSettlement = false;
     let factionIdx = -1;
-    let settlementType = cell.settlement ? cell.settlement.type : '';
-    let ruinName = cell.ruin ? cell.ruin.name : '';
-    let isFire = cell.fireTicksLeft > 0;
-    let hasBeast = cell.wildlife.some(w => w.species === 'legendary_beast');
+    let type = '';
+    let ruin = null;
+    let isFire = false;
+    let hasBeast = false;
 
-    // Load historical references if timeline is active
     if (this.historicalState) {
-      const idx = (y * this.world.width + x) * 2;
-      const fCode = this.historicalState.mapState.grid[idx + 1];
-      if (fCode !== '.') {
-        hasSettlement = true;
-        factionIdx = fCode === 'P' ? 4 : parseInt(fCode, 10);
-        settlementType = 'village';
-      } else {
-        hasSettlement = false;
+      const cells = this.historicalState.mapState.modifiedCells || [];
+      const keyCell = cells.find(c => c.r === this.activeRealm && c.x === x && c.y === y);
+      if (keyCell) {
+        hasSettlement = keyCell.f !== null;
+        if (hasSettlement) {
+          factionIdx = keyCell.f === 'Players' ? 4 : this.world.factions.findIndex(f => f.name === keyCell.f);
+          type = keyCell.t;
+        }
+        ruin = keyCell.ruin;
+        isFire = keyCell.fire;
       }
-
-      const key = `${y},${x}`;
-      const spec = this.historicalState.mapState.specials[key];
-      isFire = spec === 'fire';
-      ruinName = (spec && spec.type === 'ruin') ? spec.name : '';
-      hasBeast = spec === 'beast';
     } else {
-      if (cell.settlement) {
-        factionIdx = this.world.factions.findIndex(f => f.name === cell.settlement.faction);
-        if (factionIdx === -1 && cell.settlement.faction === 'Players') factionIdx = 4;
+      const key = `${this.activeRealm}:${x},${y}`;
+      const cell = this.world.modifiedCells[key];
+      if (cell) {
+        hasSettlement = cell.settlement !== null;
+        if (hasSettlement) {
+          factionIdx = this.world.factions.findIndex(f => f.name === cell.settlement.faction);
+          if (factionIdx === -1 && cell.settlement.faction === 'Players') factionIdx = 4;
+          type = cell.settlement.type;
+        }
+        ruin = cell.ruin;
+        isFire = cell.fireTicksLeft > 0;
+        hasBeast = cell.wildlife.some(w => w.species === 'legendary_beast');
       }
     }
 
-    // 1. Draw Forest details
-    if (this.viewMode === 'terrain' && !hasSettlement && !isFire) {
-      if ((!this.historicalState && cell.biome === 'forest') || (this.historicalState && this.historicalState.mapState.grid[(y * this.world.width + x) * 2] === 'F')) {
-        ctx.fillStyle = 'rgba(255, 255, 255, 0.08)';
-        ctx.font = '8px sans-serif';
-        ctx.fillText('▲', cx + 4, cy + 12);
-        ctx.fillText('▲', cx + 12, cy + 18);
-      }
+    // 1. Draw wildfire overlay
+    if (isFire) {
+      ctx.fillStyle = 'rgba(239, 68, 68, 0.65)';
+      ctx.fillRect(cx, cy, ts, ts);
+      ctx.font = '10px sans-serif';
+      ctx.fillText('🔥', cx + 4, cy + ts - 6);
+      return;
     }
 
-    // 2. Draw Ruins (Procedurally: Stone Archway)
-    if (ruinName) {
+    // 2. Draw Portal Ruin Vortex
+    if (ruin && ruin.portalTarget) {
+      // Swirling portal color animation
+      ctx.fillStyle = this.activeRealm === 'overworld' ? 'rgba(139, 92, 246, 0.3)' : 'rgba(16, 185, 129, 0.3)';
+      ctx.fillRect(cx, cy, ts, ts);
+
+      ctx.save();
+      ctx.translate(cx + ts/2, cy + ts/2);
+      ctx.rotate(this.animTime * 1.5);
+      
+      // Draw swirling portal oval
+      ctx.strokeStyle = this.activeRealm === 'overworld' ? '#8b5cf6' : '#10b981';
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.arc(0, 0, 8, 0, Math.PI * 2);
+      ctx.stroke();
+      
+      ctx.fillStyle = '#ffffff';
+      ctx.fillRect(-2, -2, 4, 4); // Core spark
+      ctx.restore();
+      return;
+    }
+
+    // 3. Draw standard ruins
+    if (ruin) {
       ctx.strokeStyle = '#dfb15b';
       ctx.lineWidth = 1.5;
       ctx.beginPath();
-      // Draw arch
       ctx.arc(cx + ts/2, cy + ts - 4, 6, Math.PI, 0, false);
       ctx.stroke();
-      // Draw pillars
       ctx.fillStyle = '#dfb15b';
       ctx.fillRect(cx + ts/2 - 7, cy + ts - 7, 2, 4);
       ctx.fillRect(cx + ts/2 + 5, cy + ts - 7, 2, 4);
       return;
     }
 
-    // 3. Draw Settlement (Castle or House)
+    // 4. Draw Settlement buildings
     if (hasSettlement) {
       const fColor = FACTION_COLORS[factionIdx] || '#ef4444';
       ctx.fillStyle = fColor;
-      
-      const isCapital = settlementType === 'capital';
-      
+      const isCapital = type === 'capital';
+
       if (isCapital) {
-        // Draw elegant castle towers
-        ctx.fillRect(cx + 4, cy + ts - 14, 4, 10);
-        ctx.fillRect(cx + ts - 8, cy + ts - 14, 4, 10);
-        ctx.fillRect(cx + 8, cy + ts - 10, ts - 16, 6);
-        // Flags
-        ctx.strokeStyle = '#ffffff';
-        ctx.lineWidth = 1;
-        ctx.beginPath();
-        ctx.moveTo(cx + 6, cy + ts - 14);
-        ctx.lineTo(cx + 6, cy + ts - 18);
-        ctx.lineTo(cx + 10, cy + ts - 16);
-        ctx.lineTo(cx + 6, cy + ts - 14);
-        ctx.stroke();
+        ctx.fillRect(cx + 4, cy + ts - 15, 5, 11);
+        ctx.fillRect(cx + ts - 9, cy + ts - 15, 5, 11);
+        ctx.fillRect(cx + 9, cy + ts - 11, ts - 18, 7);
       } else {
-        // Draw simple hamlet house
         ctx.beginPath();
         ctx.moveTo(cx + ts/2, cy + 5);
-        ctx.lineTo(cx + 4, cy + 12);
-        ctx.lineTo(cx + ts - 4, cy + 12);
+        ctx.lineTo(cx + 4, cy + 13);
+        ctx.lineTo(cx + ts - 4, cy + 13);
         ctx.closePath();
         ctx.fill();
-        ctx.fillRect(cx + 6, cy + 12, ts - 12, ts - 17);
+        ctx.fillRect(cx + 6, cy + 13, ts - 12, ts - 18);
       }
     }
 
-    // 4. Draw Legendary Beast
+    // 5. Draw legendary beast
     if (hasBeast) {
       ctx.fillStyle = '#ef4444';
       ctx.font = '13px sans-serif';
@@ -564,7 +590,7 @@ export class MapRenderer {
     }
   }
 
-  // Draw Trade Routes connecting settlements
+  // Draw Trade lines
   drawTradeRoutes(ts) {
     const routes = this.historicalState ? this.historicalState.mapState.tradeRoutes : (this.world.tradeRoutes || []);
     if (routes.length === 0) return;
@@ -581,7 +607,6 @@ export class MapRenderer {
       this.ctx.lineTo(route.to.x * ts + ts/2, route.to.y * ts + ts/2);
       this.ctx.stroke();
 
-      // Render a tiny animated caravan dot moving along trade paths
       const p = (this.animTime * 0.15) % 1.0;
       const cx = route.from.x * ts + ts/2 + (route.to.x - route.from.x) * ts * p;
       const cy = route.from.y * ts + ts/2 + (route.to.y - route.from.y) * ts * p;
@@ -601,4 +626,3 @@ export class MapRenderer {
     return `rgba(${r}, ${g}, ${b}, ${alpha})`;
   }
 }
-export { BIOME_LABELS };

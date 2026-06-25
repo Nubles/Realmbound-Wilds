@@ -10,6 +10,19 @@ body:
         Your instructions will be validated, and the world simulator will run your action.
         The map will be updated on GitHub Pages!
 
+  - type: dropdown
+    id: realm
+    attributes:
+      label: Target Realm / Dimension
+      description: Select which cosmic realm your expedition team is traveling to.
+      options:
+        - Overworld (Standard surface world)
+        - Underworld (Caves, crystals, and lava vents)
+        - Aether (Floating sky islands and cloud fields)
+        - Space (Zero gravity vacuum orbits and asteroids)
+    validations:
+      required: true
+
   - type: input
     id: coordinates
     attributes:

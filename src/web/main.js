@@ -1,4 +1,5 @@
 import { MapRenderer, BIOME_LABELS } from './renderer.js';
+import { generateCell } from '../simulation/engine.js';
 
 let currentWorld = null;
 let historyLog = [];
@@ -157,6 +158,21 @@ function inspectCell(cell) {
     return;
   }
 
+  // Handle undiscovered Fog of War tiles
+  if (cell.undiscovered) {
+    inspectorContent.innerHTML = `
+      <div class="inspector-section">
+        <span class="inspector-subtitle">Coordinates</span>
+        <span class="inspector-val">[${cell.x}, ${cell.y}]</span>
+      </div>
+      <div class="ruin-box" style="border-color: rgba(255, 255, 255, 0.15); background: rgba(0, 0, 0, 0.4); margin-top: 10px;">
+        <p class="ruin-name" style="color: var(--text-secondary);">🌫️ Undiscovered Territory</p>
+        <p style="font-size: 0.8rem; line-height: 1.4; color: var(--text-secondary);">This sector of <strong>${cell.realm.toUpperCase()}</strong> has not been discovered yet. Faction borders or a player expedition must target these coordinates to reveal the fog of war!</p>
+      </div>
+    `;
+    return;
+  }
+
   let wildlifeDesc = 'None';
   if (cell.wildlife && cell.wildlife.length > 0) {
     wildlifeDesc = cell.wildlife.map(w => {
@@ -185,15 +201,28 @@ function inspectCell(cell) {
 
   let ruinHtml = '';
   if (cell.ruin) {
-    ruinHtml = `
-      <div class="inspector-section">
-        <div class="ruin-box">
-          <p class="ruin-name">🏛️ ${cell.ruin.name}</p>
-          <p style="font-size: 0.8rem; line-height: 1.3;">${cell.ruin.description}</p>
-          <p style="font-size: 0.75rem; color: var(--text-secondary); margin-top: 6px;">Discovered/Created: Year ${cell.ruin.age}</p>
+    if (cell.ruin.portalTarget) {
+      // Draw interactive portal teleportation link
+      ruinHtml = `
+        <div class="inspector-section">
+          <div class="ruin-box" style="border-color: #8b5cf6; background: rgba(139, 92, 246, 0.05);">
+            <p class="ruin-name" style="color: #a78bfa;">🌀 Dimensional Portal</p>
+            <p style="font-size: 0.8rem; line-height: 1.3;">${cell.ruin.description}</p>
+            <button onclick="window.teleportTo('${cell.ruin.portalTarget.realm}', ${cell.ruin.portalTarget.x}, ${cell.ruin.portalTarget.y})" class="btn btn-primary" style="margin-top: 8px; padding: 4px 10px; font-size: 0.8rem; font-family: var(--font-sans);">Enter Portal</button>
+          </div>
         </div>
-      </div>
-    `;
+      `;
+    } else {
+      ruinHtml = `
+        <div class="inspector-section">
+          <div class="ruin-box">
+            <p class="ruin-name">🏛️ ${cell.ruin.name}</p>
+            <p style="font-size: 0.8rem; line-height: 1.3;">${cell.ruin.description}</p>
+            <p style="font-size: 0.75rem; color: var(--text-secondary); margin-top: 6px;">Discovered/Created: Year ${cell.ruin.age}</p>
+          </div>
+        </div>
+      `;
+    }
   }
 
   let localHistoryHtml = '';
@@ -379,6 +408,36 @@ async function init() {
   
   const canvas = document.getElementById('world-map');
   renderer = new MapRenderer(canvas);
+
+  // Bind active Realm dropdown
+  const realmSelector = document.getElementById('realm-selector');
+  realmSelector.addEventListener('change', (e) => {
+    renderer.setRealm(e.target.value);
+  });
+
+  // Global portal travel teleportation function
+  window.teleportTo = (realm, x, y) => {
+    realmSelector.value = realm;
+    renderer.setRealm(realm);
+    
+    // Pan camera to target coordinates
+    renderer.panX = renderer.canvas.width / 2 - x * renderer.tileSize * renderer.zoom;
+    renderer.panY = renderer.canvas.height / 2 - y * renderer.tileSize * renderer.zoom;
+    
+    // Auto inspect
+    const key = `${realm}:${x},${y}`;
+    let cell;
+    if (renderer.historicalState) {
+      cell = renderer.getReconstructedCell(x, y);
+    } else if (currentWorld) {
+      if (currentWorld.modifiedCells[key]) cell = currentWorld.modifiedCells[key];
+      else cell = generateCell(x, y, realm, currentWorld.seed);
+    }
+    
+    renderer.selectedCell = cell;
+    inspectCell(cell);
+    renderer.draw();
+  };
 
   // Set callback for cell inspection
   renderer.onSelectCell = (cell) => {

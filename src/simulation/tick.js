@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import { createNewWorld, advanceSimulation } from './engine.js';
+import { createNewWorld, advanceSimulation, getCell } from './engine.js';
 
 const DATA_DIR = path.resolve('public/data');
 const WORLD_FILE = path.join(DATA_DIR, 'world.json');
@@ -12,63 +12,43 @@ if (!fs.existsSync(DATA_DIR)) {
 }
 
 function getSummary(world) {
-  const biomeCodes = { ocean: 'O', coast: 'C', lake: 'L', plains: 'P', forest: 'F', mountain: 'M', desert: 'D', tundra: 'T' };
-  let mapStr = '';
-  const specials = {};
-  let deer = 0, wolf = 0, elk = 0, bear = 0, beasts = 0, population = 0;
+  let deer = 0, wolf = 0, elk = 0, bear = 0, beasts = 0;
+  let population = 0;
 
-  for (let y = 0; y < world.height; y++) {
-    for (let x = 0; x < world.width; x++) {
-      const cell = world.grid[y][x];
-      if (cell.settlement) {
-        population += cell.settlement.size;
-      }
-      cell.wildlife.forEach(w => {
-        if (w.species === 'deer') deer += w.count;
-        if (w.species === 'wolf') wolf += w.count;
-        if (w.species === 'elk') elk += w.count;
-        if (w.species === 'bear') bear += w.count;
-        if (w.species === 'legendary_beast') beasts += w.count;
-      });
-
-      // Compress grid cell
-      const bCode = biomeCodes[cell.biome] || 'O';
-      let fCode = '.';
-      
-      if (cell.settlement) {
-        const idx = world.factions.findIndex(f => f.name === cell.settlement.faction);
-        fCode = idx !== -1 ? idx.toString() : 'P';
-      } else {
-        // Soft border coloring
-        let minDistance = 999;
-        let bestFactionIdx = -1;
-        world.factions.forEach((f, fIdx) => {
-          f.settlements.forEach(s => {
-            const dist = Math.hypot(cell.x - s.x, cell.y - s.y);
-            if (dist < minDistance && dist < 8) {
-              minDistance = dist;
-              bestFactionIdx = fIdx;
-            }
-          });
-        });
-        if (bestFactionIdx !== -1 && cell.biome !== 'ocean') {
-          fCode = bestFactionIdx.toString();
-        }
-      }
-
-      mapStr += bCode + fCode;
-
-      // Special overlay tile markers
-      const key = `${y},${x}`;
-      if (cell.fireTicksLeft > 0) specials[key] = 'fire';
-      else if (cell.ruin) specials[key] = { type: 'ruin', name: cell.ruin.name };
-      else if (cell.wildlife.some(w => w.species === 'legendary_beast')) specials[key] = 'beast';
+  // Compile stats across all registered modified cells
+  Object.keys(world.modifiedCells).forEach(key => {
+    const cell = world.modifiedCells[key];
+    if (cell.settlement) {
+      population += cell.settlement.size;
     }
-  }
+    cell.wildlife.forEach(w => {
+      if (w.species === 'deer') deer += w.count;
+      if (w.species === 'wolf') wolf += w.count;
+      if (w.species === 'elk') elk += w.count;
+      if (w.species === 'bear') bear += w.count;
+      if (w.species === 'legendary_beast') beasts += w.count;
+    });
+  });
 
   const factionPowers = {};
   world.factions.forEach(f => {
     factionPowers[f.name] = f.power;
+  });
+
+  // Compress active map overlays for historical time-travel replaying
+  const compressedCells = [];
+  Object.keys(world.modifiedCells).forEach(key => {
+    const cell = world.modifiedCells[key];
+    compressedCells.push({
+      r: cell.realm,
+      x: cell.x,
+      y: cell.y,
+      f: cell.settlement ? cell.settlement.faction : null,
+      t: cell.settlement ? cell.settlement.type : null,
+      s: cell.settlement ? cell.settlement.size : 0,
+      ruin: cell.ruin ? { name: cell.ruin.name, portalTarget: cell.ruin.portalTarget } : null,
+      fire: cell.fireTicksLeft > 0
+    });
   });
 
   return {
@@ -77,9 +57,9 @@ function getSummary(world) {
     stats: { deer, wolf, elk, bear, beasts, population },
     factions: factionPowers,
     events: [...world.chronicle.slice(-10)], // Grab recent events
+    discoveredCenters: world.discoveredCenters,
     mapState: {
-      grid: mapStr,
-      specials,
+      modifiedCells: compressedCells,
       tradeRoutes: (world.tradeRoutes || []).map(tr => ({
         from: tr.from,
         to: tr.to,
@@ -108,7 +88,7 @@ async function run() {
   if (!world) {
     console.log('Initializing a brand new world...');
     const seed = Date.now().toString();
-    world = createNewWorld(60, 40, seed);
+    world = createNewWorld(seed);
   } else {
     console.log(`Advancing simulation for Year ${world.year}...`);
     advanceSimulation(world);
@@ -127,7 +107,6 @@ async function run() {
   // Append new history summary
   const summary = getSummary(world);
   history.push(summary);
-  // Keep last 200 ticks of history data in the log to avoid huge files
   if (history.length > 200) {
     history.shift();
   }

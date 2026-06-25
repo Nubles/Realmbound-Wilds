@@ -494,3 +494,21 @@ canvas:active {
 .mt-4 {
   margin-top: 16px;
 }
+
+.realm-select {
+  background: rgba(15, 17, 26, 0.95);
+  border: 1px solid var(--border-color);
+  color: var(--gold);
+  border-radius: 6px;
+  padding: 4px 10px;
+  outline: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+.realm-select:hover, .realm-select:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 8px var(--gold-glow);
+}
