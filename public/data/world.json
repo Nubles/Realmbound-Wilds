@@ -1,6 +1,6 @@
 {
   "seed": "1782424979471",
-  "year": 4,
+  "year": 5,
   "factions": [
     {
       "name": "Valoria",
@@ -20,12 +20,12 @@
       "status": {
         "Players": "peace"
       },
-      "power": 200,
+      "power": 220,
       "resources": {
-        "gold": 7,
+        "gold": 22,
         "wood": 3,
         "iron": 0,
-        "timber": 3
+        "timber": 4
       },
       "technologies": [
         "stone_tools"
@@ -50,13 +50,13 @@
       "status": {
         "Valoria": "peace"
       },
-      "power": 112,
+      "power": 120,
       "resources": {
-        "gold": 24,
+        "gold": 30,
         "wood": 48,
         "iron": 10,
-        "shadowgem": 6,
-        "magmametal": 6
+        "shadowgem": 8,
+        "magmametal": 8
       },
       "technologies": [
         "stone_tools"
@@ -71,16 +71,16 @@
       "realm": "overworld",
       "biome": "forest",
       "elevation": 0.33695322429137475,
-      "temperature": 0.814139641576148,
+      "temperature": 0.8106216888480627,
       "settlement": {
         "name": "Valoria Prime",
         "faction": "Valoria",
-        "size": 200,
+        "size": 220,
         "type": "village",
         "resources": [
           "timber"
         ],
-        "happiness": 82,
+        "happiness": 81,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -98,7 +98,7 @@
           "count": 23
         }
       ],
-      "vegetation": 0.8840000000000001,
+      "vegetation": 0.9440000000000002,
       "history": []
     },
     "overworld:5,5": {
@@ -107,7 +107,7 @@
       "realm": "overworld",
       "biome": "plains",
       "elevation": 0.5249701008440653,
-      "temperature": 0.7065599635836595,
+      "temperature": 0.7030420108555742,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -127,7 +127,7 @@
           "count": 26
         }
       ],
-      "vegetation": 0.333,
+      "vegetation": 0.34800000000000003,
       "history": []
     },
     "underworld:0,0": {
@@ -136,7 +136,7 @@
       "realm": "underworld",
       "biome": "deep_lake",
       "elevation": 0.21318443796895772,
-      "temperature": 0.5188152066415936,
+      "temperature": 0.5152972539135083,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -151,7 +151,7 @@
         }
       },
       "wildlife": [],
-      "vegetation": 0.083,
+      "vegetation": 0.098,
       "history": []
     },
     "overworld:-15,10": {
@@ -160,7 +160,7 @@
       "realm": "overworld",
       "biome": "ocean",
       "elevation": 0.03447570636113438,
-      "temperature": 0.8536752168845787,
+      "temperature": 0.8501572641564934,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -180,7 +180,7 @@
           "count": 1
         }
       ],
-      "vegetation": 0.083,
+      "vegetation": 0.098,
       "history": []
     },
     "aether:0,0": {
@@ -189,7 +189,7 @@
       "realm": "aether",
       "biome": "void",
       "elevation": 0.18900273544403365,
-      "temperature": 0.5232589369127529,
+      "temperature": 0.5197409841846676,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -204,7 +204,7 @@
         }
       },
       "wildlife": [],
-      "vegetation": 0.083,
+      "vegetation": 0.098,
       "history": []
     },
     "overworld:20,-15": {
@@ -213,7 +213,7 @@
       "realm": "overworld",
       "biome": "ocean",
       "elevation": 0.2740765277329316,
-      "temperature": 0.7176554578659892,
+      "temperature": 0.7141375051379039,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -228,7 +228,7 @@
         }
       },
       "wildlife": [],
-      "vegetation": 0.083,
+      "vegetation": 0.098,
       "history": []
     },
     "space:0,0": {
@@ -237,7 +237,7 @@
       "realm": "space",
       "biome": "crater",
       "elevation": 0.15,
-      "temperature": 0.8,
+      "temperature": 0.7964820472719147,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [
@@ -250,7 +250,7 @@
         "age": 4
       },
       "wildlife": [],
-      "vegetation": 0,
+      "vegetation": 0.015,
       "history": []
     },
     "underworld:15,10": {
@@ -259,11 +259,11 @@
       "realm": "underworld",
       "biome": "crystal_cave",
       "elevation": 0.2551693100415643,
-      "temperature": 0.49287585664646744,
+      "temperature": 0.48935790391838224,
       "settlement": {
         "name": "Aethelgard Outpost",
         "faction": "Players",
-        "size": 112,
+        "size": 120,
         "type": "village",
         "resources": [
           "shadowgem",
@@ -283,7 +283,7 @@
       ],
       "ruin": null,
       "wildlife": [],
-      "vegetation": 0.083,
+      "vegetation": 0.098,
       "history": [
         "[Year 1] Outpost Aethelgard Outpost founded by Alexander."
       ]
@@ -350,6 +350,6 @@
     "[Year 4] SEA MONSTER SIGHTING: A giant kraken was spotted in the oceanic waters at [-15, 10]!"
   ],
   "tradeRoutes": [],
-  "globalTempOffset": -0.12245172177441419,
-  "season": "Spring"
+  "globalTempOffset": -0.1101795272808522,
+  "season": "Summer"
 }
