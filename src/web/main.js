@@ -87,13 +87,31 @@ function updateUI(world) {
   climateOffsetEl.style.color = tempOffset >= 0 ? '#ef4444' : '#60a5fa';
 
   let totalPop = 0;
+  const resourceCounts = {};
   Object.keys(world.modifiedCells).forEach(key => {
     const cell = world.modifiedCells[key];
     if (cell.settlement) {
       totalPop += cell.settlement.size;
     }
+    if (cell.resources && cell.resources.length > 0) {
+      cell.resources.forEach(r => {
+        resourceCounts[r] = (resourceCounts[r] || 0) + 1;
+      });
+    }
   });
   globalPopEl.innerText = totalPop.toLocaleString();
+
+  // Populate global resources element
+  const globalResEl = document.getElementById('global-resources');
+  if (globalResEl) {
+    const resList = Object.keys(resourceCounts);
+    if (resList.length === 0) {
+      globalResEl.innerText = 'None Detected';
+    } else {
+      globalResEl.innerText = resList.map(r => `${r} (${resourceCounts[r]})`).join(', ');
+      globalResEl.title = resList.map(r => `${r}: ${resourceCounts[r]} sectors`).join('\n');
+    }
+  }
 
   // Factions list
   factionListEl.innerHTML = '';
@@ -251,9 +269,12 @@ function inspectCell(cell) {
   }
 
   inspectorContent.innerHTML = `
-    <div class="inspector-section">
-      <span class="inspector-subtitle">Coordinates</span>
-      <span class="inspector-val">[${cell.x}, ${cell.y}]</span>
+    <div class="inspector-section" style="display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
+      <div>
+        <span class="inspector-subtitle">Coordinates</span>
+        <span class="inspector-val">[${cell.x}, ${cell.y}]</span>
+      </div>
+      <button onclick="window.zoomToCell(${cell.x}, ${cell.y})" class="btn btn-secondary" style="padding: 4px 8px; font-size: 0.75rem; border-color: var(--gold-glow); display: inline-flex; align-items: center; gap: 4px;" title="Zoom in to see detailed micro-structures">🔍 Detailed View</button>
     </div>
     
     <div class="inspector-section">
@@ -485,6 +506,17 @@ async function init() {
       window.synth.playPortalTravel();
     }
   });
+
+  // Global zoom to micro-detail helper
+  window.zoomToCell = (x, y) => {
+    renderer.targetZoom = 3.0;
+    renderer.targetPanX = renderer.canvas.width / 2 - x * renderer.tileSize * 3.0 - (renderer.tileSize * 3.0) / 2;
+    renderer.targetPanY = renderer.canvas.height / 2 - y * renderer.tileSize * 3.0 - (renderer.tileSize * 3.0) / 2;
+    
+    if (window.synth) {
+      window.synth.playClick();
+    }
+  };
 
   // Global portal travel teleportation function
   window.teleportTo = (realm, x, y) => {

@@ -796,9 +796,76 @@ export class MapRenderer {
     this.ctx.fillStyle = color;
     this.ctx.fillRect(cx, cy, ts, ts);
 
-    this.ctx.strokeStyle = 'rgba(0, 0, 0, 0.18)';
-    this.ctx.lineWidth = 0.5;
-    this.ctx.strokeRect(cx, cy, ts, ts);
+    // Draw micro detailed view overlay when zoomed in
+    if (this.zoom >= 2.2) {
+      this.ctx.save();
+      
+      // Draw grid line borders for individual tiles at high zoom
+      this.ctx.strokeStyle = 'rgba(255, 255, 255, 0.08)';
+      this.ctx.lineWidth = 0.5;
+      this.ctx.strokeRect(cx, cy, ts, ts);
+
+      // Micro environment symbols inside the chunk
+      if (biome === 'forest' || biome === 'mushroom_forest' || biome === 'starlight_woods') {
+        this.ctx.fillStyle = biome === 'mushroom_forest' ? '#10b981' : (biome === 'starlight_woods' ? '#38bdf8' : '#15803d');
+        // Render three micro trees/mushrooms inside the tile
+        this.ctx.font = `${ts / 3.5}px sans-serif`;
+        this.ctx.fillText(biome === 'mushroom_forest' ? '🍄' : '🌲', cx + 2, cy + ts/2);
+        this.ctx.fillText(biome === 'mushroom_forest' ? '🍄' : '🌲', cx + ts/2, cy + ts - 2);
+        this.ctx.fillText(biome === 'mushroom_forest' ? '🍄' : '🌲', cx + ts - 8, cy + ts/2 + 2);
+      } else if (biome === 'mountain' || biome === 'storm_peaks') {
+        this.ctx.fillStyle = '#64748b';
+        this.ctx.beginPath();
+        this.ctx.moveTo(cx + ts/4, cy + ts - 2);
+        this.ctx.lineTo(cx + ts/2, cy + ts/3);
+        this.ctx.lineTo(cx + 3*ts/4, cy + ts - 2);
+        this.ctx.fill();
+        
+        this.ctx.fillStyle = '#94a3b8';
+        this.ctx.beginPath();
+        this.ctx.moveTo(cx + ts/2, cy + ts - 2);
+        this.ctx.lineTo(cx + 3*ts/5, cy + ts/2);
+        this.ctx.lineTo(cx + 4*ts/5, cy + ts - 2);
+        this.ctx.fill();
+      }
+
+      // Render mini resource sparkles
+      if (baseCell.resources && baseCell.resources.length > 0) {
+        this.ctx.fillStyle = baseCell.resources.includes('gold') ? '#f59e0b' : (baseCell.resources.includes('stardust') || baseCell.resources.includes('starmetal') ? '#38bdf8' : '#94a3b8');
+        this.ctx.font = `${ts / 4}px sans-serif`;
+        this.ctx.fillText('✨', cx + ts - 8, cy + 8);
+      }
+
+      // Render micro population dots if settlement present
+      let sSize = 0;
+      if (this.historicalState) {
+        const cells = this.historicalState.mapState.modifiedCells || [];
+        const keyCell = cells.find(c => c.r === this.activeRealm && c.x === x && c.y === y);
+        if (keyCell && keyCell.f) sSize = keyCell.s;
+      } else {
+        const key = `${this.activeRealm}:${x},${y}`;
+        const cell = this.world.modifiedCells[key];
+        if (cell && cell.settlement) sSize = cell.settlement.size;
+      }
+
+      if (sSize > 0) {
+        const numDots = Math.min(6, Math.ceil(sSize / 150));
+        this.ctx.fillStyle = '#ffffff';
+        for (let idx = 0; idx < numDots; idx++) {
+          const dx = cx + 4 + (idx % 3) * (ts / 4);
+          const dy = cy + ts - 8 - Math.floor(idx / 3) * (ts / 4);
+          this.ctx.beginPath();
+          this.ctx.arc(dx, dy, 1.2, 0, Math.PI * 2);
+          this.ctx.fill();
+        }
+      }
+
+      this.ctx.restore();
+    } else {
+      this.ctx.strokeStyle = 'rgba(0, 0, 0, 0.18)';
+      this.ctx.lineWidth = 0.5;
+      this.ctx.strokeRect(cx, cy, ts, ts);
+    }
   }
 
   // Draw overlay structures (castles, portals, fires)
