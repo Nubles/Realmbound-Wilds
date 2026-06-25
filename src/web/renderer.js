@@ -642,7 +642,14 @@ export class MapRenderer {
 
           if (this.isCoordinateDiscovered(nextCx, nextCy)) {
             const cell = generateCell(nextCx, nextCy, this.activeRealm, this.world.seed);
-            if (cell.biome !== 'ocean' && cell.biome !== 'mountain' && cell.biome !== 'void' && cell.biome !== 'void_space') {
+            const faction = this.world.factions.find(f => f.name === ent.color || f.color === ent.color);
+            const canSail = faction && faction.technologies && faction.technologies.includes('sailing_boats');
+
+            // Allow moving into ocean/coast if they have boat tech
+            const isValidLand = cell.biome !== 'ocean' && cell.biome !== 'mountain' && cell.biome !== 'void' && cell.biome !== 'void_space';
+            const isValidWater = canSail && (cell.biome === 'ocean' || cell.biome === 'coast');
+
+            if (isValidLand || isValidWater) {
               ent.targetX = nextCx * ts + Math.random() * (ts - 6) + 3;
               ent.targetY = nextCy * ts + Math.random() * (ts - 6) + 3;
             }
@@ -720,6 +727,32 @@ export class MapRenderer {
 
       this.ctx.save();
       if (ent.type === 'citizen') {
+        // Reconstruct tech-based vehicle emoji representation
+        const faction = this.world.factions.find(f => f.name === ent.color || f.color === ent.color);
+        let vehicleEmoji = '🚶';
+        let vehicleSpeed = 0.35;
+        if (faction && faction.technologies) {
+          if (faction.technologies.includes('starflight')) {
+            vehicleEmoji = '🚀';
+            vehicleSpeed = 1.2;
+          } else if (faction.technologies.includes('steam_engine')) {
+            vehicleEmoji = '🚗';
+            vehicleSpeed = 0.85;
+          } else if (faction.technologies.includes('carriage_vehicles')) {
+            vehicleEmoji = '🐎';
+            vehicleSpeed = 0.6;
+          } else if (faction.technologies.includes('sailing_boats')) {
+            // Use boat if currently on coast or ocean
+            const cell = generateCell(cx, cy, this.activeRealm, this.world.seed);
+            if (cell.biome === 'ocean' || cell.biome === 'coast') {
+              vehicleEmoji = '⛵';
+              vehicleSpeed = 0.5;
+            }
+          }
+        }
+        ent.emoji = vehicleEmoji;
+        ent.speed = vehicleSpeed;
+
         // Draw colored dot with citizen/trader label when zoomed in
         this.ctx.fillStyle = ent.color;
         this.ctx.beginPath();

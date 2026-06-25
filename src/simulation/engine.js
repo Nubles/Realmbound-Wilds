@@ -46,15 +46,22 @@ const FACTION_COLORS = ["#3b82f6", "#10b981", "#6b7280", "#f59e0b", "#8b5cf6", "
 const RES_PREFIXES = ["Nova", "Shadow", "Stellar", "Cavern", "Astral", "Magma", "Deep", "Prismatic", "Chrono", "Aether"];
 const RES_SUFFIXES = ["gem", "ore", "crystal", "dust", "timber", "shards", "metal", "alloy", "weave", "essence"];
 
-// Procedural Tech Tree Definitions
+// Procedural Tech Tree Definitions starting from Stone Age
 export const TECH_TREE = [
-  { id: 'tier1_tooling', name: 'Basic Tooling', cost: 100, requires: [] },
-  { id: 'tier1_agriculture', name: 'Crop Rotations', cost: 120, requires: [] },
-  { id: 'tier2_metallurgy', name: 'Advanced Metallurgy', cost: 250, requires: ['tier1_tooling'] },
-  { id: 'tier2_logistics', name: 'Trade Networks', cost: 300, requires: ['tier1_agriculture'] },
-  { id: 'tier3_alchemy', name: 'Dimensional Alchemy', cost: 500, requires: ['tier2_metallurgy'] },
-  { id: 'tier3_architecture', name: 'Fortified Citadels', cost: 600, requires: ['tier2_logistics'] },
-  { id: 'tier4_spaceflight', name: 'Orbital Flight', cost: 1000, requires: ['tier3_alchemy', 'tier3_architecture'] }
+  // Stone Age
+  { id: 'stone_tools', name: 'Basic Flint Tooling', cost: 40, requires: [] },
+  { id: 'stone_shelter', name: 'Primitive Shelters', cost: 60, requires: [] },
+  
+  // Bronze/Iron Age
+  { id: 'sailing_boats', name: 'Sailing & Watercraft', cost: 150, requires: ['stone_tools'] },
+  { id: 'carriage_vehicles', name: 'Carriage Vehicles', cost: 200, requires: ['stone_shelter'] },
+  
+  // Industrial/Alchemical Age
+  { id: 'steam_engine', name: 'Steam Engines & Motorized Vehicles', cost: 450, requires: ['carriage_vehicles'] },
+  { id: 'sky_ships', name: 'Aetherial Sky Sailing', cost: 600, requires: ['sailing_boats'] },
+  
+  // Space Age
+  { id: 'starflight', name: 'Cosmic Spaceflight', cost: 1200, requires: ['steam_engine', 'sky_ships'] }
 ];
 
 export function getProceduralResource(x, y, realm, seed) {
@@ -290,7 +297,7 @@ export function createNewWorld(seed = "realmbound") {
     settlements: [{ realm: REALMS.OVERWORLD, x: cx, y: cy }],
     status: {},
     power: 150,
-    resources: { gold: 100, wood: 100, iron: 20 },
+    resources: { gold: 10, wood: 5, iron: 0 },
     technologies: []
   });
 
