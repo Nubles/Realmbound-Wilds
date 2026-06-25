@@ -542,26 +542,40 @@ export class MapRenderer {
       const ts = this.tileSize;
       
       // Seed initial entities if empty
+      // Seed initial entities if empty
       if (this.entities.length === 0) {
-        // Roaming citizen traders between cities or nearby cells
+        // Procedural citizen naming lists
+        const CITIZEN_NAMES = ["Thorin", "Elara", "Alden", "Valen", "Kira", "Roran", "Lyra", "Sark", "Dara", "Joran"];
+        const CITIZEN_ROLES = ["Gatherer", "Miner", "Builder", "Scout", "Trader"];
+
+        // Roaming citizen traders/workers between cities or nearby cells
         this.world.factions.forEach(faction => {
           faction.settlements.forEach(s => {
             if (s.realm !== this.activeRealm) return;
-            // Create a trader entity
-            this.entities.push({
-              id: `${faction.name}-trader-${s.x}-${s.y}-${Math.random()}`,
-              type: 'citizen',
-              subType: 'trader',
-              color: faction.color,
-              x: s.x * ts + ts/2,
-              y: s.y * ts + ts/2,
-              targetX: s.x * ts + ts/2,
-              targetY: s.y * ts + ts/2,
-              homeX: s.x,
-              homeY: s.y,
-              speed: 0.35 + Math.random() * 0.25,
-              emoji: '🚶'
-            });
+            // Spawn 3 distinct simulated citizens per settlement
+            for (let cIdx = 0; cIdx < 3; cIdx++) {
+              const citizenName = CITIZEN_NAMES[Math.floor(Math.random() * CITIZEN_NAMES.length)] + " " + faction.name.substring(0, 4);
+              const citizenRole = CITIZEN_ROLES[Math.floor(Math.random() * CITIZEN_ROLES.length)];
+              
+              this.entities.push({
+                id: `${faction.name}-citizen-${s.x}-${s.y}-${cIdx}-${Math.random()}`,
+                type: 'citizen',
+                name: citizenName,
+                role: citizenRole,
+                hunger: Math.floor(Math.random() * 30), // Start with low hunger
+                inventory: { gold: 0, food: 2, raw_materials: 0 },
+                task: `Resting at ${s.name}`,
+                color: faction.color,
+                x: s.x * ts + ts/2 + (Math.random() * 12 - 6),
+                y: s.y * ts + ts/2 + (Math.random() * 12 - 6),
+                targetX: s.x * ts + ts/2,
+                targetY: s.y * ts + ts/2,
+                homeX: s.x,
+                homeY: s.y,
+                speed: 0.35 + Math.random() * 0.25,
+                emoji: '🚶'
+              });
+            }
           });
         });
 
@@ -615,16 +629,42 @@ export class MapRenderer {
           const key = `${this.activeRealm}:${cx},${cy}`;
           
           if (ent.type === 'citizen') {
-            // Citizen trader generates gold/income or resource transfers
             const faction = this.world.factions.find(f => f.name === ent.color || f.color === ent.color);
-            if (faction) {
-              faction.resources.gold = (faction.resources.gold || 0) + 2;
-              
-              // Occasionally push message to chronicle
-              if (Math.random() < 0.05) {
-                this.world.chronicle.push(`[Traders] ${faction.name} merchants completed trade delivery at [${cx}, ${cy}], generating +2 gold.`);
-                if (window.synth) window.synth.playClick();
+            
+            // Increment hunger points
+            ent.hunger = (ent.hunger || 0) + 12;
+            
+            // Check biome to set specific task
+            const cell = generateCell(cx, cy, this.activeRealm, this.world.seed);
+            if (cell.biome.includes('forest')) {
+              ent.task = "Gathering Timber";
+              if (faction) faction.resources.wood = (faction.resources.wood || 0) + 1;
+            } else if (cell.resources && cell.resources.length > 0) {
+              ent.task = `Mining ${cell.resources[0]}`;
+              if (faction) {
+                const res = cell.resources[0];
+                faction.resources[res] = (faction.resources[res] || 0) + 1;
               }
+            } else {
+              ent.task = "Patrolling Region";
+            }
+
+            // Citizen consumes food if hungry
+            if (ent.hunger >= 65) {
+              if (faction && faction.resources.gold >= 5) {
+                // Buy food from faction reserve
+                ent.hunger = 0;
+                faction.resources.gold = Math.max(0, faction.resources.gold - 5);
+                ent.task = "Eating Rations";
+              } else {
+                // Starving state
+                ent.task = "Starving / Foraging";
+                ent.hunger = 40; // temporary foraging drop
+              }
+            }
+
+            if (faction) {
+              faction.resources.gold = (faction.resources.gold || 0) + 1;
             }
           } else if (ent.type === 'wildlife') {
             // Animals slightly graze and modify vegetation density

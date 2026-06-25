@@ -310,8 +310,52 @@ function inspectCell(cell) {
       <div>${resourcesDesc}</div>
     </div>
 
+    <div class="inspector-section">
+      <span class="inspector-subtitle">👤 Local Citizens (${cell.realm.toUpperCase()})</span>
+      <div id="local-citizens-list" style="display: flex; flex-direction: column; gap: 8px; margin-top: 4px;">
+        <!-- Citizens will be populated dynamically from renderer -->
+      </div>
+    </div>
+
     ${localHistoryHtml}
   `;
+
+  // Dynamically populate local citizens present at these coordinates
+  const listEl = document.getElementById('local-citizens-list');
+  if (listEl && window.renderer && window.renderer.entities) {
+    const present = window.renderer.entities.filter(ent => {
+      if (ent.type !== 'citizen') return false;
+      // Convert canvas coordinate space back to chunk units
+      const cx = Math.floor(ent.x / window.renderer.tileSize);
+      const cy = Math.floor(ent.y / window.renderer.tileSize);
+      return cx === cell.x && cy === cell.y;
+    });
+
+    if (present.length === 0) {
+      listEl.innerHTML = '<div style="font-style: italic; color: var(--text-secondary); font-size: 0.8rem;">No citizens present in this sector.</div>';
+    } else {
+      listEl.innerHTML = '';
+      present.forEach(p => {
+        const item = document.createElement('div');
+        item.style.background = 'rgba(255, 255, 255, 0.03)';
+        item.style.border = '1px solid rgba(255, 255, 255, 0.05)';
+        item.style.borderRadius = '6px';
+        item.style.padding = '6px 8px';
+        item.style.fontSize = '0.78rem';
+        item.innerHTML = `
+          <div style="display: flex; justify-content: space-between; font-weight: 600;">
+            <span style="color: var(--gold);">${p.emoji} ${p.name}</span>
+            <span style="font-size: 0.72rem; color: var(--text-secondary);">${p.role}</span>
+          </div>
+          <div style="margin-top: 4px; display: flex; justify-content: space-between;">
+            <span>Task: <strong>${p.task || 'Patrolling'}</strong></span>
+            <span style="color: ${p.hunger >= 50 ? '#ef4444' : 'var(--text-secondary)'}">Hunger: ${p.hunger}%</span>
+          </div>
+        `;
+        listEl.appendChild(item);
+      });
+    }
+  }
 }
 
 // Setup Timeline Slider & Sparklines (SVG Chart)
