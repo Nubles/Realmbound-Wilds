@@ -4072,5 +4072,274 @@
         }
       ]
     }
+  },
+  {
+    "year": 7,
+    "globalTempOffset": -0.04246287789195777,
+    "stats": {
+      "deer": 24,
+      "wolf": 0,
+      "elk": 0,
+      "bear": 0,
+      "beasts": 0,
+      "population": 1008
+    },
+    "factions": {
+      "Valoria": 220,
+      "Oakhaven": 225,
+      "Ironclad": 225,
+      "Sunspire": 187,
+      "Players": 139
+    },
+    "events": [
+      "[Year 1] Player Alexander founded settlement: Aethelgard Outpost on underworld at [15, 10].",
+      "[Year 2] DIPLOMACY: Alliances forged between Valoria and Ironclad!",
+      "[Year 2] DECLARATION OF WAR: Valoria declared war on Sunspire!",
+      "[Year 2] CALL TO ARMS: Ironclad joins war against Sunspire to defend ally Valoria.",
+      "[Year 3] PEACE TREATY: Armistice signed between Ironclad and Sunspire.",
+      "[Year 4] PEACE TREATY: Armistice signed between Valoria and Sunspire.",
+      "[Year 6] DIPLOMACY: Alliances forged between Valoria and Oakhaven!",
+      "[Year 7] RESEARCH: Valoria unlocked technology [Basic Tooling]!",
+      "[Year 7] RESEARCH: Oakhaven unlocked technology [Basic Tooling]!",
+      "[Year 7] RESEARCH: Ironclad unlocked technology [Basic Tooling]!"
+    ],
+    "discoveredCenters": [
+      {
+        "realm": "overworld",
+        "x": -4,
+        "y": 9,
+        "radius": 6
+      },
+      {
+        "realm": "overworld",
+        "x": 0,
+        "y": -11,
+        "radius": 6
+      },
+      {
+        "realm": "overworld",
+        "x": 13,
+        "y": -9,
+        "radius": 6
+      },
+      {
+        "realm": "overworld",
+        "x": -19,
+        "y": -10,
+        "radius": 6
+      },
+      {
+        "realm": "underworld",
+        "x": 15,
+        "y": 10,
+        "radius": 6
+      },
+      {
+        "realm": "overworld",
+        "x": 5,
+        "y": 5,
+        "radius": 4
+      },
+      {
+        "realm": "underworld",
+        "x": 0,
+        "y": 0,
+        "radius": 4
+      },
+      {
+        "realm": "overworld",
+        "x": -15,
+        "y": 10,
+        "radius": 4
+      },
+      {
+        "realm": "aether",
+        "x": 0,
+        "y": 0,
+        "radius": 4
+      },
+      {
+        "realm": "overworld",
+        "x": 20,
+        "y": -15,
+        "radius": 4
+      },
+      {
+        "realm": "space",
+        "x": 0,
+        "y": 0,
+        "radius": 4
+      }
+    ],
+    "mapState": {
+      "modifiedCells": [
+        {
+          "r": "overworld",
+          "x": -4,
+          "y": 9,
+          "f": "Valoria",
+          "t": "village",
+          "s": 220,
+          "ruin": null,
+          "fire": false
+        },
+        {
+          "r": "overworld",
+          "x": 0,
+          "y": -11,
+          "f": "Oakhaven",
+          "t": "village",
+          "s": 231,
+          "ruin": null,
+          "fire": false
+        },
+        {
+          "r": "overworld",
+          "x": 13,
+          "y": -9,
+          "f": "Ironclad",
+          "t": "village",
+          "s": 231,
+          "ruin": null,
+          "fire": false
+        },
+        {
+          "r": "overworld",
+          "x": -19,
+          "y": -10,
+          "f": "Sunspire",
+          "t": "village",
+          "s": 187,
+          "ruin": null,
+          "fire": false
+        },
+        {
+          "r": "overworld",
+          "x": 5,
+          "y": 5,
+          "f": null,
+          "t": null,
+          "s": 0,
+          "ruin": {
+            "name": "Ancient Cavern Portal",
+            "portalTarget": {
+              "realm": "underworld",
+              "x": 0,
+              "y": 0
+            }
+          },
+          "fire": false
+        },
+        {
+          "r": "underworld",
+          "x": 0,
+          "y": 0,
+          "f": null,
+          "t": null,
+          "s": 0,
+          "ruin": {
+            "name": "Ancient Cavern Portal Link",
+            "portalTarget": {
+              "realm": "overworld",
+              "x": 5,
+              "y": 5
+            }
+          },
+          "fire": false
+        },
+        {
+          "r": "overworld",
+          "x": -15,
+          "y": 10,
+          "f": null,
+          "t": null,
+          "s": 0,
+          "ruin": {
+            "name": "Sky Gate of Aether",
+            "portalTarget": {
+              "realm": "aether",
+              "x": 0,
+              "y": 0
+            }
+          },
+          "fire": false
+        },
+        {
+          "r": "aether",
+          "x": 0,
+          "y": 0,
+          "f": null,
+          "t": null,
+          "s": 0,
+          "ruin": {
+            "name": "Sky Gate of Aether Link",
+            "portalTarget": {
+              "realm": "overworld",
+              "x": -15,
+              "y": 10
+            }
+          },
+          "fire": false
+        },
+        {
+          "r": "overworld",
+          "x": 20,
+          "y": -15,
+          "f": null,
+          "t": null,
+          "s": 0,
+          "ruin": {
+            "name": "Celestial Launchpad",
+            "portalTarget": {
+              "realm": "space",
+              "x": 0,
+              "y": 0
+            }
+          },
+          "fire": false
+        },
+        {
+          "r": "space",
+          "x": 0,
+          "y": 0,
+          "f": null,
+          "t": null,
+          "s": 0,
+          "ruin": {
+            "name": "Celestial Launchpad Link",
+            "portalTarget": {
+              "realm": "overworld",
+              "x": 20,
+              "y": -15
+            }
+          },
+          "fire": false
+        },
+        {
+          "r": "underworld",
+          "x": 15,
+          "y": 10,
+          "f": "Players",
+          "t": "village",
+          "s": 139,
+          "ruin": null,
+          "fire": false
+        }
+      ],
+      "tradeRoutes": [
+        {
+          "from": {
+            "x": 0,
+            "y": -11
+          },
+          "to": {
+            "x": 13,
+            "y": -9
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        }
+      ]
+    }
   }
 ]
