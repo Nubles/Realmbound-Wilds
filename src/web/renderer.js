@@ -5,6 +5,9 @@ export class CosmicSynth {
   constructor() {
     this.ctx = null;
     this.muted = false;
+    this.ambientOsc = null;
+    this.ambientGain = null;
+    this.musicMuted = true;
   }
 
   init() {
@@ -108,6 +111,57 @@ export class CosmicSynth {
       osc.start();
       osc.stop(this.ctx.currentTime + 0.85);
     });
+  }
+
+  startAmbientMusic(realm = 'overworld') {
+    this.init();
+    if (this.musicMuted || !this.ctx) return;
+    this.stopAmbientMusic();
+    
+    this.ambientOsc = this.ctx.createOscillator();
+    this.ambientGain = this.ctx.createGain();
+    
+    let baseFreq = 110;
+    let type = 'sine';
+    
+    if (realm === 'overworld') {
+      baseFreq = 220;
+      type = 'triangle';
+    } else if (realm === 'underworld') {
+      baseFreq = 82.4;
+      type = 'sawtooth';
+    } else if (realm === 'aether') {
+      baseFreq = 329.6;
+      type = 'sine';
+    } else if (realm === 'space') {
+      baseFreq = 55.0;
+      type = 'sine';
+    }
+    
+    this.ambientOsc.type = type;
+    this.ambientOsc.frequency.setValueAtTime(baseFreq, this.ctx.currentTime);
+    
+    this.ambientGain.gain.setValueAtTime(0.001, this.ctx.currentTime);
+    this.ambientGain.gain.linearRampToValueAtTime(0.04, this.ctx.currentTime + 1.0);
+    
+    const filter = this.ctx.createBiquadFilter();
+    filter.type = 'lowpass';
+    filter.frequency.value = realm === 'underworld' ? 180 : 450;
+    
+    this.ambientOsc.connect(filter);
+    filter.connect(this.ambientGain);
+    this.ambientGain.connect(this.ctx.destination);
+    
+    this.ambientOsc.start();
+  }
+
+  stopAmbientMusic() {
+    if (this.ambientOsc) {
+      try {
+        this.ambientOsc.stop();
+      } catch (e) {}
+      this.ambientOsc = null;
+    }
   }
 }
 
@@ -258,6 +312,9 @@ export class MapRenderer {
     this.hoveredCell = null;
     this.atmosphericParticles = []; // Clear current atmospheric particles
     this.rebuildDiscoveryCache();
+    if (window.synth) {
+      window.synth.startAmbientMusic(realm);
+    }
     this.draw();
   }
 
@@ -630,6 +687,7 @@ export class MapRenderer {
                 type: 'citizen',
                 name: citizenName,
                 role: citizenRole,
+                realm: this.activeRealm,
                 age: Math.floor(Math.random() * 30) + 15,
                 parents: "Ancestors",
                 generation: 1,
@@ -712,6 +770,7 @@ export class MapRenderer {
 
       // Update entity movement towards their targets
       this.entities.forEach(ent => {
+        if (ent.realm && ent.realm !== this.activeRealm) return;
         const dx = ent.targetX - ent.x;
         const dy = ent.targetY - ent.y;
         const dist = Math.hypot(dx, dy);
@@ -728,6 +787,28 @@ export class MapRenderer {
           if (ent.type === 'citizen') {
             const faction = this.world.factions.find(f => f.name === ent.color || f.color === ent.color);
             
+            // Portal Traversal Check
+            const cell = generateCell(cx, cy, this.activeRealm, this.world.seed);
+            const dynamicCell = this.world.modifiedCells[key];
+            const ruin = dynamicCell ? dynamicCell.ruin : (cell ? cell.ruin : null);
+            if (ruin && ruin.portalTarget && Math.random() < 0.22) {
+              const target = ruin.portalTarget;
+              if (!ent.history) ent.history = [];
+              ent.history.push(`Traversed portal from ${this.activeRealm} to ${target.realm} [${target.x}, ${target.y}] in Year ${this.world.year}`);
+              if (this.world.chronicle && Math.random() < 0.2) {
+                this.world.chronicle.push(`[Portal] ${ent.name} stepped through the portal into ${target.realm} at [${target.x}, ${target.y}].`);
+              }
+              ent.realm = target.realm;
+              ent.x = target.x * ts + ts/2;
+              ent.y = target.y * ts + ts/2;
+              ent.targetX = ent.x;
+              ent.targetY = ent.y;
+              ent.homeX = target.x;
+              ent.homeY = target.y;
+              if (window.synth) window.synth.playSwirl();
+              return;
+            }
+
             // Increment hunger points
             ent.hunger = (ent.hunger || 0) + 12;
             
@@ -1434,6 +1515,17 @@ export class MapRenderer {
         ctx.fillStyle = '#60a5fa';
         ctx.font = '8px sans-serif';
         ctx.fillText('🛰️', cx + ts - 10, cy + 10);
+      }
+
+      // Builder scaffolding overlay
+      const hasBuilder = this.entities.some(e => e.type === 'citizen' && e.role === 'Builder' && Math.floor(e.x / ts) === x && Math.floor(e.y / ts) === y && e.realm === this.activeRealm);
+      if (hasBuilder) {
+        ctx.strokeStyle = '#f97316';
+        ctx.lineWidth = 1;
+        ctx.strokeRect(cx + 2, cy + 2, ts - 4, ts - 4);
+        ctx.fillStyle = '#f97316';
+        ctx.font = '8px sans-serif';
+        ctx.fillText('🏗️', cx + 2, cy + 9);
       }
     }
 

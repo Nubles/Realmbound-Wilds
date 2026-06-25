@@ -57,6 +57,12 @@
         <button class="btn btn-secondary" id="sound-toggle" style="margin-right: 8px;" title="Mute/Unmute Sounds">
           🔊
         </button>
+        <button class="btn btn-secondary" id="music-toggle" style="margin-right: 8px;" title="Mute/Unmute Ambient Music">
+          🎵
+        </button>
+        <button class="btn btn-secondary" id="tech-btn" style="margin-right: 8px;">
+          <span class="btn-icon">🧪</span> Tech Tree
+        </button>
         <button class="btn btn-secondary" id="help-btn" style="margin-right: 8px;">
           <span class="btn-icon">📜</span> Chronicle Guide
         </button>
@@ -101,6 +107,22 @@
       </div>
     </div>
 
+    <!-- Tech Tree Modal Overlay -->
+    <div id="tech-modal" class="modal-overlay hidden">
+      <div class="modal-content card" style="max-width: 600px; max-height: 85vh; overflow-y: auto;">
+        <header class="modal-header">
+          <h2 class="font-fantasy">🧪 Technology Tree Research</h2>
+          <button id="close-tech-btn" class="close-btn">&times;</button>
+        </header>
+        <div class="modal-body">
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 12px;">Accumulate technology research points by ticking the years. Select a technology below to queue research for your faction (Players).</p>
+          <div id="tech-tree-container" style="display: flex; flex-direction: column; gap: 10px;">
+            <!-- Tech items will be rendered dynamically here -->
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Main Workspace -->
     <div class="workspace">
       
@@ -112,6 +134,16 @@
         </div>
 
         <h2 class="card-title font-fantasy mt-4">📜 Historical Chronicle</h2>
+        <div style="margin-bottom: 6px; display: flex; flex-direction: column; gap: 6px;">
+          <input type="text" id="chronicle-search" placeholder="🔍 Search chronicle..." style="background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; padding: 4px 6px; color: #fff; font-size: 0.75rem; width: 100%;">
+          <div style="display: flex; gap: 4px; overflow-x: auto; padding-bottom: 4px; scrollbar-width: none;">
+            <button class="btn btn-secondary filter-tab active" data-filter="all" style="padding: 2px 6px; font-size: 0.68rem; border-color: rgba(255,255,255,0.15);">All</button>
+            <button class="btn btn-secondary filter-tab" data-filter="war" style="padding: 2px 6px; font-size: 0.68rem; border-color: rgba(255,255,255,0.15);">Wars ⚔️</button>
+            <button class="btn btn-secondary filter-tab" data-filter="trade" style="padding: 2px 6px; font-size: 0.68rem; border-color: rgba(255,255,255,0.15);">Trade 🪙</button>
+            <button class="btn btn-secondary filter-tab" data-filter="tech" style="padding: 2px 6px; font-size: 0.68rem; border-color: rgba(255,255,255,0.15);">Tech 🧪</button>
+            <button class="btn btn-secondary filter-tab" data-filter="disaster" style="padding: 2px 6px; font-size: 0.68rem; border-color: rgba(255,255,255,0.15);">Events ☄️</button>
+          </div>
+        </div>
         <div class="chronicle-box" id="chronicle-box">
           <div class="loading">Reading the chronicles...</div>
         </div>

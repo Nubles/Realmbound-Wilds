@@ -4,6 +4,9 @@ import { generateCell, getCell } from '../simulation/engine.js';
 let currentWorld = null;
 let historyLog = [];
 let renderer = null;
+let chronicleFilter = 'all';
+let chronicleSearchQuery = '';
+let playerResearchPoints = 40;
 
 // DOM Elements
 const currentYearEl = document.getElementById('current-year');
@@ -166,14 +169,28 @@ function updateUI(world) {
   if (world.chronicle.length === 0) {
     chronicleBoxEl.innerHTML = '<div class="placeholder-text">The scrolls are currently blank.</div>';
   } else {
-    // Show chronicle logs in reverse (latest first)
     const reversedChronicle = [...world.chronicle].reverse();
-    reversedChronicle.forEach(log => {
-      const entry = document.createElement('div');
-      entry.className = 'chronicle-entry';
-      entry.innerText = log;
-      chronicleBoxEl.appendChild(entry);
+    const filtered = reversedChronicle.filter(log => {
+      if (chronicleSearchQuery && !log.toLowerCase().includes(chronicleSearchQuery.toLowerCase())) {
+        return false;
+      }
+      if (chronicleFilter === 'war') return log.includes('[War]') || log.includes('slain') || log.includes('declared war') || log.includes('SIEGE') || log.includes('RAMPAGE');
+      if (chronicleFilter === 'trade') return log.includes('TRADE') || log.includes('MARKET') || log.includes('Trade') || log.includes('trade');
+      if (chronicleFilter === 'tech') return log.includes('RESEARCH') || log.includes('UPGRADE') || log.includes('unlocked technology') || log.includes('Research');
+      if (chronicleFilter === 'disaster') return log.includes('Disaster') || log.includes('IMPACT') || log.includes('STRIKE') || log.includes('SIGHTING') || log.includes('Crisis') || log.includes('METEOR');
+      return true;
     });
+
+    if (filtered.length === 0) {
+      chronicleBoxEl.innerHTML = '<div class="placeholder-text">No matching chronicles found.</div>';
+    } else {
+      filtered.forEach(log => {
+        const entry = document.createElement('div');
+        entry.className = 'chronicle-entry';
+        entry.innerText = log;
+        chronicleBoxEl.appendChild(entry);
+      });
+    }
   }
 
   // Update selection/inspect details if a cell is selected
@@ -604,6 +621,75 @@ async function init() {
     });
   }
 
+  // Music Mute Toggle
+  const musicToggle = document.getElementById('music-toggle');
+  if (musicToggle) {
+    musicToggle.addEventListener('click', () => {
+      if (window.synth) {
+        window.synth.musicMuted = !window.synth.musicMuted;
+        musicToggle.innerText = window.synth.musicMuted ? '🔇' : '🎵';
+        if (!window.synth.musicMuted) {
+          window.synth.startAmbientMusic(renderer ? renderer.activeRealm : 'overworld');
+        } else {
+          window.synth.stopAmbientMusic();
+        }
+      }
+    });
+  }
+
+  // Tech Tree Modal Toggle
+  const techBtn = document.getElementById('tech-btn');
+  const techModal = document.getElementById('tech-modal');
+  const closeTechBtn = document.getElementById('close-tech-btn');
+
+  if (techBtn && techModal && closeTechBtn) {
+    techBtn.addEventListener('click', () => {
+      techModal.classList.remove('hidden');
+      window.renderTechTree();
+      if (window.synth) window.synth.playClick();
+    });
+    closeTechBtn.addEventListener('click', () => {
+      techModal.classList.add('hidden');
+      if (window.synth) window.synth.playClick();
+    });
+    techModal.addEventListener('click', (e) => {
+      if (e.target === techModal) {
+        techModal.classList.add('hidden');
+      }
+    });
+  }
+
+  // Chronicle search and category filters
+  const searchInput = document.getElementById('chronicle-search');
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      chronicleSearchQuery = e.target.value;
+      if (currentWorld) updateUI(currentWorld);
+    });
+  }
+
+  const tabs = document.querySelectorAll('.filter-tab');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      chronicleFilter = tab.getAttribute('data-filter');
+      if (currentWorld) updateUI(currentWorld);
+      if (window.synth) window.synth.playClick();
+    });
+  });
+
+  // Local research accumulation loop (2 points every 5 seconds)
+  setInterval(() => {
+    if (currentWorld) {
+      playerResearchPoints += 2;
+      const tModal = document.getElementById('tech-modal');
+      if (tModal && !tModal.classList.contains('hidden')) {
+        window.renderTechTree();
+      }
+    }
+  }, 5000);
+
   // Bind active Realm dropdown
   const realmSelector = document.getElementById('realm-selector');
   realmSelector.addEventListener('change', (e) => {
@@ -736,6 +822,81 @@ window.orderMove = function(citizenId) {
         inspectCell(window.renderer.selectedCell);
       }
       if (window.synth) window.synth.playClick();
+    }
+  }
+};
+
+const CORE_TECHS = [
+  { id: 'stone_tools', name: 'Basic Flint Tooling', cost: 10, requires: [], desc: 'Allows basic tool building' },
+  { id: 'stone_shelter', name: 'Primitive Shelters', cost: 20, requires: [], desc: 'Reduces freezing hazards' },
+  { id: 'sailing_boats', name: 'Sailing & Watercraft', cost: 40, requires: ['stone_tools'], desc: 'Unlocks water travel' },
+  { id: 'carriage_vehicles', name: 'Carriage Vehicles', cost: 50, requires: ['stone_shelter'], desc: 'Increases citizen speed and cargo slots' },
+  { id: 'steam_engine', name: 'Steam Engines', cost: 100, requires: ['carriage_vehicles'], desc: 'Drastically boosts citizen transport' },
+  { id: 'sky_ships', name: 'Aetherial Sky Sailing', cost: 120, requires: ['sailing_boats'], desc: 'Allows exploration of Aether sky islands' },
+  { id: 'starflight', name: 'Cosmic Spaceflight', cost: 200, requires: ['steam_engine', 'sky_ships'], desc: 'Unlocks orbit travel and spaceports' }
+];
+
+window.renderTechTree = function() {
+  const container = document.getElementById('tech-tree-container');
+  if (!container || !currentWorld) return;
+  
+  const playerFaction = currentWorld.factions.find(f => f.name === 'Players' || f.name === 'Valoria');
+  if (!playerFaction) return;
+  if (!playerFaction.technologies) playerFaction.technologies = [];
+  
+  container.innerHTML = `
+    <div style="font-weight: 600; color: var(--gold); font-size: 0.85rem; margin-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 8px;">Research Points Available: 🎓${playerResearchPoints}</div>
+  `;
+  
+  CORE_TECHS.forEach(tech => {
+    const isUnlocked = playerFaction.technologies.includes(tech.id);
+    const meetsRequirements = tech.requires.every(reqId => playerFaction.technologies.includes(reqId));
+    const canAfford = playerResearchPoints >= tech.cost;
+    
+    let btnHtml = '';
+    if (isUnlocked) {
+      btnHtml = `<span style="color: #10b981; font-weight: bold; font-size: 0.72rem;">✓ Unlocked</span>`;
+    } else if (!meetsRequirements) {
+      btnHtml = `<span style="color: var(--text-secondary); font-size: 0.72rem;">Requires: ${tech.requires.join(', ')}</span>`;
+    } else if (!canAfford) {
+      btnHtml = `<button class="btn btn-secondary" style="padding: 2px 8px; font-size: 0.7rem; border-color: rgba(255,255,255,0.08);" disabled>Cost: 🎓${tech.cost}</button>`;
+    } else {
+      btnHtml = `<button onclick="window.unlockTech('${tech.id}', ${tech.cost})" class="btn btn-primary" style="padding: 2px 8px; font-size: 0.7rem; border-color: var(--gold-glow);">Research (🎓${tech.cost})</button>`;
+    }
+    
+    const item = document.createElement('div');
+    item.style.background = 'rgba(255, 255, 255, 0.03)';
+    item.style.border = '1px solid rgba(255, 255, 255, 0.06)';
+    item.style.borderRadius = '6px';
+    item.style.padding = '8px 10px';
+    item.style.display = 'flex';
+    item.style.justifyContent = 'space-between';
+    item.style.alignItems = 'center';
+    
+    item.innerHTML = `
+      <div>
+        <div style="font-weight: bold; font-size: 0.8rem; color: var(--gold);">${tech.name}</div>
+        <div style="font-size: 0.7rem; color: var(--text-secondary); margin-top: 2px;">${tech.desc}</div>
+      </div>
+      <div>${btnHtml}</div>
+    `;
+    container.appendChild(item);
+  });
+};
+
+window.unlockTech = function(techId, cost) {
+  if (currentWorld) {
+    const playerFaction = currentWorld.factions.find(f => f.name === 'Players' || f.name === 'Valoria');
+    if (playerFaction && playerResearchPoints >= cost) {
+      playerResearchPoints -= cost;
+      if (!playerFaction.technologies) playerFaction.technologies = [];
+      playerFaction.technologies.push(techId);
+      
+      currentWorld.chronicle.push(`[Research] Player faction successfully unlocked tech: [${techId.toUpperCase()}]!`);
+      
+      if (window.synth) window.synth.playBell();
+      window.renderTechTree();
+      updateUI(currentWorld);
     }
   }
 };
