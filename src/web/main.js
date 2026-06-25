@@ -1,5 +1,5 @@
 import { MapRenderer, BIOME_LABELS } from './renderer.js';
-import { generateCell } from '../simulation/engine.js';
+import { generateCell, getCell } from '../simulation/engine.js';
 
 let currentWorld = null;
 let historyLog = [];
@@ -87,13 +87,12 @@ function updateUI(world) {
   climateOffsetEl.style.color = tempOffset >= 0 ? '#ef4444' : '#60a5fa';
 
   let totalPop = 0;
-  for (let y = 0; y < world.height; y++) {
-    for (let x = 0; x < world.width; x++) {
-      if (world.grid[y][x].settlement) {
-        totalPop += world.grid[y][x].settlement.size;
-      }
+  Object.keys(world.modifiedCells).forEach(key => {
+    const cell = world.modifiedCells[key];
+    if (cell.settlement) {
+      totalPop += cell.settlement.size;
     }
-  }
+  });
   globalPopEl.innerText = totalPop.toLocaleString();
 
   // Factions list
@@ -105,7 +104,7 @@ function updateUI(world) {
     const sortedFactions = [...world.factions].sort((a, b) => b.power - a.power);
     sortedFactions.forEach(faction => {
       const activeSettlements = faction.settlements.filter(s => {
-        const cell = world.grid[s.y][s.x];
+        const cell = getCell(world, s.realm || 'overworld', s.x, s.y);
         return cell.settlement && cell.settlement.faction === faction.name;
       });
 
