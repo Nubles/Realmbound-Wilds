@@ -1964,5 +1964,270 @@
       ],
       "tradeRoutes": []
     }
+  },
+  {
+    "year": 2,
+    "globalTempOffset": 0.016493115145713094,
+    "stats": {
+      "deer": 22,
+      "wolf": 0,
+      "elk": 0,
+      "bear": 0,
+      "beasts": 0,
+      "population": 629
+    },
+    "factions": {
+      "Valoria": 133,
+      "Oakhaven": 129,
+      "Ironclad": 129,
+      "Sunspire": 129,
+      "Players": 97
+    },
+    "events": [
+      "The multi-dimensional cosmos awakens.",
+      "The faction of Valoria established their capital Valoria Prime on the Overworld at [-8, -6].",
+      "The faction of Oakhaven established their capital Oakhaven Prime on the Overworld at [12, -8].",
+      "The faction of Ironclad established their capital Ironclad Prime on the Overworld at [12, 2].",
+      "The faction of Sunspire established their capital Sunspire Prime on the Overworld at [0, -18].",
+      "[Year 1] Player Alexander founded settlement: Aethelgard Outpost on underworld at [15, 10]."
+    ],
+    "discoveredCenters": [
+      {
+        "realm": "overworld",
+        "x": -8,
+        "y": -6,
+        "radius": 6
+      },
+      {
+        "realm": "overworld",
+        "x": 12,
+        "y": -8,
+        "radius": 6
+      },
+      {
+        "realm": "overworld",
+        "x": 12,
+        "y": 2,
+        "radius": 6
+      },
+      {
+        "realm": "overworld",
+        "x": 0,
+        "y": -18,
+        "radius": 6
+      },
+      {
+        "realm": "underworld",
+        "x": 15,
+        "y": 10,
+        "radius": 6
+      },
+      {
+        "realm": "overworld",
+        "x": 5,
+        "y": 5,
+        "radius": 4
+      },
+      {
+        "realm": "underworld",
+        "x": 0,
+        "y": 0,
+        "radius": 4
+      },
+      {
+        "realm": "overworld",
+        "x": -15,
+        "y": 10,
+        "radius": 4
+      },
+      {
+        "realm": "aether",
+        "x": 0,
+        "y": 0,
+        "radius": 4
+      },
+      {
+        "realm": "overworld",
+        "x": 20,
+        "y": -15,
+        "radius": 4
+      },
+      {
+        "realm": "space",
+        "x": 0,
+        "y": 0,
+        "radius": 4
+      }
+    ],
+    "mapState": {
+      "modifiedCells": [
+        {
+          "r": "overworld",
+          "x": -8,
+          "y": -6,
+          "f": "Valoria",
+          "t": "village",
+          "s": 133,
+          "ruin": null,
+          "fire": false
+        },
+        {
+          "r": "overworld",
+          "x": 12,
+          "y": -8,
+          "f": "Oakhaven",
+          "t": "village",
+          "s": 135,
+          "ruin": null,
+          "fire": false
+        },
+        {
+          "r": "overworld",
+          "x": 12,
+          "y": 2,
+          "f": "Ironclad",
+          "t": "village",
+          "s": 135,
+          "ruin": null,
+          "fire": false
+        },
+        {
+          "r": "overworld",
+          "x": 0,
+          "y": -18,
+          "f": "Sunspire",
+          "t": "village",
+          "s": 129,
+          "ruin": null,
+          "fire": false
+        },
+        {
+          "r": "overworld",
+          "x": 5,
+          "y": 5,
+          "f": null,
+          "t": null,
+          "s": 0,
+          "ruin": {
+            "name": "Ancient Cavern Portal",
+            "portalTarget": {
+              "realm": "underworld",
+              "x": 0,
+              "y": 0
+            }
+          },
+          "fire": false
+        },
+        {
+          "r": "underworld",
+          "x": 0,
+          "y": 0,
+          "f": null,
+          "t": null,
+          "s": 0,
+          "ruin": {
+            "name": "Ancient Cavern Portal Link",
+            "portalTarget": {
+              "realm": "overworld",
+              "x": 5,
+              "y": 5
+            }
+          },
+          "fire": false
+        },
+        {
+          "r": "overworld",
+          "x": -15,
+          "y": 10,
+          "f": null,
+          "t": null,
+          "s": 0,
+          "ruin": {
+            "name": "Sky Gate of Aether",
+            "portalTarget": {
+              "realm": "aether",
+              "x": 0,
+              "y": 0
+            }
+          },
+          "fire": false
+        },
+        {
+          "r": "aether",
+          "x": 0,
+          "y": 0,
+          "f": null,
+          "t": null,
+          "s": 0,
+          "ruin": {
+            "name": "Sky Gate of Aether Link",
+            "portalTarget": {
+              "realm": "overworld",
+              "x": -15,
+              "y": 10
+            }
+          },
+          "fire": false
+        },
+        {
+          "r": "overworld",
+          "x": 20,
+          "y": -15,
+          "f": null,
+          "t": null,
+          "s": 0,
+          "ruin": {
+            "name": "Celestial Launchpad",
+            "portalTarget": {
+              "realm": "space",
+              "x": 0,
+              "y": 0
+            }
+          },
+          "fire": false
+        },
+        {
+          "r": "space",
+          "x": 0,
+          "y": 0,
+          "f": null,
+          "t": null,
+          "s": 0,
+          "ruin": {
+            "name": "Celestial Launchpad Link",
+            "portalTarget": {
+              "realm": "overworld",
+              "x": 20,
+              "y": -15
+            }
+          },
+          "fire": false
+        },
+        {
+          "r": "underworld",
+          "x": 15,
+          "y": 10,
+          "f": "Players",
+          "t": "village",
+          "s": 97,
+          "ruin": null,
+          "fire": false
+        }
+      ],
+      "tradeRoutes": [
+        {
+          "from": {
+            "x": 12,
+            "y": -8
+          },
+          "to": {
+            "x": 12,
+            "y": 2
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        }
+      ]
+    }
   }
 ]
