@@ -214,6 +214,61 @@ async function run() {
   const rawData = fs.readFileSync(WORLD_FILE, 'utf8');
   const world = JSON.parse(rawData);
 
+  // Database Migration Layer: convert older format grids to infinite dimensions
+  if (world && (!world.modifiedCells || world.grid)) {
+    console.warn('Old world database format detected. Migrating to infinite realms database...');
+    const migrated = {
+      seed: world.seed || 'realmbound',
+      year: world.year,
+      factions: world.factions,
+      modifiedCells: {},
+      discoveredCenters: world.discoveredCenters || [],
+      chronicle: world.chronicle || [],
+      tradeRoutes: world.tradeRoutes || [],
+      globalTempOffset: world.globalTempOffset || 0.0
+    };
+
+    if (world.grid) {
+      for (let y = 0; y < world.grid.length; y++) {
+        for (let x = 0; x < world.grid[y].length; x++) {
+          const cell = world.grid[y][x];
+          const isModified = cell.settlement || cell.ruin || cell.fireTicksLeft > 0 || cell.history.length > 0;
+          if (isModified) {
+            const key = `overworld:${x},${y}`;
+            migrated.modifiedCells[key] = {
+              x, y, realm: 'overworld',
+              biome: cell.biome, elevation: cell.elevation, temperature: cell.temperature,
+              settlement: cell.settlement, fireTicksLeft: cell.fireTicksLeft,
+              resources: cell.resources || [], ruin: cell.ruin,
+              wildlife: cell.wildlife || [], vegetation: cell.vegetation || 0.5,
+              history: cell.history || []
+            };
+          }
+        }
+      }
+    }
+
+    migrated.factions.forEach(f => {
+      f.settlements.forEach(s => {
+        s.realm = s.realm || 'overworld';
+        if (!migrated.discoveredCenters.some(dc => dc.realm === s.realm && dc.x === s.x && dc.y === s.y)) {
+          migrated.discoveredCenters.push({
+            realm: s.realm,
+            x: s.x,
+            y: s.y,
+            radius: 6
+          });
+        }
+      });
+      if (f.capital) {
+        f.capital.realm = f.capital.realm || 'overworld';
+      }
+    });
+
+    Object.assign(world, migrated);
+    delete world.grid;
+  }
+
   const outcome = generateOutcome(world, parsed);
 
   // Save changes
