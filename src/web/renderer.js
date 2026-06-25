@@ -906,6 +906,32 @@ export class MapRenderer {
               }
             }
 
+            // Peasant rebellion strike behavior: refuse to work
+            if (homeCell.settlement && homeCell.settlement.rebellionActive) {
+              ent.task = "✊ Protesting Regime!";
+              ent.activityState = 'GATHERING';
+              ent.cargo = {};
+              ent.speed = (ent.speed || 0.35) * 0.7;
+            }
+
+            // Harbor Port Warship boarding check
+            const hasHarbor = homeCell.settlement && homeCell.settlement.harbor;
+            if (hasHarbor && (currentCell.biome === 'ocean' || currentCell.biome === 'coast')) {
+              ent.onWarship = true;
+              ent.task = "🚢 Sailing Warship";
+            } else {
+              ent.onWarship = false;
+            }
+
+            // Bio-Lab mutation upgrades
+            if (cx === ent.homeX && cy === ent.homeY && homeCell.settlement && homeCell.settlement.biolab && Math.random() < 0.15) {
+              const TRAITS = ["Swiftfooted", "Giant Strength", "Sickly", "Intellectual", "Rugged"];
+              if (ent.trait === 'Sickly') {
+                ent.trait = 'Rugged'; // Cure sickly to rugged
+                ent.history.push(`Bio-Lab mutagen therapy mutated trait to Rugged in Year ${this.world.year}`);
+              }
+            }
+
             // Tool and Weapon Crafting at home
             if (cx === ent.homeX && cy === ent.homeY && faction && !ent.plagued) {
               if (!ent.equipped) {
@@ -1200,7 +1226,10 @@ export class MapRenderer {
         const faction = this.world.factions.find(f => f.name === ent.color || f.color === ent.color);
         let vehicleEmoji = '🚶';
         let vehicleSpeed = 0.35;
-        if (faction && faction.technologies) {
+        if (ent.onWarship) {
+          vehicleEmoji = ent.role === 'Soldier' ? '🏴‍☠️' : '🚢';
+          vehicleSpeed = 0.75;
+        } else if (faction && faction.technologies) {
           if (faction.technologies.includes('starflight')) {
             vehicleEmoji = '🚀';
             vehicleSpeed = 1.2;
@@ -1563,6 +1592,10 @@ export class MapRenderer {
     let hasApothecary = false;
     let wonderBlueprint = null;
 
+    let hasHarbor = false;
+    let hasBioLab = false;
+    let hasStrike = false;
+
     if (this.historicalState) {
       const cells = this.historicalState.mapState.modifiedCells || [];
       const keyCell = cells.find(c => c.r === this.activeRealm && c.x === x && c.y === y);
@@ -1587,6 +1620,9 @@ export class MapRenderer {
           isPlagued = cell.settlement.plagued;
           hasApothecary = cell.settlement.apothecary;
           wonderBlueprint = cell.settlement.wonderBlueprint;
+          hasHarbor = cell.settlement.harbor;
+          hasBioLab = cell.settlement.biolab;
+          hasStrike = cell.settlement.rebellionActive;
         }
         ruin = cell.ruin;
         isFire = cell.fireTicksLeft > 0;
@@ -1665,6 +1701,30 @@ export class MapRenderer {
         ctx.fillStyle = '#10b981';
         ctx.font = '8px sans-serif';
         ctx.fillText('🏥', cx + 2, cy + 9);
+      }
+
+      // Render Harbor Port
+      if (hasHarbor) {
+        ctx.fillStyle = '#38bdf8';
+        ctx.font = '8px sans-serif';
+        ctx.fillText('⚓', cx + ts - 9, cy + 9);
+      }
+
+      // Render Bio-Lab
+      if (hasBioLab) {
+        ctx.fillStyle = '#a78bfa';
+        ctx.font = '8px sans-serif';
+        ctx.fillText('🧪', cx + 2, cy + ts - 2);
+      }
+
+      // Render Peasant Strike Active (red outline / strike sign)
+      if (hasStrike) {
+        ctx.strokeStyle = '#ef4444';
+        ctx.lineWidth = 1.5;
+        ctx.strokeRect(cx, cy, ts, ts);
+        ctx.fillStyle = '#ef4444';
+        ctx.font = '9px sans-serif';
+        ctx.fillText('✊', cx + ts/2 - 4, cy + ts/2 + 3);
       }
 
       // Render Shield overlay (blue circle outlining settlement)

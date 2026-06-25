@@ -588,14 +588,60 @@ export function advanceSimulation(world) {
         }
       }
       
-      // Gather local resources to faction stockpile
-      if (cell.resources) {
+      // Assign Ideology if undefined
+      const IDEOLOGIES = ["Militarism", "Industrialism", "Pacifism", "Scholasticism"];
+      if (!faction.ideology) {
+        faction.ideology = IDEOLOGIES[world.factions.indexOf(faction) % IDEOLOGIES.length];
+      }
+
+      // Initialize class proportions and happiness if not defined
+      if (!cell.settlement.happiness) {
+        cell.settlement.happiness = 85;
+      }
+      if (!cell.settlement.classes) {
+        cell.settlement.classes = { nobles: 5, merchants: 20, peasants: 75 };
+      }
+
+      // Happiness drift depending on ideology, taxation, and season
+      let taxRate = 0.05;
+      if (faction.ideology === 'Militarism') {
+        taxRate = 0.07; // High tax
+        cell.settlement.happiness = Math.max(10, cell.settlement.happiness - 1);
+      } else if (faction.ideology === 'Pacifism') {
+        taxRate = 0.03; // Low tax
+        cell.settlement.happiness = Math.min(100, cell.settlement.happiness + 2);
+      }
+
+      // Freezing decays happiness
+      if (heatingFail) {
+        cell.settlement.happiness = Math.max(5, cell.settlement.happiness - 15);
+      }
+
+      // Peasant Rebellion/Strike check
+      if (cell.settlement.happiness < 20 && random() < 0.2) {
+        cell.settlement.plagued = false; // reset disease
+        cell.settlement.rebellionActive = true;
+        world.chronicle.push(`${logPrefix} PEASANT STRIKE: Peasants in ${cell.settlement.name} are striking against the ${faction.ideology} regime! Productivity halted.`);
+      }
+
+      // Rebellion recovery if heating resolved
+      if (!heatingFail && cell.settlement.happiness >= 45 && cell.settlement.rebellionActive) {
+        cell.settlement.rebellionActive = false;
+        world.chronicle.push(`${logPrefix} PEASANT RECOVERY: Order restored in ${cell.settlement.name}.`);
+      }
+
+      // Gather local resources to faction stockpile (halted if striking)
+      if (cell.resources && !cell.settlement.rebellionActive) {
         cell.resources.forEach(r => {
-          faction.resources[r] = (faction.resources[r] || 0) + 1;
+          let multiplier = 1;
+          if (faction.ideology === 'Industrialism') multiplier = 2; // double resources
+          faction.resources[r] = (faction.resources[r] || 0) + multiplier;
         });
       }
-      // Basic gold taxation based on settlement size
-      faction.resources.gold = (faction.resources.gold || 0) + Math.max(1, Math.floor(cell.settlement.size * 0.05));
+
+      // Basic gold taxation based on settlement size & tax rate
+      const taxAmt = Math.max(1, Math.floor(cell.settlement.size * taxRate));
+      faction.resources.gold = (faction.resources.gold || 0) + (cell.settlement.rebellionActive ? 0 : taxAmt);
       
       saveCell(world, cell);
     });
