@@ -135,5 +135,106 @@
       "[Year 3] Wildfire erupted in the dense forest at [19, 24].",
       "[Year 3] Wildfire erupted in the dense forest at [8, 28]."
     ]
+  },
+  {
+    "year": 4,
+    "globalTempOffset": 0.014198603309622464,
+    "stats": {
+      "deer": 37759,
+      "wolf": 759,
+      "elk": 1054,
+      "bear": 0,
+      "beasts": 0,
+      "population": 564
+    },
+    "factions": {
+      "Valoria": 66,
+      "Oakhaven": 125,
+      "Ironclad": 125,
+      "Sunspire": 133,
+      "Players": 99
+    },
+    "events": [
+      "The faction of Sunspire is established. Capital founded at [54, 5] named Sunspire Prime.",
+      "[Year 1] Player Alexander established a new settlement: Aethelgard Outpost at [15, 10].",
+      "[Year 2] Wildfire erupted in the dense forest at [8, 25].",
+      "[Year 2] Wildfire erupted in the dense forest at [25, 30].",
+      "[Year 2] Wildfire erupted in the dense forest at [15, 38].",
+      "[Year 2] Factions declare war! Conflict has erupted between Valoria and Players over regional dominance.",
+      "[Year 3] Wildfire erupted in the dense forest at [12, 22].",
+      "[Year 3] Wildfire erupted in the dense forest at [19, 24].",
+      "[Year 3] Wildfire erupted in the dense forest at [8, 28].",
+      "[Year 4] Wildfire erupted in the dense forest at [14, 23]."
+    ],
+    "mapState": {
+      "grid": "T.T.T.T.T.T.M.M.M.M.M.M.M.M.M.M.M.M.M.M.M.M.M.M.M.M.M.M.M.M.M.M.M.M.M.M.M.M.M.T.T.T.T.T.T.T.T.T.T3T3T3T3T3T3T3T3T3T3T3T3T.T.T.T.T.M.M.M.M.M.M.M.M.M.M.M.M.M.M.M.M.M.M.M.M.M.M.M.M.M.M.M.M.M.M.M.M.M.M.T.T.T.T.T.T.T.T.T.T3T3T3T3T3T3T3F3F3F3F3T3P.P.T.T.T.T.M.M.M.M.M.M.M.M.M.M.M.M.M.M.M.M.M.M.M.M.M.M.M.M.M.M.M.M.M.M.M.M.M.T.T.T.T.T.T.P.T.F3T3F3F3T3F3F3F3F3F3F3F3F3T.P.P.T.T.T.M.M.M.M.M.M.M4M4M4M4M4M4M4M.M.M.M.M.M.M.M.M.M.M.M.M.M.M.M.M.M.M.M.T.T.T.T.P.P.P.P.F3F3F3F3F3F3F3F3F3F3F3F3F3P.P.P.P.P.T.M.M.M.M.M4M4M4M4M4M4M4M4M4M4M4M.M.M.M.M.M.M.M.M.M.M.M.M.M.M.M.M.T.P.T.P.P.P.P.P.F.F3F3F3F3F3F3F3F3F3F3F3F3F3P.P.P.P.P.P.P.M.M.M4M4M4M4M4M4M4M4M4M4M4M4M4M.M.M.M.M.M.M.M.M.M.M.M.M.M.M.P.P.P.P.P.P.P.P.P.F.F3F3F3F3F3F3F3F3F3F3F3F3F3P.P.P.P.P.P.P.M.M.M4M4M4M4M4M4M4M4M4M4M4M4M4M.M.M.M.M.M.M.M.M.M.M.M.M.P.P.P.P.P.P.P.P.P.P.F.F.F3F3F3F3F3F3F3F3F3F3F3F3F3P.P.P.P.P.P.P.P.M4M4M4M4M4M4M4M4M4M4M4M4M4M4M4M.M.M.M.M.M.M.M.M.M.P.P.P.P.P.P.P.P.P.P.P.P.F.F.F3F3F3F3F3F3F3F3F3F3F3F3F3P.P.P.P.P.P.P.P.M4M4M4M4M4M4M4M4M4M4M4M4M4M4M4M.M.M.M.M.M.M.M.M.M.P.P.P.P.P.P.P.P.P.P.P.P.F.F.F3F3F3F3F3F3F3F3F3F3F3F3F3P.P.P.P.P.P.P.P.P4M4M4M4M4M4M4M4M4M4M4M4M4M4M4M.M.M.M.M.M.M.M.M.M.P.P.P.P.P.P.P.P.P.P.P.P.F.F.F.F3F3F3F3F3F3F3F3F3F3F3F3P.P.P.P.P.P.P.P.P4P4M4M4M4M4M4M4M4M4M4M4M4M4M4M.M.M.M.M.M.M.M.M.P.P.P.P.P.P.P.P.P.P.P.P.F.F.F.F.F3F3F3F3F3F3F3F3F3F3F3F3P.P.P.P.P.P.P.P.P4P4P4M4M4M4M4M4M4M4M4M4M4M4M4M.M.M.M.M.M.M.M.M.P.P.P.P.P.P.P.P.P.P.P.F.F.F.F.F.F.F3F3F3F3F3F3F3F3F3F3F3P.P.P.P.P.P.P.P.P4P4P4P4P4M4M4M4M4M4M4M4M4M4M4M.M.M.M.M.M.M.M.M.P.P.P.P.P.P.P.P.P.F.F.F.F.F.F.F.F.F.F.F3F3F3F3F3F3F3F.F.P.P.P.P.P.P.P.P.P4P4P4P4P4P4M4M4M4M4M4M4M4M4M4M.M.M1M1M1M1M1M1M1P.P.P.P.P.P.P.P.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.P.P.P.P.P.P.P.P.P.P4P4P4P4P4P4M4M4M4M4M4M4M4M.M1M1M1M1M1M1M1M1P1P1P1P.P.P.P.P.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.P.P.P.P.P.P.P.P.P.P4P4P4P4P4P4M4M4M4M4M4M4M4M1M1M1M1M1M1M1M1P1P1P1P1P1P.P.P.P.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.P.P.P.P.P.P.P.P.P.P.P4P4P4P4P4P4M4M4M4M4M4M.M1M1M1M1M1M1M1P1P1P1P1P1P1P.P.P.F.F.F.F.F.F.F.F.F.F.F.P.P.P.F.F.F.F.F.F.F.F.P.P.P.P.P.P.P.P.P.P.P.P.P4P4P4P4M4M4M4M.M.M1M1M1M1M1M1M1P1P1P1P1P1P1P1P1P.P.F.F.F.F.F.F.F.F.F.F.P.P.P.P.P.F.F.F.F.F.F.F.P.F.F.F.F.F.F.P.P.P.P.P.P.P.P.P.P.M.M.M.M.M1M1M1M1M1M1M1P1P1P1P1P1P1P1P1P.P.F.F.F.F.F.F.F.F.F.P.P.P.P.P.P.P.P.P.F.F.F.F.F.F.F.F.F.F.F.F.P.P.P.P.P.P.P.P.P.P.M.M.M.M1M1M1M1M1M1P1P1P1P1P1P1P1P1P1P.P.P.F.F.F.F.F.F.F.P.P.P.P.P.P.P.P.P.P.P.P.F.F.F.F.F.F.F.F.F.F.F.F.P.P.P.P.P.P.P.P.P0P0P0M0M1M1M1M1M1P1P1P1P1P1P1P1P1P1P.P.P.P.F.F.F.P.P.P.P.P.P.P.P.P.P.P.P.P.P.P.P.F.F.F.F.F.F.F.F.F.F.F.F.P.P.P.P.P.P0P0P0P0P0P0P0P1P1P1P1P1P1P1P1P1P1P1P1P1P.P.P.P.P.P.P.P.P.P.P.P.P.P.P.P.P.P.P.P.P.P.P.P.F.F.F.F.F.F.F.F.F.F.F.F.F.F.P.P0P0P0P0P0P0P0P0P0P1P1P1P1P1P1P1P1P1P1P1P1P.P.P.P.P.P.P.P.P.P.P.P.P.P.P.P.P.P.P.P.P.P.P.P.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F0F0F0P0P0P0P0P0P0P0P1P1P1P1P1P1P1P1P1P1P1P.P.P2P2P2P2P2P2P2P.P.P.P.P.P.P.P.P.P.P.P.P.P.P.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F0F0F0F0F0F0F0F0P0P0P0P0P1P1P1P1P1P1P1P1P1P.P2P2P2P2P2P2P2P2P2P2P2P.P.P.P.P.P.P.P.P.P.P.P.P.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F0F0F0F0F0F0F0F0F0P0P0P0P0P1P1P1P1P1P1P1P1P2P2P2P2P2P2P2P2P2P2P2P2P2P.P.P.P.P.P.P.P.P.P.P.P.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F0F0F0F0F0F0F0F0F0F0P0P0P0P0P1P1P1P1P1P1P.P2P2P2P2P2P2P2P2P2P2P2P2P2P.P.P.P.P.P.P.P.P.P.P.P.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F0F0F0F0F0F0F0F0F0F0F0P0P0P0P0P1P1P1P.P.P2P2P2P2P2P2P2P2P2P2P2P2P2P2P2P.P.P.P.P.P.P.P.P.P.P.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F0F0F0F0F0F0F0F0F0F0F0F0F0P0P0P.P.P.P.P.P2P2P2P2P2P2P2P2P2P2P2P2P2P2P2P.P.P.P.P.P.P.P.P.P.P.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F0F0F0F0F0F0F0F0F0F0F0F0F0F0P0P.P.P.P.P.M2M2M2M2M2P2P2P2P2P2P2P2P2P2P2P.P.P.P.P.P.P.P.P.P.P.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0P.P.P.P.M.M2M2M2M2M2P2P2P2P2P2P2P2P2P2P2P.P.P.P.P.P.P.P.P.P.P.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F0F0F0F0F0F0F0F0F0F0F0F0F0F.P.P.P.P.M.M2M2M2M2M2P2P2P2P2P2P2P2P2P2P2P.P.P.P.P.P.P.P.P.P.P.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F0F0F0F0F0F0F0F0F0F0F0F0F0F.P.P.P.P.M.M2M2M2M2M2P2P2P2P2P2P2P2P2P2P2P.P.P.P.P.P.P.P.P.P.P.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F0F0F0F0F0F0F0F0F0F0F0F.F.P.P.P.P.M.M2M2M2M2M2P2P2P2P2P2P2P2P2P2P2P.P.P.P.P.P.P.P.P.P.P.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F0F0F0F0F0F0F0F.F.F.F.P.P.P.P.P.M.M2M2M2P2P2P2P2P2P2P2P2P2P2P.P.P.P.P.P.P.P.P.P.P.P.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.P.P.P.P.P.P.P2M2P2P2P2P2P2P2P2P2P2P2P2P.P.P.P.P.P.P.P.P.P.P.P.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.P.P.P.P.P.P.T.P2T2T2P2P2T2T2P2P2P2P2P.P.P.P.P.P.P.P.P.P.P.P.P.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.T.F.F.T.T.P.T.T.P.T.P.T.P.P2T2P2T2T2P2P2T.P.P.P.T.P.P.P.P.P.P.P.P.P.P.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.F.T.F.T.F.F.P.T.P.T.T.T.T.T.T.T.T.T.T.T.T.T.T.T.T.T.T.P.P.P.P.P.P.P.T.P.P.P.F.F.C.C.C.F.F.F.F.F.T.T.F.T.F.T.F.T.T.T.F.T.T.F.T.T.T.T.T.T.T.T.T.T.T.T.T.T.T.T.T.T.T.T.T.T.T.T.T.T.T.T.T.T.T.T.T.P.P.T.",
+      "specials": {
+        "22,11": "fire",
+        "22,12": "fire",
+        "23,14": "fire",
+        "23,19": "fire",
+        "24,19": "fire",
+        "25,8": "fire",
+        "25,18": "fire",
+        "25,19": "fire",
+        "26,20": "fire",
+        "26,21": "fire",
+        "26,22": "fire",
+        "27,7": "fire",
+        "27,9": "fire",
+        "27,21": "fire",
+        "27,22": "fire",
+        "28,8": "fire",
+        "28,9": "fire",
+        "28,22": "fire",
+        "28,23": "fire",
+        "28,25": "fire",
+        "29,9": "fire",
+        "29,22": "fire",
+        "29,23": "fire",
+        "29,24": "fire",
+        "29,25": "fire",
+        "29,26": "fire",
+        "30,21": "fire",
+        "30,22": "fire",
+        "30,23": "fire",
+        "30,24": "fire",
+        "30,25": "fire",
+        "30,26": "fire",
+        "31,21": "fire",
+        "31,22": "fire",
+        "31,23": "fire",
+        "31,25": "fire",
+        "31,26": "fire",
+        "31,27": "fire",
+        "32,22": "fire",
+        "32,23": "fire",
+        "32,24": "fire",
+        "32,28": "fire",
+        "32,29": "fire",
+        "33,23": "fire",
+        "33,24": "fire",
+        "36,16": "fire",
+        "37,14": "fire",
+        "37,15": "fire",
+        "37,16": "fire",
+        "38,16": "fire",
+        "39,16": "fire"
+      },
+      "tradeRoutes": [
+        {
+          "from": {
+            "x": 21,
+            "y": 27
+          },
+          "to": {
+            "x": 28,
+            "y": 20
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        }
+      ]
+    }
   }
 ]
