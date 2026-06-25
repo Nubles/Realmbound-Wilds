@@ -1,6 +1,6 @@
 {
   "seed": "1782424979471",
-  "year": 3,
+  "year": 4,
   "factions": [
     {
       "name": "Valoria",
@@ -20,14 +20,16 @@
       "status": {
         "Players": "peace"
       },
-      "power": 182,
+      "power": 200,
       "resources": {
-        "gold": 33,
+        "gold": 7,
         "wood": 3,
         "iron": 0,
-        "timber": 2
+        "timber": 3
       },
-      "technologies": [],
+      "technologies": [
+        "stone_tools"
+      ],
       "ideology": "Militarism"
     },
     {
@@ -48,13 +50,13 @@
       "status": {
         "Valoria": "peace"
       },
-      "power": 104,
+      "power": 112,
       "resources": {
-        "gold": 19,
+        "gold": 24,
         "wood": 48,
         "iron": 10,
-        "shadowgem": 4,
-        "magmametal": 4
+        "shadowgem": 6,
+        "magmametal": 6
       },
       "technologies": [
         "stone_tools"
@@ -69,16 +71,16 @@
       "realm": "overworld",
       "biome": "forest",
       "elevation": 0.33695322429137475,
-      "temperature": 0.8263848137535894,
+      "temperature": 0.814139641576148,
       "settlement": {
         "name": "Valoria Prime",
         "faction": "Valoria",
-        "size": 182,
+        "size": 200,
         "type": "village",
         "resources": [
           "timber"
         ],
-        "happiness": 83,
+        "happiness": 82,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -96,7 +98,7 @@
           "count": 23
         }
       ],
-      "vegetation": 0.8440000000000001,
+      "vegetation": 0.8840000000000001,
       "history": []
     },
     "overworld:5,5": {
@@ -105,7 +107,7 @@
       "realm": "overworld",
       "biome": "plains",
       "elevation": 0.5249701008440653,
-      "temperature": 0.7188051357611008,
+      "temperature": 0.7065599635836595,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -125,7 +127,7 @@
           "count": 26
         }
       ],
-      "vegetation": 0.318,
+      "vegetation": 0.333,
       "history": []
     },
     "underworld:0,0": {
@@ -134,7 +136,7 @@
       "realm": "underworld",
       "biome": "deep_lake",
       "elevation": 0.21318443796895772,
-      "temperature": 0.531060378819035,
+      "temperature": 0.5188152066415936,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -149,7 +151,7 @@
         }
       },
       "wildlife": [],
-      "vegetation": 0.068,
+      "vegetation": 0.083,
       "history": []
     },
     "overworld:-15,10": {
@@ -158,7 +160,7 @@
       "realm": "overworld",
       "biome": "ocean",
       "elevation": 0.03447570636113438,
-      "temperature": 0.8659203890620201,
+      "temperature": 0.8536752168845787,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -172,8 +174,13 @@
           "y": 0
         }
       },
-      "wildlife": [],
-      "vegetation": 0.068,
+      "wildlife": [
+        {
+          "species": "sea_monster",
+          "count": 1
+        }
+      ],
+      "vegetation": 0.083,
       "history": []
     },
     "aether:0,0": {
@@ -182,7 +189,7 @@
       "realm": "aether",
       "biome": "void",
       "elevation": 0.18900273544403365,
-      "temperature": 0.5355041090901943,
+      "temperature": 0.5232589369127529,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -197,7 +204,7 @@
         }
       },
       "wildlife": [],
-      "vegetation": 0.068,
+      "vegetation": 0.083,
       "history": []
     },
     "overworld:20,-15": {
@@ -206,7 +213,7 @@
       "realm": "overworld",
       "biome": "ocean",
       "elevation": 0.2740765277329316,
-      "temperature": 0.7299006300434305,
+      "temperature": 0.7176554578659892,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -221,31 +228,29 @@
         }
       },
       "wildlife": [],
-      "vegetation": 0.068,
+      "vegetation": 0.083,
       "history": []
     },
     "space:0,0": {
       "x": 0,
       "y": 0,
       "realm": "space",
-      "biome": "void_space",
-      "elevation": 0.3567314440443187,
-      "temperature": 0.12725495353620497,
+      "biome": "crater",
+      "elevation": 0.15,
+      "temperature": 0.8,
       "settlement": null,
       "fireTicksLeft": 0,
-      "resources": [],
+      "resources": [
+        "astralmetal",
+        "obsidian"
+      ],
       "ruin": {
-        "name": "Celestial Launchpad Link",
-        "description": "A returning gateway linked back to overworld at coordinates [20, -15].",
-        "age": 1,
-        "portalTarget": {
-          "realm": "overworld",
-          "x": 20,
-          "y": -15
-        }
+        "name": "Smoking Crater Outpost",
+        "description": "Rich in stellar materials from a celestial impact.",
+        "age": 4
       },
       "wildlife": [],
-      "vegetation": 0.068,
+      "vegetation": 0,
       "history": []
     },
     "underworld:15,10": {
@@ -254,11 +259,11 @@
       "realm": "underworld",
       "biome": "crystal_cave",
       "elevation": 0.2551693100415643,
-      "temperature": 0.5051210288239089,
+      "temperature": 0.49287585664646744,
       "settlement": {
         "name": "Aethelgard Outpost",
         "faction": "Players",
-        "size": 104,
+        "size": 112,
         "type": "village",
         "resources": [
           "shadowgem",
@@ -278,7 +283,7 @@
       ],
       "ruin": null,
       "wildlife": [],
-      "vegetation": 0.068,
+      "vegetation": 0.083,
       "history": [
         "[Year 1] Outpost Aethelgard Outpost founded by Alexander."
       ]
@@ -339,9 +344,12 @@
     "The founding capital of Valoria Prime was established on the Overworld at [-1, -1]. Exploring the uncharted realms begins...",
     "[Year 1] Player Alexander founded settlement: Aethelgard Outpost on underworld at [15, 10].",
     "[Year 2] RESEARCH: Players unlocked technology [Basic Flint Tooling]!",
-    "[Year 3] CLIMATE: A severe blizzard froze outer sectors. Fuel wood consumption doubled."
+    "[Year 3] CLIMATE: A severe blizzard froze outer sectors. Fuel wood consumption doubled.",
+    "[Year 4] RESEARCH: Valoria unlocked technology [Basic Flint Tooling]!",
+    "[Year 4] METEOR STRIKE: A roaring meteorite struck the ground at [0, 0] in space, leaving a burning crater of astralmetal.",
+    "[Year 4] SEA MONSTER SIGHTING: A giant kraken was spotted in the oceanic waters at [-15, 10]!"
   ],
   "tradeRoutes": [],
-  "globalTempOffset": -0.12062280935235321,
-  "season": "Winter"
+  "globalTempOffset": -0.12245172177441419,
+  "season": "Spring"
 }
