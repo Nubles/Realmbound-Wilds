@@ -252,25 +252,31 @@ function inspectCell(cell) {
     
     let structureList = [];
     if (cell.settlement.apothecary) structureList.push('🏥 Apothecary');
+    if (cell.settlement.shielded) structureList.push('🛡️ Shield Generator');
+    if (cell.settlement.dome) structureList.push('🌋 Life Support Dome');
     if (cell.settlement.wonderBlueprint) {
       const bp = cell.settlement.wonderBlueprint;
       structureList.push(`🏛️ Wonder (${bp.progress}% Built)`);
     }
+    
+    // Check if faction has globally built satellite
+    const factionObj = currentWorld.factions.find(f => f.name === cell.settlement.faction);
+    if (factionObj && factionObj.satelliteBuilt) {
+      structureList.push('🛰️ Defense Satellites');
+    }
+
     const structuresDesc = structureList.length > 0 ? `<div style="font-size: 0.8rem; color: var(--gold); margin-top: 4px;">Structures: ${structureList.join(', ')}</div>` : '';
 
     let buildControlsHtml = '';
     if (isPlayerFaction && !renderer.historicalState) {
-      const factionObj = currentWorld.factions.find(f => f.name === cell.settlement.faction);
-      const gold = factionObj ? (factionObj.resources.gold || 0) : 0;
-      const wood = factionObj ? (factionObj.resources.wood || factionObj.resources.timber || 0) : 0;
-      const iron = factionObj ? (factionObj.resources.iron || 0) : 0;
-
       buildControlsHtml = `
         <div style="margin-top: 8px; border-top: 1px dashed rgba(255,255,255,0.08); padding-top: 8px; display: flex; flex-direction: column; gap: 6px;">
           <div style="font-size: 0.72rem; color: var(--text-secondary);">Build Infrastructure:</div>
-          <div style="display: flex; gap: 6px;">
+          <div style="display: flex; flex-wrap: wrap; gap: 6px;">
             <button onclick="window.buildApothecary('${cell.realm}', ${cell.x}, ${cell.y})" class="btn btn-secondary" style="padding: 3px 6px; font-size: 0.7rem;" ${cell.settlement.apothecary ? 'disabled' : ''}>🏥 Apothecary (💰30, 🪵10)</button>
             <button onclick="window.buildWonderBlueprint('${cell.realm}', ${cell.x}, ${cell.y})" class="btn btn-secondary" style="padding: 3px 6px; font-size: 0.7rem;" ${cell.settlement.wonderBlueprint ? 'disabled' : ''}>🏛️ Wonder BP (💰100, 🪵50, 🪙10)</button>
+            <button onclick="window.buildShield('${cell.realm}', ${cell.x}, ${cell.y})" class="btn btn-secondary" style="padding: 3px 6px; font-size: 0.7rem;" ${cell.settlement.shielded ? 'disabled' : ''}>🛡️ Shield (💰80, 🪙20)</button>
+            <button onclick="window.buildSatellite('${cell.realm}', ${cell.x}, ${cell.y})" class="btn btn-secondary" style="padding: 3px 6px; font-size: 0.7rem;" ${(factionObj && factionObj.satelliteBuilt) ? 'disabled' : ''}>🛰️ Satellite (💰150, 🪙30)</button>
           </div>
         </div>
       `;
@@ -425,6 +431,9 @@ function inspectCell(cell) {
         const plagueBadge = p.plagued ? `<span style="background: #22c55e; color: #fff; padding: 1px 4px; border-radius: 3px; font-size: 0.65rem; margin-left: 6px;">🤢 Sick</span>` : '';
         const eqEmoji = p.equipped === 'Sword' ? '⚔️' : (p.equipped === 'Pickaxe' ? '⛏️' : (p.equipped === 'Axe' ? '🪓' : ''));
         const equippedLabel = p.equipped ? `<span style="color: var(--gold); margin-left: 6px;">${eqEmoji} ${p.equipped}</span>` : '';
+        
+        const traitBadge = p.trait ? `<span style="color: #60a5fa; border: 1px solid rgba(96,165,250,0.3); padding: 1px 4px; border-radius: 3px; font-size: 0.65rem; margin-left: 4px;">🧬 ${p.trait}</span>` : '';
+        const mountBadge = p.tamedMount ? `<span style="color: #a78bfa; border: 1px solid rgba(167,139,250,0.3); padding: 1px 4px; border-radius: 3px; font-size: 0.65rem; margin-left: 4px;">🦖 ${p.tamedMount}</span>` : '';
 
         item.innerHTML = `
           <div style="display: flex; justify-content: space-between; font-weight: 600;">
@@ -432,7 +441,7 @@ function inspectCell(cell) {
             <span style="font-size: 0.72rem; color: var(--text-secondary);">${p.role}</span>
           </div>
           <div style="margin-top: 4px; font-size: 0.72rem; color: var(--text-secondary); display: flex; justify-content: space-between;">
-            <span>HP: <strong>${p.health || 100}</strong></span>
+            <span>HP: <strong>${p.health || 100}</strong> ${traitBadge}${mountBadge}</span>
             <span>Age: <strong>${p.age || 18}</strong> (Gen ${p.generation || 1})</span>
           </div>
           <div style="margin-top: 4px; display: flex; justify-content: space-between;">
@@ -1005,6 +1014,48 @@ window.buildWonderBlueprint = function(realm, x, y) {
         updateUI(currentWorld);
       } else {
         alert("Insufficient resources! Requires 100 gold, 50 wood, and 10 iron.");
+      }
+    }
+  }
+};
+
+window.buildShield = function(realm, x, y) {
+  if (currentWorld) {
+    const key = `${realm}:${x},${y}`;
+    const cell = currentWorld.modifiedCells[key];
+    if (cell && cell.settlement) {
+      const faction = currentWorld.factions.find(f => f.name === cell.settlement.faction);
+      if (faction && (faction.resources.gold || 0) >= 80 && (faction.resources.iron || 0) >= 20) {
+        faction.resources.gold -= 80;
+        faction.resources.iron -= 20;
+        
+        cell.settlement.shielded = true;
+        currentWorld.chronicle.push(`[Construction] Installed Planetary Shield Generator in ${cell.settlement.name} [${x}, ${y}]. Shield active.`);
+        if (window.synth) window.synth.playClick();
+        updateUI(currentWorld);
+      } else {
+        alert("Insufficient resources! Requires 80 gold and 20 iron.");
+      }
+    }
+  }
+};
+
+window.buildSatellite = function(realm, x, y) {
+  if (currentWorld) {
+    const key = `${realm}:${x},${y}`;
+    const cell = currentWorld.modifiedCells[key];
+    if (cell && cell.settlement) {
+      const faction = currentWorld.factions.find(f => f.name === cell.settlement.faction);
+      if (faction && (faction.resources.gold || 0) >= 150 && (faction.resources.iron || 0) >= 30) {
+        faction.resources.gold -= 150;
+        faction.resources.iron -= 30;
+        
+        faction.satelliteBuilt = true;
+        currentWorld.chronicle.push(`[Space Flight] Launched Orbital Defense Satellite constellation from ${cell.settlement.name}! Global network online.`);
+        if (window.synth) window.synth.playBell();
+        updateUI(currentWorld);
+      } else {
+        alert("Insufficient resources! Requires 150 gold and 30 iron.");
       }
     }
   }

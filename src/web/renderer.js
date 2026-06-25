@@ -605,6 +605,7 @@ export class MapRenderer {
         this.lastWorldYear = this.world.year;
         
         const CITIZEN_NAMES = ["Thorin", "Elara", "Alden", "Valen", "Kira", "Roran", "Lyra", "Sark", "Dara", "Joran"];
+        const TRAITS = ["Swiftfooted", "Giant Strength", "Sickly", "Intellectual", "Rugged"];
         const kidsToSpawn = [];
         this.entities = this.entities.filter(ent => {
           if (ent.type !== 'citizen') return true;
@@ -621,12 +622,20 @@ export class MapRenderer {
             }
           }
           
+          // Genetic mutation or inheritance check
+          if (!ent.trait) {
+            ent.trait = TRAITS[Math.floor(Math.random() * TRAITS.length)];
+          }
+
           // Reproduction check (fertile age 20-45)
           if (ent.age >= 20 && ent.age <= 45 && Math.random() < 0.08) {
             const nameSuffix = ent.name.split(' ').pop() || '';
             const babyName = CITIZEN_NAMES[Math.floor(Math.random() * CITIZEN_NAMES.length)] + " " + nameSuffix;
             const roles = ["Gatherer", "Miner", "Builder", "Scout", "Trader"];
             const babyRole = roles[Math.floor(Math.random() * roles.length)];
+            
+            // Inherit trait (70% chance) or get new random trait
+            const babyTrait = Math.random() < 0.7 ? ent.trait : TRAITS[Math.floor(Math.random() * TRAITS.length)];
             
             if (!ent.history) ent.history = [];
             ent.history.push(`Had a child named ${babyName} in Year ${this.world.year}`);
@@ -646,13 +655,14 @@ export class MapRenderer {
               inventory: { gold: 0, food: 3, raw_materials: 0 },
               task: `Infant resting`,
               color: ent.color,
+              trait: babyTrait,
               x: ent.homeX * ts + ts/2 + (Math.random() * 8 - 4),
               y: ent.homeY * ts + ts/2 + (Math.random() * 8 - 4),
               targetX: ent.homeX * ts + ts/2,
               targetY: ent.homeY * ts + ts/2,
               homeX: ent.homeX,
               homeY: ent.homeY,
-              speed: ent.speed || 0.35,
+              speed: (ent.speed || 0.35) * (babyTrait === 'Swiftfooted' ? 1.4 : 1.0),
               emoji: '🚶'
             });
           }
@@ -662,7 +672,7 @@ export class MapRenderer {
         kidsToSpawn.forEach(k => {
           this.entities.push(k);
           if (this.world.chronicle && Math.random() < 0.3) {
-            this.world.chronicle.push(`[Chronicle] A baby named ${k.name} was born to ${k.parents} (Gen ${k.generation})!`);
+            this.world.chronicle.push(`[Chronicle] A baby named ${k.name} with trait [${k.trait}] was born to ${k.parents} (Gen ${k.generation})!`);
           }
         });
       }
@@ -708,6 +718,10 @@ export class MapRenderer {
                 });
               }
 
+              const TRAITS = ["Swiftfooted", "Giant Strength", "Sickly", "Intellectual", "Rugged"];
+              const randomTrait = TRAITS[Math.floor(Math.random() * TRAITS.length)];
+              const bSpeed = 0.35 + Math.random() * 0.25;
+
               this.entities.push({
                 id: `${faction.name}-citizen-${s.x}-${s.y}-${cIdx}-${Math.random()}`,
                 type: 'citizen',
@@ -724,13 +738,15 @@ export class MapRenderer {
                 inventory: { gold: 0, food: 2, raw_materials: 0 },
                 task: `Resting at ${s.name}`,
                 color: faction.color,
+                trait: randomTrait,
+                tamedMount: null,
                 x: s.x * ts + ts/2 + (Math.random() * 12 - 6),
                 y: s.y * ts + ts/2 + (Math.random() * 12 - 6),
                 targetX: s.x * ts + ts/2,
                 targetY: s.y * ts + ts/2,
                 homeX: s.x,
                 homeY: s.y,
-                speed: 0.35 + Math.random() * 0.25,
+                speed: bSpeed * (randomTrait === 'Swiftfooted' ? 1.4 : 1.0),
                 emoji: '🚶'
               });
             }
@@ -833,6 +849,27 @@ export class MapRenderer {
               ent.homeY = target.y;
               if (window.synth) window.synth.playSwirl();
               return;
+            }
+
+            // Legendary Beast / Pegasus / Deer Domestication & Taming
+            if ((ent.role === 'Scout' || ent.role === 'Soldier') && !ent.tamedMount) {
+              const currentCellState = this.world.modifiedCells[key] || generateCell(cx, cy, this.activeRealm, this.world.seed);
+              if (currentCellState.wildlife && currentCellState.wildlife.length > 0) {
+                const wild = currentCellState.wildlife[0];
+                if (Math.random() < 0.25) {
+                  ent.tamedMount = wild.species;
+                  ent.history.push(`Successfully tamed and mounted a wild ${wild.species} in Year ${this.world.year}`);
+                  this.world.chronicle.push(`[Taming] AMAZING! ${ent.name} successfully tamed and mounted a wild ${wild.species} in ${this.activeRealm} at [${cx}, ${cy}]!`);
+                  if (window.synth) window.synth.playAlliance();
+                  
+                  // Reduce wild population count
+                  wild.count--;
+                  if (wild.count <= 0) {
+                    currentCellState.wildlife = currentCellState.wildlife.filter(w => w !== wild);
+                  }
+                  this.world.modifiedCells[key] = currentCellState;
+                }
+              }
             }
 
             // Plague infection checks
@@ -1029,6 +1066,12 @@ export class MapRenderer {
               if (ent1.equipped === 'Sword') ent1Dmg *= 2.0;
               if (ent2.equipped === 'Sword') ent2Dmg *= 2.0;
 
+              // Tamed mount multipliers
+              if (ent1.tamedMount === 'legendary_beast') ent1Dmg *= 2.5;
+              else if (ent1.tamedMount === 'pegasus') ent1Dmg *= 1.5;
+              if (ent2.tamedMount === 'legendary_beast') ent2Dmg *= 2.5;
+              else if (ent2.tamedMount === 'pegasus') ent2Dmg *= 1.5;
+
               // Leader aura multipliers (+50% combat efficiency / reduction in received damage)
               if (ent1HasLeaderAura) ent2Dmg *= 1.5;
               if (ent2HasLeaderAura) ent1Dmg *= 1.5;
@@ -1197,7 +1240,9 @@ export class MapRenderer {
           this.ctx.fillStyle = '#ffffff';
           this.ctx.font = '5px sans-serif';
           this.ctx.textAlign = 'center';
-          this.ctx.fillText(ent.emoji, ent.x, ent.y - 4);
+          const mountEmoji = ent.tamedMount === 'legendary_beast' ? '🐉' : (ent.tamedMount === 'pegasus' ? '🦄' : (ent.tamedMount === 'deer' ? '🦌' : ''));
+          const displayLabel = mountEmoji ? `${ent.emoji}${mountEmoji}` : ent.emoji;
+          this.ctx.fillText(displayLabel, ent.x, ent.y - 4);
         }
       } else if (ent.type === 'shuttle') {
         // Space Shuttle flying
@@ -1620,6 +1665,27 @@ export class MapRenderer {
         ctx.fillStyle = '#10b981';
         ctx.font = '8px sans-serif';
         ctx.fillText('🏥', cx + 2, cy + 9);
+      }
+
+      // Render Shield overlay (blue circle outlining settlement)
+      if (cell && cell.settlement && cell.settlement.shielded) {
+        ctx.strokeStyle = '#3b82f6';
+        ctx.lineWidth = 1.5;
+        ctx.beginPath();
+        ctx.arc(cx + ts/2, cy + ts/2, ts/2 - 2, 0, Math.PI * 2);
+        ctx.stroke();
+      }
+
+      // Render Life Support Dome overlay (light blue dome shape overlay)
+      if (cell && cell.settlement && cell.settlement.dome) {
+        ctx.fillStyle = 'rgba(56, 189, 248, 0.15)';
+        ctx.beginPath();
+        ctx.arc(cx + ts/2, cy + ts/2, ts/2 - 1, Math.PI, 0, false);
+        ctx.closePath();
+        ctx.fill();
+        ctx.strokeStyle = '#38bdf8';
+        ctx.lineWidth = 1.0;
+        ctx.stroke();
       }
 
       // Render Wonder blueprint / Completed Wonder overlay

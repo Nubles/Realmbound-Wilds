@@ -775,14 +775,18 @@ export function advanceSimulation(world) {
     }
   });
 
-  // Dynamic discovery updates
-  world.discoveredCenters = [];
+  // Dynamic discovery updates: Make discovery cumulative!
+  if (!world.discoveredCenters) world.discoveredCenters = [];
   world.factions.forEach(f => {
     f.settlements.forEach(s => {
       const cell = getCell(world, s.realm, s.x, s.y);
       if (cell.settlement) {
         const rad = cell.settlement.size > 1000 ? 10 : (cell.settlement.size > 500 ? 8 : 6);
-        world.discoveredCenters.push({ realm: s.realm, x: s.x, y: s.y, radius: rad });
+        // Only push if not already present to avoid duplication
+        const exists = world.discoveredCenters.some(dc => dc.realm === s.realm && dc.x === s.x && dc.y === s.y);
+        if (!exists) {
+          world.discoveredCenters.push({ realm: s.realm, x: s.x, y: s.y, radius: rad });
+        }
       }
     });
   });
@@ -790,9 +794,28 @@ export function advanceSimulation(world) {
   Object.keys(world.modifiedCells).forEach(key => {
     const cell = world.modifiedCells[key];
     if (cell.ruin && cell.ruin.portalTarget) {
-      world.discoveredCenters.push({ realm: cell.realm, x: cell.x, y: cell.y, radius: 4 });
+      const exists = world.discoveredCenters.some(dc => dc.realm === cell.realm && dc.x === cell.x && dc.y === cell.y);
+      if (!exists) {
+        world.discoveredCenters.push({ realm: cell.realm, x: cell.x, y: cell.y, radius: 4 });
+      }
     }
   });
+
+  // Weather Cycle dynamics (Spring Flood, Summer heatwaves, Autumn winds, Winter blizzards)
+  let weatherEvent = '';
+  if (world.season === 'Spring' && random() < 0.25) {
+    weatherEvent = 'Spring Flood';
+    world.globalTempOffset -= 0.05;
+    world.chronicle.push(`${logPrefix} CLIMATE: Heavy torrential rains triggered a Spring Flood across kingdoms, boosting vegetation growth.`);
+  } else if (world.season === 'Summer' && random() < 0.2) {
+    weatherEvent = 'Summer Heatwave';
+    world.globalTempOffset += 0.08;
+    world.chronicle.push(`${logPrefix} CLIMATE: A scorching heatwave swept the lands, drying up cavern reservoirs.`);
+  } else if (world.season === 'Winter' && random() < 0.3) {
+    weatherEvent = 'Cavern Blizzard';
+    world.globalTempOffset -= 0.12;
+    world.chronicle.push(`${logPrefix} CLIMATE: A severe blizzard froze outer sectors. Fuel wood consumption doubled.`);
+  }
 
   // --- 1. Environmental Disasters ---
   // Meteor Strike (3% chance)
@@ -802,27 +825,43 @@ export function advanceSimulation(world) {
     const ry = targetCenter.y + Math.floor(random() * 5) - 2;
     const cell = getCell(world, targetCenter.realm, rx, ry);
     
-    cell.biome = 'crater';
-    cell.elevation = 0.15;
-    cell.temperature = 0.8;
-    cell.vegetation = 0.0;
-    
+    // Check if the faction has an Orbital Defense Satellite or Planetary Shield Generator built
+    let defended = false;
+    let defFaction = null;
     if (cell.settlement) {
-      world.chronicle.push(`${logPrefix} METEOR IMPACT: A roaring meteorite obliterated the settlement ${cell.settlement.name} at [${rx}, ${ry}] in ${targetCenter.realm}!`);
       const f = world.factions.find(fac => fac.name === cell.settlement.faction);
-      if (f) f.settlements = f.settlements.filter(s => s.x !== rx || s.y !== ry || s.realm !== targetCenter.realm);
-      cell.settlement = null;
-    } else {
-      world.chronicle.push(`${logPrefix} METEOR STRIKE: A roaring meteorite struck the ground at [${rx}, ${ry}] in ${targetCenter.realm}, leaving a burning crater of astralmetal.`);
+      if (f) {
+        defFaction = f;
+        if (f.satelliteBuilt || cell.settlement.shielded) {
+          defended = true;
+        }
+      }
     }
-    
-    cell.resources = ['astralmetal', 'obsidian'];
-    cell.ruin = {
-      name: "Smoking Crater Outpost",
-      description: "Rich in stellar materials from a celestial impact.",
-      age: world.year
-    };
-    saveCell(world, cell);
+
+    if (defended) {
+      world.chronicle.push(`${logPrefix} DEFENSE NETWORK: Orbital satellite/planetary shield successfully vaporized an incoming meteor targeting [${rx}, ${ry}] in ${targetCenter.realm}!`);
+    } else {
+      cell.biome = 'crater';
+      cell.elevation = 0.15;
+      cell.temperature = 0.8;
+      cell.vegetation = 0.0;
+      
+      if (cell.settlement) {
+        world.chronicle.push(`${logPrefix} METEOR IMPACT: A roaring meteorite obliterated the settlement ${cell.settlement.name} at [${rx}, ${ry}] in ${targetCenter.realm}!`);
+        if (defFaction) defFaction.settlements = defFaction.settlements.filter(s => s.x !== rx || s.y !== ry || s.realm !== targetCenter.realm);
+        cell.settlement = null;
+      } else {
+        world.chronicle.push(`${logPrefix} METEOR STRIKE: A roaring meteorite struck the ground at [${rx}, ${ry}] in ${targetCenter.realm}, leaving a burning crater of astralmetal.`);
+      }
+      
+      cell.resources = ['astralmetal', 'obsidian'];
+      cell.ruin = {
+        name: "Smoking Crater Outpost",
+        description: "Rich in stellar materials from a celestial impact.",
+        age: world.year
+      };
+      saveCell(world, cell);
+    }
   }
 
   // Sea Monster sighting (5% chance in water biomes)

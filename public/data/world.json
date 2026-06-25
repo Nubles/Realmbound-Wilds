@@ -1,5 +1,5 @@
 {
-  "seed": "1782413477538",
+  "seed": "1782415283429",
   "year": 1,
   "factions": [
     {
@@ -7,14 +7,14 @@
       "color": "#3b82f6",
       "capital": {
         "realm": "overworld",
-        "x": -19,
-        "y": -15
+        "x": -2,
+        "y": 0
       },
       "settlements": [
         {
           "realm": "overworld",
-          "x": -19,
-          "y": -15
+          "x": -2,
+          "y": 0
         }
       ],
       "status": {
@@ -50,25 +50,36 @@
     }
   ],
   "modifiedCells": {
-    "overworld:-19,-15": {
-      "x": -19,
-      "y": -15,
+    "overworld:-2,0": {
+      "x": -2,
+      "y": 0,
       "realm": "overworld",
-      "biome": "plains",
-      "elevation": 0.32227794531862486,
-      "temperature": 0.7577461995589017,
+      "biome": "forest",
+      "elevation": 0.3288439066731411,
+      "temperature": 0.8418950905790535,
       "settlement": {
         "name": "Valoria Prime",
         "faction": "Valoria",
         "size": 150,
         "type": "capital",
-        "resources": []
+        "resources": [
+          "timber",
+          "chronoore"
+        ]
       },
       "fireTicksLeft": 0,
-      "resources": [],
+      "resources": [
+        "timber",
+        "chronoore"
+      ],
       "ruin": null,
-      "wildlife": [],
-      "vegetation": 0.3,
+      "wildlife": [
+        {
+          "species": "deer",
+          "count": 20
+        }
+      ],
+      "vegetation": 0.8,
       "history": []
     },
     "overworld:5,5": {
@@ -77,7 +88,7 @@
       "realm": "overworld",
       "biome": "plains",
       "elevation": 0.5249701008440653,
-      "temperature": 0.7753522993341944,
+      "temperature": 0.732116707013633,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -101,7 +112,7 @@
       "realm": "underworld",
       "biome": "deep_lake",
       "elevation": 0.21318443796895772,
-      "temperature": 0.5544360435654236,
+      "temperature": 0.5250287263973443,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -125,7 +136,7 @@
       "realm": "overworld",
       "biome": "ocean",
       "elevation": 0.03447570636113438,
-      "temperature": 0.8795841532640559,
+      "temperature": 0.8738549902730091,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -173,7 +184,7 @@
       "realm": "overworld",
       "biome": "ocean",
       "elevation": 0.2740765277329316,
-      "temperature": 0.7437009438300339,
+      "temperature": 0.7437992421896962,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -197,7 +208,7 @@
       "realm": "space",
       "biome": "void_space",
       "elevation": 0.3567314440443187,
-      "temperature": 0.12519086985848843,
+      "temperature": 0.07817970295436681,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -221,7 +232,7 @@
       "realm": "underworld",
       "biome": "crystal_cave",
       "elevation": 0.2551693100415643,
-      "temperature": 0.5368548801933791,
+      "temperature": 0.6011827646355521,
       "settlement": {
         "name": "Aethelgard Outpost",
         "faction": "Players",
@@ -242,8 +253,8 @@
   "discoveredCenters": [
     {
       "realm": "overworld",
-      "x": -19,
-      "y": -15,
+      "x": -2,
+      "y": 0,
       "radius": 7
     },
     {
@@ -291,7 +302,7 @@
   ],
   "chronicle": [
     "The multi-dimensional cosmos awakens.",
-    "The founding capital of Valoria Prime was established on the Overworld at [-19, -15]. Exploring the uncharted realms begins...",
+    "The founding capital of Valoria Prime was established on the Overworld at [-2, 0]. Exploring the uncharted realms begins...",
     "[Year 1] Player Alexander founded settlement: Aethelgard Outpost on underworld at [15, 10]."
   ],
   "tradeRoutes": [],
