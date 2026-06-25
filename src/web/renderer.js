@@ -1,5 +1,5 @@
 // Infinite procedural Map Canvas Renderer with Fog of War for Realmbound Wilds
-import { generateCell, REALMS } from '../simulation/engine.js';
+import { generateCell, getCell, REALMS } from '../simulation/engine.js';
 
 export class CosmicSynth {
   constructor() {
@@ -478,6 +478,7 @@ export class MapRenderer {
 
   startAnimationLoop() {
     const loop = () => {
+      try {
       this.animTime += 0.04;
       
       let changed = false;
@@ -519,6 +520,9 @@ export class MapRenderer {
       this.updateParticles();
       // Always draw to make sure animated particles and waves render smoothly
       this.draw();
+      } catch (err) {
+        console.error('Render loop error:', err);
+      }
       
       this.animationFrameId = requestAnimationFrame(loop);
     };
