@@ -473,7 +473,7 @@ export class MapRenderer {
       
       this.targetPanX = mouseX - mapX * this.targetZoom;
       this.targetPanY = mouseY - mapY * this.targetZoom;
-    });
+    }, { passive: false });
   }
 
   startAnimationLoop() {
@@ -1599,6 +1599,8 @@ export class MapRenderer {
     let hasHarbor = false;
     let hasBioLab = false;
     let hasStrike = false;
+    let hasShield = false;
+    let hasDome = false;
 
     if (this.historicalState) {
       const cells = this.historicalState.mapState.modifiedCells || [];
@@ -1627,6 +1629,8 @@ export class MapRenderer {
           hasHarbor = cell.settlement.harbor;
           hasBioLab = cell.settlement.biolab;
           hasStrike = cell.settlement.rebellionActive;
+          hasShield = cell.settlement.shielded;
+          hasDome = cell.settlement.dome;
         }
         ruin = cell.ruin;
         isFire = cell.fireTicksLeft > 0;
@@ -1732,7 +1736,7 @@ export class MapRenderer {
       }
 
       // Render Shield overlay (blue circle outlining settlement)
-      if (cell && cell.settlement && cell.settlement.shielded) {
+      if (hasShield) {
         ctx.strokeStyle = '#3b82f6';
         ctx.lineWidth = 1.5;
         ctx.beginPath();
@@ -1741,7 +1745,7 @@ export class MapRenderer {
       }
 
       // Render Life Support Dome overlay (light blue dome shape overlay)
-      if (cell && cell.settlement && cell.settlement.dome) {
+      if (hasDome) {
         ctx.fillStyle = 'rgba(56, 189, 248, 0.15)';
         ctx.beginPath();
         ctx.arc(cx + ts/2, cy + ts/2, ts/2 - 1, Math.PI, 0, false);
