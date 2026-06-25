@@ -609,6 +609,32 @@ export class MapRenderer {
         const dist = Math.hypot(dx, dy);
 
         if (dist < 1.0) {
+          // Arrived at destination chunk, perform meaningful action
+          const cx = Math.floor(ent.x / ts);
+          const cy = Math.floor(ent.y / ts);
+          const key = `${this.activeRealm}:${cx},${cy}`;
+          
+          if (ent.type === 'citizen') {
+            // Citizen trader generates gold/income or resource transfers
+            const faction = this.world.factions.find(f => f.name === ent.color || f.color === ent.color);
+            if (faction) {
+              faction.resources.gold = (faction.resources.gold || 0) + 2;
+              
+              // Occasionally push message to chronicle
+              if (Math.random() < 0.05) {
+                this.world.chronicle.push(`[Traders] ${faction.name} merchants completed trade delivery at [${cx}, ${cy}], generating +2 gold.`);
+                if (window.synth) window.synth.playClick();
+              }
+            }
+          } else if (ent.type === 'wildlife') {
+            // Animals slightly graze and modify vegetation density
+            const cell = this.world.modifiedCells[key] || generateCell(cx, cy, this.activeRealm, this.world.seed);
+            if (cell.vegetation > 0.1) {
+              cell.vegetation = Math.max(0.05, cell.vegetation - 0.03);
+              this.world.modifiedCells[key] = cell; // Save modifications
+            }
+          }
+
           // Choose a new nearby coordinate target to wander to
           const range = 3; // wandered chunk offset range
           const nextCx = ent.homeX + Math.floor(Math.random() * (range * 2 + 1)) - range;
