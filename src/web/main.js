@@ -81,6 +81,13 @@ function updateUI(world) {
   // Header stats
   currentYearEl.innerText = `Year ${world.year}`;
   
+  const currentSeasonEl = document.getElementById('current-season');
+  if (currentSeasonEl) {
+    const seasonEmojis = { Spring: '🌸', Summer: '☀️', Autumn: '🍂', Winter: '❄\uFE0F' };
+    const season = world.season || 'Spring';
+    currentSeasonEl.innerText = `${seasonEmojis[season] || '🌸'} ${season}`;
+  }
+
   const tempOffset = world.globalTempOffset;
   const tempSign = tempOffset >= 0 ? '+' : '';
   climateOffsetEl.innerText = `${tempSign}${Math.round(tempOffset * 100)}% Dev`;
@@ -342,15 +349,21 @@ function inspectCell(cell) {
         item.style.borderRadius = '6px';
         item.style.padding = '6px 8px';
         item.style.fontSize = '0.78rem';
+        const cargoList = Object.keys(p.cargo || {}).map(k => `${k}(${p.cargo[k]})`).join(', ');
         item.innerHTML = `
           <div style="display: flex; justify-content: space-between; font-weight: 600;">
             <span style="color: var(--gold);">${p.emoji} ${p.name}</span>
             <span style="font-size: 0.72rem; color: var(--text-secondary);">${p.role}</span>
           </div>
+          <div style="margin-top: 4px; font-size: 0.72rem; color: var(--text-secondary);">
+            <span>Age: <strong>${p.age || 18}</strong> (Gen ${p.generation || 1})</span> | 
+            <span>Parents: <strong>${p.parents || 'Ancestors'}</strong></span>
+          </div>
           <div style="margin-top: 4px; display: flex; justify-content: space-between;">
             <span>Task: <strong>${p.task || 'Patrolling'}</strong></span>
             <span style="color: ${p.hunger >= 50 ? '#ef4444' : 'var(--text-secondary)'}">Hunger: ${p.hunger}%</span>
           </div>
+          ${cargoList ? `<div style="margin-top: 4px; font-size: 0.72rem; color: #60a5fa; border-top: 1px dashed rgba(255,255,255,0.05); padding-top: 4px;">🎒 Cargo: ${cargoList}</div>` : ''}
         `;
         listEl.appendChild(item);
       });
@@ -432,6 +445,14 @@ async function onTimelineTravel(year) {
     const histState = historyLog[index];
     if (histState) {
       currentYearEl.innerText = `Year ${histState.year} (Historical)`;
+      
+      const currentSeasonEl = document.getElementById('current-season');
+      if (currentSeasonEl) {
+        const seasons = ['Spring', 'Summer', 'Autumn', 'Winter'];
+        const season = seasons[histState.year % 4] || 'Spring';
+        const seasonEmojis = { Spring: '🌸', Summer: '☀️', Autumn: '🍂', Winter: '❄\uFE0F' };
+        currentSeasonEl.innerText = `${seasonEmojis[season] || '🌸'} ${season} (Hist)`;
+      }
       
       const tempOffset = histState.globalTempOffset;
       const tempSign = tempOffset >= 0 ? '+' : '';

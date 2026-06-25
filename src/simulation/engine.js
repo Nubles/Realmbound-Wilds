@@ -261,7 +261,8 @@ export function createNewWorld(seed = "realmbound") {
     discoveredCenters: [], // Array of { realm, x, y, radius }
     chronicle: ["The multi-dimensional cosmos awakens."],
     tradeRoutes: [],
-    globalTempOffset: 0.0
+    globalTempOffset: 0.0,
+    season: 'Spring'
   };
 
   // Place a single starting settlement to grow and explore the world from scratch
@@ -366,6 +367,8 @@ function getNeighbors(x, y) {
 // Advance simulation tick
 export function advanceSimulation(world) {
   world.year += 1;
+  const seasons = ['Spring', 'Summer', 'Autumn', 'Winter'];
+  world.season = seasons[world.year % 4];
   const logPrefix = `[Year ${world.year}]`;
   setSeed(world.seed + world.year);
 
@@ -391,8 +394,9 @@ export function advanceSimulation(world) {
     const [cx, cy] = coords.split(',').map(Number);
     const cell = getCell(world, realm, cx, cy);
 
-    // Weather drift
-    cell.temperature = Math.max(0, Math.min(1.0, cell.temperature + world.globalTempOffset * 0.1));
+    // Weather drift (colder in winter, hotter in summer)
+    const seasonalTempAdjust = world.season === 'Winter' ? -0.15 : (world.season === 'Summer' ? 0.15 : 0.0);
+    cell.temperature = Math.max(0, Math.min(1.0, cell.temperature + world.globalTempOffset * 0.1 + seasonalTempAdjust * 0.05));
 
     // Wildfire rules with Oakhaven Druid trait
     if (cell.fireTicksLeft > 0) {
@@ -420,8 +424,9 @@ export function advanceSimulation(world) {
       if (cell.vegetation > 0.1) {
         getNeighbors(cx, cy).forEach(n => {
           const nc = getCell(world, realm, n.x, n.y);
-          // Oakhaven tiles resist wildfire spreading
-          const spreadChance = nc.settlement && nc.settlement.faction === 'Oakhaven' ? 0.12 : 0.25;
+          // Oakhaven tiles resist wildfire spreading; Summer doubles spread chance
+          let spreadChance = nc.settlement && nc.settlement.faction === 'Oakhaven' ? 0.12 : 0.25;
+          if (world.season === 'Summer') spreadChance *= 2.0;
           if (nc.fireTicksLeft === 0 && nc.vegetation > 0.45 && random() < spreadChance) {
             nc.fireTicksLeft = Math.floor(random() * 3) + 2;
             cellsToSave.push(nc);
@@ -429,10 +434,13 @@ export function advanceSimulation(world) {
         });
       }
     } else {
-      // Vegetation growth (Druids grow forests faster)
-      const growthFactor = cell.settlement && cell.settlement.faction === 'Oakhaven' ? 0.08 : 0.04;
+      // Vegetation growth (Druids grow forests faster; accelerated in Summer, halted in Winter)
+      let growthFactor = cell.settlement && cell.settlement.faction === 'Oakhaven' ? 0.08 : 0.04;
+      if (world.season === 'Summer') growthFactor *= 1.5;
+      if (world.season === 'Winter') growthFactor *= 0.1;
+      
       if (cell.biome.includes('forest') || cell.biome.includes('woods')) cell.vegetation = Math.min(1.0, cell.vegetation + growthFactor);
-      else cell.vegetation = Math.min(0.5, cell.vegetation + 0.015);
+      else cell.vegetation = Math.min(0.5, cell.vegetation + 0.015 * (world.season === 'Winter' ? 0.2 : 1.0));
     }
 
     cellsToSave.push(cell);
@@ -453,14 +461,27 @@ export function advanceSimulation(world) {
       faction.technologies = [];
     }
 
+    // Winter heating resource consumption
+    let heatingFail = false;
+    if (world.season === 'Winter') {
+      const woodNeed = faction.settlements.length * 2;
+      if ((faction.resources.wood || 0) >= woodNeed) {
+        faction.resources.wood -= woodNeed;
+      } else {
+        faction.resources.wood = 0;
+        heatingFail = true;
+      }
+    }
+
     faction.settlements.forEach(sCoord => {
       const cell = getCell(world, sCoord.realm, sCoord.x, sCoord.y);
       if (!cell.settlement) return;
 
       let growthModifier = 0.08;
+      if (heatingFail) growthModifier *= 0.25; // Severe penalty for freezing citizens
       
       // Valoria Expansionist Trait
-      if (faction.name === 'Valoria') growthModifier = 0.11;
+      if (faction.name === 'Valoria') growthModifier *= 1.3;
       // Ironclad Industrialist Trait: grows faster on mineral-rich cells
       if (faction.name === 'Ironclad' && (cell.resources.includes('iron') || cell.resources.includes('gold'))) {
         growthModifier += 0.05;
@@ -480,6 +501,9 @@ export function advanceSimulation(world) {
 
       if (!isSpaceDecay) {
         cell.settlement.size += Math.floor(cell.settlement.size * growthModifier);
+        if (heatingFail && random() < 0.15) {
+          world.chronicle.push(`${logPrefix} Winter Crisis: Citizens in ${cell.settlement.name} are freezing due to lack of timber reserves!`);
+        }
       }
       
       factionPower += cell.settlement.size;

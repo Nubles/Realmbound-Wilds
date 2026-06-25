@@ -200,6 +200,8 @@ export class MapRenderer {
     this.particles = [];
     this.atmosphericParticles = []; // Custom atmospheric elements per realm
     this.entities = []; // Animated citizens and wildlife entities roaming the map
+    this.roadTraffic = {}; // Tracks coordinate traversals for dynamic roads
+    this.lastWorldYear = 1;
     
     this.discoveryCache = new Set();
     this.setupEvents();
@@ -540,8 +542,70 @@ export class MapRenderer {
     // Generate and animate roaming entities
     if (this.world) {
       const ts = this.tileSize;
+
+      // Handle generational aging and reproduction on year change
+      if (this.world.year !== this.lastWorldYear) {
+        this.lastWorldYear = this.world.year;
+        
+        const CITIZEN_NAMES = ["Thorin", "Elara", "Alden", "Valen", "Kira", "Roran", "Lyra", "Sark", "Dara", "Joran"];
+        const kidsToSpawn = [];
+        this.entities = this.entities.filter(ent => {
+          if (ent.type !== 'citizen') return true;
+          ent.age = (ent.age || 0) + 1;
+          
+          // Death check (starts at age 70)
+          if (ent.age >= 70) {
+            const deathChance = (ent.age - 70) * 0.05 + 0.02;
+            if (Math.random() < deathChance) {
+              if (this.world.chronicle) {
+                this.world.chronicle.push(`[Chronicle] ${ent.name} (${ent.role}) passed away of old age at ${ent.age} in Year ${this.world.year}.`);
+              }
+              return false; // dies
+            }
+          }
+          
+          // Reproduction check (fertile age 20-45)
+          if (ent.age >= 20 && ent.age <= 45 && Math.random() < 0.08) {
+            const nameSuffix = ent.name.split(' ').pop() || '';
+            const babyName = CITIZEN_NAMES[Math.floor(Math.random() * CITIZEN_NAMES.length)] + " " + nameSuffix;
+            const roles = ["Gatherer", "Miner", "Builder", "Scout", "Trader"];
+            const babyRole = roles[Math.floor(Math.random() * roles.length)];
+            
+            kidsToSpawn.push({
+              id: `${ent.id}-child-${Math.random()}`,
+              type: 'citizen',
+              name: babyName,
+              role: babyRole,
+              age: 0,
+              parents: ent.name,
+              generation: (ent.generation || 1) + 1,
+              activityState: 'GATHERING',
+              cargo: {},
+              hunger: 0,
+              inventory: { gold: 0, food: 3, raw_materials: 0 },
+              task: `Infant resting`,
+              color: ent.color,
+              x: ent.homeX * ts + ts/2 + (Math.random() * 8 - 4),
+              y: ent.homeY * ts + ts/2 + (Math.random() * 8 - 4),
+              targetX: ent.homeX * ts + ts/2,
+              targetY: ent.homeY * ts + ts/2,
+              homeX: ent.homeX,
+              homeY: ent.homeY,
+              speed: ent.speed || 0.35,
+              emoji: '🚶'
+            });
+          }
+          return true;
+        });
+        
+        kidsToSpawn.forEach(k => {
+          this.entities.push(k);
+          if (this.world.chronicle && Math.random() < 0.3) {
+            this.world.chronicle.push(`[Chronicle] A baby named ${k.name} was born to ${k.parents} (Gen ${k.generation})!`);
+          }
+        });
+      }
       
-      // Seed initial entities if empty
       // Seed initial entities if empty
       if (this.entities.length === 0) {
         // Procedural citizen naming lists
@@ -562,6 +626,11 @@ export class MapRenderer {
                 type: 'citizen',
                 name: citizenName,
                 role: citizenRole,
+                age: Math.floor(Math.random() * 30) + 15,
+                parents: "Ancestors",
+                generation: 1,
+                activityState: 'GATHERING', // 'GATHERING' | 'RETURNING'
+                cargo: {},
                 hunger: Math.floor(Math.random() * 30), // Start with low hunger
                 inventory: { gold: 0, food: 2, raw_materials: 0 },
                 task: `Resting at ${s.name}`,
@@ -616,6 +685,26 @@ export class MapRenderer {
         });
       }
 
+      // Dynamic space shuttle spawning (if starflight is researched)
+      if (this.world && this.world.factions) {
+        const hasStarflight = this.world.factions.some(f => f.technologies && f.technologies.includes('starflight'));
+        if (this.activeRealm === 'space' || hasStarflight) {
+          const shuttleCount = this.entities.filter(ent => ent.type === 'shuttle').length;
+          if (shuttleCount < 3 && Math.random() < 0.05) {
+            this.entities.push({
+              id: `shuttle-${Math.random()}`,
+              type: 'shuttle',
+              emoji: Math.random() < 0.5 ? '🚀' : '🛸',
+              x: Math.random() * this.canvas.width,
+              y: Math.random() * this.canvas.height,
+              targetX: Math.random() * this.canvas.width,
+              targetY: Math.random() * this.canvas.height,
+              speed: 1.5 + Math.random() * 1.0
+            });
+          }
+        }
+      }
+
       // Update entity movement towards their targets
       this.entities.forEach(ent => {
         const dx = ent.targetX - ent.x;
@@ -628,25 +717,62 @@ export class MapRenderer {
           const cy = Math.floor(ent.y / ts);
           const key = `${this.activeRealm}:${cx},${cy}`;
           
+          // Track traffic traversal for dynamic roads
+          this.roadTraffic[key] = (this.roadTraffic[key] || 0) + 1;
+          
           if (ent.type === 'citizen') {
             const faction = this.world.factions.find(f => f.name === ent.color || f.color === ent.color);
             
             // Increment hunger points
             ent.hunger = (ent.hunger || 0) + 12;
             
-            // Check biome to set specific task
-            const cell = generateCell(cx, cy, this.activeRealm, this.world.seed);
-            if (cell.biome.includes('forest')) {
-              ent.task = "Gathering Timber";
-              if (faction) faction.resources.wood = (faction.resources.wood || 0) + 1;
-            } else if (cell.resources && cell.resources.length > 0) {
-              ent.task = `Mining ${cell.resources[0]}`;
-              if (faction) {
-                const res = cell.resources[0];
-                faction.resources[res] = (faction.resources[res] || 0) + 1;
-              }
+            // Manage Cargo Gathering & Returning states
+            if (!ent.cargo) ent.cargo = {};
+            
+            if (ent.activityState === 'RETURNING') {
+              // Deposit gathered resources to Faction reserves
+              Object.keys(ent.cargo).forEach(res => {
+                if (faction) {
+                  faction.resources[res] = (faction.resources[res] || 0) + ent.cargo[res];
+                }
+              });
+              ent.cargo = {};
+              ent.activityState = 'GATHERING';
+              ent.task = "Deposited cargo, resting";
+              
+              if (faction) faction.resources.gold = (faction.resources.gold || 0) + 2;
             } else {
-              ent.task = "Patrolling Region";
+              // We are gathering
+              const cell = generateCell(cx, cy, this.activeRealm, this.world.seed);
+              let gatheredType = null;
+              if (cell.biome.includes('forest')) {
+                gatheredType = 'wood';
+              } else if (cell.resources && cell.resources.length > 0) {
+                gatheredType = cell.resources[0];
+              }
+              
+              if (gatheredType) {
+                ent.cargo[gatheredType] = (ent.cargo[gatheredType] || 0) + 1;
+                ent.task = `Harvested ${gatheredType}`;
+              } else {
+                ent.task = "Patrolling Region";
+              }
+              
+              // Capacity limits based on technology level
+              let capacity = 3;
+              if (faction && faction.technologies) {
+                if (faction.technologies.includes('starflight')) capacity = 25;
+                else if (faction.technologies.includes('steam_engine')) capacity = 15;
+                else if (faction.technologies.includes('carriage_vehicles')) capacity = 8;
+              }
+              
+              const totalCargo = Object.values(ent.cargo).reduce((a, b) => a + b, 0);
+              if (totalCargo >= capacity) {
+                ent.activityState = 'RETURNING';
+                ent.task = "Hauling cargo home";
+                ent.targetX = ent.homeX * ts + ts/2;
+                ent.targetY = ent.homeY * ts + ts/2;
+              }
             }
 
             // Citizen consumes food if hungry
@@ -675,23 +801,31 @@ export class MapRenderer {
             }
           }
 
-          // Choose a new nearby coordinate target to wander to
-          const range = 3; // wandered chunk offset range
-          const nextCx = ent.homeX + Math.floor(Math.random() * (range * 2 + 1)) - range;
-          const nextCy = ent.homeY + Math.floor(Math.random() * (range * 2 + 1)) - range;
+          if (ent.type === 'shuttle') {
+            ent.targetX = Math.random() * (this.canvas ? this.canvas.width : 800);
+            ent.targetY = Math.random() * (this.canvas ? this.canvas.height : 600);
+          } else if (ent.type === 'citizen' && ent.activityState === 'RETURNING') {
+            ent.targetX = ent.homeX * ts + ts/2;
+            ent.targetY = ent.homeY * ts + ts/2;
+          } else {
+            // Choose a new nearby coordinate target to wander to
+            const range = 3; // wandered chunk offset range
+            const nextCx = ent.homeX + Math.floor(Math.random() * (range * 2 + 1)) - range;
+            const nextCy = ent.homeY + Math.floor(Math.random() * (range * 2 + 1)) - range;
 
-          if (this.isCoordinateDiscovered(nextCx, nextCy)) {
-            const cell = generateCell(nextCx, nextCy, this.activeRealm, this.world.seed);
-            const faction = this.world.factions.find(f => f.name === ent.color || f.color === ent.color);
-            const canSail = faction && faction.technologies && faction.technologies.includes('sailing_boats');
+            if (this.isCoordinateDiscovered(nextCx, nextCy)) {
+              const cell = generateCell(nextCx, nextCy, this.activeRealm, this.world.seed);
+              const faction = this.world.factions.find(f => f.name === ent.color || f.color === ent.color);
+              const canSail = faction && faction.technologies && faction.technologies.includes('sailing_boats');
 
-            // Allow moving into ocean/coast if they have boat tech
-            const isValidLand = cell.biome !== 'ocean' && cell.biome !== 'mountain' && cell.biome !== 'void' && cell.biome !== 'void_space';
-            const isValidWater = canSail && (cell.biome === 'ocean' || cell.biome === 'coast');
+              // Allow moving into ocean/coast if they have boat tech
+              const isValidLand = cell.biome !== 'ocean' && cell.biome !== 'mountain' && cell.biome !== 'void' && cell.biome !== 'void_space';
+              const isValidWater = canSail && (cell.biome === 'ocean' || cell.biome === 'coast');
 
-            if (isValidLand || isValidWater) {
-              ent.targetX = nextCx * ts + Math.random() * (ts - 6) + 3;
-              ent.targetY = nextCy * ts + Math.random() * (ts - 6) + 3;
+              if (isValidLand || isValidWater) {
+                ent.targetX = nextCx * ts + Math.random() * (ts - 6) + 3;
+                ent.targetY = nextCy * ts + Math.random() * (ts - 6) + 3;
+              }
             }
           }
         } else {
@@ -724,6 +858,19 @@ export class MapRenderer {
     for (let y = startY; y <= endY; y++) {
       for (let x = startX; x <= endX; x++) {
         this.drawCell(x, y, x * ts, y * ts, ts);
+      }
+    }
+
+    // 1.5. Draw dynamic citizen-worn roads/paths
+    for (let y = startY; y <= endY; y++) {
+      for (let x = startX; x <= endX; x++) {
+        const roadKey = `${this.activeRealm}:${x},${y}`;
+        const traffic = this.roadTraffic[roadKey] || 0;
+        if (traffic > 0 && this.isCoordinateDiscovered(x, y)) {
+          const intensity = Math.min(0.65, traffic * 0.09);
+          this.ctx.fillStyle = `rgba(139, 90, 43, ${intensity})`; // Dirt path brown
+          this.ctx.fillRect(x * ts + ts/4, y * ts + ts/4, ts/2, ts/2);
+        }
       }
     }
 
@@ -809,6 +956,12 @@ export class MapRenderer {
           this.ctx.textAlign = 'center';
           this.ctx.fillText(ent.emoji, ent.x, ent.y - 4);
         }
+      } else if (ent.type === 'shuttle') {
+        // Space Shuttle flying
+        this.ctx.fillStyle = '#60a5fa';
+        this.ctx.font = '12px sans-serif';
+        this.ctx.textAlign = 'center';
+        this.ctx.fillText(ent.emoji || '🚀', ent.x, ent.y + 4);
       } else {
         // Wildlife animals roaming
         if (this.zoom >= 2.0) {
@@ -1207,6 +1360,14 @@ export class MapRenderer {
         ctx.closePath();
         ctx.fill();
         ctx.fillRect(cx + 6, cy + 13, ts - 12, ts - 18);
+      }
+
+      // Spaceport overlay if faction has starflight tech
+      const faction = factionIdx !== -1 ? this.world.factions[factionIdx] : null;
+      if (faction && faction.technologies && faction.technologies.includes('starflight')) {
+        ctx.fillStyle = '#60a5fa';
+        ctx.font = '8px sans-serif';
+        ctx.fillText('🛰️', cx + ts - 10, cy + 10);
       }
     }
 
