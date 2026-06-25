@@ -63,6 +63,9 @@
         <button class="btn btn-secondary" id="tech-btn" style="margin-right: 8px;">
           <span class="btn-icon">🧪</span> Tech Tree
         </button>
+        <button class="btn btn-secondary" id="diplomacy-btn" style="margin-right: 8px;">
+          <span class="btn-icon">👑</span> Diplomacy
+        </button>
         <button class="btn btn-secondary" id="help-btn" style="margin-right: 8px;">
           <span class="btn-icon">📜</span> Chronicle Guide
         </button>
@@ -118,6 +121,22 @@
           <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 12px;">Accumulate technology research points by ticking the years. Select a technology below to queue research for your faction (Players).</p>
           <div id="tech-tree-container" style="display: flex; flex-direction: column; gap: 10px;">
             <!-- Tech items will be rendered dynamically here -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Diplomacy Modal Overlay -->
+    <div id="diplomacy-modal" class="modal-overlay hidden">
+      <div class="modal-content card" style="max-width: 500px; max-height: 80vh; overflow-y: auto;">
+        <header class="modal-header">
+          <h2 class="font-fantasy">👑 Faction Diplomacy Relations</h2>
+          <button id="close-diplomacy-btn" class="close-btn">&times;</button>
+        </header>
+        <div class="modal-body">
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 12px;">Draft treaties and direct relations with rival kingdoms. Select a target faction to change diplomatic status:</p>
+          <div id="diplomacy-container" style="display: flex; flex-direction: column; gap: 10px;">
+            <!-- Factions list will be populated dynamically -->
           </div>
         </div>
       </div>

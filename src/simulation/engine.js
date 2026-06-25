@@ -840,6 +840,62 @@ export function advanceSimulation(world) {
     }
   }
 
+  // Plague Outbreak check (5% chance)
+  if (random() < 0.05) {
+    const activeSettlementsList = [];
+    world.factions.forEach(f => {
+      f.settlements.forEach(s => {
+        activeSettlementsList.push({ realm: s.realm, x: s.x, y: s.y });
+      });
+    });
+    if (activeSettlementsList.length > 0) {
+      const targetS = activeSettlementsList[Math.floor(random() * activeSettlementsList.length)];
+      const cell = getCell(world, targetS.realm, targetS.x, targetS.y);
+      if (cell.settlement) {
+        cell.settlement.plagued = true;
+        world.chronicle.push(`${logPrefix} PLAGUE OUTBREAK: Outbreak center detected at ${cell.settlement.name} in ${targetS.realm} [${targetS.x}, ${targetS.y}]! Sickness is spreading.`);
+        saveCell(world, cell);
+      }
+    }
+  }
+
+  // Active plague transmission/spread check (across adjacent cells)
+  const plagueKeys = Object.keys(world.modifiedCells).filter(key => {
+    const c = world.modifiedCells[key];
+    return c.settlement && c.settlement.plagued;
+  });
+  plagueKeys.forEach(key => {
+    const cell = world.modifiedCells[key];
+    const neighbors = getNeighbors(cell.x, cell.y);
+    neighbors.forEach(n => {
+      const nc = getCell(world, cell.realm, n.x, n.y);
+      if (nc.settlement && !nc.settlement.plagued && random() < 0.25) {
+        // If there's an Apothecary built, resist infection
+        if (nc.settlement.apothecary) {
+          if (random() < 0.8) return; // 80% infection prevention
+        }
+        nc.settlement.plagued = true;
+        world.chronicle.push(`${logPrefix} CONTAGION: The plague has spread to ${nc.settlement.name} at [${nc.x}, ${nc.y}] in ${cell.realm}!`);
+        saveCell(world, nc);
+      }
+    });
+
+    // Demise from plague if untreated and no Apothecary built
+    if (cell.settlement && cell.settlement.plagued) {
+      if (cell.settlement.apothecary) {
+        // Cure settlement plague
+        cell.settlement.plagued = false;
+        world.chronicle.push(`${logPrefix} MEDICAL RELIEF: Apothecary structure successfully cured the plague outbreak in ${cell.settlement.name}.`);
+        saveCell(world, cell);
+      } else if (random() < 0.15) {
+        const livesLost = Math.floor(cell.settlement.size * 0.12) + 5;
+        cell.settlement.size = Math.max(10, cell.settlement.size - livesLost);
+        world.chronicle.push(`${logPrefix} PLAGUE TOLL: Sickness claimed ${livesLost} citizens in ${cell.settlement.name}. An Apothecary is urgently needed!`);
+        saveCell(world, cell);
+      }
+    }
+  });
+
   // --- 2. Market Economies & Trading ---
   for (let i = 0; i < world.factions.length; i++) {
     for (let j = i + 1; j < world.factions.length; j++) {

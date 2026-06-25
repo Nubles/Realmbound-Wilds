@@ -243,12 +243,48 @@ function inspectCell(cell) {
 
   let settlementHtml = '';
   if (cell.settlement) {
+    const isPlayerFaction = cell.settlement.faction === 'Players' || cell.settlement.faction === 'Valoria';
+    
+    let plagueStatusText = '';
+    if (cell.settlement.plagued) {
+      plagueStatusText = `<div style="color: #22c55e; font-weight: bold; font-size: 0.8rem; margin-top: 4px;">🤢 Outbreak: Plague Active!</div>`;
+    }
+    
+    let structureList = [];
+    if (cell.settlement.apothecary) structureList.push('🏥 Apothecary');
+    if (cell.settlement.wonderBlueprint) {
+      const bp = cell.settlement.wonderBlueprint;
+      structureList.push(`🏛️ Wonder (${bp.progress}% Built)`);
+    }
+    const structuresDesc = structureList.length > 0 ? `<div style="font-size: 0.8rem; color: var(--gold); margin-top: 4px;">Structures: ${structureList.join(', ')}</div>` : '';
+
+    let buildControlsHtml = '';
+    if (isPlayerFaction && !renderer.historicalState) {
+      const factionObj = currentWorld.factions.find(f => f.name === cell.settlement.faction);
+      const gold = factionObj ? (factionObj.resources.gold || 0) : 0;
+      const wood = factionObj ? (factionObj.resources.wood || factionObj.resources.timber || 0) : 0;
+      const iron = factionObj ? (factionObj.resources.iron || 0) : 0;
+
+      buildControlsHtml = `
+        <div style="margin-top: 8px; border-top: 1px dashed rgba(255,255,255,0.08); padding-top: 8px; display: flex; flex-direction: column; gap: 6px;">
+          <div style="font-size: 0.72rem; color: var(--text-secondary);">Build Infrastructure:</div>
+          <div style="display: flex; gap: 6px;">
+            <button onclick="window.buildApothecary('${cell.realm}', ${cell.x}, ${cell.y})" class="btn btn-secondary" style="padding: 3px 6px; font-size: 0.7rem;" ${cell.settlement.apothecary ? 'disabled' : ''}>🏥 Apothecary (💰30, 🪵10)</button>
+            <button onclick="window.buildWonderBlueprint('${cell.realm}', ${cell.x}, ${cell.y})" class="btn btn-secondary" style="padding: 3px 6px; font-size: 0.7rem;" ${cell.settlement.wonderBlueprint ? 'disabled' : ''}>🏛️ Wonder BP (💰100, 🪵50, 🪙10)</button>
+          </div>
+        </div>
+      `;
+    }
+
     settlementHtml = `
       <div class="inspector-section">
         <span class="inspector-subtitle">🏘️ Settlement</span>
         <span class="inspector-val" style="font-size: 1.1rem; color: var(--gold);">${cell.settlement.name}</span>
         <span class="inspector-val">Faction: ${cell.settlement.faction}</span>
         <span class="inspector-val">Population: ${cell.settlement.size.toLocaleString()} (${cell.settlement.type})</span>
+        ${plagueStatusText}
+        ${structuresDesc}
+        ${buildControlsHtml}
       </div>
     `;
   }
@@ -348,7 +384,7 @@ function inspectCell(cell) {
   const listEl = document.getElementById('local-citizens-list');
   if (listEl && window.renderer && window.renderer.entities) {
     const present = window.renderer.entities.filter(ent => {
-      if (ent.type !== 'citizen') return false;
+      if (ent.type !== 'citizen' && ent.type !== 'leader') return false;
       // Convert canvas coordinate space back to chunk units
       const cx = Math.floor(ent.x / window.renderer.tileSize);
       const cy = Math.floor(ent.y / window.renderer.tileSize);
@@ -366,11 +402,14 @@ function inspectCell(cell) {
         item.style.borderRadius = '6px';
         item.style.padding = '6px 8px';
         item.style.fontSize = '0.78rem';
+        
         const cargoList = Object.keys(p.cargo || {}).map(k => `${k}(${p.cargo[k]})`).join(', ');
+        
         const milestonesHtml = p.history && p.history.length > 0
           ? `<details style="margin-top: 6px; font-size: 0.7rem; color: var(--text-secondary); cursor: pointer;"><summary>🗒️ View Life Diary</summary><div style="display: flex; flex-direction: column; gap: 2px; margin-top: 4px; padding-left: 6px; border-left: 1px solid rgba(255,255,255,0.1);">${p.history.map(h => `<div>• ${h}</div>`).join('')}</div></details>`
           : '';
-        const controlsHtml = `
+          
+        const controlsHtml = p.type === 'citizen' ? `
           <div style="margin-top: 6px; display: flex; align-items: center; justify-content: space-between; gap: 6px; border-top: 1px dashed rgba(255,255,255,0.05); padding-top: 6px;">
             <select onchange="window.reassignRole('${p.id}', this.value)" style="background: #111; color: var(--gold); border: 1px solid rgba(255,255,255,0.15); border-radius: 4px; font-size: 0.7rem; padding: 2px 4px; cursor: pointer;">
               <option value="Gatherer" ${p.role === 'Gatherer' ? 'selected' : ''}>Gatherer</option>
@@ -381,19 +420,23 @@ function inspectCell(cell) {
             </select>
             <button onclick="window.orderMove('${p.id}')" style="background: rgba(255, 255, 255, 0.05); color: var(--gold); border: 1px solid rgba(255,255,255,0.15); border-radius: 4px; font-size: 0.7rem; padding: 2px 6px; cursor: pointer;" title="Direct citizen to walk to selected coordinates">📍 Move Here</button>
           </div>
-        `;
+        ` : '';
+
+        const plagueBadge = p.plagued ? `<span style="background: #22c55e; color: #fff; padding: 1px 4px; border-radius: 3px; font-size: 0.65rem; margin-left: 6px;">🤢 Sick</span>` : '';
+        const eqEmoji = p.equipped === 'Sword' ? '⚔️' : (p.equipped === 'Pickaxe' ? '⛏️' : (p.equipped === 'Axe' ? '🪓' : ''));
+        const equippedLabel = p.equipped ? `<span style="color: var(--gold); margin-left: 6px;">${eqEmoji} ${p.equipped}</span>` : '';
 
         item.innerHTML = `
           <div style="display: flex; justify-content: space-between; font-weight: 600;">
-            <span style="color: var(--gold);">${p.emoji} ${p.name}</span>
+            <span style="color: var(--gold);">${p.emoji} ${p.name} ${plagueBadge}</span>
             <span style="font-size: 0.72rem; color: var(--text-secondary);">${p.role}</span>
           </div>
-          <div style="margin-top: 4px; font-size: 0.72rem; color: var(--text-secondary);">
-            <span>Age: <strong>${p.age || 18}</strong> (Gen ${p.generation || 1})</span> | 
-            <span>Parents: <strong>${p.parents || 'Ancestors'}</strong></span>
+          <div style="margin-top: 4px; font-size: 0.72rem; color: var(--text-secondary); display: flex; justify-content: space-between;">
+            <span>HP: <strong>${p.health || 100}</strong></span>
+            <span>Age: <strong>${p.age || 18}</strong> (Gen ${p.generation || 1})</span>
           </div>
           <div style="margin-top: 4px; display: flex; justify-content: space-between;">
-            <span>Task: <strong>${p.task || 'Patrolling'}</strong></span>
+            <span>Task: <strong>${p.task || 'Patrolling'}</strong> ${equippedLabel}</span>
             <span style="color: ${p.hunger >= 50 ? '#ef4444' : 'var(--text-secondary)'}">Hunger: ${p.hunger}%</span>
           </div>
           ${cargoList ? `<div style="margin-top: 4px; font-size: 0.72rem; color: #60a5fa; border-top: 1px dashed rgba(255,255,255,0.05); padding-top: 4px;">🎒 Cargo: ${cargoList}</div>` : ''}
@@ -659,6 +702,28 @@ async function init() {
     });
   }
 
+  // Diplomacy Modal Toggle
+  const diplomacyBtn = document.getElementById('diplomacy-btn');
+  const diplomacyModal = document.getElementById('diplomacy-modal');
+  const closeDiplomacyBtn = document.getElementById('close-diplomacy-btn');
+
+  if (diplomacyBtn && diplomacyModal && closeDiplomacyBtn) {
+    diplomacyBtn.addEventListener('click', () => {
+      diplomacyModal.classList.remove('hidden');
+      window.renderDiplomacyRelations();
+      if (window.synth) window.synth.playClick();
+    });
+    closeDiplomacyBtn.addEventListener('click', () => {
+      diplomacyModal.classList.add('hidden');
+      if (window.synth) window.synth.playClick();
+    });
+    diplomacyModal.addEventListener('click', (e) => {
+      if (e.target === diplomacyModal) {
+        diplomacyModal.classList.add('hidden');
+      }
+    });
+  }
+
   // Chronicle search and category filters
   const searchInput = document.getElementById('chronicle-search');
   if (searchInput) {
@@ -896,6 +961,120 @@ window.unlockTech = function(techId, cost) {
       
       if (window.synth) window.synth.playBell();
       window.renderTechTree();
+      updateUI(currentWorld);
+    }
+  }
+};
+
+window.buildApothecary = function(realm, x, y) {
+  if (currentWorld) {
+    const key = `${realm}:${x},${y}`;
+    const cell = currentWorld.modifiedCells[key];
+    if (cell && cell.settlement) {
+      const faction = currentWorld.factions.find(f => f.name === cell.settlement.faction);
+      if (faction && (faction.resources.gold || 0) >= 30 && (faction.resources.wood || faction.resources.timber || 0) >= 10) {
+        faction.resources.gold -= 30;
+        if (faction.resources.wood) faction.resources.wood -= 10;
+        else if (faction.resources.timber) faction.resources.timber -= 10;
+        cell.settlement.apothecary = true;
+        currentWorld.chronicle.push(`[Construction] Established Apothecary structure in ${cell.settlement.name} at [${x}, ${y}] to treat sick citizens.`);
+        if (window.synth) window.synth.playClick();
+        updateUI(currentWorld);
+      } else {
+        alert("Insufficient resources! Requires 30 gold and 10 wood.");
+      }
+    }
+  }
+};
+
+window.buildWonderBlueprint = function(realm, x, y) {
+  if (currentWorld) {
+    const key = `${realm}:${x},${y}`;
+    const cell = currentWorld.modifiedCells[key];
+    if (cell && cell.settlement) {
+      const faction = currentWorld.factions.find(f => f.name === cell.settlement.faction);
+      if (faction && (faction.resources.gold || 0) >= 100 && (faction.resources.wood || faction.resources.timber || 0) >= 50 && (faction.resources.iron || 0) >= 10) {
+        faction.resources.gold -= 100;
+        if (faction.resources.wood) faction.resources.wood -= 50;
+        else if (faction.resources.timber) faction.resources.timber -= 50;
+        faction.resources.iron -= 10;
+        
+        cell.settlement.wonderBlueprint = { progress: 0 };
+        currentWorld.chronicle.push(`[Construction] Placed Megastructure Wonder blueprint at ${cell.settlement.name} [${x}, ${y}]! Assignment: Builders must deliver materials.`);
+        if (window.synth) window.synth.playClick();
+        updateUI(currentWorld);
+      } else {
+        alert("Insufficient resources! Requires 100 gold, 50 wood, and 10 iron.");
+      }
+    }
+  }
+};
+
+window.renderDiplomacyRelations = function() {
+  const container = document.getElementById('diplomacy-container');
+  if (!container || !currentWorld) return;
+
+  const playerFactionName = 'Players';
+  const playerFaction = currentWorld.factions.find(f => f.name === playerFactionName) || currentWorld.factions.find(f => f.name === 'Valoria');
+  if (!playerFaction) return;
+
+  container.innerHTML = '';
+  
+  currentWorld.factions.forEach(fac => {
+    if (fac.name === playerFaction.name) return;
+
+    const currentStatus = playerFaction.status[fac.name] || 'peace';
+    const statusColor = currentStatus === 'alliance' ? '#10b981' : (currentStatus === 'war' ? '#ef4444' : '#eab308');
+
+    const item = document.createElement('div');
+    item.style.background = 'rgba(255, 255, 255, 0.03)';
+    item.style.border = '1px solid rgba(255, 255, 255, 0.06)';
+    item.style.borderRadius = '6px';
+    item.style.padding = '10px';
+    item.style.display = 'flex';
+    item.style.flexDirection = 'column';
+    item.style.gap = '8px';
+
+    item.innerHTML = `
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-weight: bold; color: ${fac.color}; font-size: 0.95rem;">
+          <span class="faction-color-dot" style="background-color: ${fac.color}; display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px;"></span>
+          ${fac.name} (Power: ${fac.power || 0})
+        </span>
+        <span style="color: ${statusColor}; font-weight: bold; font-size: 0.8rem; text-transform: uppercase;">${currentStatus}</span>
+      </div>
+      <div style="display: flex; gap: 6px; justify-content: flex-end; margin-top: 4px;">
+        <button onclick="window.changeDiplomacy('${fac.name}', 'war')" class="btn btn-secondary" style="padding: 2px 8px; font-size: 0.72rem; border-color: rgba(239, 68, 68, 0.2); color: #ef4444;" ${currentStatus === 'war' ? 'disabled' : ''}>⚔️ Declare War</button>
+        <button onclick="window.changeDiplomacy('${fac.name}', 'peace')" class="btn btn-secondary" style="padding: 2px 8px; font-size: 0.72rem; border-color: rgba(234, 179, 8, 0.2); color: #eab308;" ${currentStatus === 'peace' ? 'disabled' : ''}>🕊️ Offer Peace</button>
+        <button onclick="window.changeDiplomacy('${fac.name}', 'alliance')" class="btn btn-secondary" style="padding: 2px 8px; font-size: 0.72rem; border-color: rgba(16, 185, 129, 0.2); color: #10b981;" ${currentStatus === 'alliance' ? 'disabled' : ''}>🤝 Alliance</button>
+      </div>
+    `;
+    container.appendChild(item);
+  });
+};
+
+window.changeDiplomacy = function(targetFactionName, newStatus) {
+  if (currentWorld) {
+    const playerFaction = currentWorld.factions.find(f => f.name === 'Players') || currentWorld.factions.find(f => f.name === 'Valoria');
+    const targetFaction = currentWorld.factions.find(f => f.name === targetFactionName);
+
+    if (playerFaction && targetFaction) {
+      playerFaction.status[targetFactionName] = newStatus;
+      targetFaction.status[playerFaction.name] = newStatus;
+
+      const logPrefix = `[Year ${currentWorld.year}]`;
+      if (newStatus === 'war') {
+        currentWorld.chronicle.push(`${logPrefix} WAR DECLARED: Player faction declared war on ${targetFactionName}!`);
+        if (window.synth) window.synth.playSwirl();
+      } else if (newStatus === 'alliance') {
+        currentWorld.chronicle.push(`${logPrefix} ALLIANCE FORGED: Player faction formed a holy alliance with ${targetFactionName}!`);
+        if (window.synth) window.synth.playAlliance();
+      } else {
+        currentWorld.chronicle.push(`${logPrefix} PEACE TREATY: Player faction agreed to peace terms with ${targetFactionName}.`);
+        if (window.synth) window.synth.playBell();
+      }
+
+      window.renderDiplomacyRelations();
       updateUI(currentWorld);
     }
   }

@@ -682,6 +682,32 @@ export class MapRenderer {
               const citizenName = CITIZEN_NAMES[Math.floor(Math.random() * CITIZEN_NAMES.length)] + " " + faction.name.substring(0, 4);
               const citizenRole = CITIZEN_ROLES[Math.floor(Math.random() * CITIZEN_ROLES.length)];
               
+              if (cIdx === 0) {
+                this.entities.push({
+                  id: `${faction.name}-leader-${s.x}-${s.y}-${Math.random()}`,
+                  type: 'leader',
+                  name: `Royal Leader ${faction.name}`,
+                  role: 'Kingdom Hero',
+                  realm: this.activeRealm,
+                  age: 25,
+                  parents: "Royal Lineage",
+                  generation: 1,
+                  health: 500,
+                  maxHealth: 500,
+                  history: [`Ascended to the throne of ${faction.name} in Year 1`],
+                  task: `Guarding Faction Center`,
+                  color: faction.color,
+                  x: s.x * ts + ts/2,
+                  y: s.y * ts + ts/2,
+                  targetX: s.x * ts + ts/2,
+                  targetY: s.y * ts + ts/2,
+                  homeX: s.x,
+                  homeY: s.y,
+                  speed: 0.6,
+                  emoji: '👑'
+                });
+              }
+
               this.entities.push({
                 id: `${faction.name}-citizen-${s.x}-${s.y}-${cIdx}-${Math.random()}`,
                 type: 'citizen',
@@ -809,6 +835,61 @@ export class MapRenderer {
               return;
             }
 
+            // Plague infection checks
+            const homeCell = getCell(this.world, ent.realm || this.activeRealm, ent.homeX, ent.homeY);
+            const currentCell = getCell(this.world, ent.realm || this.activeRealm, cx, cy);
+            
+            // If home or current cell is plagued, citizen has 30% chance to catch it
+            if ((homeCell.settlement && homeCell.settlement.plagued) || (currentCell.settlement && currentCell.settlement.plagued)) {
+              if (Math.random() < 0.3) {
+                ent.plagued = true;
+              }
+            }
+
+            // Apothecary healing logic at home
+            if (ent.plagued && homeCell.settlement && homeCell.settlement.apothecary) {
+              ent.plagued = false;
+              ent.task = "Cured by Apothecary";
+            }
+
+            // Plague stats drain
+            if (ent.plagued) {
+              ent.health = (ent.health || 100) - 2;
+              ent.speed = (ent.speed || 0.35) * 0.6; // slow down
+              if (Math.random() < 0.1) {
+                this.particles.push({
+                  x: ent.x + (Math.random() * 6 - 3),
+                  y: ent.y + (Math.random() * 6 - 3),
+                  vx: Math.random() * 0.5 - 0.25,
+                  vy: Math.random() * -0.5,
+                  size: 3,
+                  color: 'rgba(34, 197, 94, ', // green plague particles
+                  life: 0.8
+                });
+              }
+            }
+
+            // Tool and Weapon Crafting at home
+            if (cx === ent.homeX && cy === ent.homeY && faction && !ent.plagued) {
+              if (!ent.equipped) {
+                if (faction.resources.gold >= 15 && faction.resources.iron >= 5 && Math.random() < 0.2) {
+                  faction.resources.gold -= 15;
+                  faction.resources.iron -= 5;
+                  const roll = Math.random();
+                  if (roll < 0.33) {
+                    ent.equipped = 'Sword';
+                    ent.history.push(`Crafted a steel sword for combat in Year ${this.world.year}`);
+                  } else if (roll < 0.66) {
+                    ent.equipped = 'Pickaxe';
+                    ent.history.push(`Crafted a reinforced pickaxe for mining in Year ${this.world.year}`);
+                  } else {
+                    ent.equipped = 'Axe';
+                    ent.history.push(`Crafted a lumberjack axe for forestry in Year ${this.world.year}`);
+                  }
+                }
+              }
+            }
+
             // Increment hunger points
             ent.hunger = (ent.hunger || 0) + 12;
             
@@ -824,7 +905,10 @@ export class MapRenderer {
               }
               Object.keys(ent.cargo).forEach(res => {
                 if (faction) {
-                  faction.resources[res] = (faction.resources[res] || 0) + ent.cargo[res];
+                  let multiplier = 1;
+                  if (res === 'wood' && ent.equipped === 'Axe') multiplier = 2; // double wood
+                  if ((res === 'iron' || res === 'gold') && ent.equipped === 'Pickaxe') multiplier = 2; // double mining
+                  faction.resources[res] = (faction.resources[res] || 0) + ent.cargo[res] * multiplier;
                 }
               });
               ent.cargo = {};
@@ -928,14 +1012,29 @@ export class MapRenderer {
 
       // Combat Resolution Check
       this.entities.forEach(ent1 => {
-        if (ent1.type !== 'citizen') return;
+        if (ent1.type !== 'citizen' && ent1.type !== 'leader') return;
         this.entities.forEach(ent2 => {
-          if (ent2.type !== 'citizen' || ent1.id === ent2.id) return;
+          if ((ent2.type !== 'citizen' && ent2.type !== 'leader') || ent1.id === ent2.id) return;
           if (ent1.color !== ent2.color) {
             const dist = Math.hypot(ent1.x - ent2.x, ent1.y - ent2.y);
             if (dist < 12.0) {
-              ent1.health = (ent1.health || 100) - 5;
-              ent2.health = (ent2.health || 100) - 5;
+              // Calculate leader aura boosts
+              const ent1HasLeaderAura = this.entities.some(e => e.type === 'leader' && e.color === ent1.color && Math.hypot(e.x - ent1.x, e.y - ent1.y) < 60);
+              const ent2HasLeaderAura = this.entities.some(e => e.type === 'leader' && e.color === ent2.color && Math.hypot(e.x - ent2.x, e.y - ent2.y) < 60);
+              
+              let ent1Dmg = 5;
+              let ent2Dmg = 5;
+
+              // Weapon multipliers
+              if (ent1.equipped === 'Sword') ent1Dmg *= 2.0;
+              if (ent2.equipped === 'Sword') ent2Dmg *= 2.0;
+
+              // Leader aura multipliers (+50% combat efficiency / reduction in received damage)
+              if (ent1HasLeaderAura) ent2Dmg *= 1.5;
+              if (ent2HasLeaderAura) ent1Dmg *= 1.5;
+
+              ent1.health = (ent1.health || 100) - ent2Dmg;
+              ent2.health = (ent2.health || 100) - ent1Dmg;
               ent1.task = "Battling rival!";
               ent2.task = "Battling rival!";
               
@@ -962,11 +1061,12 @@ export class MapRenderer {
 
       // Filter dead entities and log slain events
       this.entities = this.entities.filter(ent => {
-        if (ent.type === 'citizen' && (ent.health || 100) <= 0) {
+        if ((ent.type === 'citizen' || ent.type === 'leader') && (ent.health || 100) <= 0) {
           if (this.world.chronicle) {
             const cx = Math.floor(ent.x / ts);
             const cy = Math.floor(ent.y / ts);
-            this.world.chronicle.push(`[War] ${ent.name} was slain in battle at [${cx}, ${cy}] in Year ${this.world.year}.`);
+            const typeLabel = ent.type === 'leader' ? 'Royal Leader' : 'Citizen';
+            this.world.chronicle.push(`[War] ${typeLabel} ${ent.name} was slain in battle at [${cx}, ${cy}] in Year ${this.world.year}.`);
             if (window.synth) window.synth.playSwirl();
           }
           return false;
@@ -1414,6 +1514,9 @@ export class MapRenderer {
     let isFire = false;
     let hasBeast = false;
     let hasSeaMonster = false;
+    let isPlagued = false;
+    let hasApothecary = false;
+    let wonderBlueprint = null;
 
     if (this.historicalState) {
       const cells = this.historicalState.mapState.modifiedCells || [];
@@ -1436,6 +1539,9 @@ export class MapRenderer {
           factionIdx = this.world.factions.findIndex(f => f.name === cell.settlement.faction);
           if (factionIdx === -1 && cell.settlement.faction === 'Players') factionIdx = 4;
           type = cell.settlement.type;
+          isPlagued = cell.settlement.plagued;
+          hasApothecary = cell.settlement.apothecary;
+          wonderBlueprint = cell.settlement.wonderBlueprint;
         }
         ruin = cell.ruin;
         isFire = cell.fireTicksLeft > 0;
@@ -1509,6 +1615,41 @@ export class MapRenderer {
         ctx.fillRect(cx + 6, cy + 13, ts - 12, ts - 18);
       }
 
+      // Render Apothecary overlay
+      if (hasApothecary) {
+        ctx.fillStyle = '#10b981';
+        ctx.font = '8px sans-serif';
+        ctx.fillText('🏥', cx + 2, cy + 9);
+      }
+
+      // Render Wonder blueprint / Completed Wonder overlay
+      if (wonderBlueprint) {
+        if (wonderBlueprint.progress < 100) {
+          ctx.strokeStyle = '#eab308';
+          ctx.lineWidth = 1;
+          ctx.setLineDash([2, 2]);
+          ctx.strokeRect(cx + 1, cy + 1, ts - 2, ts - 2);
+          ctx.setLineDash([]);
+          ctx.fillStyle = '#eab308';
+          ctx.font = '6px sans-serif';
+          ctx.fillText(`🚧${wonderBlueprint.progress}%`, cx + ts/2 - 8, cy + 9);
+        } else {
+          ctx.fillStyle = '#fbbf24';
+          ctx.font = '10px sans-serif';
+          ctx.fillText('🏛️', cx + ts/2 - 5, cy + ts - 4);
+        }
+      }
+
+      // Render Plague sickness overlay
+      if (isPlagued) {
+        ctx.strokeStyle = '#22c55e';
+        ctx.lineWidth = 2;
+        ctx.strokeRect(cx, cy, ts, ts);
+        ctx.fillStyle = '#22c55e';
+        ctx.font = '9px sans-serif';
+        ctx.fillText('🤢', cx + ts - 10, cy + ts - 2);
+      }
+
       // Spaceport overlay if faction has starflight tech
       const faction = factionIdx !== -1 ? this.world.factions[factionIdx] : null;
       if (faction && faction.technologies && faction.technologies.includes('starflight')) {
@@ -1526,6 +1667,19 @@ export class MapRenderer {
         ctx.fillStyle = '#f97316';
         ctx.font = '8px sans-serif';
         ctx.fillText('🏗️', cx + 2, cy + 9);
+
+        // Active Builder contributes to Wonder Blueprint progress if present
+        if (wonderBlueprint && wonderBlueprint.progress < 100 && faction && Math.random() < 0.15) {
+          if (faction.resources.wood >= 1 && faction.resources.iron >= 1) {
+            faction.resources.wood -= 1;
+            faction.resources.iron -= 1;
+            wonderBlueprint.progress = Math.min(100, wonderBlueprint.progress + 5);
+            if (wonderBlueprint.progress === 100) {
+              this.world.chronicle.push(`[Wonder] MEGASTRUCTURE COMPLETED! Faction ${faction.name} finished construction of the Monumental Wonder at [${x}, ${y}] in ${this.activeRealm}!`);
+              if (window.synth) window.synth.playBell();
+            }
+          }
+        }
       }
     }
 
