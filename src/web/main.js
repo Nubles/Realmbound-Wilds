@@ -145,8 +145,12 @@ function updateUI(world) {
 
   // Update selection/inspect details if a cell is selected
   if (renderer && renderer.selectedCell) {
-    // Sync selected cell with the fresh coordinates from database
-    const refreshedCell = world.grid[renderer.selectedCell.y][renderer.selectedCell.x];
+    let refreshedCell;
+    if (renderer.historicalState) {
+      refreshedCell = renderer.getReconstructedCell(renderer.selectedCell.x, renderer.selectedCell.y);
+    } else {
+      refreshedCell = getCell(world, renderer.selectedCell.realm || 'overworld', renderer.selectedCell.x, renderer.selectedCell.y);
+    }
     inspectCell(refreshedCell);
   }
 }

@@ -83,19 +83,43 @@ export class MapRenderer {
     this.animTime = 0;
     this.particles = [];
     
+    this.discoveryCache = new Set();
     this.setupEvents();
     this.startAnimationLoop();
+  }
+
+  rebuildDiscoveryCache() {
+    this.discoveryCache.clear();
+    const centers = this.historicalState ? this.historicalState.discoveredCenters : (this.world ? this.world.discoveredCenters : []);
+    if (!centers) return;
+
+    for (let i = 0; i < centers.length; i++) {
+      const c = centers[i];
+      if (c.realm === this.activeRealm) {
+        const rad = Math.ceil(c.radius);
+        // Precompute coordinates within circle distance
+        for (let dy = -rad; dy <= rad; dy++) {
+          for (let dx = -rad; dx <= rad; dx++) {
+            if (dx*dx + dy*dy <= c.radius * c.radius) {
+              this.discoveryCache.add(`${c.x + dx},${c.y + dy}`);
+            }
+          }
+        }
+      }
+    }
   }
 
   setWorld(world) {
     this.world = world;
     this.historicalState = null;
+    this.rebuildDiscoveryCache();
     this.resize();
     this.resetView();
   }
 
   setHistoricalState(state) {
     this.historicalState = state;
+    this.rebuildDiscoveryCache();
     this.draw();
   }
 
@@ -108,6 +132,7 @@ export class MapRenderer {
     this.activeRealm = realm;
     this.selectedCell = null;
     this.hoveredCell = null;
+    this.rebuildDiscoveryCache();
     this.draw();
   }
 
@@ -133,23 +158,14 @@ export class MapRenderer {
   }
 
   zoomOut() {
-    this.zoom = Math.max(0.15, this.zoom / 1.25);
+    // Enforce reasonable zoom limit to avoid canvas scaling overhead
+    this.zoom = Math.max(0.3, this.zoom / 1.25);
     this.draw();
   }
 
   // Check if coordinate is discovered under current Fog of War centers
   isCoordinateDiscovered(x, y) {
-    const centers = this.historicalState ? this.historicalState.discoveredCenters : (this.world ? this.world.discoveredCenters : []);
-    if (!centers) return false;
-    
-    for (let i = 0; i < centers.length; i++) {
-      const c = centers[i];
-      if (c.realm === this.activeRealm) {
-        const d = Math.hypot(x - c.x, y - c.y);
-        if (d <= c.radius) return true;
-      }
-    }
-    return false;
+    return this.discoveryCache.has(`${x},${y}`);
   }
 
   // Get active cell from coordinates
