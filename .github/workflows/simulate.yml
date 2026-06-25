@@ -1,6 +1,10 @@
 name: Simulation Tick
 
 on:
+  push:
+    branches: [ "main" ]
+    paths-ignore:
+      - 'public/data/**'
   schedule:
     - cron: '0 * * * *' # Run hourly
   workflow_dispatch: # Enable manual run from Actions tab
