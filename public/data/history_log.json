@@ -73,5 +73,36 @@
       "The faction of Ironclad is established. Capital founded at [41, 30] named Ironclad Prime.",
       "The faction of Sunspire is established. Capital founded at [54, 5] named Sunspire Prime."
     ]
+  },
+  {
+    "year": 2,
+    "globalTempOffset": 0.013954235885240671,
+    "stats": {
+      "deer": 27552,
+      "wolf": 1109,
+      "elk": 1151,
+      "bear": 11,
+      "beasts": 0,
+      "population": 522
+    },
+    "factions": {
+      "Valoria": 110,
+      "Oakhaven": 108,
+      "Ironclad": 108,
+      "Sunspire": 110,
+      "Players": 86
+    },
+    "events": [
+      "The world is forged from the primal wildlands.",
+      "The faction of Valoria is established. Capital founded at [21, 27] named Valoria Prime.",
+      "The faction of Oakhaven is established. Capital founded at [28, 20] named Oakhaven Prime.",
+      "The faction of Ironclad is established. Capital founded at [41, 30] named Ironclad Prime.",
+      "The faction of Sunspire is established. Capital founded at [54, 5] named Sunspire Prime.",
+      "[Year 1] Player Alexander established a new settlement: Aethelgard Outpost at [15, 10].",
+      "[Year 2] Wildfire erupted in the dense forest at [8, 25].",
+      "[Year 2] Wildfire erupted in the dense forest at [25, 30].",
+      "[Year 2] Wildfire erupted in the dense forest at [15, 38].",
+      "[Year 2] Factions declare war! Conflict has erupted between Valoria and Players over regional dominance."
+    ]
   }
 ]
