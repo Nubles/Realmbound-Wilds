@@ -1,6 +1,6 @@
 {
   "seed": "1782391104390",
-  "year": 7,
+  "year": 8,
   "factions": [
     {
       "name": "Valoria",
@@ -23,9 +23,9 @@
         "Sunspire": "peace",
         "Players": "peace"
       },
-      "power": 220,
+      "power": 244,
       "resources": {
-        "gold": 0,
+        "gold": 12,
         "wood": 50,
         "iron": 10
       },
@@ -54,13 +54,13 @@
         "Sunspire": "peace",
         "Players": "peace"
       },
-      "power": 225,
+      "power": 249,
       "resources": {
-        "gold": 1,
+        "gold": 13,
         "wood": 50,
         "iron": 10,
-        "fish": 6,
-        "cavernore": 6
+        "fish": 7,
+        "cavernore": 7
       },
       "technologies": [
         "tier1_tooling"
@@ -87,9 +87,9 @@
         "Sunspire": "peace",
         "Players": "peace"
       },
-      "power": 225,
+      "power": 249,
       "resources": {
-        "gold": 1,
+        "gold": 13,
         "wood": 50,
         "iron": 10
       },
@@ -118,13 +118,15 @@
         "Ironclad": "peace",
         "Players": "peace"
       },
-      "power": 187,
+      "power": 201,
       "resources": {
-        "gold": 94,
+        "gold": 64,
         "wood": 50,
         "iron": 10
       },
-      "technologies": []
+      "technologies": [
+        "stone_tools"
+      ]
     },
     {
       "name": "Players",
@@ -147,13 +149,15 @@
         "Ironclad": "peace",
         "Sunspire": "peace"
       },
-      "power": 139,
+      "power": 150,
       "resources": {
-        "gold": 82,
+        "gold": 49,
         "wood": 50,
         "iron": 10
       },
-      "technologies": []
+      "technologies": [
+        "stone_tools"
+      ]
     }
   ],
   "modifiedCells": {
@@ -163,11 +167,11 @@
       "realm": "overworld",
       "biome": "coast",
       "elevation": 0.318812288726184,
-      "temperature": 0.810964385157277,
+      "temperature": 0.8076838149920228,
       "settlement": {
         "name": "Valoria Prime",
         "faction": "Valoria",
-        "size": 220,
+        "size": 244,
         "type": "village",
         "resources": []
       },
@@ -175,7 +179,7 @@
       "resources": [],
       "ruin": null,
       "wildlife": [],
-      "vegetation": 0.14,
+      "vegetation": 0.15500000000000003,
       "history": []
     },
     "overworld:0,-11": {
@@ -184,11 +188,11 @@
       "realm": "overworld",
       "biome": "coast",
       "elevation": 0.3074389482551541,
-      "temperature": 0.7208564976255853,
+      "temperature": 0.7175759274603312,
       "settlement": {
         "name": "Oakhaven Prime",
         "faction": "Oakhaven",
-        "size": 231,
+        "size": 255,
         "type": "village",
         "resources": [
           "fish",
@@ -202,7 +206,7 @@
       ],
       "ruin": null,
       "wildlife": [],
-      "vegetation": 0.14,
+      "vegetation": 0.15500000000000003,
       "history": []
     },
     "overworld:13,-9": {
@@ -211,11 +215,11 @@
       "realm": "overworld",
       "biome": "coast",
       "elevation": 0.31836727146564525,
-      "temperature": 0.7734535048863198,
+      "temperature": 0.7701729347210656,
       "settlement": {
         "name": "Ironclad Prime",
         "faction": "Ironclad",
-        "size": 231,
+        "size": 255,
         "type": "village",
         "resources": []
       },
@@ -223,7 +227,7 @@
       "resources": [],
       "ruin": null,
       "wildlife": [],
-      "vegetation": 0.14,
+      "vegetation": 0.15500000000000003,
       "history": []
     },
     "overworld:-19,-10": {
@@ -232,11 +236,11 @@
       "realm": "overworld",
       "biome": "coast",
       "elevation": 0.28430215116063723,
-      "temperature": 0.7639494202884487,
+      "temperature": 0.7606688501231945,
       "settlement": {
         "name": "Sunspire Prime",
         "faction": "Sunspire",
-        "size": 187,
+        "size": 201,
         "type": "village",
         "resources": []
       },
@@ -244,7 +248,7 @@
       "resources": [],
       "ruin": null,
       "wildlife": [],
-      "vegetation": 0.14,
+      "vegetation": 0.15500000000000003,
       "history": []
     },
     "overworld:5,5": {
@@ -253,7 +257,7 @@
       "realm": "overworld",
       "biome": "plains",
       "elevation": 0.5249701008440653,
-      "temperature": 0.7054376339872293,
+      "temperature": 0.7021570638219751,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -273,7 +277,7 @@
           "count": 24
         }
       ],
-      "vegetation": 0.39000000000000007,
+      "vegetation": 0.4050000000000001,
       "history": []
     },
     "underworld:0,0": {
@@ -282,7 +286,7 @@
       "realm": "underworld",
       "biome": "deep_lake",
       "elevation": 0.21318443796895772,
-      "temperature": 0.5301481809376567,
+      "temperature": 0.5268676107724025,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -297,7 +301,7 @@
         }
       },
       "wildlife": [],
-      "vegetation": 0.14,
+      "vegetation": 0.15500000000000003,
       "history": []
     },
     "overworld:-15,10": {
@@ -306,7 +310,7 @@
       "realm": "overworld",
       "biome": "ocean",
       "elevation": 0.03447570636113438,
-      "temperature": 0.8897416930582775,
+      "temperature": 0.8864611228930234,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -321,7 +325,7 @@
         }
       },
       "wildlife": [],
-      "vegetation": 0.14,
+      "vegetation": 0.15500000000000003,
       "history": []
     },
     "aether:0,0": {
@@ -330,7 +334,7 @@
       "realm": "aether",
       "biome": "void",
       "elevation": 0.18900273544403365,
-      "temperature": 0.5250472286129371,
+      "temperature": 0.5217666584476829,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -345,7 +349,7 @@
         }
       },
       "wildlife": [],
-      "vegetation": 0.14,
+      "vegetation": 0.15500000000000003,
       "history": []
     },
     "overworld:20,-15": {
@@ -354,7 +358,7 @@
       "realm": "overworld",
       "biome": "ocean",
       "elevation": 0.2740765277329316,
-      "temperature": 0.7313706057002602,
+      "temperature": 0.7280900355350061,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -369,7 +373,7 @@
         }
       },
       "wildlife": [],
-      "vegetation": 0.14,
+      "vegetation": 0.15500000000000003,
       "history": []
     },
     "space:0,0": {
@@ -378,7 +382,7 @@
       "realm": "space",
       "biome": "void_space",
       "elevation": 0.3567314440443187,
-      "temperature": 0.06338304465729741,
+      "temperature": 0.060102474492043235,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -393,7 +397,7 @@
         }
       },
       "wildlife": [],
-      "vegetation": 0.14,
+      "vegetation": 0.15500000000000003,
       "history": []
     },
     "underworld:15,10": {
@@ -402,11 +406,11 @@
       "realm": "underworld",
       "biome": "crystal_cave",
       "elevation": 0.2551693100415643,
-      "temperature": 0.512543553056326,
+      "temperature": 0.5092629828910719,
       "settlement": {
         "name": "Aethelgard Outpost",
         "faction": "Players",
-        "size": 139,
+        "size": 150,
         "type": "village",
         "resources": []
       },
@@ -414,7 +418,7 @@
       "resources": [],
       "ruin": null,
       "wildlife": [],
-      "vegetation": 0.14,
+      "vegetation": 0.15500000000000003,
       "history": [
         "[Year 1] Outpost Aethelgard Outpost founded by Alexander."
       ]
@@ -503,7 +507,9 @@
     "[Year 6] DIPLOMACY: Alliances forged between Valoria and Oakhaven!",
     "[Year 7] RESEARCH: Valoria unlocked technology [Basic Tooling]!",
     "[Year 7] RESEARCH: Oakhaven unlocked technology [Basic Tooling]!",
-    "[Year 7] RESEARCH: Ironclad unlocked technology [Basic Tooling]!"
+    "[Year 7] RESEARCH: Ironclad unlocked technology [Basic Tooling]!",
+    "[Year 8] RESEARCH: Sunspire unlocked technology [Basic Flint Tooling]!",
+    "[Year 8] RESEARCH: Players unlocked technology [Basic Flint Tooling]!"
   ],
   "tradeRoutes": [
     {
@@ -519,5 +525,5 @@
       "f2": "Ironclad"
     }
   ],
-  "globalTempOffset": -0.04246287789195777
+  "globalTempOffset": -0.03280570165254176
 }
