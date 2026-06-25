@@ -144,18 +144,18 @@ export const BIOME_LABELS = {
 const REALM_BIOME_COLORS = {
   overworld: {
     ocean: '#0c1524', coast: '#1b324d', lake: '#244e76', plains: '#455e3c',
-    forest: '#264228', mountain: '#4a4d53', desert: '#8a7959', tundra: '#5a6b6c'
+    forest: '#264228', mountain: '#4a4d53', desert: '#8a7959', tundra: '#5a6b6c', crater: '#2a2220'
   },
   underworld: {
     deep_lake: '#0c0f1d', solid_rock: '#1e1c22', magma_vent: '#b91c1c',
-    mushroom_forest: '#18382c', crystal_cave: '#4c2e6b', cavern: '#2d2b33'
+    mushroom_forest: '#18382c', crystal_cave: '#4c2e6b', cavern: '#2d2b33', crater: '#2a2220'
   },
   aether: {
     void: '#0b0c16', storm_peaks: '#4d5162', starlight_woods: '#1d3e56',
-    cloud_fields: '#65779c', sky_island: '#3a6b7e'
+    cloud_fields: '#65779c', sky_island: '#3a6b7e', crater: '#2a2220'
   },
   space: {
-    void_space: '#020205', comet_tail: '#29435c', nebula: '#3f1f51', asteroid_belt: '#1b1d22'
+    void_space: '#020205', comet_tail: '#29435c', nebula: '#3f1f51', asteroid_belt: '#1b1d22', crater: '#2a2220'
   }
 };
 
@@ -571,6 +571,9 @@ export class MapRenderer {
             const roles = ["Gatherer", "Miner", "Builder", "Scout", "Trader"];
             const babyRole = roles[Math.floor(Math.random() * roles.length)];
             
+            if (!ent.history) ent.history = [];
+            ent.history.push(`Had a child named ${babyName} in Year ${this.world.year}`);
+            
             kidsToSpawn.push({
               id: `${ent.id}-child-${Math.random()}`,
               type: 'citizen',
@@ -581,6 +584,7 @@ export class MapRenderer {
               generation: (ent.generation || 1) + 1,
               activityState: 'GATHERING',
               cargo: {},
+              history: [`Born to ${ent.name} in Year ${this.world.year}`],
               hunger: 0,
               inventory: { gold: 0, food: 3, raw_materials: 0 },
               task: `Infant resting`,
@@ -631,6 +635,7 @@ export class MapRenderer {
                 generation: 1,
                 activityState: 'GATHERING', // 'GATHERING' | 'RETURNING'
                 cargo: {},
+                history: [`Began career as a ${citizenRole} in Year 1`],
                 hunger: Math.floor(Math.random() * 30), // Start with low hunger
                 inventory: { gold: 0, food: 2, raw_materials: 0 },
                 task: `Resting at ${s.name}`,
@@ -731,6 +736,11 @@ export class MapRenderer {
             
             if (ent.activityState === 'RETURNING') {
               // Deposit gathered resources to Faction reserves
+              if (!ent.history) ent.history = [];
+              const cargoKeys = Object.keys(ent.cargo || {});
+              if (cargoKeys.length > 0) {
+                ent.history.push(`Deposited cargo [${cargoKeys.map(k => `${k}:${ent.cargo[k]}`).join(', ')}] in Year ${this.world.year}`);
+              }
               Object.keys(ent.cargo).forEach(res => {
                 if (faction) {
                   faction.resources[res] = (faction.resources[res] || 0) + ent.cargo[res];
@@ -834,6 +844,54 @@ export class MapRenderer {
           ent.y += (dy / dist) * ent.speed;
         }
       });
+
+      // Combat Resolution Check
+      this.entities.forEach(ent1 => {
+        if (ent1.type !== 'citizen') return;
+        this.entities.forEach(ent2 => {
+          if (ent2.type !== 'citizen' || ent1.id === ent2.id) return;
+          if (ent1.color !== ent2.color) {
+            const dist = Math.hypot(ent1.x - ent2.x, ent1.y - ent2.y);
+            if (dist < 12.0) {
+              ent1.health = (ent1.health || 100) - 5;
+              ent2.health = (ent2.health || 100) - 5;
+              ent1.task = "Battling rival!";
+              ent2.task = "Battling rival!";
+              
+              if (!ent1.history) ent1.history = [];
+              if (!ent1.history.includes("Engaged in skirmish")) {
+                ent1.history.push(`Engaged in combat against ${ent2.name} in Year ${this.world.year}`);
+              }
+              
+              if (Math.random() < 0.25) {
+                this.particles.push({
+                  x: (ent1.x + ent2.x)/2 + (Math.random()*6-3),
+                  y: (ent1.y + ent2.y)/2 + (Math.random()*6-3),
+                  vx: Math.random()*2-1,
+                  vy: Math.random()*2-1,
+                  size: 2,
+                  color: 'rgba(239, 68, 68, ',
+                  life: 0.8
+                });
+              }
+            }
+          }
+        });
+      });
+
+      // Filter dead entities and log slain events
+      this.entities = this.entities.filter(ent => {
+        if (ent.type === 'citizen' && (ent.health || 100) <= 0) {
+          if (this.world.chronicle) {
+            const cx = Math.floor(ent.x / ts);
+            const cy = Math.floor(ent.y / ts);
+            this.world.chronicle.push(`[War] ${ent.name} was slain in battle at [${cx}, ${cy}] in Year ${this.world.year}.`);
+            if (window.synth) window.synth.playSwirl();
+          }
+          return false;
+        }
+        return true;
+      });
     }
   }
 
@@ -936,6 +994,10 @@ export class MapRenderer {
               vehicleSpeed = 0.5;
             }
           }
+        }
+        if (ent.emoji && ent.emoji !== vehicleEmoji) {
+          if (!ent.history) ent.history = [];
+          ent.history.push(`Upgraded transportation vehicle to ${vehicleEmoji} in Year ${this.world.year}`);
         }
         ent.emoji = vehicleEmoji;
         ent.speed = vehicleSpeed;
@@ -1129,7 +1191,9 @@ export class MapRenderer {
     }
 
     const baseCell = generateCell(x, y, this.activeRealm, this.world.seed);
-    let biome = baseCell.biome;
+    const key = `${this.activeRealm}:${x},${y}`;
+    const dynamicCell = this.world && this.world.modifiedCells[key];
+    let biome = dynamicCell ? dynamicCell.biome : baseCell.biome;
     let factionIdx = -1;
 
     // Load overlays from dynamic cell registry
@@ -1268,6 +1332,7 @@ export class MapRenderer {
     let ruin = null;
     let isFire = false;
     let hasBeast = false;
+    let hasSeaMonster = false;
 
     if (this.historicalState) {
       const cells = this.historicalState.mapState.modifiedCells || [];
@@ -1293,7 +1358,8 @@ export class MapRenderer {
         }
         ruin = cell.ruin;
         isFire = cell.fireTicksLeft > 0;
-        hasBeast = cell.wildlife.some(w => w.species === 'legendary_beast');
+        hasBeast = cell.wildlife && cell.wildlife.some(w => w.species === 'legendary_beast');
+        hasSeaMonster = cell.wildlife && cell.wildlife.some(w => w.species === 'sea_monster');
       }
     }
 
@@ -1376,6 +1442,13 @@ export class MapRenderer {
       ctx.fillStyle = '#ef4444';
       ctx.font = '13px sans-serif';
       ctx.fillText('🐉', cx + 4, cy + ts - 5);
+    }
+
+    // 6. Draw sea monster
+    if (hasSeaMonster) {
+      ctx.fillStyle = '#3b82f6';
+      ctx.font = '13px sans-serif';
+      ctx.fillText('🦑', cx + 4, cy + ts - 5);
     }
   }
 

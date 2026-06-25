@@ -794,6 +794,89 @@ export function advanceSimulation(world) {
     }
   });
 
+  // --- 1. Environmental Disasters ---
+  // Meteor Strike (3% chance)
+  if (random() < 0.03 && world.discoveredCenters.length > 0) {
+    const targetCenter = world.discoveredCenters[Math.floor(random() * world.discoveredCenters.length)];
+    const rx = targetCenter.x + Math.floor(random() * 5) - 2;
+    const ry = targetCenter.y + Math.floor(random() * 5) - 2;
+    const cell = getCell(world, targetCenter.realm, rx, ry);
+    
+    cell.biome = 'crater';
+    cell.elevation = 0.15;
+    cell.temperature = 0.8;
+    cell.vegetation = 0.0;
+    
+    if (cell.settlement) {
+      world.chronicle.push(`${logPrefix} METEOR IMPACT: A roaring meteorite obliterated the settlement ${cell.settlement.name} at [${rx}, ${ry}] in ${targetCenter.realm}!`);
+      const f = world.factions.find(fac => fac.name === cell.settlement.faction);
+      if (f) f.settlements = f.settlements.filter(s => s.x !== rx || s.y !== ry || s.realm !== targetCenter.realm);
+      cell.settlement = null;
+    } else {
+      world.chronicle.push(`${logPrefix} METEOR STRIKE: A roaring meteorite struck the ground at [${rx}, ${ry}] in ${targetCenter.realm}, leaving a burning crater of astralmetal.`);
+    }
+    
+    cell.resources = ['astralmetal', 'obsidian'];
+    cell.ruin = {
+      name: "Smoking Crater Outpost",
+      description: "Rich in stellar materials from a celestial impact.",
+      age: world.year
+    };
+    saveCell(world, cell);
+  }
+
+  // Sea Monster sighting (5% chance in water biomes)
+  if (random() < 0.05) {
+    const waterKeys = Object.keys(world.modifiedCells).filter(key => {
+      const c = world.modifiedCells[key];
+      return c.realm === 'overworld' && (c.biome === 'ocean' || c.biome === 'coast');
+    });
+    if (waterKeys.length > 0) {
+      const targetKey = waterKeys[Math.floor(random() * waterKeys.length)];
+      const cell = world.modifiedCells[targetKey];
+      cell.wildlife = [{ species: 'sea_monster', count: 1 }];
+      world.chronicle.push(`${logPrefix} SEA MONSTER SIGHTING: A giant kraken was spotted in the oceanic waters at [${cell.x}, ${cell.y}]!`);
+      saveCell(world, cell);
+    }
+  }
+
+  // --- 2. Market Economies & Trading ---
+  for (let i = 0; i < world.factions.length; i++) {
+    for (let j = i + 1; j < world.factions.length; j++) {
+      const f1 = world.factions[i];
+      const f2 = world.factions[j];
+      
+      if (!f1.resources || !f2.resources) continue;
+      
+      const resourcesList = ['wood', 'iron', 'gold'];
+      resourcesList.forEach(res => {
+        const amt1 = f1.resources[res] || 0;
+        const amt2 = f2.resources[res] || 0;
+        
+        if (amt1 < 10 && amt2 > 60 && (f1.resources.gold || 0) > 30) {
+          f1.resources[res] += 10;
+          f2.resources[res] -= 10;
+          f1.resources.gold -= 15;
+          f2.resources.gold += 15;
+          
+          if (random() < 0.15) {
+            world.chronicle.push(`${logPrefix} MARKET TRADE: ${f1.name} purchased 10 units of ${res} from ${f2.name} for 15 gold.`);
+          }
+        }
+        else if (amt2 < 10 && amt1 > 60 && (f2.resources.gold || 0) > 30) {
+          f2.resources[res] += 10;
+          f1.resources[res] -= 10;
+          f2.resources.gold -= 15;
+          f1.resources.gold += 15;
+          
+          if (random() < 0.15) {
+            world.chronicle.push(`${logPrefix} MARKET TRADE: ${f2.name} purchased 10 units of ${res} from ${f1.name} for 15 gold.`);
+          }
+        }
+      });
+    }
+  }
+
   if (world.chronicle.length > 500) {
     world.chronicle = world.chronicle.slice(world.chronicle.length - 500);
   }

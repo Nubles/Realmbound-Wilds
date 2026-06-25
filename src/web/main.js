@@ -350,6 +350,22 @@ function inspectCell(cell) {
         item.style.padding = '6px 8px';
         item.style.fontSize = '0.78rem';
         const cargoList = Object.keys(p.cargo || {}).map(k => `${k}(${p.cargo[k]})`).join(', ');
+        const milestonesHtml = p.history && p.history.length > 0
+          ? `<details style="margin-top: 6px; font-size: 0.7rem; color: var(--text-secondary); cursor: pointer;"><summary>🗒️ View Life Diary</summary><div style="display: flex; flex-direction: column; gap: 2px; margin-top: 4px; padding-left: 6px; border-left: 1px solid rgba(255,255,255,0.1);">${p.history.map(h => `<div>• ${h}</div>`).join('')}</div></details>`
+          : '';
+        const controlsHtml = `
+          <div style="margin-top: 6px; display: flex; align-items: center; justify-content: space-between; gap: 6px; border-top: 1px dashed rgba(255,255,255,0.05); padding-top: 6px;">
+            <select onchange="window.reassignRole('${p.id}', this.value)" style="background: #111; color: var(--gold); border: 1px solid rgba(255,255,255,0.15); border-radius: 4px; font-size: 0.7rem; padding: 2px 4px; cursor: pointer;">
+              <option value="Gatherer" ${p.role === 'Gatherer' ? 'selected' : ''}>Gatherer</option>
+              <option value="Miner" ${p.role === 'Miner' ? 'selected' : ''}>Miner</option>
+              <option value="Builder" ${p.role === 'Builder' ? 'selected' : ''}>Builder</option>
+              <option value="Scout" ${p.role === 'Scout' ? 'selected' : ''}>Scout</option>
+              <option value="Soldier" ${p.role === 'Soldier' ? 'selected' : ''}>Soldier</option>
+            </select>
+            <button onclick="window.orderMove('${p.id}')" style="background: rgba(255, 255, 255, 0.05); color: var(--gold); border: 1px solid rgba(255,255,255,0.15); border-radius: 4px; font-size: 0.7rem; padding: 2px 6px; cursor: pointer;" title="Direct citizen to walk to selected coordinates">📍 Move Here</button>
+          </div>
+        `;
+
         item.innerHTML = `
           <div style="display: flex; justify-content: space-between; font-weight: 600;">
             <span style="color: var(--gold);">${p.emoji} ${p.name}</span>
@@ -364,6 +380,8 @@ function inspectCell(cell) {
             <span style="color: ${p.hunger >= 50 ? '#ef4444' : 'var(--text-secondary)'}">Hunger: ${p.hunger}%</span>
           </div>
           ${cargoList ? `<div style="margin-top: 4px; font-size: 0.72rem; color: #60a5fa; border-top: 1px dashed rgba(255,255,255,0.05); padding-top: 4px;">🎒 Cargo: ${cargoList}</div>` : ''}
+          ${milestonesHtml}
+          ${controlsHtml}
         `;
         listEl.appendChild(item);
       });
@@ -683,5 +701,43 @@ async function init() {
   // Handle window resizing
   window.addEventListener('resize', () => renderer.resize());
 }
+
+window.reassignRole = function(citizenId, newRole) {
+  if (window.renderer && window.renderer.entities) {
+    const citizen = window.renderer.entities.find(e => e.id === citizenId);
+    if (citizen) {
+      citizen.role = newRole;
+      citizen.task = "Assigned as " + newRole;
+      if (!citizen.history) citizen.history = [];
+      citizen.history.push(`Reassigned role to ${newRole} in Year ${window.renderer.world.year}`);
+      
+      if (window.renderer.selectedCell) {
+        inspectCell(window.renderer.selectedCell);
+      }
+      if (window.synth) window.synth.playClick();
+    }
+  }
+};
+
+window.orderMove = function(citizenId) {
+  if (window.renderer && window.renderer.entities && window.renderer.selectedCell) {
+    const citizen = window.renderer.entities.find(e => e.id === citizenId);
+    if (citizen) {
+      const ts = window.renderer.tileSize;
+      const cell = window.renderer.selectedCell;
+      citizen.targetX = cell.x * ts + ts/2;
+      citizen.targetY = cell.y * ts + ts/2;
+      citizen.activityState = 'GATHERING';
+      citizen.task = "Moving to ordered coordinates";
+      if (!citizen.history) citizen.history = [];
+      citizen.history.push(`Ordered to move to [${cell.x}, ${cell.y}] in Year ${window.renderer.world.year}`);
+      
+      if (window.renderer.selectedCell) {
+        inspectCell(window.renderer.selectedCell);
+      }
+      if (window.synth) window.synth.playClick();
+    }
+  }
+};
 
 document.addEventListener('DOMContentLoaded', init);
