@@ -128,6 +128,12 @@ function updateUI(world) {
 
       const factionItem = document.createElement('div');
       factionItem.className = 'faction-item';
+      
+      const techNames = faction.technologies && faction.technologies.length > 0 ? faction.technologies.join(', ') : 'None';
+      const woodCount = faction.resources ? (faction.resources.timber || faction.resources.wood || 0) : 0;
+      const goldCount = faction.resources ? (faction.resources.gold || 0) : 0;
+      const ironCount = faction.resources ? (faction.resources.iron || 0) : 0;
+
       factionItem.innerHTML = `
         <div class="faction-header">
           <span class="faction-name">
@@ -137,8 +143,11 @@ function updateUI(world) {
           <span class="faction-power">Power: ${faction.power}</span>
         </div>
         <div class="faction-stats">
-          <span>Settlements: ${activeSettlements.length}</span>
-          <span>Status: ${JSON.stringify(faction.status) === '{}' ? 'Isolation' : 'Active'}</span>
+          <span>Cities: ${activeSettlements.length}</span>
+          <span>Stockpile: 💰${goldCount} 🪵${woodCount} 🪙${ironCount}</span>
+        </div>
+        <div style="font-size: 0.72rem; color: var(--gold); margin-top: 2px; text-overflow: ellipsis; white-space: nowrap; overflow: hidden;" title="Unlocked: ${techNames}">
+          🎓 Tech: ${techNames}
         </div>
       `;
       factionListEl.appendChild(factionItem);

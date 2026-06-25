@@ -42,6 +42,28 @@ function getSmoothNoise(x, y, realm, seed) {
 const FACTION_NAMES = ["Valoria", "Oakhaven", "Ironclad", "Sunspire", "Grimwallow", "Aethelgard"];
 const FACTION_COLORS = ["#3b82f6", "#10b981", "#6b7280", "#f59e0b", "#8b5cf6", "#ec4899"];
 
+// Procedural Resource Prefix & Suffix tables
+const RES_PREFIXES = ["Nova", "Shadow", "Stellar", "Cavern", "Astral", "Magma", "Deep", "Prismatic", "Chrono", "Aether"];
+const RES_SUFFIXES = ["gem", "ore", "crystal", "dust", "timber", "shards", "metal", "alloy", "weave", "essence"];
+
+// Procedural Tech Tree Definitions
+export const TECH_TREE = [
+  { id: 'tier1_tooling', name: 'Basic Tooling', cost: 100, requires: [] },
+  { id: 'tier1_agriculture', name: 'Crop Rotations', cost: 120, requires: [] },
+  { id: 'tier2_metallurgy', name: 'Advanced Metallurgy', cost: 250, requires: ['tier1_tooling'] },
+  { id: 'tier2_logistics', name: 'Trade Networks', cost: 300, requires: ['tier1_agriculture'] },
+  { id: 'tier3_alchemy', name: 'Dimensional Alchemy', cost: 500, requires: ['tier2_metallurgy'] },
+  { id: 'tier3_architecture', name: 'Fortified Citadels', cost: 600, requires: ['tier2_logistics'] },
+  { id: 'tier4_spaceflight', name: 'Orbital Flight', cost: 1000, requires: ['tier3_alchemy', 'tier3_architecture'] }
+];
+
+export function getProceduralResource(x, y, realm, seed) {
+  const rng = seedRandom(`${x},${y}:${realm}:res:${seed}`);
+  const pre = RES_PREFIXES[Math.floor(rng() * RES_PREFIXES.length)];
+  const suf = RES_SUFFIXES[Math.floor(rng() * RES_SUFFIXES.length)];
+  return `${pre}${suf}`.toLowerCase();
+}
+
 export const REALMS = {
   OVERWORLD: 'overworld',
   UNDERWORLD: 'underworld',
@@ -89,6 +111,11 @@ export function generateCell(x, y, realm, seed) {
       if (elevation > 0.68 && detailNoise < 0.08) resources.push('gold');
       if (biome === 'forest' && detailNoise < 0.3) resources.push('timber');
       if (biome === 'coast' && detailNoise < 0.2) resources.push('fish');
+      
+      // Inject procedural resource under specific noise conditions
+      if (detailNoise < 0.18) {
+        resources.push(getProceduralResource(x, y, realm, seed));
+      }
     }
 
   } else if (realm === REALMS.UNDERWORLD) {
@@ -111,6 +138,10 @@ export function generateCell(x, y, realm, seed) {
       resources.push('obsidian');
     }
 
+    if (biome !== 'deep_lake' && biome !== 'solid_rock' && detailNoise < 0.15) {
+      resources.push(getProceduralResource(x, y, realm, seed));
+    }
+
   } else if (realm === REALMS.AETHER) {
     // Aether: sky clouds, floating islands
     temperature = 0.3 + (1 - elevation) * 0.3;
@@ -126,6 +157,10 @@ export function generateCell(x, y, realm, seed) {
       resources.push('stardust');
     }
 
+    if (biome !== 'void' && detailNoise < 0.15) {
+      resources.push(getProceduralResource(x, y, realm, seed));
+    }
+
   } else if (realm === REALMS.SPACE) {
     // Space: vacuum orbit, asteroids
     temperature = 0.05 + detailNoise * 0.1;
@@ -137,6 +172,10 @@ export function generateCell(x, y, realm, seed) {
 
     if (biome === 'asteroid_belt' && detailNoise < 0.15) {
       resources.push('starmetal');
+    }
+
+    if (biome !== 'void_space' && detailNoise < 0.15) {
+      resources.push(getProceduralResource(x, y, realm, seed));
     }
   }
 
@@ -251,7 +290,9 @@ export function createNewWorld(seed = "realmbound") {
       capital: { realm: REALMS.OVERWORLD, x: cx, y: cy },
       settlements: [{ realm: REALMS.OVERWORLD, x: cx, y: cy }],
       status: {},
-      power: 120
+      power: 120,
+      resources: { gold: 50, wood: 50, iron: 10 }, // Resource stockpile for tech research
+      technologies: [] // Discovered technology IDs
     });
 
     // Setup initial Fog of War discovery boundary around capital
@@ -463,8 +504,26 @@ export function advanceSimulation(world) {
         }
       }
       
+      // Gather local resources to faction stockpile
+      if (cell.resources) {
+        cell.resources.forEach(r => {
+          faction.resources[r] = (faction.resources[r] || 0) + 1;
+        });
+      }
+      // Basic gold taxation based on settlement size
+      faction.resources.gold = (faction.resources.gold || 0) + Math.max(1, Math.floor(cell.settlement.size * 0.05));
+      
       saveCell(world, cell);
     });
+
+    // Tech tree research progression check
+    if (!faction.technologies) faction.technologies = [];
+    const nextTech = TECH_TREE.find(t => !faction.technologies.includes(t.id) && t.requires.every(req => faction.technologies.includes(req)));
+    if (nextTech && faction.resources.gold >= nextTech.cost) {
+      faction.resources.gold -= nextTech.cost;
+      faction.technologies.push(nextTech.id);
+      world.chronicle.push(`${logPrefix} RESEARCH: ${faction.name} unlocked technology [${nextTech.name}]!`);
+    }
 
     faction.power = factionPower;
   });

@@ -1,20 +1,20 @@
 {
-  "seed": "1782390046431",
-  "year": 3,
+  "seed": "1782391104390",
+  "year": 1,
   "factions": [
     {
       "name": "Valoria",
       "color": "#3b82f6",
       "capital": {
         "realm": "overworld",
-        "x": -8,
-        "y": -6
+        "x": -4,
+        "y": 9
       },
       "settlements": [
         {
           "realm": "overworld",
-          "x": -8,
-          "y": -6
+          "x": -4,
+          "y": 9
         }
       ],
       "status": {
@@ -23,21 +23,27 @@
         "Sunspire": "peace",
         "Players": "peace"
       },
-      "power": 147
+      "power": 120,
+      "resources": {
+        "gold": 50,
+        "wood": 50,
+        "iron": 10
+      },
+      "technologies": []
     },
     {
       "name": "Oakhaven",
       "color": "#10b981",
       "capital": {
         "realm": "overworld",
-        "x": 12,
-        "y": -8
+        "x": 0,
+        "y": -11
       },
       "settlements": [
         {
           "realm": "overworld",
-          "x": 12,
-          "y": -8
+          "x": 0,
+          "y": -11
         }
       ],
       "status": {
@@ -46,21 +52,27 @@
         "Sunspire": "peace",
         "Players": "peace"
       },
-      "power": 145
+      "power": 120,
+      "resources": {
+        "gold": 50,
+        "wood": 50,
+        "iron": 10
+      },
+      "technologies": []
     },
     {
       "name": "Ironclad",
       "color": "#6b7280",
       "capital": {
         "realm": "overworld",
-        "x": 12,
-        "y": 2
+        "x": 13,
+        "y": -9
       },
       "settlements": [
         {
           "realm": "overworld",
-          "x": 12,
-          "y": 2
+          "x": 13,
+          "y": -9
         }
       ],
       "status": {
@@ -69,21 +81,27 @@
         "Sunspire": "peace",
         "Players": "peace"
       },
-      "power": 145
+      "power": 120,
+      "resources": {
+        "gold": 50,
+        "wood": 50,
+        "iron": 10
+      },
+      "technologies": []
     },
     {
       "name": "Sunspire",
       "color": "#f59e0b",
       "capital": {
         "realm": "overworld",
-        "x": 0,
-        "y": -18
+        "x": -19,
+        "y": -10
       },
       "settlements": [
         {
           "realm": "overworld",
-          "x": 0,
-          "y": -18
+          "x": -19,
+          "y": -10
         }
       ],
       "status": {
@@ -92,7 +110,13 @@
         "Ironclad": "peace",
         "Players": "peace"
       },
-      "power": 139
+      "power": 120,
+      "resources": {
+        "gold": 50,
+        "wood": 50,
+        "iron": 10
+      },
+      "technologies": []
     },
     {
       "name": "Players",
@@ -115,96 +139,98 @@
         "Ironclad": "peace",
         "Sunspire": "peace"
       },
-      "power": 104
+      "power": 90
     }
   ],
   "modifiedCells": {
-    "overworld:-8,-6": {
-      "x": -8,
-      "y": -6,
+    "overworld:-4,9": {
+      "x": -4,
+      "y": 9,
       "realm": "overworld",
-      "biome": "plains",
-      "elevation": 0.32749446268439825,
-      "temperature": 0.8389576933402025,
+      "biome": "coast",
+      "elevation": 0.318812288726184,
+      "temperature": 0.8292163359111296,
       "settlement": {
         "name": "Valoria Prime",
         "faction": "Valoria",
-        "size": 147,
-        "type": "village",
+        "size": 120,
+        "type": "capital",
         "resources": []
       },
       "fireTicksLeft": 0,
       "resources": [],
       "ruin": null,
       "wildlife": [],
-      "vegetation": 0.33,
+      "vegetation": 0.05,
       "history": []
     },
-    "overworld:12,-8": {
-      "x": 12,
-      "y": -8,
+    "overworld:0,-11": {
+      "x": 0,
+      "y": -11,
       "realm": "overworld",
-      "biome": "plains",
-      "elevation": 0.3337772266163062,
-      "temperature": 0.7982041009257905,
+      "biome": "coast",
+      "elevation": 0.3074389482551541,
+      "temperature": 0.739108448379438,
       "settlement": {
         "name": "Oakhaven Prime",
         "faction": "Oakhaven",
-        "size": 151,
-        "type": "village",
-        "resources": []
-      },
-      "fireTicksLeft": 0,
-      "resources": [],
-      "ruin": null,
-      "wildlife": [],
-      "vegetation": 0.33,
-      "history": []
-    },
-    "overworld:12,2": {
-      "x": 12,
-      "y": 2,
-      "realm": "overworld",
-      "biome": "plains",
-      "elevation": 0.5811051086847137,
-      "temperature": 0.7634316488737826,
-      "settlement": {
-        "name": "Ironclad Prime",
-        "faction": "Ironclad",
-        "size": 151,
-        "type": "village",
-        "resources": []
-      },
-      "fireTicksLeft": 0,
-      "resources": [],
-      "ruin": null,
-      "wildlife": [],
-      "vegetation": 0.33,
-      "history": []
-    },
-    "overworld:0,-18": {
-      "x": 0,
-      "y": -18,
-      "realm": "overworld",
-      "biome": "coast",
-      "elevation": 0.28663260257504314,
-      "temperature": 0.6932099523546942,
-      "settlement": {
-        "name": "Sunspire Prime",
-        "faction": "Sunspire",
-        "size": 139,
-        "type": "village",
+        "size": 120,
+        "type": "capital",
         "resources": [
-          "fish"
+          "fish",
+          "cavernore"
         ]
       },
       "fireTicksLeft": 0,
       "resources": [
-        "fish"
+        "fish",
+        "cavernore"
       ],
       "ruin": null,
       "wildlife": [],
-      "vegetation": 0.08,
+      "vegetation": 0.05,
+      "history": []
+    },
+    "overworld:13,-9": {
+      "x": 13,
+      "y": -9,
+      "realm": "overworld",
+      "biome": "coast",
+      "elevation": 0.31836727146564525,
+      "temperature": 0.7917054556401725,
+      "settlement": {
+        "name": "Ironclad Prime",
+        "faction": "Ironclad",
+        "size": 120,
+        "type": "capital",
+        "resources": []
+      },
+      "fireTicksLeft": 0,
+      "resources": [],
+      "ruin": null,
+      "wildlife": [],
+      "vegetation": 0.05,
+      "history": []
+    },
+    "overworld:-19,-10": {
+      "x": -19,
+      "y": -10,
+      "realm": "overworld",
+      "biome": "coast",
+      "elevation": 0.28430215116063723,
+      "temperature": 0.7822013710423014,
+      "settlement": {
+        "name": "Sunspire Prime",
+        "faction": "Sunspire",
+        "size": 120,
+        "type": "capital",
+        "resources": []
+      },
+      "fireTicksLeft": 0,
+      "resources": [],
+      "ruin": null,
+      "wildlife": [],
+      "vegetation": 0.05,
       "history": []
     },
     "overworld:5,5": {
@@ -213,7 +239,7 @@
       "realm": "overworld",
       "biome": "plains",
       "elevation": 0.5249701008440653,
-      "temperature": 0.724667535402525,
+      "temperature": 0.7236895847410819,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -230,10 +256,10 @@
       "wildlife": [
         {
           "species": "deer",
-          "count": 22
+          "count": 24
         }
       ],
-      "vegetation": 0.33,
+      "vegetation": 0.3,
       "history": []
     },
     "underworld:0,0": {
@@ -242,7 +268,7 @@
       "realm": "underworld",
       "biome": "deep_lake",
       "elevation": 0.21318443796895772,
-      "temperature": 0.5040538249269886,
+      "temperature": 0.5484001316915094,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -257,7 +283,7 @@
         }
       },
       "wildlife": [],
-      "vegetation": 0.08,
+      "vegetation": 0.05,
       "history": []
     },
     "overworld:-15,10": {
@@ -266,7 +292,7 @@
       "realm": "overworld",
       "biome": "ocean",
       "elevation": 0.03447570636113438,
-      "temperature": 0.8832076120509234,
+      "temperature": 0.9079936438121302,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -281,7 +307,7 @@
         }
       },
       "wildlife": [],
-      "vegetation": 0.08,
+      "vegetation": 0.05,
       "history": []
     },
     "aether:0,0": {
@@ -290,7 +316,7 @@
       "realm": "aether",
       "biome": "void",
       "elevation": 0.18900273544403365,
-      "temperature": 0.5463566066864878,
+      "temperature": 0.5432991793667898,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -305,7 +331,7 @@
         }
       },
       "wildlife": [],
-      "vegetation": 0.08,
+      "vegetation": 0.05,
       "history": []
     },
     "overworld:20,-15": {
@@ -314,7 +340,7 @@
       "realm": "overworld",
       "biome": "ocean",
       "elevation": 0.2740765277329316,
-      "temperature": 0.7944505100004208,
+      "temperature": 0.7496225564541129,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -329,7 +355,7 @@
         }
       },
       "wildlife": [],
-      "vegetation": 0.08,
+      "vegetation": 0.05,
       "history": []
     },
     "space:0,0": {
@@ -338,7 +364,7 @@
       "realm": "space",
       "biome": "void_space",
       "elevation": 0.3567314440443187,
-      "temperature": 0.06977631380967796,
+      "temperature": 0.08163499541115016,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -353,7 +379,7 @@
         }
       },
       "wildlife": [],
-      "vegetation": 0.08,
+      "vegetation": 0.05,
       "history": []
     },
     "underworld:15,10": {
@@ -362,11 +388,11 @@
       "realm": "underworld",
       "biome": "crystal_cave",
       "elevation": 0.2551693100415643,
-      "temperature": 0.5655158765093798,
+      "temperature": 0.5307955038101788,
       "settlement": {
         "name": "Aethelgard Outpost",
         "faction": "Players",
-        "size": 104,
+        "size": 90,
         "type": "village",
         "resources": []
       },
@@ -374,7 +400,7 @@
       "resources": [],
       "ruin": null,
       "wildlife": [],
-      "vegetation": 0.08,
+      "vegetation": 0.05,
       "history": [
         "[Year 1] Outpost Aethelgard Outpost founded by Alexander."
       ]
@@ -383,32 +409,26 @@
   "discoveredCenters": [
     {
       "realm": "overworld",
-      "x": -8,
-      "y": -6,
-      "radius": 6
-    },
-    {
-      "realm": "overworld",
-      "x": 12,
-      "y": -8,
-      "radius": 6
-    },
-    {
-      "realm": "overworld",
-      "x": 12,
-      "y": 2,
+      "x": -4,
+      "y": 9,
       "radius": 6
     },
     {
       "realm": "overworld",
       "x": 0,
-      "y": -18,
+      "y": -11,
       "radius": 6
     },
     {
-      "realm": "underworld",
-      "x": 15,
-      "y": 10,
+      "realm": "overworld",
+      "x": 13,
+      "y": -9,
+      "radius": 6
+    },
+    {
+      "realm": "overworld",
+      "x": -19,
+      "y": -10,
       "radius": 6
     },
     {
@@ -446,29 +466,22 @@
       "x": 0,
       "y": 0,
       "radius": 4
+    },
+    {
+      "realm": "underworld",
+      "x": 15,
+      "y": 10,
+      "radius": 6
     }
   ],
   "chronicle": [
     "The multi-dimensional cosmos awakens.",
-    "The faction of Valoria established their capital Valoria Prime on the Overworld at [-8, -6].",
-    "The faction of Oakhaven established their capital Oakhaven Prime on the Overworld at [12, -8].",
-    "The faction of Ironclad established their capital Ironclad Prime on the Overworld at [12, 2].",
-    "The faction of Sunspire established their capital Sunspire Prime on the Overworld at [0, -18].",
+    "The faction of Valoria established their capital Valoria Prime on the Overworld at [-4, 9].",
+    "The faction of Oakhaven established their capital Oakhaven Prime on the Overworld at [0, -11].",
+    "The faction of Ironclad established their capital Ironclad Prime on the Overworld at [13, -9].",
+    "The faction of Sunspire established their capital Sunspire Prime on the Overworld at [-19, -10].",
     "[Year 1] Player Alexander founded settlement: Aethelgard Outpost on underworld at [15, 10]."
   ],
-  "tradeRoutes": [
-    {
-      "from": {
-        "x": 12,
-        "y": -8
-      },
-      "to": {
-        "x": 12,
-        "y": 2
-      },
-      "f1": "Oakhaven",
-      "f2": "Ironclad"
-    }
-  ],
-  "globalTempOffset": 0.014081158051267268
+  "tradeRoutes": [],
+  "globalTempOffset": 0
 }
