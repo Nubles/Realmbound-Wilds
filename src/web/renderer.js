@@ -1145,14 +1145,28 @@ export class MapRenderer {
     }
   }
 
-  // Draw Trade lines
+  // Draw Trade lines and roads
   drawTradeRoutes(ts) {
     const routes = this.historicalState ? this.historicalState.mapState.tradeRoutes : (this.world.tradeRoutes || []);
     if (routes.length === 0) return;
 
     this.ctx.save();
-    this.ctx.strokeStyle = 'rgba(223, 177, 91, 0.45)';
-    this.ctx.lineWidth = 1.5;
+    
+    // Step 1: Draw solid cobblestone roads underneath trade paths
+    this.ctx.strokeStyle = '#3f3f46';
+    this.ctx.lineWidth = 3.5;
+    this.ctx.lineCap = 'round';
+    this.ctx.lineJoin = 'round';
+    routes.forEach(route => {
+      this.ctx.beginPath();
+      this.ctx.moveTo(route.from.x * ts + ts/2, route.from.y * ts + ts/2);
+      this.ctx.lineTo(route.to.x * ts + ts/2, route.to.y * ts + ts/2);
+      this.ctx.stroke();
+    });
+
+    // Step 2: Overlay golden trade route markers
+    this.ctx.strokeStyle = 'rgba(223, 177, 91, 0.75)';
+    this.ctx.lineWidth = 1.2;
     this.ctx.setLineDash([4, 4]);
     this.ctx.lineDashOffset = -this.animTime * 5;
 

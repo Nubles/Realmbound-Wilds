@@ -484,12 +484,13 @@ export function advanceSimulation(world) {
       else if (cell.settlement.size > 700) cell.settlement.type = 'town';
       else cell.settlement.type = 'village';
 
-      // Settlement Expansion
+      // Settlement Expansion into discovered or undiscovered coordinates
       const expandRate = faction.name === 'Valoria' ? 0.13 : 0.08;
       if (cell.settlement.size > 650 && random() < expandRate && faction.settlements.length < 12) {
         const neighbors = getNeighbors(sCoord.x, sCoord.y);
         const candidates = neighbors.filter(n => {
           const nc = getCell(world, sCoord.realm, n.x, n.y);
+          // Allow expanding into neighboring cells as long as they are not ocean/mountain/void voids, even if they were covered by Fog of War!
           return nc.biome !== 'ocean' && nc.biome !== 'mountain' && nc.biome !== 'void' && nc.biome !== 'void_space' && !nc.settlement;
         });
 
