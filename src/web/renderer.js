@@ -199,6 +199,7 @@ export class MapRenderer {
     this.animTime = 0;
     this.particles = [];
     this.atmosphericParticles = []; // Custom atmospheric elements per realm
+    this.entities = []; // Animated citizens and wildlife entities roaming the map
     
     this.discoveryCache = new Set();
     this.setupEvents();
@@ -535,6 +536,98 @@ export class MapRenderer {
       if (p.y < 0) p.y = this.canvas.height;
       if (p.y > this.canvas.height) p.y = 0;
     });
+
+    // Generate and animate roaming entities
+    if (this.world) {
+      const ts = this.tileSize;
+      
+      // Seed initial entities if empty
+      if (this.entities.length === 0) {
+        // Roaming citizen traders between cities or nearby cells
+        this.world.factions.forEach(faction => {
+          faction.settlements.forEach(s => {
+            if (s.realm !== this.activeRealm) return;
+            // Create a trader entity
+            this.entities.push({
+              id: `${faction.name}-trader-${s.x}-${s.y}-${Math.random()}`,
+              type: 'citizen',
+              subType: 'trader',
+              color: faction.color,
+              x: s.x * ts + ts/2,
+              y: s.y * ts + ts/2,
+              targetX: s.x * ts + ts/2,
+              targetY: s.y * ts + ts/2,
+              homeX: s.x,
+              homeY: s.y,
+              speed: 0.35 + Math.random() * 0.25,
+              emoji: '🚶'
+            });
+          });
+        });
+
+        // Add some random wild animals roaming in forest/plains biomes
+        const maxAnimals = 15;
+        let animalCount = 0;
+        const centers = this.historicalState ? this.historicalState.discoveredCenters : (this.world.discoveredCenters || []);
+        
+        centers.forEach(c => {
+          if (c.realm !== this.activeRealm || animalCount >= maxAnimals) return;
+          const rad = Math.ceil(c.radius);
+          for (let attempts = 0; attempts < 10; attempts++) {
+            const rx = c.x + Math.floor(Math.random() * (rad * 2 + 1)) - rad;
+            const ry = c.y + Math.floor(Math.random() * (rad * 2 + 1)) - rad;
+            
+            if (this.isCoordinateDiscovered(rx, ry)) {
+              const cell = generateCell(rx, ry, this.activeRealm, this.world.seed);
+              if (cell.biome !== 'ocean' && cell.biome !== 'mountain' && cell.biome !== 'void' && cell.biome !== 'void_space') {
+                const isPegasus = this.activeRealm === 'aether';
+                this.entities.push({
+                  id: `animal-${rx}-${ry}-${Math.random()}`,
+                  type: 'wildlife',
+                  subType: isPegasus ? 'pegasus' : 'deer',
+                  x: rx * ts + ts/2,
+                  y: ry * ts + ts/2,
+                  targetX: rx * ts + ts/2,
+                  targetY: ry * ts + ts/2,
+                  homeX: rx,
+                  homeY: ry,
+                  speed: 0.2 + Math.random() * 0.15,
+                  emoji: isPegasus ? '🦄' : '🦌'
+                });
+                animalCount++;
+                break;
+              }
+            }
+          }
+        });
+      }
+
+      // Update entity movement towards their targets
+      this.entities.forEach(ent => {
+        const dx = ent.targetX - ent.x;
+        const dy = ent.targetY - ent.y;
+        const dist = Math.hypot(dx, dy);
+
+        if (dist < 1.0) {
+          // Choose a new nearby coordinate target to wander to
+          const range = 3; // wandered chunk offset range
+          const nextCx = ent.homeX + Math.floor(Math.random() * (range * 2 + 1)) - range;
+          const nextCy = ent.homeY + Math.floor(Math.random() * (range * 2 + 1)) - range;
+
+          if (this.isCoordinateDiscovered(nextCx, nextCy)) {
+            const cell = generateCell(nextCx, nextCy, this.activeRealm, this.world.seed);
+            if (cell.biome !== 'ocean' && cell.biome !== 'mountain' && cell.biome !== 'void' && cell.biome !== 'void_space') {
+              ent.targetX = nextCx * ts + Math.random() * (ts - 6) + 3;
+              ent.targetY = nextCy * ts + Math.random() * (ts - 6) + 3;
+            }
+          }
+        } else {
+          // Move towards target
+          ent.x += (dx / dist) * ent.speed;
+          ent.y += (dy / dist) * ent.speed;
+        }
+      });
+    }
   }
 
   // Draw visible grid
@@ -590,6 +683,48 @@ export class MapRenderer {
     this.particles.forEach(p => {
       this.ctx.fillStyle = p.color + p.life + ')';
       this.ctx.fillRect(p.x, p.y, p.size, p.size);
+    });
+
+    // 5.5 Draw moving citizens and animals
+    this.entities.forEach(ent => {
+      // Reconstruct chunk coordinates
+      const cx = Math.floor(ent.x / ts);
+      const cy = Math.floor(ent.y / ts);
+      if (!this.isCoordinateDiscovered(cx, cy)) return;
+
+      this.ctx.save();
+      if (ent.type === 'citizen') {
+        // Draw colored dot with citizen/trader label when zoomed in
+        this.ctx.fillStyle = ent.color;
+        this.ctx.beginPath();
+        this.ctx.arc(ent.x, ent.y, this.zoom >= 2.0 ? 3 : 2, 0, Math.PI * 2);
+        this.ctx.fill();
+        
+        this.ctx.strokeStyle = '#ffffff';
+        this.ctx.lineWidth = 0.5;
+        this.ctx.stroke();
+
+        if (this.zoom >= 2.5) {
+          this.ctx.fillStyle = '#ffffff';
+          this.ctx.font = '5px sans-serif';
+          this.ctx.textAlign = 'center';
+          this.ctx.fillText(ent.emoji, ent.x, ent.y - 4);
+        }
+      } else {
+        // Wildlife animals roaming
+        if (this.zoom >= 2.0) {
+          this.ctx.fillStyle = '#ffffff';
+          this.ctx.font = '8px sans-serif';
+          this.ctx.textAlign = 'center';
+          this.ctx.fillText(ent.emoji, ent.x, ent.y + 3);
+        } else {
+          this.ctx.fillStyle = ent.subType === 'pegasus' ? '#38bdf8' : '#a78bfa';
+          this.ctx.beginPath();
+          this.ctx.arc(ent.x, ent.y, 1.5, 0, Math.PI * 2);
+          this.ctx.fill();
+        }
+      }
+      this.ctx.restore();
     });
 
     this.ctx.restore();
