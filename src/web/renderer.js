@@ -400,8 +400,9 @@ export class MapRenderer {
     let lastX = 0;
     let lastY = 0;
 
-    this.canvas.addEventListener('mousedown', (e) => {
+    this.canvas.addEventListener('pointerdown', (e) => {
       this.isDragging = true;
+      this.canvas.setPointerCapture(e.pointerId);
       startX = e.clientX - this.targetPanX;
       startY = e.clientY - this.targetPanY;
       lastX = e.clientX;
@@ -410,7 +411,7 @@ export class MapRenderer {
       this.vy = 0;
     });
 
-    window.addEventListener('mousemove', (e) => {
+    this.canvas.addEventListener('pointermove', (e) => {
       const rect = this.canvas.getBoundingClientRect();
       const clientX = e.clientX - rect.left;
       const clientY = e.clientY - rect.top;
@@ -431,8 +432,18 @@ export class MapRenderer {
       }
     });
 
-    window.addEventListener('mouseup', () => {
+    this.canvas.addEventListener('pointerup', (e) => {
       this.isDragging = false;
+      try {
+        this.canvas.releasePointerCapture(e.pointerId);
+      } catch (err) {}
+    });
+
+    this.canvas.addEventListener('pointercancel', (e) => {
+      this.isDragging = false;
+      try {
+        this.canvas.releasePointerCapture(e.pointerId);
+      } catch (err) {}
     });
 
     this.canvas.addEventListener('click', (e) => {
