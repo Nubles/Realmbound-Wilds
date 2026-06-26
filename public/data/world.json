@@ -1,6 +1,6 @@
 {
   "seed": "1782424979471",
-  "year": 7,
+  "year": 8,
   "factions": [
     {
       "name": "Valoria",
@@ -18,17 +18,18 @@
         }
       ],
       "status": {
-        "Players": "peace"
+        "Players": "war"
       },
-      "power": 267,
+      "power": 294,
       "resources": {
-        "gold": 56,
+        "gold": 16,
         "wood": 1,
         "iron": 0,
-        "timber": 6
+        "timber": 7
       },
       "technologies": [
-        "stone_tools"
+        "stone_tools",
+        "stone_shelter"
       ],
       "ideology": "Militarism"
     },
@@ -48,15 +49,15 @@
         }
       ],
       "status": {
-        "Valoria": "peace"
+        "Valoria": "war"
       },
-      "power": 139,
+      "power": 150,
       "resources": {
-        "gold": 42,
+        "gold": 49,
         "wood": 46,
         "iron": 10,
-        "shadowgem": 12,
-        "magmametal": 12
+        "shadowgem": 14,
+        "magmametal": 14
       },
       "technologies": [
         "stone_tools"
@@ -71,16 +72,16 @@
       "realm": "overworld",
       "biome": "forest",
       "elevation": 0.33695322429137475,
-      "temperature": 0.7822316616547103,
+      "temperature": 0.7713030065611745,
       "settlement": {
         "name": "Valoria Prime",
         "faction": "Valoria",
-        "size": 267,
+        "size": 294,
         "type": "village",
         "resources": [
           "timber"
         ],
-        "happiness": 79,
+        "happiness": 78,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -98,7 +99,7 @@
           "count": 23
         }
       ],
-      "vegetation": 0.9880000000000002,
+      "vegetation": 1,
       "history": []
     },
     "overworld:5,5": {
@@ -107,7 +108,7 @@
       "realm": "overworld",
       "biome": "plains",
       "elevation": 0.5249701008440653,
-      "temperature": 0.6746519836622217,
+      "temperature": 0.6637233285686859,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -127,7 +128,7 @@
           "count": 26
         }
       ],
-      "vegetation": 0.36600000000000005,
+      "vegetation": 0.38100000000000006,
       "history": []
     },
     "underworld:0,0": {
@@ -136,7 +137,7 @@
       "realm": "underworld",
       "biome": "deep_lake",
       "elevation": 0.21318443796895772,
-      "temperature": 0.48690722672015574,
+      "temperature": 0.47597857162661994,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -151,7 +152,7 @@
         }
       },
       "wildlife": [],
-      "vegetation": 0.116,
+      "vegetation": 0.131,
       "history": []
     },
     "overworld:-15,10": {
@@ -160,7 +161,7 @@
       "realm": "overworld",
       "biome": "ocean",
       "elevation": 0.03447570636113438,
-      "temperature": 0.8217672369631409,
+      "temperature": 0.8108385818696051,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -180,7 +181,7 @@
           "count": 1
         }
       ],
-      "vegetation": 0.116,
+      "vegetation": 0.131,
       "history": []
     },
     "aether:0,0": {
@@ -189,7 +190,7 @@
       "realm": "aether",
       "biome": "void",
       "elevation": 0.18900273544403365,
-      "temperature": 0.49135095699131504,
+      "temperature": 0.48042230189777924,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -204,7 +205,7 @@
         }
       },
       "wildlife": [],
-      "vegetation": 0.116,
+      "vegetation": 0.131,
       "history": []
     },
     "overworld:20,-15": {
@@ -213,7 +214,7 @@
       "realm": "overworld",
       "biome": "ocean",
       "elevation": 0.2740765277329316,
-      "temperature": 0.6857474779445514,
+      "temperature": 0.6748188228510156,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -228,7 +229,7 @@
         }
       },
       "wildlife": [],
-      "vegetation": 0.116,
+      "vegetation": 0.131,
       "history": []
     },
     "space:0,0": {
@@ -237,7 +238,7 @@
       "realm": "space",
       "biome": "crater",
       "elevation": 0.15,
-      "temperature": 0.7680920200785623,
+      "temperature": 0.7571633649850265,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [
@@ -250,7 +251,7 @@
         "age": 4
       },
       "wildlife": [],
-      "vegetation": 0.033,
+      "vegetation": 0.048,
       "history": []
     },
     "underworld:15,10": {
@@ -259,11 +260,11 @@
       "realm": "underworld",
       "biome": "crystal_cave",
       "elevation": 0.2551693100415643,
-      "temperature": 0.46096787672502965,
+      "temperature": 0.45003922163149385,
       "settlement": {
         "name": "Aethelgard Outpost",
         "faction": "Players",
-        "size": 139,
+        "size": 150,
         "type": "village",
         "resources": [
           "shadowgem",
@@ -283,10 +284,32 @@
       ],
       "ruin": null,
       "wildlife": [],
-      "vegetation": 0.116,
+      "vegetation": 0.131,
       "history": [
         "[Year 1] Outpost Aethelgard Outpost founded by Alexander."
       ]
+    },
+    "aether:1,-2": {
+      "x": 1,
+      "y": -2,
+      "realm": "aether",
+      "biome": "crater",
+      "elevation": 0.15,
+      "temperature": 0.8,
+      "settlement": null,
+      "fireTicksLeft": 0,
+      "resources": [
+        "astralmetal",
+        "obsidian"
+      ],
+      "ruin": {
+        "name": "Smoking Crater Outpost",
+        "description": "Rich in stellar materials from a celestial impact.",
+        "age": 8
+      },
+      "wildlife": [],
+      "vegetation": 0,
+      "history": []
     }
   },
   "discoveredCenters": [
@@ -347,9 +370,12 @@
     "[Year 3] CLIMATE: A severe blizzard froze outer sectors. Fuel wood consumption doubled.",
     "[Year 4] RESEARCH: Valoria unlocked technology [Basic Flint Tooling]!",
     "[Year 4] METEOR STRIKE: A roaring meteorite struck the ground at [0, 0] in space, leaving a burning crater of astralmetal.",
-    "[Year 4] SEA MONSTER SIGHTING: A giant kraken was spotted in the oceanic waters at [-15, 10]!"
+    "[Year 4] SEA MONSTER SIGHTING: A giant kraken was spotted in the oceanic waters at [-15, 10]!",
+    "[Year 8] RESEARCH: Valoria unlocked technology [Primitive Shelters]!",
+    "[Year 8] DECLARATION OF WAR: Valoria declared war on Players!",
+    "[Year 8] METEOR STRIKE: A roaring meteorite struck the ground at [1, -2] in aether, leaving a burning crater of astralmetal."
   ],
   "tradeRoutes": [],
-  "globalTempOffset": -0.11196840967051686,
-  "season": "Winter"
+  "globalTempOffset": -0.10928655093535782,
+  "season": "Spring"
 }
