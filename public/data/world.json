@@ -1,6 +1,6 @@
 {
   "seed": "1782424979471",
-  "year": 10,
+  "year": 11,
   "factions": [
     {
       "name": "Valoria",
@@ -20,12 +20,12 @@
       "status": {
         "Players": "war"
       },
-      "power": 357,
+      "power": 366,
       "resources": {
-        "gold": 62,
-        "wood": 1,
+        "gold": 57,
+        "wood": 0,
         "iron": 0,
-        "timber": 9
+        "timber": 0
       },
       "technologies": [
         "stone_tools",
@@ -51,13 +51,13 @@
       "status": {
         "Valoria": "war"
       },
-      "power": 174,
+      "power": 187,
       "resources": {
-        "gold": 5,
-        "wood": 46,
+        "gold": 14,
+        "wood": 44,
         "iron": 10,
-        "shadowgem": 18,
-        "magmametal": 18
+        "shadowgem": 20,
+        "magmametal": 20
       },
       "technologies": [
         "stone_tools",
@@ -73,22 +73,23 @@
       "realm": "overworld",
       "biome": "forest",
       "elevation": 0.33695322429137475,
-      "temperature": 0.7539128499633441,
+      "temperature": 0.7334230496116723,
       "settlement": {
         "name": "Valoria Prime",
         "faction": "Valoria",
-        "size": 357,
+        "size": 366,
         "type": "village",
         "resources": [
           "timber"
         ],
-        "happiness": 76,
+        "happiness": 60,
         "classes": {
           "nobles": 5,
           "merchants": 20,
           "peasants": 75
         },
-        "dominTrait": "Swiftfooted"
+        "dominTrait": "Swiftfooted",
+        "apothecary": true
       },
       "fireTicksLeft": 0,
       "resources": [
@@ -110,7 +111,7 @@
       "realm": "overworld",
       "biome": "plains",
       "elevation": 0.5249701008440653,
-      "temperature": 0.6463331719708555,
+      "temperature": 0.6258433716191837,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -130,7 +131,7 @@
           "count": 26
         }
       ],
-      "vegetation": 0.4110000000000001,
+      "vegetation": 0.4140000000000001,
       "history": []
     },
     "underworld:0,0": {
@@ -139,7 +140,7 @@
       "realm": "underworld",
       "biome": "deep_lake",
       "elevation": 0.21318443796895772,
-      "temperature": 0.4585884150287896,
+      "temperature": 0.43809861467711775,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -154,7 +155,7 @@
         }
       },
       "wildlife": [],
-      "vegetation": 0.16100000000000003,
+      "vegetation": 0.16400000000000003,
       "history": []
     },
     "overworld:-15,10": {
@@ -163,7 +164,7 @@
       "realm": "overworld",
       "biome": "ocean",
       "elevation": 0.03447570636113438,
-      "temperature": 0.7934484252717747,
+      "temperature": 0.7729586249201029,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -183,7 +184,7 @@
           "count": 1
         }
       ],
-      "vegetation": 0.16100000000000003,
+      "vegetation": 0.16400000000000003,
       "history": []
     },
     "aether:0,0": {
@@ -192,7 +193,7 @@
       "realm": "aether",
       "biome": "void",
       "elevation": 0.18900273544403365,
-      "temperature": 0.4630321452999489,
+      "temperature": 0.44254234494827704,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -207,7 +208,7 @@
         }
       },
       "wildlife": [],
-      "vegetation": 0.16100000000000003,
+      "vegetation": 0.16400000000000003,
       "history": []
     },
     "overworld:20,-15": {
@@ -216,7 +217,7 @@
       "realm": "overworld",
       "biome": "ocean",
       "elevation": 0.2740765277329316,
-      "temperature": 0.6574286662531852,
+      "temperature": 0.6369388659015134,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -231,7 +232,7 @@
         }
       },
       "wildlife": [],
-      "vegetation": 0.16100000000000003,
+      "vegetation": 0.16400000000000003,
       "history": []
     },
     "space:0,0": {
@@ -240,7 +241,7 @@
       "realm": "space",
       "biome": "crater",
       "elevation": 0.15,
-      "temperature": 0.7397732083871961,
+      "temperature": 0.7192834080355243,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [
@@ -253,7 +254,7 @@
         "age": 4
       },
       "wildlife": [],
-      "vegetation": 0.078,
+      "vegetation": 0.081,
       "history": []
     },
     "underworld:15,10": {
@@ -262,11 +263,11 @@
       "realm": "underworld",
       "biome": "crystal_cave",
       "elevation": 0.2551693100415643,
-      "temperature": 0.4326490650336635,
+      "temperature": 0.41215926468199165,
       "settlement": {
         "name": "Aethelgard Outpost",
         "faction": "Players",
-        "size": 174,
+        "size": 187,
         "type": "village",
         "resources": [
           "shadowgem",
@@ -287,7 +288,7 @@
       ],
       "ruin": null,
       "wildlife": [],
-      "vegetation": 0.16100000000000003,
+      "vegetation": 0.16400000000000003,
       "history": [
         "[Year 1] Outpost Aethelgard Outpost founded by Alexander."
       ]
@@ -298,7 +299,7 @@
       "realm": "aether",
       "biome": "crater",
       "elevation": 0.15,
-      "temperature": 0.7826098434021697,
+      "temperature": 0.7621200430504979,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [
@@ -311,7 +312,7 @@
         "age": 8
       },
       "wildlife": [],
-      "vegetation": 0.03,
+      "vegetation": 0.033,
       "history": []
     }
   },
@@ -377,9 +378,11 @@
     "[Year 8] RESEARCH: Valoria unlocked technology [Primitive Shelters]!",
     "[Year 8] DECLARATION OF WAR: Valoria declared war on Players!",
     "[Year 8] METEOR STRIKE: A roaring meteorite struck the ground at [1, -2] in aether, leaving a burning crater of astralmetal.",
-    "[Year 10] RESEARCH: Players unlocked technology [Primitive Shelters]!"
+    "[Year 10] RESEARCH: Players unlocked technology [Primitive Shelters]!",
+    "[Year 11] CONSTRUCTION: Valoria Prime built an Apothecary to protect citizens from plagues.",
+    "[Year 11] CLIMATE: A severe blizzard froze outer sectors. Fuel wood consumption doubled."
   ],
   "tradeRoutes": [],
-  "globalTempOffset": -0.1228512857388705,
-  "season": "Autumn"
+  "globalTempOffset": -0.24989800351671873,
+  "season": "Winter"
 }
