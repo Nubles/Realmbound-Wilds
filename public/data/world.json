@@ -1,6 +1,6 @@
 {
   "seed": "1782424979471",
-  "year": 9,
+  "year": 10,
   "factions": [
     {
       "name": "Valoria",
@@ -20,12 +20,12 @@
       "status": {
         "Players": "war"
       },
-      "power": 324,
+      "power": 357,
       "resources": {
-        "gold": 38,
+        "gold": 62,
         "wood": 1,
         "iron": 0,
-        "timber": 8
+        "timber": 9
       },
       "technologies": [
         "stone_tools",
@@ -51,16 +51,17 @@
       "status": {
         "Valoria": "war"
       },
-      "power": 162,
+      "power": 174,
       "resources": {
-        "gold": 57,
+        "gold": 5,
         "wood": 46,
         "iron": 10,
-        "shadowgem": 16,
-        "magmametal": 16
+        "shadowgem": 18,
+        "magmametal": 18
       },
       "technologies": [
-        "stone_tools"
+        "stone_tools",
+        "stone_shelter"
       ],
       "ideology": "Industrialism"
     }
@@ -72,16 +73,16 @@
       "realm": "overworld",
       "biome": "forest",
       "elevation": 0.33695322429137475,
-      "temperature": 0.7661979785372312,
+      "temperature": 0.7539128499633441,
       "settlement": {
         "name": "Valoria Prime",
         "faction": "Valoria",
-        "size": 324,
+        "size": 357,
         "type": "village",
         "resources": [
           "timber"
         ],
-        "happiness": 77,
+        "happiness": 76,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -109,7 +110,7 @@
       "realm": "overworld",
       "biome": "plains",
       "elevation": 0.5249701008440653,
-      "temperature": 0.6586183005447426,
+      "temperature": 0.6463331719708555,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -129,7 +130,7 @@
           "count": 26
         }
       ],
-      "vegetation": 0.3960000000000001,
+      "vegetation": 0.4110000000000001,
       "history": []
     },
     "underworld:0,0": {
@@ -138,7 +139,7 @@
       "realm": "underworld",
       "biome": "deep_lake",
       "elevation": 0.21318443796895772,
-      "temperature": 0.47087354360267664,
+      "temperature": 0.4585884150287896,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -153,7 +154,7 @@
         }
       },
       "wildlife": [],
-      "vegetation": 0.14600000000000002,
+      "vegetation": 0.16100000000000003,
       "history": []
     },
     "overworld:-15,10": {
@@ -162,7 +163,7 @@
       "realm": "overworld",
       "biome": "ocean",
       "elevation": 0.03447570636113438,
-      "temperature": 0.8057335538456618,
+      "temperature": 0.7934484252717747,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -182,7 +183,7 @@
           "count": 1
         }
       ],
-      "vegetation": 0.14600000000000002,
+      "vegetation": 0.16100000000000003,
       "history": []
     },
     "aether:0,0": {
@@ -191,7 +192,7 @@
       "realm": "aether",
       "biome": "void",
       "elevation": 0.18900273544403365,
-      "temperature": 0.47531727387383593,
+      "temperature": 0.4630321452999489,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -206,7 +207,7 @@
         }
       },
       "wildlife": [],
-      "vegetation": 0.14600000000000002,
+      "vegetation": 0.16100000000000003,
       "history": []
     },
     "overworld:20,-15": {
@@ -215,7 +216,7 @@
       "realm": "overworld",
       "biome": "ocean",
       "elevation": 0.2740765277329316,
-      "temperature": 0.6697137948270723,
+      "temperature": 0.6574286662531852,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -230,7 +231,7 @@
         }
       },
       "wildlife": [],
-      "vegetation": 0.14600000000000002,
+      "vegetation": 0.16100000000000003,
       "history": []
     },
     "space:0,0": {
@@ -239,7 +240,7 @@
       "realm": "space",
       "biome": "crater",
       "elevation": 0.15,
-      "temperature": 0.7520583369610832,
+      "temperature": 0.7397732083871961,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [
@@ -252,7 +253,7 @@
         "age": 4
       },
       "wildlife": [],
-      "vegetation": 0.063,
+      "vegetation": 0.078,
       "history": []
     },
     "underworld:15,10": {
@@ -261,11 +262,11 @@
       "realm": "underworld",
       "biome": "crystal_cave",
       "elevation": 0.2551693100415643,
-      "temperature": 0.44493419360755054,
+      "temperature": 0.4326490650336635,
       "settlement": {
         "name": "Aethelgard Outpost",
         "faction": "Players",
-        "size": 162,
+        "size": 174,
         "type": "village",
         "resources": [
           "shadowgem",
@@ -286,7 +287,7 @@
       ],
       "ruin": null,
       "wildlife": [],
-      "vegetation": 0.14600000000000002,
+      "vegetation": 0.16100000000000003,
       "history": [
         "[Year 1] Outpost Aethelgard Outpost founded by Alexander."
       ]
@@ -297,7 +298,7 @@
       "realm": "aether",
       "biome": "crater",
       "elevation": 0.15,
-      "temperature": 0.7948949719760567,
+      "temperature": 0.7826098434021697,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [
@@ -310,7 +311,7 @@
         "age": 8
       },
       "wildlife": [],
-      "vegetation": 0.015,
+      "vegetation": 0.03,
       "history": []
     }
   },
@@ -375,9 +376,10 @@
     "[Year 4] SEA MONSTER SIGHTING: A giant kraken was spotted in the oceanic waters at [-15, 10]!",
     "[Year 8] RESEARCH: Valoria unlocked technology [Primitive Shelters]!",
     "[Year 8] DECLARATION OF WAR: Valoria declared war on Players!",
-    "[Year 8] METEOR STRIKE: A roaring meteorite struck the ground at [1, -2] in aether, leaving a burning crater of astralmetal."
+    "[Year 8] METEOR STRIKE: A roaring meteorite struck the ground at [1, -2] in aether, leaving a burning crater of astralmetal.",
+    "[Year 10] RESEARCH: Players unlocked technology [Primitive Shelters]!"
   ],
   "tradeRoutes": [],
-  "globalTempOffset": -0.12605028023943304,
-  "season": "Summer"
+  "globalTempOffset": -0.1228512857388705,
+  "season": "Autumn"
 }
