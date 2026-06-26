@@ -726,8 +726,10 @@ export class MapRenderer {
                 });
               }
 
+              const dominantTrait = (s.settlement && s.settlement.dominTrait) || "Rugged";
               const TRAITS = ["Swiftfooted", "Giant Strength", "Sickly", "Intellectual", "Rugged"];
-              const randomTrait = TRAITS[Math.floor(Math.random() * TRAITS.length)];
+              // 70% chance to inherit dominant trait, 30% chance for mutation
+              const randomTrait = Math.random() < 0.70 ? dominantTrait : TRAITS[Math.floor(Math.random() * TRAITS.length)];
               const bSpeed = 0.35 + Math.random() * 0.25;
 
               this.entities.push({
@@ -937,6 +939,15 @@ export class MapRenderer {
               if (ent.trait === 'Sickly') {
                 ent.trait = 'Rugged'; // Cure sickly to rugged
                 ent.history.push(`Bio-Lab mutagen therapy mutated trait to Rugged in Year ${this.world.year}`);
+                homeCell.settlement.dominTrait = 'Rugged';
+              } else {
+                // Synthesize new trait dynamically
+                const chosen = TRAITS[Math.floor(Math.random() * TRAITS.length)];
+                if (chosen !== 'Sickly') {
+                  ent.trait = chosen;
+                  ent.history.push(`Bio-Lab mutagen therapy mutated trait to ${chosen} in Year ${this.world.year}`);
+                  homeCell.settlement.dominTrait = chosen;
+                }
               }
             }
 

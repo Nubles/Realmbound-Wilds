@@ -601,6 +601,103 @@ export function advanceSimulation(world) {
       if (!cell.settlement.classes) {
         cell.settlement.classes = { nobles: 5, merchants: 20, peasants: 75 };
       }
+      if (!cell.settlement.dominTrait) {
+        const DEFAULT_TRAITS = ["Swiftfooted", "Giant Strength", "Intellectual", "Rugged"];
+        cell.settlement.dominTrait = DEFAULT_TRAITS[Math.floor(random() * DEFAULT_TRAITS.length)];
+      }
+
+      // Dynamic Faction Government Ideology shifting based on global citizen happiness
+      if (random() < 0.12) {
+        const lastIdeology = faction.ideology;
+        if (cell.settlement.happiness < 45) {
+          // Unhappy citizens drive shift towards Pacifism (low tax) or Industrialism (growth)
+          faction.ideology = random() < 0.5 ? 'Pacifism' : 'Industrialism';
+        } else if (cell.settlement.happiness > 75 && faction.resources.gold > 500) {
+          // Content, wealthy factions shift towards Scholasticism (research) or Militarism
+          faction.ideology = random() < 0.5 ? 'Scholasticism' : 'Militarism';
+        }
+        if (lastIdeology !== faction.ideology) {
+          world.chronicle.push(`${logPrefix} GOVERNMENT SHIFT: Faction ${faction.name} shifted state ideology from ${lastIdeology} to ${faction.ideology} due to civil pressures.`);
+        }
+      }
+
+      // Civil War Breakout Split: If happiness is critically low and faction has at least 4 settlements
+      if (cell.settlement.happiness < 28 && faction.settlements.length >= 4 && random() < 0.25) {
+        const activeNames = world.factions.map(f => f.name);
+        const availableName = FACTION_NAMES.find(n => !activeNames.includes(n)) || `${faction.name} rebels`;
+        const newColor = FACTION_COLORS[world.factions.length % FACTION_COLORS.length];
+        
+        // Split settlements: half stay, half break away
+        const halfCount = Math.floor(faction.settlements.length / 2);
+        const breakawaySettlements = faction.settlements.slice(0, halfCount);
+        faction.settlements = faction.settlements.slice(halfCount);
+
+        // Register new rebel faction
+        const repCapital = breakawaySettlements[0];
+        world.factions.push({
+          name: availableName,
+          color: newColor,
+          capital: repCapital,
+          settlements: breakawaySettlements,
+          status: {},
+          power: 0,
+          resources: { gold: 150, wood: 100, iron: 20 },
+          technologies: [...faction.technologies],
+          ideology: faction.ideology === 'Militarism' ? 'Pacifism' : 'Militarism'
+        });
+
+        // Update cells to point to new faction
+        breakawaySettlements.forEach(s => {
+          const sc = getCell(world, s.realm, s.x, s.y);
+          if (sc.settlement) {
+            sc.settlement.faction = availableName;
+            sc.settlement.happiness = 75; // reset happiness post-revolution
+            saveCell(world, sc);
+          }
+        });
+
+        // Set initial diplomacy stance to war between parents & rebels
+        world.factions.forEach(fac => {
+          if (fac.name !== availableName) {
+            if (fac.name === faction.name) {
+              fac.status[availableName] = 'war';
+              const rebelFac = world.factions.find(rf => rf.name === availableName);
+              if (rebelFac) rebelFac.status[fac.name] = 'war';
+            } else {
+              fac.status[availableName] = 'peace';
+            }
+          }
+        });
+
+        world.chronicle.push(`${logPrefix} CIVIL WAR: Ideological split in ${faction.name}! Rebel faction ${availableName} seized control of ${halfCount} settlements.`);
+      }
+
+      // Space Colonization Ticks
+      if (sCoord.realm === REALMS.SPACE && cell.settlement.dome && random() < 0.15 && faction.settlements.length < 12) {
+        // Expand space presence if dome is active
+        const neighbors = getNeighbors(sCoord.x, sCoord.y);
+        const spaceCandidates = neighbors.filter(n => {
+          const nc = getCell(world, REALMS.SPACE, n.x, n.y);
+          return nc.biome !== 'void_space' && !nc.settlement;
+        });
+
+        if (spaceCandidates.length > 0) {
+          const target = spaceCandidates[Math.floor(random() * spaceCandidates.length)];
+          const newCell = getCell(world, REALMS.SPACE, target.x, target.y);
+          newCell.settlement = {
+            name: `Astro-Dome ${Math.floor(random()*900+100)} of ${faction.name}`,
+            faction: faction.name,
+            size: 50,
+            type: 'village',
+            resources: [...newCell.resources],
+            dome: true,
+            dominTrait: cell.settlement.dominTrait
+          };
+          saveCell(world, newCell);
+          faction.settlements.push({ realm: REALMS.SPACE, x: target.x, y: target.y });
+          world.chronicle.push(`${logPrefix} SPACE COLONIZATION: Faction ${faction.name} launched orbital modules to establish space colony at [${target.x}, ${target.y}].`);
+        }
+      }
 
       // Happiness drift depending on ideology, taxation, and season
       let taxRate = 0.05;
