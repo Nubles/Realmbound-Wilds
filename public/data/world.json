@@ -1,6 +1,6 @@
 {
   "seed": "1782424979471",
-  "year": 8,
+  "year": 9,
   "factions": [
     {
       "name": "Valoria",
@@ -20,12 +20,12 @@
       "status": {
         "Players": "war"
       },
-      "power": 294,
+      "power": 324,
       "resources": {
-        "gold": 16,
+        "gold": 38,
         "wood": 1,
         "iron": 0,
-        "timber": 7
+        "timber": 8
       },
       "technologies": [
         "stone_tools",
@@ -51,13 +51,13 @@
       "status": {
         "Valoria": "war"
       },
-      "power": 150,
+      "power": 162,
       "resources": {
-        "gold": 49,
+        "gold": 57,
         "wood": 46,
         "iron": 10,
-        "shadowgem": 14,
-        "magmametal": 14
+        "shadowgem": 16,
+        "magmametal": 16
       },
       "technologies": [
         "stone_tools"
@@ -72,21 +72,22 @@
       "realm": "overworld",
       "biome": "forest",
       "elevation": 0.33695322429137475,
-      "temperature": 0.7713030065611745,
+      "temperature": 0.7661979785372312,
       "settlement": {
         "name": "Valoria Prime",
         "faction": "Valoria",
-        "size": 294,
+        "size": 324,
         "type": "village",
         "resources": [
           "timber"
         ],
-        "happiness": 78,
+        "happiness": 77,
         "classes": {
           "nobles": 5,
           "merchants": 20,
           "peasants": 75
-        }
+        },
+        "dominTrait": "Swiftfooted"
       },
       "fireTicksLeft": 0,
       "resources": [
@@ -108,7 +109,7 @@
       "realm": "overworld",
       "biome": "plains",
       "elevation": 0.5249701008440653,
-      "temperature": 0.6637233285686859,
+      "temperature": 0.6586183005447426,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -128,7 +129,7 @@
           "count": 26
         }
       ],
-      "vegetation": 0.38100000000000006,
+      "vegetation": 0.3960000000000001,
       "history": []
     },
     "underworld:0,0": {
@@ -137,7 +138,7 @@
       "realm": "underworld",
       "biome": "deep_lake",
       "elevation": 0.21318443796895772,
-      "temperature": 0.47597857162661994,
+      "temperature": 0.47087354360267664,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -152,7 +153,7 @@
         }
       },
       "wildlife": [],
-      "vegetation": 0.131,
+      "vegetation": 0.14600000000000002,
       "history": []
     },
     "overworld:-15,10": {
@@ -161,7 +162,7 @@
       "realm": "overworld",
       "biome": "ocean",
       "elevation": 0.03447570636113438,
-      "temperature": 0.8108385818696051,
+      "temperature": 0.8057335538456618,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -181,7 +182,7 @@
           "count": 1
         }
       ],
-      "vegetation": 0.131,
+      "vegetation": 0.14600000000000002,
       "history": []
     },
     "aether:0,0": {
@@ -190,7 +191,7 @@
       "realm": "aether",
       "biome": "void",
       "elevation": 0.18900273544403365,
-      "temperature": 0.48042230189777924,
+      "temperature": 0.47531727387383593,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -205,7 +206,7 @@
         }
       },
       "wildlife": [],
-      "vegetation": 0.131,
+      "vegetation": 0.14600000000000002,
       "history": []
     },
     "overworld:20,-15": {
@@ -214,7 +215,7 @@
       "realm": "overworld",
       "biome": "ocean",
       "elevation": 0.2740765277329316,
-      "temperature": 0.6748188228510156,
+      "temperature": 0.6697137948270723,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -229,7 +230,7 @@
         }
       },
       "wildlife": [],
-      "vegetation": 0.131,
+      "vegetation": 0.14600000000000002,
       "history": []
     },
     "space:0,0": {
@@ -238,7 +239,7 @@
       "realm": "space",
       "biome": "crater",
       "elevation": 0.15,
-      "temperature": 0.7571633649850265,
+      "temperature": 0.7520583369610832,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [
@@ -251,7 +252,7 @@
         "age": 4
       },
       "wildlife": [],
-      "vegetation": 0.048,
+      "vegetation": 0.063,
       "history": []
     },
     "underworld:15,10": {
@@ -260,11 +261,11 @@
       "realm": "underworld",
       "biome": "crystal_cave",
       "elevation": 0.2551693100415643,
-      "temperature": 0.45003922163149385,
+      "temperature": 0.44493419360755054,
       "settlement": {
         "name": "Aethelgard Outpost",
         "faction": "Players",
-        "size": 150,
+        "size": 162,
         "type": "village",
         "resources": [
           "shadowgem",
@@ -275,7 +276,8 @@
           "nobles": 5,
           "merchants": 20,
           "peasants": 75
-        }
+        },
+        "dominTrait": "Rugged"
       },
       "fireTicksLeft": 0,
       "resources": [
@@ -284,7 +286,7 @@
       ],
       "ruin": null,
       "wildlife": [],
-      "vegetation": 0.131,
+      "vegetation": 0.14600000000000002,
       "history": [
         "[Year 1] Outpost Aethelgard Outpost founded by Alexander."
       ]
@@ -295,7 +297,7 @@
       "realm": "aether",
       "biome": "crater",
       "elevation": 0.15,
-      "temperature": 0.8,
+      "temperature": 0.7948949719760567,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [
@@ -308,7 +310,7 @@
         "age": 8
       },
       "wildlife": [],
-      "vegetation": 0,
+      "vegetation": 0.015,
       "history": []
     }
   },
@@ -376,6 +378,6 @@
     "[Year 8] METEOR STRIKE: A roaring meteorite struck the ground at [1, -2] in aether, leaving a burning crater of astralmetal."
   ],
   "tradeRoutes": [],
-  "globalTempOffset": -0.10928655093535782,
-  "season": "Spring"
+  "globalTempOffset": -0.12605028023943304,
+  "season": "Summer"
 }
