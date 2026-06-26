@@ -282,21 +282,6 @@ function inspectCell(cell) {
     const happinessHtml = `<div style="font-size: 0.78rem; color: ${cell.settlement.happiness >= 60 ? '#10b981' : (cell.settlement.happiness >= 35 ? '#eab308' : '#ef4444')}; margin-top: 2px;">😊 Happiness: ${cell.settlement.happiness}%</div>`;
 
     let buildControlsHtml = '';
-    if (isPlayerFaction && !renderer.historicalState) {
-      buildControlsHtml = `
-        <div style="margin-top: 8px; border-top: 1px dashed rgba(255,255,255,0.08); padding-top: 8px; display: flex; flex-direction: column; gap: 6px;">
-          <div style="font-size: 0.72rem; color: var(--text-secondary);">Build Infrastructure:</div>
-          <div style="display: flex; flex-wrap: wrap; gap: 6px;">
-            <button onclick="window.buildApothecary('${cell.realm}', ${cell.x}, ${cell.y})" class="btn btn-secondary" style="padding: 3px 6px; font-size: 0.7rem;" ${cell.settlement.apothecary ? 'disabled' : ''}>🏥 Apothecary (💰30, 🪵10)</button>
-            <button onclick="window.buildWonderBlueprint('${cell.realm}', ${cell.x}, ${cell.y})" class="btn btn-secondary" style="padding: 3px 6px; font-size: 0.7rem;" ${cell.settlement.wonderBlueprint ? 'disabled' : ''}>🏛️ Wonder BP (💰100, 🪵50, 🪙10)</button>
-            <button onclick="window.buildShield('${cell.realm}', ${cell.x}, ${cell.y})" class="btn btn-secondary" style="padding: 3px 6px; font-size: 0.7rem;" ${cell.settlement.shielded ? 'disabled' : ''}>🛡️ Shield (💰80, 🪙20)</button>
-            <button onclick="window.buildSatellite('${cell.realm}', ${cell.x}, ${cell.y})" class="btn btn-secondary" style="padding: 3px 6px; font-size: 0.7rem;" ${(factionObj && factionObj.satelliteBuilt) ? 'disabled' : ''}>🛰️ Satellite (💰150, 🪙30)</button>
-            <button onclick="window.buildHarbor('${cell.realm}', ${cell.x}, ${cell.y})" class="btn btn-secondary" style="padding: 3px 6px; font-size: 0.7rem;" ${cell.settlement.harbor ? 'disabled' : ''}>⚓ Harbor (💰60, 🪵20)</button>
-            <button onclick="window.buildBioLab('${cell.realm}', ${cell.x}, ${cell.y})" class="btn btn-secondary" style="padding: 3px 6px; font-size: 0.7rem;" ${cell.settlement.biolab ? 'disabled' : ''}>🧪 Bio-Lab (💰90, 🪵30, 🪙10)</button>
-          </div>
-        </div>
-      `;
-    }
 
     settlementHtml = `
       <div class="inspector-section">
@@ -434,28 +419,9 @@ function inspectCell(cell) {
           ? `<details style="margin-top: 6px; font-size: 0.7rem; color: var(--text-secondary); cursor: pointer;"><summary>🗒️ View Life Diary</summary><div style="display: flex; flex-direction: column; gap: 2px; margin-top: 4px; padding-left: 6px; border-left: 1px solid rgba(255,255,255,0.1);">${p.history.map(h => `<div>• ${h}</div>`).join('')}</div></details>`
           : '';
           
-        const hasSettlementBiolab = cell.settlement && cell.settlement.biolab;
-        const mutagensHtml = hasSettlementBiolab ? `
-          <select onchange="window.mutateCitizen('${p.id}', this.value); this.selectedIndex = 0;" style="background: #111; color: #a78bfa; border: 1px solid rgba(167,139,250,0.3); border-radius: 4px; font-size: 0.7rem; padding: 2px 4px; cursor: pointer; max-width: 90px;">
-            <option value="">🧬 Mutate</option>
-            <option value="Swiftfooted">Swiftfooted</option>
-            <option value="Giant Strength">Giant Strength</option>
-            <option value="Rugged">Rugged</option>
-            <option value="Intellectual">Intellectual</option>
-          </select>
-        ` : '';
-
         const controlsHtml = p.type === 'citizen' ? `
           <div style="margin-top: 6px; display: flex; align-items: center; justify-content: space-between; gap: 6px; border-top: 1px dashed rgba(255,255,255,0.05); padding-top: 6px;">
-            <select onchange="window.reassignRole('${p.id}', this.value)" style="background: #111; color: var(--gold); border: 1px solid rgba(255,255,255,0.15); border-radius: 4px; font-size: 0.7rem; padding: 2px 4px; cursor: pointer;">
-              <option value="Gatherer" ${p.role === 'Gatherer' ? 'selected' : ''}>Gatherer</option>
-              <option value="Miner" ${p.role === 'Miner' ? 'selected' : ''}>Miner</option>
-              <option value="Builder" ${p.role === 'Builder' ? 'selected' : ''}>Builder</option>
-              <option value="Scout" ${p.role === 'Scout' ? 'selected' : ''}>Scout</option>
-              <option value="Soldier" ${p.role === 'Soldier' ? 'selected' : ''}>Soldier</option>
-            </select>
-            ${mutagensHtml}
-            <button onclick="window.orderMove('${p.id}')" style="background: rgba(255, 255, 255, 0.05); color: var(--gold); border: 1px solid rgba(255,255,255,0.15); border-radius: 4px; font-size: 0.7rem; padding: 2px 6px; cursor: pointer;" title="Direct citizen to walk to selected coordinates">📍 Move Here</button>
+            <span style="font-size: 0.7rem; color: var(--text-secondary);">Autonomous Agent</span>
           </div>
         ` : '';
 

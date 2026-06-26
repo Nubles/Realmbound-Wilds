@@ -642,6 +642,79 @@ export function advanceSimulation(world) {
       // Basic gold taxation based on settlement size & tax rate
       const taxAmt = Math.max(1, Math.floor(cell.settlement.size * taxRate));
       faction.resources.gold = (faction.resources.gold || 0) + (cell.settlement.rebellionActive ? 0 : taxAmt);
+
+      // Autonomous Infrastructure Construction Decisions
+      if (!cell.settlement.rebellionActive) {
+        // 1. Apothecary: Build if plagued or population > 300, and has resources (30 gold, 10 wood/timber)
+        if (!cell.settlement.apothecary) {
+          const woodQty = faction.resources.wood || faction.resources.timber || 0;
+          if ((cell.settlement.plagued || cell.settlement.size > 300) && (faction.resources.gold || 0) >= 30 && woodQty >= 10) {
+            faction.resources.gold -= 30;
+            if (faction.resources.wood) faction.resources.wood -= 10;
+            else if (faction.resources.timber) faction.resources.timber -= 10;
+            cell.settlement.apothecary = true;
+            world.chronicle.push(`${logPrefix} CONSTRUCTION: ${cell.settlement.name} built an Apothecary to protect citizens from plagues.`);
+          }
+        }
+
+        // 2. Harbor Port: Build if coastal biome and population > 400, and has resources (60 gold, 20 wood/timber)
+        if (!cell.settlement.harbor && cell.biome === 'coast') {
+          const woodQty = faction.resources.wood || faction.resources.timber || 0;
+          if (cell.settlement.size > 400 && (faction.resources.gold || 0) >= 60 && woodQty >= 20) {
+            faction.resources.gold -= 60;
+            if (faction.resources.wood) faction.resources.wood -= 20;
+            else if (faction.resources.timber) faction.resources.timber -= 20;
+            cell.settlement.harbor = true;
+            world.chronicle.push(`${logPrefix} CONSTRUCTION: ${cell.settlement.name} constructed a Harbor Port to initiate maritime operations.`);
+          }
+        }
+
+        // 3. Bio-Lab: Build if population > 600, has wood, gold, and iron, and has carriage_vehicles tech (90 gold, 30 wood/timber, 10 iron)
+        if (!cell.settlement.biolab && faction.technologies.includes('carriage_vehicles')) {
+          const woodQty = faction.resources.wood || faction.resources.timber || 0;
+          if (cell.settlement.size > 600 && (faction.resources.gold || 0) >= 90 && woodQty >= 30 && (faction.resources.iron || 0) >= 10) {
+            faction.resources.gold -= 90;
+            if (faction.resources.wood) faction.resources.wood -= 30;
+            else if (faction.resources.timber) faction.resources.timber -= 30;
+            faction.resources.iron -= 10;
+            cell.settlement.biolab = true;
+            world.chronicle.push(`${logPrefix} CONSTRUCTION: ${cell.settlement.name} established a Bio-Laboratory facility for genetic upgrades.`);
+          }
+        }
+
+        // 4. Planetary Shield Generator: Build if population > 850, has gold and iron (80 gold, 20 iron)
+        if (!cell.settlement.shielded) {
+          if (cell.settlement.size > 850 && (faction.resources.gold || 0) >= 80 && (faction.resources.iron || 0) >= 20) {
+            faction.resources.gold -= 80;
+            faction.resources.iron -= 20;
+            cell.settlement.shielded = true;
+            world.chronicle.push(`${logPrefix} CONSTRUCTION: ${cell.settlement.name} installed a Planetary Shield Generator for orbital defense.`);
+          }
+        }
+
+        // 5. Orbital Defense Satellite: Launch if faction capital, has starflight tech, and faction doesn't have it built (150 gold, 30 iron)
+        if (!faction.satelliteBuilt && faction.technologies.includes('starflight') && cell.settlement.type === 'capital') {
+          if ((faction.resources.gold || 0) >= 150 && (faction.resources.iron || 0) >= 30) {
+            faction.resources.gold -= 150;
+            faction.resources.iron -= 30;
+            faction.satelliteBuilt = true;
+            world.chronicle.push(`${logPrefix} SPACE FLIGHT: ${faction.name} launched an Orbital Defense Satellite constellation from capital ${cell.settlement.name}!`);
+          }
+        }
+
+        // 6. Megastructure Wonder Blueprint: Start building if capital/city and population > 1000, has wood, gold, and iron (100 gold, 50 wood/timber, 10 iron)
+        if (!cell.settlement.wonderBlueprint && (cell.settlement.type === 'city' || cell.settlement.type === 'capital')) {
+          const woodQty = faction.resources.wood || faction.resources.timber || 0;
+          if (cell.settlement.size > 1000 && (faction.resources.gold || 0) >= 100 && woodQty >= 50 && (faction.resources.iron || 0) >= 10) {
+            faction.resources.gold -= 100;
+            if (faction.resources.wood) faction.resources.wood -= 50;
+            else if (faction.resources.timber) faction.resources.timber -= 50;
+            faction.resources.iron -= 10;
+            cell.settlement.wonderBlueprint = { progress: 0 };
+            world.chronicle.push(`${logPrefix} CONSTRUCTION: ${cell.settlement.name} laid the foundation for a Megastructure Wonder.`);
+          }
+        }
+      }
       
       saveCell(world, cell);
     });
