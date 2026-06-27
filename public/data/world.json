@@ -1,6 +1,6 @@
 {
   "seed": "1782424979471",
-  "year": 19,
+  "year": 20,
   "factions": [
     {
       "name": "Valoria",
@@ -15,17 +15,22 @@
           "realm": "overworld",
           "x": -1,
           "y": -1
+        },
+        {
+          "realm": "overworld",
+          "x": 0,
+          "y": -2
         }
       ],
       "status": {
         "Players": "peace"
       },
-      "power": 693,
+      "power": 765,
       "resources": {
-        "gold": 10,
+        "gold": 63,
         "wood": 0,
         "iron": 0,
-        "timber": 8
+        "timber": 9
       },
       "technologies": [
         "stone_tools",
@@ -53,13 +58,13 @@
       "status": {
         "Valoria": "peace"
       },
-      "power": 341,
+      "power": 368,
       "resources": {
-        "gold": 86,
+        "gold": 104,
         "wood": 30,
         "iron": 10,
-        "shadowgem": 36,
-        "magmametal": 36
+        "shadowgem": 38,
+        "magmametal": 38
       },
       "technologies": [
         "stone_tools",
@@ -75,16 +80,16 @@
       "realm": "overworld",
       "biome": "forest",
       "elevation": 0.33695322429137475,
-      "temperature": 0.578838481627106,
+      "temperature": 0.558838481627106,
       "settlement": {
         "name": "Valoria Prime",
         "faction": "Valoria",
-        "size": 693,
-        "type": "village",
+        "size": 765,
+        "type": "town",
         "resources": [
           "timber"
         ],
-        "happiness": 22,
+        "happiness": 21,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -114,7 +119,7 @@
       "realm": "overworld",
       "biome": "plains",
       "elevation": 0.5249701008440653,
-      "temperature": 0.4712588036346174,
+      "temperature": 0.4512588036346174,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -143,7 +148,7 @@
       "realm": "underworld",
       "biome": "deep_lake",
       "elevation": 0.21318443796895772,
-      "temperature": 0.2835140466925516,
+      "temperature": 0.2635140466925516,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -158,7 +163,7 @@
         }
       },
       "wildlife": [],
-      "vegetation": 0.2600000000000001,
+      "vegetation": 0.27500000000000013,
       "history": []
     },
     "overworld:-15,10": {
@@ -167,7 +172,7 @@
       "realm": "overworld",
       "biome": "ocean",
       "elevation": 0.03447570636113438,
-      "temperature": 0.6183740569355367,
+      "temperature": 0.5983740569355367,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -187,7 +192,7 @@
           "count": 1
         }
       ],
-      "vegetation": 0.2600000000000001,
+      "vegetation": 0.27500000000000013,
       "history": []
     },
     "aether:0,0": {
@@ -196,7 +201,7 @@
       "realm": "aether",
       "biome": "void",
       "elevation": 0.18900273544403365,
-      "temperature": 0.2879577769637109,
+      "temperature": 0.26795777696371087,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -211,7 +216,7 @@
         }
       },
       "wildlife": [],
-      "vegetation": 0.2600000000000001,
+      "vegetation": 0.27500000000000013,
       "history": []
     },
     "overworld:20,-15": {
@@ -220,7 +225,7 @@
       "realm": "overworld",
       "biome": "ocean",
       "elevation": 0.2740765277329316,
-      "temperature": 0.4823542979169471,
+      "temperature": 0.4623542979169471,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -235,7 +240,7 @@
         }
       },
       "wildlife": [],
-      "vegetation": 0.2600000000000001,
+      "vegetation": 0.27500000000000013,
       "history": []
     },
     "space:0,0": {
@@ -244,7 +249,7 @@
       "realm": "space",
       "biome": "crater",
       "elevation": 0.15,
-      "temperature": 0.564698840050958,
+      "temperature": 0.544698840050958,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [
@@ -257,7 +262,7 @@
         "age": 4
       },
       "wildlife": [],
-      "vegetation": 0.17700000000000005,
+      "vegetation": 0.19200000000000006,
       "history": []
     },
     "underworld:15,10": {
@@ -266,11 +271,11 @@
       "realm": "underworld",
       "biome": "crystal_cave",
       "elevation": 0.2551693100415643,
-      "temperature": 0.2575746966974255,
+      "temperature": 0.23757469669742548,
       "settlement": {
         "name": "Aethelgard Outpost",
         "faction": "Players",
-        "size": 341,
+        "size": 368,
         "type": "village",
         "resources": [
           "shadowgem",
@@ -292,7 +297,7 @@
       ],
       "ruin": null,
       "wildlife": [],
-      "vegetation": 0.2600000000000001,
+      "vegetation": 0.27500000000000013,
       "history": [
         "[Year 1] Outpost Aethelgard Outpost founded by Alexander."
       ]
@@ -303,7 +308,7 @@
       "realm": "aether",
       "biome": "crater",
       "elevation": 0.15,
-      "temperature": 0.6075354750659316,
+      "temperature": 0.5875354750659316,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [
@@ -316,7 +321,28 @@
         "age": 8
       },
       "wildlife": [],
-      "vegetation": 0.129,
+      "vegetation": 0.14400000000000002,
+      "history": []
+    },
+    "overworld:0,-2": {
+      "x": 0,
+      "y": -2,
+      "realm": "overworld",
+      "biome": "forest",
+      "elevation": 0.34143143133174064,
+      "temperature": 0.8471688409041338,
+      "settlement": {
+        "name": "Stonefort of Valoria",
+        "faction": "Valoria",
+        "size": 60,
+        "type": "village",
+        "resources": []
+      },
+      "fireTicksLeft": 0,
+      "resources": [],
+      "ruin": null,
+      "wildlife": [],
+      "vegetation": 0.8,
       "history": []
     }
   },
@@ -368,6 +394,12 @@
       "x": 15,
       "y": 10,
       "radius": 6
+    },
+    {
+      "realm": "overworld",
+      "x": 0,
+      "y": -2,
+      "radius": 6
     }
   ],
   "chronicle": [
@@ -392,9 +424,10 @@
     "[Year 14] RESEARCH: Valoria unlocked technology [Sailing & Watercraft]!",
     "[Year 18] CONSTRUCTION: Aethelgard Outpost built an Apothecary to protect citizens from plagues.",
     "[Year 19] RESEARCH: Valoria unlocked technology [Carriage Vehicles]!",
-    "[Year 19] CLIMATE: A severe blizzard froze outer sectors. Fuel wood consumption doubled."
+    "[Year 19] CLIMATE: A severe blizzard froze outer sectors. Fuel wood consumption doubled.",
+    "[Year 20] EXPANSION: Valoria expanded to [0, -2] in overworld, building Stonefort of Valoria."
   ],
   "tradeRoutes": [],
-  "globalTempOffset": -0.32,
-  "season": "Winter"
+  "globalTempOffset": -0.2,
+  "season": "Spring"
 }
