@@ -1,6 +1,6 @@
 {
   "seed": "1782424979471",
-  "year": 17,
+  "year": 18,
   "factions": [
     {
       "name": "Valoria",
@@ -20,12 +20,12 @@
       "status": {
         "Players": "peace"
       },
-      "power": 613,
+      "power": 676,
       "resources": {
-        "gold": 115,
+        "gold": 162,
         "wood": 0,
         "iron": 0,
-        "timber": 6
+        "timber": 7
       },
       "technologies": [
         "stone_tools",
@@ -52,13 +52,13 @@
       "status": {
         "Valoria": "peace"
       },
-      "power": 293,
+      "power": 316,
       "resources": {
-        "gold": 84,
-        "wood": 42,
+        "gold": 69,
+        "wood": 32,
         "iron": 10,
-        "shadowgem": 32,
-        "magmametal": 32
+        "shadowgem": 34,
+        "magmametal": 34
       },
       "technologies": [
         "stone_tools",
@@ -74,16 +74,16 @@
       "realm": "overworld",
       "biome": "forest",
       "elevation": 0.33695322429137475,
-      "temperature": 0.626338481627106,
+      "temperature": 0.606338481627106,
       "settlement": {
         "name": "Valoria Prime",
         "faction": "Valoria",
-        "size": 613,
+        "size": 676,
         "type": "village",
         "resources": [
           "timber"
         ],
-        "happiness": 39,
+        "happiness": 38,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -113,7 +113,7 @@
       "realm": "overworld",
       "biome": "plains",
       "elevation": 0.5249701008440653,
-      "temperature": 0.5187588036346175,
+      "temperature": 0.49875880363461744,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -133,7 +133,7 @@
           "count": 26
         }
       ],
-      "vegetation": 0.49200000000000016,
+      "vegetation": 0.5,
       "history": []
     },
     "underworld:0,0": {
@@ -142,7 +142,7 @@
       "realm": "underworld",
       "biome": "deep_lake",
       "elevation": 0.21318443796895772,
-      "temperature": 0.33101404669255163,
+      "temperature": 0.3110140466925516,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -157,7 +157,7 @@
         }
       },
       "wildlife": [],
-      "vegetation": 0.2420000000000001,
+      "vegetation": 0.2570000000000001,
       "history": []
     },
     "overworld:-15,10": {
@@ -166,7 +166,7 @@
       "realm": "overworld",
       "biome": "ocean",
       "elevation": 0.03447570636113438,
-      "temperature": 0.6658740569355367,
+      "temperature": 0.6458740569355367,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -186,7 +186,7 @@
           "count": 1
         }
       ],
-      "vegetation": 0.2420000000000001,
+      "vegetation": 0.2570000000000001,
       "history": []
     },
     "aether:0,0": {
@@ -195,7 +195,7 @@
       "realm": "aether",
       "biome": "void",
       "elevation": 0.18900273544403365,
-      "temperature": 0.33545777696371093,
+      "temperature": 0.3154577769637109,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -210,7 +210,7 @@
         }
       },
       "wildlife": [],
-      "vegetation": 0.2420000000000001,
+      "vegetation": 0.2570000000000001,
       "history": []
     },
     "overworld:20,-15": {
@@ -219,7 +219,7 @@
       "realm": "overworld",
       "biome": "ocean",
       "elevation": 0.2740765277329316,
-      "temperature": 0.5298542979169472,
+      "temperature": 0.5098542979169471,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -234,7 +234,7 @@
         }
       },
       "wildlife": [],
-      "vegetation": 0.2420000000000001,
+      "vegetation": 0.2570000000000001,
       "history": []
     },
     "space:0,0": {
@@ -243,7 +243,7 @@
       "realm": "space",
       "biome": "crater",
       "elevation": 0.15,
-      "temperature": 0.612198840050958,
+      "temperature": 0.592198840050958,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [
@@ -256,7 +256,7 @@
         "age": 4
       },
       "wildlife": [],
-      "vegetation": 0.15900000000000003,
+      "vegetation": 0.17400000000000004,
       "history": []
     },
     "underworld:15,10": {
@@ -265,11 +265,11 @@
       "realm": "underworld",
       "biome": "crystal_cave",
       "elevation": 0.2551693100415643,
-      "temperature": 0.30507469669742554,
+      "temperature": 0.2850746966974255,
       "settlement": {
         "name": "Aethelgard Outpost",
         "faction": "Players",
-        "size": 293,
+        "size": 316,
         "type": "village",
         "resources": [
           "shadowgem",
@@ -281,7 +281,8 @@
           "merchants": 20,
           "peasants": 75
         },
-        "dominTrait": "Rugged"
+        "dominTrait": "Rugged",
+        "apothecary": true
       },
       "fireTicksLeft": 0,
       "resources": [
@@ -290,7 +291,7 @@
       ],
       "ruin": null,
       "wildlife": [],
-      "vegetation": 0.2420000000000001,
+      "vegetation": 0.2570000000000001,
       "history": [
         "[Year 1] Outpost Aethelgard Outpost founded by Alexander."
       ]
@@ -301,7 +302,7 @@
       "realm": "aether",
       "biome": "crater",
       "elevation": 0.15,
-      "temperature": 0.6550354750659316,
+      "temperature": 0.6350354750659316,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [
@@ -314,7 +315,7 @@
         "age": 8
       },
       "wildlife": [],
-      "vegetation": 0.111,
+      "vegetation": 0.126,
       "history": []
     }
   },
@@ -387,9 +388,10 @@
     "[Year 12] PLAGUE OUTBREAK: Outbreak center detected at Valoria Prime in overworld [-1, -1]! Sickness is spreading.",
     "[Year 12] MEDICAL RELIEF: Apothecary structure successfully cured the plague outbreak in Valoria Prime.",
     "[Year 13] PEACE TREATY: Armistice signed between Valoria and Players.",
-    "[Year 14] RESEARCH: Valoria unlocked technology [Sailing & Watercraft]!"
+    "[Year 14] RESEARCH: Valoria unlocked technology [Sailing & Watercraft]!",
+    "[Year 18] CONSTRUCTION: Aethelgard Outpost built an Apothecary to protect citizens from plagues."
   ],
   "tradeRoutes": [],
   "globalTempOffset": -0.2,
-  "season": "Summer"
+  "season": "Autumn"
 }
