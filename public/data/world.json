@@ -1,6 +1,6 @@
 {
   "seed": "1782424979471",
-  "year": 35,
+  "year": 36,
   "factions": [
     {
       "name": "Valoria",
@@ -26,9 +26,9 @@
         "Players": "peace",
         "Oakhaven": "peace"
       },
-      "power": 514,
+      "power": 593,
       "resources": {
-        "gold": 83,
+        "gold": 123,
         "wood": 0,
         "iron": 0,
         "timber": 5,
@@ -67,13 +67,13 @@
         "Valoria": "peace",
         "Oakhaven": "peace"
       },
-      "power": 1244,
+      "power": 1343,
       "resources": {
-        "gold": 300,
+        "gold": 366,
         "wood": 18,
         "iron": 10,
-        "shadowgem": 68,
-        "magmametal": 68
+        "shadowgem": 70,
+        "magmametal": 70
       },
       "technologies": [
         "stone_tools",
@@ -106,12 +106,12 @@
       "status": {
         "Valoria": "peace"
       },
-      "power": 2613,
+      "power": 2847,
       "resources": {
-        "gold": 122,
+        "gold": 206,
         "wood": 0,
         "iron": 0,
-        "timber": 11
+        "timber": 12
       },
       "technologies": [
         "stone_tools",
@@ -130,16 +130,16 @@
       "realm": "overworld",
       "biome": "forest",
       "elevation": 0.33695322429137475,
-      "temperature": 0.2727225279460469,
+      "temperature": 0.25351827355258105,
       "settlement": {
         "name": "Valoria Prime",
         "faction": "Oakhaven",
-        "size": 2436,
+        "size": 2642,
         "type": "city",
         "resources": [
           "timber"
         ],
-        "happiness": 81,
+        "happiness": 83,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -173,7 +173,7 @@
       "realm": "overworld",
       "biome": "plains",
       "elevation": 0.5249701008440653,
-      "temperature": 0.16514284995355816,
+      "temperature": 0.14593859556009234,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -217,7 +217,7 @@
         }
       },
       "wildlife": [],
-      "vegetation": 0.4520000000000003,
+      "vegetation": 0.4670000000000003,
       "history": []
     },
     "overworld:-15,10": {
@@ -226,7 +226,7 @@
       "realm": "overworld",
       "biome": "ocean",
       "elevation": 0.03447570636113438,
-      "temperature": 0.31225810325447756,
+      "temperature": 0.2930538488610117,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -246,7 +246,7 @@
           "count": 1
         }
       ],
-      "vegetation": 0.4520000000000003,
+      "vegetation": 0.4670000000000003,
       "history": []
     },
     "aether:0,0": {
@@ -270,7 +270,7 @@
         }
       },
       "wildlife": [],
-      "vegetation": 0.4520000000000003,
+      "vegetation": 0.4670000000000003,
       "history": []
     },
     "overworld:20,-15": {
@@ -279,7 +279,7 @@
       "realm": "overworld",
       "biome": "ocean",
       "elevation": 0.2740765277329316,
-      "temperature": 0.17623834423588786,
+      "temperature": 0.15703408984242204,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -294,7 +294,7 @@
         }
       },
       "wildlife": [],
-      "vegetation": 0.4520000000000003,
+      "vegetation": 0.4670000000000003,
       "history": []
     },
     "space:0,0": {
@@ -303,7 +303,7 @@
       "realm": "space",
       "biome": "crater",
       "elevation": 0.15,
-      "temperature": 0.25858288636989885,
+      "temperature": 0.23937863197643303,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [
@@ -316,7 +316,7 @@
         "age": 4
       },
       "wildlife": [],
-      "vegetation": 0.3690000000000002,
+      "vegetation": 0.38400000000000023,
       "history": []
     },
     "underworld:15,10": {
@@ -329,7 +329,7 @@
       "settlement": {
         "name": "Aethelgard Outpost",
         "faction": "Players",
-        "size": 1153,
+        "size": 1245,
         "type": "town",
         "resources": [
           "shadowgem",
@@ -351,7 +351,7 @@
       ],
       "ruin": null,
       "wildlife": [],
-      "vegetation": 0.4520000000000003,
+      "vegetation": 0.4670000000000003,
       "history": [
         "[Year 1] Outpost Aethelgard Outpost founded by Alexander."
       ]
@@ -362,7 +362,7 @@
       "realm": "aether",
       "biome": "crater",
       "elevation": 0.15,
-      "temperature": 0.3014195213848725,
+      "temperature": 0.28221526699140664,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [
@@ -375,7 +375,7 @@
         "age": 8
       },
       "wildlife": [],
-      "vegetation": 0.3210000000000002,
+      "vegetation": 0.3360000000000002,
       "history": []
     },
     "overworld:0,-2": {
@@ -384,14 +384,14 @@
       "realm": "overworld",
       "biome": "forest",
       "elevation": 0.34143143133174064,
-      "temperature": 0.5610528872230748,
+      "temperature": 0.5418486328296089,
       "settlement": {
         "name": "Stonefort of Valoria",
         "faction": "Oakhaven",
-        "size": 201,
+        "size": 229,
         "type": "village",
         "resources": [],
-        "happiness": 81,
+        "happiness": 83,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -412,14 +412,14 @@
       "realm": "overworld",
       "biome": "forest",
       "elevation": 0.34226261980870737,
-      "temperature": 0.5887432531889826,
+      "temperature": 0.5695389987955167,
       "settlement": {
         "name": "Riverbend of Valoria",
         "faction": "Valoria",
-        "size": 323,
+        "size": 368,
         "type": "village",
         "resources": [],
-        "happiness": 41,
+        "happiness": 40,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -442,14 +442,14 @@
       "realm": "overworld",
       "biome": "forest",
       "elevation": 0.3261202345317221,
-      "temperature": 0.6450972806478296,
+      "temperature": 0.6258930262543637,
       "settlement": {
         "name": "Aethercliff of Valoria",
         "faction": "Valoria",
-        "size": 215,
+        "size": 249,
         "type": "village",
         "resources": [],
-        "happiness": 58,
+        "happiness": 57,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -471,7 +471,7 @@
       "realm": "overworld",
       "biome": "forest",
       "elevation": 0.32414535996050137,
-      "temperature": 0.616161551749287,
+      "temperature": 0.5969572973558211,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [
@@ -498,11 +498,11 @@
       "realm": "underworld",
       "biome": "deep_lake",
       "elevation": 0.23385834767391267,
-      "temperature": 0.37409116089866057,
+      "temperature": 0.3548869065051947,
       "settlement": {
         "name": "Riverbend of Players",
         "faction": "Players",
-        "size": 91,
+        "size": 98,
         "type": "village",
         "resources": [],
         "happiness": 85,
@@ -517,7 +517,7 @@
       "resources": [],
       "ruin": null,
       "wildlife": [],
-      "vegetation": 0.116,
+      "vegetation": 0.131,
       "history": []
     }
   },
@@ -643,7 +643,8 @@
     "[Year 34] RESEARCH: Oakhaven unlocked technology [Steam Engines & Motorized Vehicles]!",
     "[Year 35] CONSTRUCTION: Riverbend of Valoria built an Apothecary to protect citizens from plagues.",
     "[Year 35] Winter Crisis: Citizens in Stonefort of Valoria are freezing due to lack of timber reserves!",
-    "[Year 35] MEDICAL RELIEF: Apothecary structure successfully cured the plague outbreak in Riverbend of Valoria."
+    "[Year 35] MEDICAL RELIEF: Apothecary structure successfully cured the plague outbreak in Riverbend of Valoria.",
+    "[Year 36] SEA MONSTER SIGHTING: A giant kraken was spotted in the oceanic waters at [-15, 10]!"
   ],
   "tradeRoutes": [
     {
@@ -695,6 +696,6 @@
       "f2": "Oakhaven"
     }
   ],
-  "globalTempOffset": -0.2,
-  "season": "Winter"
+  "globalTempOffset": -0.1920425439346582,
+  "season": "Spring"
 }
