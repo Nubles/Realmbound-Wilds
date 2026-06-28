@@ -12901,5 +12901,349 @@
         }
       ]
     }
+  },
+  {
+    "year": 30,
+    "globalTempOffset": -0.19722894926555457,
+    "stats": {
+      "deer": 68,
+      "wolf": 0,
+      "elk": 0,
+      "bear": 0,
+      "beasts": 0,
+      "population": 2925
+    },
+    "factions": {
+      "Valoria": 242,
+      "Players": 851,
+      "Oakhaven": 1784
+    },
+    "events": [
+      "[Year 23] EXPANSION: Valoria expanded to [-2, -1] in overworld, building Aethercliff of Valoria.",
+      "[Year 23] Winter Crisis: Citizens in Stonefort of Valoria are freezing due to lack of timber reserves!",
+      "[Year 23] RESEARCH: Players unlocked technology [Sailing & Watercraft]!",
+      "[Year 24] EXPANSION: Valoria expanded to [-2, -2] in overworld, building Evergreen of Valoria.",
+      "[Year 24] CIVIL WAR: Ideological split in Valoria! Rebel faction Oakhaven seized control of 2 settlements.",
+      "[Year 25] CONSTRUCTION: Valoria Prime established a Bio-Laboratory facility for genetic upgrades.",
+      "[Year 26] BATTLE LOSS: Settlement Evergreen of Valoria was razed during combat.",
+      "[Year 27] PEACE TREATY: Armistice signed between Valoria and Oakhaven.",
+      "[Year 29] EXPANSION: Players expanded to [14, 11] in underworld, building Riverbend of Players.",
+      "[Year 30] RESEARCH: Players unlocked technology [Carriage Vehicles]!"
+    ],
+    "discoveredCenters": [
+      {
+        "realm": "overworld",
+        "x": -1,
+        "y": -1,
+        "radius": 7
+      },
+      {
+        "realm": "overworld",
+        "x": 5,
+        "y": 5,
+        "radius": 4
+      },
+      {
+        "realm": "underworld",
+        "x": 0,
+        "y": 0,
+        "radius": 4
+      },
+      {
+        "realm": "overworld",
+        "x": -15,
+        "y": 10,
+        "radius": 4
+      },
+      {
+        "realm": "aether",
+        "x": 0,
+        "y": 0,
+        "radius": 4
+      },
+      {
+        "realm": "overworld",
+        "x": 20,
+        "y": -15,
+        "radius": 4
+      },
+      {
+        "realm": "space",
+        "x": 0,
+        "y": 0,
+        "radius": 4
+      },
+      {
+        "realm": "underworld",
+        "x": 15,
+        "y": 10,
+        "radius": 6
+      },
+      {
+        "realm": "overworld",
+        "x": 0,
+        "y": -2,
+        "radius": 6
+      },
+      {
+        "realm": "overworld",
+        "x": -1,
+        "y": 0,
+        "radius": 6
+      },
+      {
+        "realm": "overworld",
+        "x": -2,
+        "y": -1,
+        "radius": 6
+      },
+      {
+        "realm": "overworld",
+        "x": -2,
+        "y": -2,
+        "radius": 6
+      },
+      {
+        "realm": "underworld",
+        "x": 14,
+        "y": 11,
+        "radius": 6
+      }
+    ],
+    "mapState": {
+      "modifiedCells": [
+        {
+          "r": "overworld",
+          "x": -1,
+          "y": -1,
+          "f": "Oakhaven",
+          "t": "town",
+          "s": 1709,
+          "ruin": null,
+          "fire": false
+        },
+        {
+          "r": "overworld",
+          "x": 5,
+          "y": 5,
+          "f": null,
+          "t": null,
+          "s": 0,
+          "ruin": {
+            "name": "Ancient Cavern Portal",
+            "portalTarget": {
+              "realm": "underworld",
+              "x": 0,
+              "y": 0
+            }
+          },
+          "fire": false
+        },
+        {
+          "r": "underworld",
+          "x": 0,
+          "y": 0,
+          "f": null,
+          "t": null,
+          "s": 0,
+          "ruin": {
+            "name": "Ancient Cavern Portal Link",
+            "portalTarget": {
+              "realm": "overworld",
+              "x": 5,
+              "y": 5
+            }
+          },
+          "fire": false
+        },
+        {
+          "r": "overworld",
+          "x": -15,
+          "y": 10,
+          "f": null,
+          "t": null,
+          "s": 0,
+          "ruin": {
+            "name": "Sky Gate of Aether",
+            "portalTarget": {
+              "realm": "aether",
+              "x": 0,
+              "y": 0
+            }
+          },
+          "fire": false
+        },
+        {
+          "r": "aether",
+          "x": 0,
+          "y": 0,
+          "f": null,
+          "t": null,
+          "s": 0,
+          "ruin": {
+            "name": "Sky Gate of Aether Link",
+            "portalTarget": {
+              "realm": "overworld",
+              "x": -15,
+              "y": 10
+            }
+          },
+          "fire": false
+        },
+        {
+          "r": "overworld",
+          "x": 20,
+          "y": -15,
+          "f": null,
+          "t": null,
+          "s": 0,
+          "ruin": {
+            "name": "Celestial Launchpad",
+            "portalTarget": {
+              "realm": "space",
+              "x": 0,
+              "y": 0
+            }
+          },
+          "fire": false
+        },
+        {
+          "r": "space",
+          "x": 0,
+          "y": 0,
+          "f": null,
+          "t": null,
+          "s": 0,
+          "ruin": {
+            "name": "Smoking Crater Outpost"
+          },
+          "fire": false
+        },
+        {
+          "r": "underworld",
+          "x": 15,
+          "y": 10,
+          "f": "Players",
+          "t": "town",
+          "s": 787,
+          "ruin": null,
+          "fire": false
+        },
+        {
+          "r": "aether",
+          "x": 1,
+          "y": -2,
+          "f": null,
+          "t": null,
+          "s": 0,
+          "ruin": {
+            "name": "Smoking Crater Outpost"
+          },
+          "fire": false
+        },
+        {
+          "r": "overworld",
+          "x": 0,
+          "y": -2,
+          "f": "Oakhaven",
+          "t": "village",
+          "s": 99,
+          "ruin": null,
+          "fire": false
+        },
+        {
+          "r": "overworld",
+          "x": -1,
+          "y": 0,
+          "f": "Valoria",
+          "t": "village",
+          "s": 169,
+          "ruin": null,
+          "fire": false
+        },
+        {
+          "r": "overworld",
+          "x": -2,
+          "y": -1,
+          "f": "Valoria",
+          "t": "village",
+          "s": 97,
+          "ruin": null,
+          "fire": false
+        },
+        {
+          "r": "overworld",
+          "x": -2,
+          "y": -2,
+          "f": null,
+          "t": null,
+          "s": 0,
+          "ruin": {
+            "name": "Ruins of Evergreen of Valoria"
+          },
+          "fire": false
+        },
+        {
+          "r": "underworld",
+          "x": 14,
+          "y": 11,
+          "f": "Players",
+          "t": "village",
+          "s": 64,
+          "ruin": null,
+          "fire": false
+        }
+      ],
+      "tradeRoutes": [
+        {
+          "from": {
+            "x": -1,
+            "y": 0
+          },
+          "to": {
+            "x": -1,
+            "y": -1
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": 0
+          },
+          "to": {
+            "x": 0,
+            "y": -2
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": -1
+          },
+          "to": {
+            "x": -1,
+            "y": -1
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": -1
+          },
+          "to": {
+            "x": 0,
+            "y": -2
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        }
+      ]
+    }
   }
 ]
