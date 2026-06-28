@@ -1,6 +1,6 @@
 {
   "seed": "1782424979471",
-  "year": 27,
+  "year": 28,
   "factions": [
     {
       "name": "Valoria",
@@ -26,9 +26,9 @@
         "Players": "peace",
         "Oakhaven": "peace"
       },
-      "power": 184,
+      "power": 154,
       "resources": {
-        "gold": 386,
+        "gold": 396,
         "wood": 6,
         "iron": 0,
         "timber": 15,
@@ -61,13 +61,13 @@
         "Valoria": "peace",
         "Oakhaven": "peace"
       },
-      "power": 625,
+      "power": 675,
       "resources": {
-        "gold": 126,
+        "gold": 159,
         "wood": 26,
         "iron": 10,
-        "shadowgem": 52,
-        "magmametal": 52
+        "shadowgem": 54,
+        "magmametal": 54
       },
       "technologies": [
         "stone_tools",
@@ -99,12 +99,12 @@
       "status": {
         "Valoria": "peace"
       },
-      "power": 1376,
+      "power": 1485,
       "resources": {
-        "gold": 187,
+        "gold": 230,
         "wood": 56,
         "iron": 10,
-        "timber": 3
+        "timber": 4
       },
       "technologies": [
         "stone_tools",
@@ -122,16 +122,16 @@
       "realm": "overworld",
       "biome": "forest",
       "elevation": 0.33695322429137475,
-      "temperature": 0.42396034612476763,
+      "temperature": 0.40531146109633087,
       "settlement": {
         "name": "Valoria Prime",
         "faction": "Oakhaven",
-        "size": 1327,
+        "size": 1445,
         "type": "town",
         "resources": [
           "timber"
         ],
-        "happiness": 80,
+        "happiness": 82,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -162,7 +162,7 @@
       "realm": "overworld",
       "biome": "plains",
       "elevation": 0.5249701008440653,
-      "temperature": 0.3163806681322789,
+      "temperature": 0.29773178310384213,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -191,7 +191,7 @@
       "realm": "underworld",
       "biome": "deep_lake",
       "elevation": 0.21318443796895772,
-      "temperature": 0.12863591119021317,
+      "temperature": 0.10998702616177639,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -206,7 +206,7 @@
         }
       },
       "wildlife": [],
-      "vegetation": 0.3560000000000002,
+      "vegetation": 0.3710000000000002,
       "history": []
     },
     "overworld:-15,10": {
@@ -215,7 +215,7 @@
       "realm": "overworld",
       "biome": "ocean",
       "elevation": 0.03447570636113438,
-      "temperature": 0.4634959214331983,
+      "temperature": 0.44484703640476153,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -235,7 +235,7 @@
           "count": 1
         }
       ],
-      "vegetation": 0.3560000000000002,
+      "vegetation": 0.3710000000000002,
       "history": []
     },
     "aether:0,0": {
@@ -244,7 +244,7 @@
       "realm": "aether",
       "biome": "void",
       "elevation": 0.18900273544403365,
-      "temperature": 0.13307964146137247,
+      "temperature": 0.11443075643293568,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -259,7 +259,7 @@
         }
       },
       "wildlife": [],
-      "vegetation": 0.3560000000000002,
+      "vegetation": 0.3710000000000002,
       "history": []
     },
     "overworld:20,-15": {
@@ -268,7 +268,7 @@
       "realm": "overworld",
       "biome": "ocean",
       "elevation": 0.2740765277329316,
-      "temperature": 0.3274761624146086,
+      "temperature": 0.30882727738617183,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -283,7 +283,7 @@
         }
       },
       "wildlife": [],
-      "vegetation": 0.3560000000000002,
+      "vegetation": 0.3710000000000002,
       "history": []
     },
     "space:0,0": {
@@ -292,7 +292,7 @@
       "realm": "space",
       "biome": "crater",
       "elevation": 0.15,
-      "temperature": 0.4098207045486196,
+      "temperature": 0.3911718195201828,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [
@@ -305,7 +305,7 @@
         "age": 4
       },
       "wildlife": [],
-      "vegetation": 0.27300000000000013,
+      "vegetation": 0.28800000000000014,
       "history": []
     },
     "underworld:15,10": {
@@ -314,11 +314,11 @@
       "realm": "underworld",
       "biome": "crystal_cave",
       "elevation": 0.2551693100415643,
-      "temperature": 0.10269656119508708,
+      "temperature": 0.08404767616665029,
       "settlement": {
         "name": "Aethelgard Outpost",
         "faction": "Players",
-        "size": 625,
+        "size": 675,
         "type": "village",
         "resources": [
           "shadowgem",
@@ -340,7 +340,7 @@
       ],
       "ruin": null,
       "wildlife": [],
-      "vegetation": 0.3560000000000002,
+      "vegetation": 0.3710000000000002,
       "history": [
         "[Year 1] Outpost Aethelgard Outpost founded by Alexander."
       ]
@@ -351,7 +351,7 @@
       "realm": "aether",
       "biome": "crater",
       "elevation": 0.15,
-      "temperature": 0.4526573395635932,
+      "temperature": 0.43400845453515646,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [
@@ -364,7 +364,7 @@
         "age": 8
       },
       "wildlife": [],
-      "vegetation": 0.2250000000000001,
+      "vegetation": 0.2400000000000001,
       "history": []
     },
     "overworld:0,-2": {
@@ -373,14 +373,14 @@
       "realm": "overworld",
       "biome": "forest",
       "elevation": 0.34143143133174064,
-      "temperature": 0.7122907054017955,
+      "temperature": 0.6936418203733588,
       "settlement": {
         "name": "Stonefort of Valoria",
         "faction": "Oakhaven",
-        "size": 49,
+        "size": 64,
         "type": "village",
         "resources": [],
-        "happiness": 80,
+        "happiness": 82,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -401,14 +401,14 @@
       "realm": "overworld",
       "biome": "forest",
       "elevation": 0.34226261980870737,
-      "temperature": 0.7399810713677034,
+      "temperature": 0.7213321863392667,
       "settlement": {
         "name": "Riverbend of Valoria",
         "faction": "Valoria",
-        "size": 97,
+        "size": 119,
         "type": "village",
         "resources": [],
-        "happiness": 64,
+        "happiness": 63,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -420,7 +420,7 @@
       "resources": [],
       "ruin": null,
       "wildlife": [],
-      "vegetation": 0.9880000000000002,
+      "vegetation": 1,
       "history": []
     },
     "overworld:-2,-1": {
@@ -429,14 +429,14 @@
       "realm": "overworld",
       "biome": "forest",
       "elevation": 0.3261202345317221,
-      "temperature": 0.7963350988265503,
+      "temperature": 0.7776862137981135,
       "settlement": {
         "name": "Aethercliff of Valoria",
         "faction": "Valoria",
-        "size": 43,
+        "size": 59,
         "type": "village",
         "resources": [],
-        "happiness": 81,
+        "happiness": 80,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -448,7 +448,7 @@
       "resources": [],
       "ruin": null,
       "wildlife": [],
-      "vegetation": 0.9440000000000002,
+      "vegetation": 0.9840000000000002,
       "history": []
     },
     "overworld:-2,-2": {
@@ -457,7 +457,7 @@
       "realm": "overworld",
       "biome": "forest",
       "elevation": 0.32414535996050137,
-      "temperature": 0.7673993699280078,
+      "temperature": 0.7487504848995711,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [
@@ -475,7 +475,7 @@
           "count": 19
         }
       ],
-      "vegetation": 0.9040000000000001,
+      "vegetation": 0.9440000000000002,
       "history": []
     }
   },
@@ -587,7 +587,56 @@
     "[Year 26] BATTLE LOSS: Settlement Evergreen of Valoria was razed during combat.",
     "[Year 27] PEACE TREATY: Armistice signed between Valoria and Oakhaven."
   ],
-  "tradeRoutes": [],
-  "globalTempOffset": -0.2,
-  "season": "Winter"
+  "tradeRoutes": [
+    {
+      "from": {
+        "x": -1,
+        "y": 0
+      },
+      "to": {
+        "x": -1,
+        "y": -1
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven"
+    },
+    {
+      "from": {
+        "x": -1,
+        "y": 0
+      },
+      "to": {
+        "x": 0,
+        "y": -2
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven"
+    },
+    {
+      "from": {
+        "x": -2,
+        "y": -1
+      },
+      "to": {
+        "x": -1,
+        "y": -1
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven"
+    },
+    {
+      "from": {
+        "x": -2,
+        "y": -1
+      },
+      "to": {
+        "x": 0,
+        "y": -2
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven"
+    }
+  ],
+  "globalTempOffset": -0.18648885028436782,
+  "season": "Spring"
 }
