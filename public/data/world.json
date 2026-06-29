@@ -1,6 +1,6 @@
 {
   "seed": "1782424979471",
-  "year": 37,
+  "year": 38,
   "factions": [
     {
       "name": "Valoria",
@@ -26,9 +26,9 @@
         "Players": "peace",
         "Oakhaven": "peace"
       },
-      "power": 680,
+      "power": 776,
       "resources": {
-        "gold": 170,
+        "gold": 224,
         "wood": 0,
         "iron": 0,
         "timber": 5,
@@ -67,19 +67,20 @@
         "Valoria": "peace",
         "Oakhaven": "peace"
       },
-      "power": 1449,
+      "power": 1564,
       "resources": {
-        "gold": 438,
+        "gold": 65,
         "wood": 18,
         "iron": 10,
-        "shadowgem": 72,
-        "magmametal": 72
+        "shadowgem": 74,
+        "magmametal": 74
       },
       "technologies": [
         "stone_tools",
         "stone_shelter",
         "sailing_boats",
-        "carriage_vehicles"
+        "carriage_vehicles",
+        "steam_engine"
       ],
       "ideology": "Industrialism"
     },
@@ -106,12 +107,12 @@
       "status": {
         "Valoria": "peace"
       },
-      "power": 3100,
+      "power": 3373,
       "resources": {
-        "gold": 298,
+        "gold": 398,
         "wood": 0,
         "iron": 0,
-        "timber": 13
+        "timber": 14
       },
       "technologies": [
         "stone_tools",
@@ -130,16 +131,16 @@
       "realm": "overworld",
       "biome": "forest",
       "elevation": 0.33695322429137475,
-      "temperature": 0.24130041513841538,
+      "temperature": 0.221373249349817,
       "settlement": {
         "name": "Valoria Prime",
         "faction": "Oakhaven",
-        "size": 2865,
+        "size": 3106,
         "type": "city",
         "resources": [
           "timber"
         ],
-        "happiness": 85,
+        "happiness": 87,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -173,7 +174,7 @@
       "realm": "overworld",
       "biome": "plains",
       "elevation": 0.5249701008440653,
-      "temperature": 0.13372073714592667,
+      "temperature": 0.1137935713573283,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -217,7 +218,7 @@
         }
       },
       "wildlife": [],
-      "vegetation": 0.4820000000000003,
+      "vegetation": 0.49700000000000033,
       "history": []
     },
     "overworld:-15,10": {
@@ -226,7 +227,7 @@
       "realm": "overworld",
       "biome": "ocean",
       "elevation": 0.03447570636113438,
-      "temperature": 0.28083599044684604,
+      "temperature": 0.26090882465824766,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -246,7 +247,7 @@
           "count": 1
         }
       ],
-      "vegetation": 0.4820000000000003,
+      "vegetation": 0.49700000000000033,
       "history": []
     },
     "aether:0,0": {
@@ -270,7 +271,7 @@
         }
       },
       "wildlife": [],
-      "vegetation": 0.4820000000000003,
+      "vegetation": 0.49700000000000033,
       "history": []
     },
     "overworld:20,-15": {
@@ -279,7 +280,7 @@
       "realm": "overworld",
       "biome": "ocean",
       "elevation": 0.2740765277329316,
-      "temperature": 0.14481623142825636,
+      "temperature": 0.124889065639658,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -294,7 +295,7 @@
         }
       },
       "wildlife": [],
-      "vegetation": 0.4820000000000003,
+      "vegetation": 0.49700000000000033,
       "history": []
     },
     "space:0,0": {
@@ -303,7 +304,7 @@
       "realm": "space",
       "biome": "crater",
       "elevation": 0.15,
-      "temperature": 0.22716077356226735,
+      "temperature": 0.207233607773669,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [
@@ -316,7 +317,7 @@
         "age": 4
       },
       "wildlife": [],
-      "vegetation": 0.39900000000000024,
+      "vegetation": 0.41400000000000026,
       "history": []
     },
     "underworld:15,10": {
@@ -329,7 +330,7 @@
       "settlement": {
         "name": "Aethelgard Outpost",
         "faction": "Players",
-        "size": 1344,
+        "size": 1451,
         "type": "town",
         "resources": [
           "shadowgem",
@@ -351,7 +352,7 @@
       ],
       "ruin": null,
       "wildlife": [],
-      "vegetation": 0.4820000000000003,
+      "vegetation": 0.49700000000000033,
       "history": [
         "[Year 1] Outpost Aethelgard Outpost founded by Alexander."
       ]
@@ -362,7 +363,7 @@
       "realm": "aether",
       "biome": "crater",
       "elevation": 0.15,
-      "temperature": 0.26999740857724097,
+      "temperature": 0.2500702427886426,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [
@@ -375,7 +376,7 @@
         "age": 8
       },
       "wildlife": [],
-      "vegetation": 0.3510000000000002,
+      "vegetation": 0.3660000000000002,
       "history": []
     },
     "overworld:0,-2": {
@@ -384,14 +385,14 @@
       "realm": "overworld",
       "biome": "forest",
       "elevation": 0.34143143133174064,
-      "temperature": 0.5296307744154433,
+      "temperature": 0.5097036086268449,
       "settlement": {
         "name": "Stonefort of Valoria",
         "faction": "Oakhaven",
-        "size": 259,
+        "size": 291,
         "type": "village",
         "resources": [],
-        "happiness": 85,
+        "happiness": 87,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -412,14 +413,14 @@
       "realm": "overworld",
       "biome": "forest",
       "elevation": 0.34226261980870737,
-      "temperature": 0.557321140381351,
+      "temperature": 0.5373939745927527,
       "settlement": {
         "name": "Riverbend of Valoria",
         "faction": "Valoria",
-        "size": 418,
+        "size": 473,
         "type": "village",
         "resources": [],
-        "happiness": 39,
+        "happiness": 38,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -442,14 +443,14 @@
       "realm": "overworld",
       "biome": "forest",
       "elevation": 0.3261202345317221,
-      "temperature": 0.613675167840198,
+      "temperature": 0.5937480020515997,
       "settlement": {
         "name": "Aethercliff of Valoria",
         "faction": "Valoria",
-        "size": 286,
+        "size": 327,
         "type": "village",
         "resources": [],
-        "happiness": 56,
+        "happiness": 55,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -471,7 +472,7 @@
       "realm": "overworld",
       "biome": "forest",
       "elevation": 0.32414535996050137,
-      "temperature": 0.5847394389416555,
+      "temperature": 0.5648122731530572,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [
@@ -498,11 +499,11 @@
       "realm": "underworld",
       "biome": "deep_lake",
       "elevation": 0.23385834767391267,
-      "temperature": 0.34266904809102905,
+      "temperature": 0.32274188230243067,
       "settlement": {
         "name": "Riverbend of Players",
         "faction": "Players",
-        "size": 105,
+        "size": 113,
         "type": "village",
         "resources": [],
         "happiness": 85,
@@ -517,7 +518,7 @@
       "resources": [],
       "ruin": null,
       "wildlife": [],
-      "vegetation": 0.14600000000000002,
+      "vegetation": 0.16100000000000003,
       "history": []
     }
   },
@@ -644,7 +645,8 @@
     "[Year 35] CONSTRUCTION: Riverbend of Valoria built an Apothecary to protect citizens from plagues.",
     "[Year 35] Winter Crisis: Citizens in Stonefort of Valoria are freezing due to lack of timber reserves!",
     "[Year 35] MEDICAL RELIEF: Apothecary structure successfully cured the plague outbreak in Riverbend of Valoria.",
-    "[Year 36] SEA MONSTER SIGHTING: A giant kraken was spotted in the oceanic waters at [-15, 10]!"
+    "[Year 36] SEA MONSTER SIGHTING: A giant kraken was spotted in the oceanic waters at [-15, 10]!",
+    "[Year 38] RESEARCH: Players unlocked technology [Steam Engines & Motorized Vehicles]!"
   ],
   "tradeRoutes": [
     {
@@ -696,6 +698,6 @@
       "f2": "Oakhaven"
     }
   ],
-  "globalTempOffset": -0.1971785841416568,
-  "season": "Summer"
+  "globalTempOffset": -0.1992716578859836,
+  "season": "Autumn"
 }
