@@ -1,6 +1,6 @@
 {
   "seed": "1782424979471",
-  "year": 45,
+  "year": 46,
   "factions": [
     {
       "name": "Valoria",
@@ -31,9 +31,9 @@
         "Players": "peace",
         "Oakhaven": "peace"
       },
-      "power": 1612,
+      "power": 1904,
       "resources": {
-        "gold": 571,
+        "gold": 13,
         "wood": 0,
         "iron": 0,
         "timber": 5,
@@ -44,7 +44,8 @@
         "stone_shelter",
         "sailing_boats",
         "carriage_vehicles",
-        "steam_engine"
+        "steam_engine",
+        "sky_ships"
       ],
       "ideology": "Industrialism"
     },
@@ -72,13 +73,13 @@
         "Valoria": "peace",
         "Oakhaven": "war"
       },
-      "power": 2675,
+      "power": 2888,
       "resources": {
-        "gold": 212,
+        "gold": 356,
         "wood": 10,
         "iron": 10,
-        "shadowgem": 88,
-        "magmametal": 88
+        "shadowgem": 90,
+        "magmametal": 90
       },
       "technologies": [
         "stone_tools",
@@ -119,12 +120,12 @@
         "Valoria": "peace",
         "Players": "war"
       },
-      "power": 5477,
+      "power": 5972,
       "resources": {
-        "gold": 686,
+        "gold": 864,
         "wood": 0,
         "iron": 0,
-        "timber": 11
+        "timber": 12
       },
       "technologies": [
         "stone_tools",
@@ -144,16 +145,16 @@
       "realm": "overworld",
       "biome": "forest",
       "elevation": 0.33695322429137475,
-      "temperature": 0.09986866707790576,
+      "temperature": 0.08876377502053909,
       "settlement": {
         "name": "Valoria Prime",
         "faction": "Oakhaven",
-        "size": 4853,
+        "size": 5259,
         "type": "city",
         "resources": [
           "timber"
         ],
-        "happiness": 71,
+        "happiness": 73,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -240,7 +241,7 @@
       "realm": "overworld",
       "biome": "ocean",
       "elevation": 0.03447570636113438,
-      "temperature": 0.13940424238633642,
+      "temperature": 0.12829935032896975,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -293,7 +294,7 @@
       "realm": "overworld",
       "biome": "ocean",
       "elevation": 0.2740765277329316,
-      "temperature": 0.0033844833677467642,
+      "temperature": 0,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -317,7 +318,7 @@
       "realm": "space",
       "biome": "crater",
       "elevation": 0.15,
-      "temperature": 0.08572902550175776,
+      "temperature": 0.07462413344439109,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [
@@ -330,7 +331,7 @@
         "age": 4
       },
       "wildlife": [],
-      "vegetation": 0.49500000000000033,
+      "vegetation": 0.5,
       "history": []
     },
     "underworld:15,10": {
@@ -343,7 +344,7 @@
       "settlement": {
         "name": "Aethelgard Outpost",
         "faction": "Players",
-        "size": 2484,
+        "size": 2682,
         "type": "city",
         "resources": [
           "shadowgem",
@@ -376,7 +377,7 @@
       "realm": "aether",
       "biome": "crater",
       "elevation": 0.15,
-      "temperature": 0.12856566051673135,
+      "temperature": 0.11746076845936468,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [
@@ -389,7 +390,7 @@
         "age": 8
       },
       "wildlife": [],
-      "vegetation": 0.4470000000000003,
+      "vegetation": 0.4620000000000003,
       "history": []
     },
     "overworld:0,-2": {
@@ -398,14 +399,14 @@
       "realm": "overworld",
       "biome": "forest",
       "elevation": 0.34143143133174064,
-      "temperature": 0.3881990263549337,
+      "temperature": 0.37709413429756705,
       "settlement": {
         "name": "Stonefort of Valoria",
         "faction": "Oakhaven",
-        "size": 549,
+        "size": 610,
         "type": "village",
         "resources": [],
-        "happiness": 71,
+        "happiness": 73,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -428,11 +429,11 @@
       "realm": "overworld",
       "biome": "forest",
       "elevation": 0.34226261980870737,
-      "temperature": 0.41588939232084154,
+      "temperature": 0.4047845002634749,
       "settlement": {
         "name": "Riverbend of Valoria",
         "faction": "Valoria",
-        "size": 949,
+        "size": 1065,
         "type": "town",
         "resources": [],
         "happiness": 6,
@@ -459,12 +460,12 @@
       "realm": "overworld",
       "biome": "forest",
       "elevation": 0.3261202345317221,
-      "temperature": 0.4722434197796885,
+      "temperature": 0.46113852772232183,
       "settlement": {
         "name": "Aethercliff of Valoria",
         "faction": "Valoria",
-        "size": 699,
-        "type": "village",
+        "size": 690,
+        "type": "town",
         "resources": [],
         "happiness": 24,
         "classes": {
@@ -488,7 +489,7 @@
       "realm": "overworld",
       "biome": "forest",
       "elevation": 0.32414535996050137,
-      "temperature": 0.44330769088114585,
+      "temperature": 0.4322027988237792,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [
@@ -515,11 +516,11 @@
       "realm": "underworld",
       "biome": "deep_lake",
       "elevation": 0.23385834767391267,
-      "temperature": 0.20123730003051943,
+      "temperature": 0.19013240797315276,
       "settlement": {
         "name": "Riverbend of Players",
         "faction": "Players",
-        "size": 191,
+        "size": 206,
         "type": "village",
         "resources": [],
         "happiness": 85,
@@ -534,7 +535,7 @@
       "resources": [],
       "ruin": null,
       "wildlife": [],
-      "vegetation": 0.2420000000000001,
+      "vegetation": 0.2570000000000001,
       "history": []
     },
     "overworld:-1,-2": {
@@ -543,20 +544,21 @@
       "realm": "overworld",
       "biome": "forest",
       "elevation": 0.33241056161549476,
-      "temperature": 0.8311747686077334,
+      "temperature": 0.8200698765503668,
       "settlement": {
         "name": "Deepmine of Oakhaven",
         "faction": "Oakhaven",
-        "size": 129,
+        "size": 157,
         "type": "village",
         "resources": [],
-        "happiness": 76,
+        "happiness": 78,
         "classes": {
           "nobles": 5,
           "merchants": 20,
           "peasants": 75
         },
-        "dominTrait": "Rugged"
+        "dominTrait": "Rugged",
+        "plagued": true
       },
       "fireTicksLeft": 0,
       "resources": [],
@@ -571,19 +573,26 @@
       "realm": "overworld",
       "biome": "forest",
       "elevation": 0.3485529468924823,
-      "temperature": 0.8634478720847856,
+      "temperature": 0.8523429800274189,
       "settlement": {
         "name": "Riverbend of Valoria",
         "faction": "Valoria",
-        "size": 78,
+        "size": 104,
         "type": "village",
-        "resources": []
+        "resources": [],
+        "happiness": 85,
+        "classes": {
+          "nobles": 5,
+          "merchants": 20,
+          "peasants": 75
+        },
+        "dominTrait": "Giant Strength"
       },
       "fireTicksLeft": 0,
       "resources": [],
       "ruin": null,
       "wildlife": [],
-      "vegetation": 0.8,
+      "vegetation": 0.8400000000000001,
       "history": []
     }
   },
@@ -739,7 +748,10 @@
     "[Year 44] PEASANT STRIKE: Peasants in Riverbend of Valoria are striking against the Industrialism regime! Productivity halted.",
     "[Year 44] RESEARCH: Players unlocked technology [Aetherial Sky Sailing]!",
     "[Year 45] EXPANSION: Valoria expanded to [0, -1] in overworld, building Riverbend of Valoria.",
-    "[Year 45] CLIMATE: A scorching heatwave swept the lands, drying up cavern reservoirs."
+    "[Year 45] CLIMATE: A scorching heatwave swept the lands, drying up cavern reservoirs.",
+    "[Year 46] RESEARCH: Valoria unlocked technology [Aetherial Sky Sailing]!",
+    "[Year 46] PLAGUE OUTBREAK: Outbreak center detected at Deepmine of Oakhaven in overworld [-1, -2]! Sickness is spreading.",
+    "[Year 46] PLAGUE TOLL: Sickness claimed 99 citizens in Aethercliff of Valoria. An Apothecary is urgently needed!"
   ],
   "tradeRoutes": [
     {
@@ -851,6 +863,6 @@
       "f2": "Oakhaven"
     }
   ],
-  "globalTempOffset": -0.12000000000000001,
-  "season": "Summer"
+  "globalTempOffset": -0.11104892057366669,
+  "season": "Autumn"
 }
