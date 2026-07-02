@@ -1,6 +1,6 @@
 {
   "seed": "1782424979471",
-  "year": 60,
+  "year": 61,
   "factions": [
     {
       "name": "Valoria",
@@ -25,12 +25,12 @@
       "status": {
         "Players": "war",
         "Oakhaven": "peace",
-        "Ironclad": "war",
+        "Ironclad": "peace",
         "Sunspire": "war"
       },
-      "power": 713,
+      "power": 425,
       "resources": {
-        "gold": 295,
+        "gold": 307,
         "wood": 0,
         "iron": 0,
         "timber": 5,
@@ -87,13 +87,13 @@
         "Ironclad": "peace",
         "Sunspire": "alliance"
       },
-      "power": 8142,
+      "power": 8855,
       "resources": {
-        "gold": 4104,
+        "gold": 4545,
         "wood": 4,
         "iron": 10,
-        "shadowgem": 106,
-        "magmametal": 106
+        "shadowgem": 107,
+        "magmametal": 107
       },
       "technologies": [
         "stone_tools",
@@ -147,14 +147,14 @@
         "Ironclad": "peace",
         "Sunspire": "alliance"
       },
-      "power": 3972,
+      "power": 4450,
       "resources": {
-        "gold": 4076,
+        "gold": 4296,
         "wood": 2,
         "iron": 0,
-        "timber": 10,
-        "astralgem": 8,
-        "prismaticdust": 1
+        "timber": 12,
+        "astralgem": 9,
+        "prismaticdust": 2
       },
       "technologies": [
         "stone_tools",
@@ -188,12 +188,12 @@
         }
       ],
       "status": {
-        "Valoria": "war",
+        "Valoria": "peace",
         "Sunspire": "peace"
       },
-      "power": 2379,
+      "power": 2646,
       "resources": {
-        "gold": 30,
+        "gold": 214,
         "wood": 6,
         "iron": 0
       },
@@ -228,12 +228,12 @@
         "Players": "alliance",
         "Ironclad": "peace"
       },
-      "power": 14258,
+      "power": 15444,
       "resources": {
-        "gold": 3447,
+        "gold": 4219,
         "wood": 58,
         "iron": 15,
-        "timber": 9
+        "timber": 11
       },
       "technologies": [
         "stone_tools",
@@ -254,11 +254,11 @@
       "realm": "overworld",
       "biome": "forest",
       "elevation": 0.33695322429137475,
-      "temperature": 0.016131491700819914,
+      "temperature": 0.02050780273478407,
       "settlement": {
         "name": "Sunspire Breakaway",
         "faction": "Sunspire",
-        "size": 14300,
+        "size": 15516,
         "type": "city",
         "resources": [
           "timber"
@@ -297,7 +297,7 @@
       "realm": "overworld",
       "biome": "plains",
       "elevation": 0.5249701008440653,
-      "temperature": 0,
+      "temperature": 0.004376311033964154,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -326,7 +326,7 @@
       "realm": "underworld",
       "biome": "deep_lake",
       "elevation": 0.21318443796895772,
-      "temperature": 0,
+      "temperature": 0.004376311033964154,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -350,7 +350,7 @@
       "realm": "overworld",
       "biome": "ocean",
       "elevation": 0.03447570636113438,
-      "temperature": 0.05566706700925059,
+      "temperature": 0.06004337804321474,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -379,7 +379,7 @@
       "realm": "aether",
       "biome": "void",
       "elevation": 0.18900273544403365,
-      "temperature": 0,
+      "temperature": 0.004376311033964154,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -403,7 +403,7 @@
       "realm": "overworld",
       "biome": "ocean",
       "elevation": 0.2740765277329316,
-      "temperature": 0,
+      "temperature": 0.004376311033964154,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -427,7 +427,7 @@
       "realm": "space",
       "biome": "crater",
       "elevation": 0.15,
-      "temperature": 0.0019918501246719237,
+      "temperature": 0.006368161158636078,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [
@@ -449,11 +449,11 @@
       "realm": "underworld",
       "biome": "crystal_cave",
       "elevation": 0.2551693100415643,
-      "temperature": 0,
+      "temperature": 0.004376311033964154,
       "settlement": {
         "name": "Aethelgard Outpost",
         "faction": "Players",
-        "size": 7431,
+        "size": 8025,
         "type": "city",
         "resources": [
           "shadowgem",
@@ -486,7 +486,7 @@
       "realm": "aether",
       "biome": "crater",
       "elevation": 0.15,
-      "temperature": 0.04482848513964553,
+      "temperature": 0.049204796173609684,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [
@@ -508,11 +508,11 @@
       "realm": "overworld",
       "biome": "forest",
       "elevation": 0.34143143133174064,
-      "temperature": 0.30446185097784784,
+      "temperature": 0.308838162011812,
       "settlement": {
         "name": "Stonefort of Valoria",
         "faction": "Oakhaven",
-        "size": 2178,
+        "size": 2388,
         "type": "city",
         "resources": [],
         "happiness": 45,
@@ -538,14 +538,14 @@
       "realm": "overworld",
       "biome": "forest",
       "elevation": 0.34226261980870737,
-      "temperature": 0.3321522169437557,
+      "temperature": 0.33652852797771987,
       "settlement": {
         "name": "Riverbend of Valoria",
         "faction": "Ironclad",
-        "size": 1864,
-        "type": "town",
+        "size": 2049,
+        "type": "city",
         "resources": [],
-        "happiness": 53,
+        "happiness": 52,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -570,14 +570,14 @@
       "realm": "overworld",
       "biome": "forest",
       "elevation": 0.3261202345317221,
-      "temperature": 0.3885062444026026,
+      "temperature": 0.3928825554365668,
       "settlement": {
         "name": "Aethercliff of Valoria",
         "faction": "Ironclad",
-        "size": 587,
+        "size": 669,
         "type": "village",
         "resources": [],
-        "happiness": 55,
+        "happiness": 54,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -601,7 +601,7 @@
       "realm": "overworld",
       "biome": "forest",
       "elevation": 0.32414535996050137,
-      "temperature": 0.35957051550406,
+      "temperature": 0.3639468265380242,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [
@@ -628,11 +628,11 @@
       "realm": "underworld",
       "biome": "deep_lake",
       "elevation": 0.23385834767391267,
-      "temperature": 0.11750012465343361,
+      "temperature": 0.12187643568739776,
       "settlement": {
         "name": "Riverbend of Players",
         "faction": "Players",
-        "size": 560,
+        "size": 604,
         "type": "village",
         "resources": [],
         "happiness": 57,
@@ -648,7 +648,7 @@
       "resources": [],
       "ruin": null,
       "wildlife": [],
-      "vegetation": 0.41900000000000026,
+      "vegetation": 0.4340000000000003,
       "history": []
     },
     "overworld:-1,-2": {
@@ -657,11 +657,11 @@
       "realm": "overworld",
       "biome": "forest",
       "elevation": 0.33241056161549476,
-      "temperature": 0.7474375932306477,
+      "temperature": 0.7518139042646118,
       "settlement": {
         "name": "Deepmine of Oakhaven",
         "faction": "Oakhaven",
-        "size": 989,
+        "size": 1104,
         "type": "town",
         "resources": [],
         "happiness": 48,
@@ -687,14 +687,14 @@
       "realm": "overworld",
       "biome": "forest",
       "elevation": 0.3485529468924823,
-      "temperature": 0.7797106967076999,
+      "temperature": 0.784087007741664,
       "settlement": {
         "name": "Riverbend of Valoria",
         "faction": "Valoria",
-        "size": 360,
+        "size": 213,
         "type": "village",
         "resources": [],
-        "happiness": 51,
+        "happiness": 53,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -717,15 +717,15 @@
       "realm": "overworld",
       "biome": "forest",
       "elevation": 0.3288439066731411,
-      "temperature": 0.8537329711122422,
+      "temperature": 0.8581092821462063,
       "settlement": {
         "name": "Evergreen of Valoria",
         "faction": "Valoria",
-        "size": 26,
+        "size": 29,
         "type": "village",
         "resources": [],
         "plagued": false,
-        "happiness": 60,
+        "happiness": 62,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -747,11 +747,11 @@
       "realm": "overworld",
       "biome": "forest",
       "elevation": 0.35642964626958623,
-      "temperature": 0.8010175024780705,
+      "temperature": 0.8053938135120345,
       "settlement": {
         "name": "Riverbend of Oakhaven",
         "faction": "Oakhaven",
-        "size": 468,
+        "size": 541,
         "type": "village",
         "resources": [
           "timber",
@@ -788,7 +788,7 @@
       "realm": "overworld",
       "biome": "coast",
       "elevation": 0.3161967124165148,
-      "temperature": 0.8479735474063411,
+      "temperature": 0.8523498584403052,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -798,7 +798,7 @@
         "age": 55
       },
       "wildlife": [],
-      "vegetation": 0.131,
+      "vegetation": 0.14600000000000002,
       "history": []
     },
     "underworld:16,10": {
@@ -807,11 +807,11 @@
       "realm": "underworld",
       "biome": "crystal_cave",
       "elevation": 0.2644151303615582,
-      "temperature": 0.5764103518519988,
+      "temperature": 0.5807866628859629,
       "settlement": {
         "name": "Aethercliff of Players",
         "faction": "Players",
-        "size": 87,
+        "size": 93,
         "type": "village",
         "resources": [],
         "happiness": 64,
@@ -826,7 +826,7 @@
       "resources": [],
       "ruin": null,
       "wildlife": [],
-      "vegetation": 0.116,
+      "vegetation": 0.131,
       "history": []
     },
     "overworld:1,-1": {
@@ -835,11 +835,11 @@
       "realm": "overworld",
       "biome": "forest",
       "elevation": 0.3609078533099546,
-      "temperature": 0.8526095358640124,
+      "temperature": 0.8569858468979765,
       "settlement": {
         "name": "Riverbend of Oakhaven",
         "faction": "Oakhaven",
-        "size": 360,
+        "size": 424,
         "type": "village",
         "resources": [],
         "happiness": 85,
@@ -863,11 +863,11 @@
       "realm": "underworld",
       "biome": "crystal_cave",
       "elevation": 0.2701113475351626,
-      "temperature": 0.5397860791163532,
+      "temperature": 0.5441623901503173,
       "settlement": {
         "name": "Aethercliff of Players",
         "faction": "Players",
-        "size": 64,
+        "size": 69,
         "type": "village",
         "resources": [],
         "happiness": 85,
@@ -882,7 +882,7 @@
       "resources": [],
       "ruin": null,
       "wildlife": [],
-      "vegetation": 0.065,
+      "vegetation": 0.08,
       "history": []
     },
     "overworld:-1,-3": {
@@ -891,11 +891,11 @@
       "realm": "overworld",
       "biome": "forest",
       "elevation": 0.3286235670008694,
-      "temperature": 0.8034774731580542,
+      "temperature": 0.8078537841920183,
       "settlement": {
         "name": "Evergreen of Oakhaven",
         "faction": "Oakhaven",
-        "size": 127,
+        "size": 173,
         "type": "village",
         "resources": [
           "timber",
@@ -921,7 +921,7 @@
           "count": 14
         }
       ],
-      "vegetation": 0.88,
+      "vegetation": 1,
       "history": []
     },
     "underworld:14,10": {
@@ -930,19 +930,26 @@
       "realm": "underworld",
       "biome": "deep_lake",
       "elevation": 0.2473650752884562,
-      "temperature": 0.5702361988403366,
+      "temperature": 0.5746125098743007,
       "settlement": {
         "name": "Deepmine of Players",
         "faction": "Players",
-        "size": 60,
+        "size": 64,
         "type": "village",
-        "resources": []
+        "resources": [],
+        "happiness": 85,
+        "classes": {
+          "nobles": 5,
+          "merchants": 20,
+          "peasants": 75
+        },
+        "dominTrait": "Rugged"
       },
       "fireTicksLeft": 0,
       "resources": [],
       "ruin": null,
       "wildlife": [],
-      "vegetation": 0.05,
+      "vegetation": 0.065,
       "history": []
     }
   },
@@ -1214,7 +1221,8 @@
     "[Year 60] EXPANSION: Players expanded to [14, 10] in underworld, building Deepmine of Players.",
     "[Year 60] GOVERNMENT SHIFT: Faction Players shifted state ideology from Militarism to Scholasticism due to civil pressures.",
     "[Year 60] RESEARCH: Ironclad unlocked technology [Cosmic Spaceflight]!",
-    "[Year 60] DIPLOMACY: Alliances forged between Oakhaven and Sunspire!"
+    "[Year 60] DIPLOMACY: Alliances forged between Oakhaven and Sunspire!",
+    "[Year 61] PEACE TREATY: Armistice signed between Valoria and Ironclad."
   ],
   "tradeRoutes": [
     {
@@ -1542,6 +1550,6 @@
       "f2": "Sunspire"
     }
   ],
-  "globalTempOffset": -0.035768450088799024,
-  "season": "Spring"
+  "globalTempOffset": -0.031236889660358452,
+  "season": "Summer"
 }
