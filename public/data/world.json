@@ -1,6 +1,6 @@
 {
   "seed": "1782424979471",
-  "year": 77,
+  "year": 78,
   "factions": [
     {
       "name": "Valoria",
@@ -30,6 +30,11 @@
           "realm": "overworld",
           "x": -1,
           "y": 0
+        },
+        {
+          "realm": "overworld",
+          "x": -3,
+          "y": 1
         }
       ],
       "status": {
@@ -38,17 +43,17 @@
         "Ironclad": "alliance",
         "Sunspire": "alliance",
         "Grimwallow": "peace",
-        "Aethelgard": "peace",
+        "Aethelgard": "alliance",
         "Oakhaven rebels": "peace"
       },
-      "power": 6254,
+      "power": 7803,
       "resources": {
-        "gold": 1119,
+        "gold": 452,
         "wood": 6,
         "iron": 0,
-        "timber": 8,
+        "timber": 9,
         "novatimber": 2,
-        "astralore": 3
+        "astralore": 4
       },
       "technologies": [
         "stone_tools",
@@ -56,9 +61,10 @@
         "sailing_boats",
         "carriage_vehicles",
         "steam_engine",
-        "sky_ships"
+        "sky_ships",
+        "starflight"
       ],
-      "ideology": "Militarism"
+      "ideology": "Scholasticism"
     },
     {
       "name": "Players",
@@ -104,9 +110,9 @@
         "Aethelgard": "alliance",
         "Oakhaven rebels": "peace"
       },
-      "power": 2460,
+      "power": 2719,
       "resources": {
-        "gold": 7117,
+        "gold": 7306,
         "wood": 0,
         "iron": 10,
         "shadowgem": 110,
@@ -166,6 +172,16 @@
           "realm": "overworld",
           "x": -2,
           "y": -4
+        },
+        {
+          "realm": "overworld",
+          "x": 1,
+          "y": -4
+        },
+        {
+          "realm": "overworld",
+          "x": -2,
+          "y": -5
         }
       ],
       "status": {
@@ -177,15 +193,15 @@
         "Aethelgard": "war",
         "Oakhaven rebels": "peace"
       },
-      "power": 5475,
+      "power": 6953,
       "resources": {
-        "gold": 7821,
+        "gold": 8166,
         "wood": 0,
         "iron": 0,
-        "timber": 1,
+        "timber": 2,
         "astralgem": 14,
-        "prismaticdust": 26,
-        "shadowore": 4
+        "prismaticdust": 27,
+        "shadowore": 5
       },
       "technologies": [
         "stone_tools",
@@ -231,6 +247,11 @@
           "realm": "overworld",
           "x": -3,
           "y": 0
+        },
+        {
+          "realm": "overworld",
+          "x": -4,
+          "y": -1
         }
       ],
       "status": {
@@ -240,12 +261,12 @@
         "Aethelgard": "peace",
         "Oakhaven rebels": "peace"
       },
-      "power": 9523,
+      "power": 11092,
       "resources": {
-        "gold": 5223,
+        "gold": 5775,
         "wood": 0,
         "iron": 0,
-        "fish": 6
+        "fish": 7
       },
       "technologies": [
         "stone_tools",
@@ -256,7 +277,7 @@
         "sky_ships",
         "starflight"
       ],
-      "ideology": "Industrialism"
+      "ideology": "Scholasticism"
     },
     {
       "name": "Sunspire",
@@ -292,15 +313,15 @@
         "Aethelgard": "alliance",
         "Oakhaven rebels": "peace"
       },
-      "power": 58526,
+      "power": 63907,
       "resources": {
-        "gold": 22569,
+        "gold": 24485,
         "wood": 6,
         "iron": 5,
-        "timber": 36,
-        "astralmetal": 4,
-        "obsidian": 4,
-        "novatimber": 3
+        "timber": 38,
+        "astralmetal": 5,
+        "obsidian": 5,
+        "novatimber": 4
       },
       "technologies": [
         "stone_tools",
@@ -342,13 +363,13 @@
         "Oakhaven rebels": "peace",
         "Valoria": "peace"
       },
-      "power": 13954,
+      "power": 15134,
       "resources": {
-        "gold": 6388,
+        "gold": 7446,
         "wood": 10,
         "iron": 5,
-        "shadowgem": 14,
-        "magmametal": 14
+        "shadowgem": 15,
+        "magmametal": 15
       },
       "technologies": [
         "stone_tools",
@@ -376,7 +397,7 @@
         "Players": "alliance",
         "Ironclad": "peace",
         "Sunspire": "alliance",
-        "Valoria": "peace"
+        "Valoria": "alliance"
       },
       "power": 0,
       "resources": {
@@ -428,9 +449,9 @@
       "status": {
         "Oakhaven": "peace"
       },
-      "power": 14440,
+      "power": 16086,
       "resources": {
-        "gold": 5499,
+        "gold": 6623,
         "wood": 0,
         "iron": 0
       },
@@ -453,16 +474,16 @@
       "realm": "overworld",
       "biome": "forest",
       "elevation": 0.33695322429137475,
-      "temperature": 0.06410846838325188,
+      "temperature": 0.07996531492721215,
       "settlement": {
         "name": "Sunspire Breakaway",
         "faction": "Sunspire",
-        "size": 56944,
+        "size": 61763,
         "type": "city",
         "resources": [
           "timber"
         ],
-        "happiness": 64,
+        "happiness": 66,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -496,7 +517,7 @@
       "realm": "overworld",
       "biome": "plains",
       "elevation": 0.5249701008440653,
-      "temperature": 0.0629275803202763,
+      "temperature": 0.07878442686423658,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -525,7 +546,7 @@
       "realm": "underworld",
       "biome": "deep_lake",
       "elevation": 0.21318443796895772,
-      "temperature": 0.0629275803202763,
+      "temperature": 0.07878442686423658,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -549,7 +570,7 @@
       "realm": "overworld",
       "biome": "ocean",
       "elevation": 0.03447570636113438,
-      "temperature": 0.10364404369168256,
+      "temperature": 0.11950089023564284,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -578,7 +599,7 @@
       "realm": "aether",
       "biome": "void",
       "elevation": 0.18900273544403365,
-      "temperature": 0.0629275803202763,
+      "temperature": 0.07878442686423658,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -602,7 +623,7 @@
       "realm": "overworld",
       "biome": "ocean",
       "elevation": 0.2740765277329316,
-      "temperature": 0.0629275803202763,
+      "temperature": 0.07878442686423658,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -626,7 +647,7 @@
       "realm": "space",
       "biome": "crater",
       "elevation": 0.15,
-      "temperature": 0.8629275803202764,
+      "temperature": 0.8787844268642366,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [
@@ -639,7 +660,7 @@
         "age": 68
       },
       "wildlife": [],
-      "vegetation": 0.111,
+      "vegetation": 0.126,
       "history": []
     },
     "underworld:15,10": {
@@ -648,17 +669,17 @@
       "realm": "underworld",
       "biome": "crystal_cave",
       "elevation": 0.2551693100415643,
-      "temperature": 0.0629275803202763,
+      "temperature": 0.07878442686423658,
       "settlement": {
         "name": "Grimwallow Breakaway",
         "faction": "Grimwallow",
-        "size": 13459,
+        "size": 14565,
         "type": "city",
         "resources": [
           "shadowgem",
           "magmametal"
         ],
-        "happiness": 49,
+        "happiness": 48,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -686,7 +707,7 @@
       "realm": "aether",
       "biome": "crater",
       "elevation": 0.15,
-      "temperature": 0.0928054618220775,
+      "temperature": 0.10866230836603777,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [
@@ -708,14 +729,14 @@
       "realm": "overworld",
       "biome": "forest",
       "elevation": 0.34143143133174064,
-      "temperature": 0.35243882766027984,
+      "temperature": 0.3682956742042401,
       "settlement": {
         "name": "Stonefort of Valoria",
         "faction": "Oakhaven rebels",
-        "size": 8234,
+        "size": 9030,
         "type": "city",
         "resources": [],
-        "happiness": 53,
+        "happiness": 52,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -743,11 +764,11 @@
       "realm": "overworld",
       "biome": "forest",
       "elevation": 0.34226261980870737,
-      "temperature": 0.3801291936261877,
+      "temperature": 0.39598604017014793,
       "settlement": {
         "name": "Deepmine of Valoria",
         "faction": "Valoria",
-        "size": 495,
+        "size": 786,
         "type": "village",
         "resources": [],
         "happiness": 84,
@@ -775,11 +796,11 @@
       "realm": "overworld",
       "biome": "forest",
       "elevation": 0.3261202345317221,
-      "temperature": 0.4364832210850346,
+      "temperature": 0.45234006762899487,
       "settlement": {
         "name": "Aethercliff of Valoria",
         "faction": "Ironclad",
-        "size": 4617,
+        "size": 5160,
         "type": "city",
         "resources": [],
         "happiness": 41,
@@ -806,17 +827,17 @@
       "realm": "overworld",
       "biome": "forest",
       "elevation": 0.32414535996050137,
-      "temperature": 0.407547492186492,
+      "temperature": 0.42340433873045225,
       "settlement": {
         "name": "Aethercliff of Sunspire",
         "faction": "Sunspire",
-        "size": 990,
+        "size": 1333,
         "type": "town",
         "resources": [
           "timber",
           "novatimber"
         ],
-        "happiness": 91,
+        "happiness": 93,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -849,14 +870,14 @@
       "realm": "underworld",
       "biome": "deep_lake",
       "elevation": 0.23385834767391267,
-      "temperature": 0.16547710133586555,
+      "temperature": 0.18133394787982582,
       "settlement": {
         "name": "Riverbend of Players",
         "faction": "Players",
-        "size": 1115,
+        "size": 1216,
         "type": "town",
         "resources": [],
-        "happiness": 29,
+        "happiness": 28,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -878,14 +899,14 @@
       "realm": "overworld",
       "biome": "forest",
       "elevation": 0.33241056161549476,
-      "temperature": 0.7954145699130795,
+      "temperature": 0.8112714164570397,
       "settlement": {
         "name": "Deepmine of Oakhaven",
         "faction": "Oakhaven rebels",
-        "size": 4525,
+        "size": 5025,
         "type": "city",
         "resources": [],
-        "happiness": 53,
+        "happiness": 52,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -909,14 +930,14 @@
       "realm": "overworld",
       "biome": "forest",
       "elevation": 0.3485529468924823,
-      "temperature": 0.8276876733901316,
+      "temperature": 0.8435445199340919,
       "settlement": {
         "name": "Riverbend of Valoria",
         "faction": "Valoria",
-        "size": 2451,
+        "size": 2945,
         "type": "city",
         "resources": [],
-        "happiness": 70,
+        "happiness": 69,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -939,15 +960,15 @@
       "realm": "overworld",
       "biome": "forest",
       "elevation": 0.3288439066731411,
-      "temperature": 0.901709947794674,
+      "temperature": 0.9175667943386342,
       "settlement": {
         "name": "Evergreen of Valoria",
         "faction": "Valoria",
-        "size": 3181,
+        "size": 3751,
         "type": "city",
         "resources": [],
         "plagued": false,
-        "happiness": 79,
+        "happiness": 78,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -969,17 +990,17 @@
       "realm": "overworld",
       "biome": "crater",
       "elevation": 0.15,
-      "temperature": 0.8500476875277236,
+      "temperature": 0.8659045340716839,
       "settlement": {
         "name": "Goldpeak of Sunspire",
         "faction": "Sunspire",
-        "size": 1240,
+        "size": 1603,
         "type": "town",
         "resources": [
           "astralmetal",
           "obsidian"
         ],
-        "happiness": 93,
+        "happiness": 95,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -1005,7 +1026,7 @@
           "count": 12
         }
       ],
-      "vegetation": 0.14400000000000002,
+      "vegetation": 0.15900000000000003,
       "history": []
     },
     "overworld:-3,0": {
@@ -1014,11 +1035,11 @@
       "realm": "overworld",
       "biome": "coast",
       "elevation": 0.3161967124165148,
-      "temperature": 0.8959505240887728,
+      "temperature": 0.9118073706327331,
       "settlement": {
         "name": "Goldpeak of Ironclad",
         "faction": "Ironclad",
-        "size": 376,
+        "size": 580,
         "type": "village",
         "resources": [],
         "happiness": 85,
@@ -1037,7 +1058,7 @@
         "age": 55
       },
       "wildlife": [],
-      "vegetation": 0.3380000000000002,
+      "vegetation": 0.3530000000000002,
       "history": []
     },
     "underworld:16,10": {
@@ -1046,14 +1067,14 @@
       "realm": "underworld",
       "biome": "crystal_cave",
       "elevation": 0.2644151303615582,
-      "temperature": 0.6243873285344306,
+      "temperature": 0.6402441750783908,
       "settlement": {
         "name": "Aethercliff of Players",
         "faction": "Players",
-        "size": 477,
+        "size": 527,
         "type": "village",
         "resources": [],
-        "happiness": 36,
+        "happiness": 35,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -1065,7 +1086,7 @@
       "resources": [],
       "ruin": null,
       "wildlife": [],
-      "vegetation": 0.3230000000000002,
+      "vegetation": 0.3380000000000002,
       "history": []
     },
     "overworld:1,-1": {
@@ -1074,14 +1095,14 @@
       "realm": "overworld",
       "biome": "forest",
       "elevation": 0.3609078533099546,
-      "temperature": 0.9005865125464442,
+      "temperature": 0.9164433590904044,
       "settlement": {
         "name": "Riverbend of Oakhaven",
         "faction": "Oakhaven rebels",
-        "size": 1534,
+        "size": 1794,
         "type": "town",
         "resources": [],
-        "happiness": 53,
+        "happiness": 52,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -1103,14 +1124,14 @@
       "realm": "underworld",
       "biome": "crystal_cave",
       "elevation": 0.2701113475351626,
-      "temperature": 0.587763055798785,
+      "temperature": 0.6036199023427452,
       "settlement": {
         "name": "Aethercliff of Players",
         "faction": "Players",
-        "size": 399,
+        "size": 442,
         "type": "village",
         "resources": [],
-        "happiness": 54,
+        "happiness": 53,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -1122,7 +1143,7 @@
       "resources": [],
       "ruin": null,
       "wildlife": [],
-      "vegetation": 0.27200000000000013,
+      "vegetation": 0.28700000000000014,
       "history": []
     },
     "overworld:-1,-3": {
@@ -1131,12 +1152,12 @@
       "realm": "overworld",
       "biome": "forest",
       "elevation": 0.3286235670008694,
-      "temperature": 0.8514544498404859,
+      "temperature": 0.8673112963844462,
       "settlement": {
         "name": "Evergreen of Oakhaven",
         "faction": "Oakhaven",
-        "size": 1983,
-        "type": "town",
+        "size": 2297,
+        "type": "city",
         "resources": [
           "timber",
           "prismaticdust"
@@ -1171,14 +1192,14 @@
       "realm": "underworld",
       "biome": "deep_lake",
       "elevation": 0.2473650752884562,
-      "temperature": 0.6182131755227683,
+      "temperature": 0.6340700220667286,
       "settlement": {
         "name": "Deepmine of Players",
         "faction": "Players",
-        "size": 386,
+        "size": 428,
         "type": "village",
         "resources": [],
-        "happiness": 54,
+        "happiness": 53,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -1190,7 +1211,7 @@
       "resources": [],
       "ruin": null,
       "wildlife": [],
-      "vegetation": 0.2570000000000001,
+      "vegetation": 0.27200000000000013,
       "history": []
     },
     "overworld:0,1": {
@@ -1199,11 +1220,11 @@
       "realm": "overworld",
       "biome": "forest",
       "elevation": 0.36500123012757424,
-      "temperature": 0.893049510105727,
+      "temperature": 0.9089063566496872,
       "settlement": {
         "name": "Goldpeak of Ironclad",
         "faction": "Ironclad",
-        "size": 2199,
+        "size": 2548,
         "type": "city",
         "resources": [],
         "happiness": 75,
@@ -1228,11 +1249,11 @@
       "realm": "overworld",
       "biome": "coast",
       "elevation": 0.31603604234226984,
-      "temperature": 0.9167518962745255,
+      "temperature": 0.9326087428184857,
       "settlement": {
         "name": "Evergreen of Ironclad",
         "faction": "Ironclad",
-        "size": 2199,
+        "size": 2548,
         "type": "city",
         "resources": [],
         "happiness": 75,
@@ -1252,7 +1273,7 @@
           "count": 1
         }
       ],
-      "vegetation": 0.20900000000000007,
+      "vegetation": 0.2240000000000001,
       "history": []
     },
     "overworld:1,-3": {
@@ -1261,11 +1282,11 @@
       "realm": "overworld",
       "biome": "forest",
       "elevation": 0.3423521301773452,
-      "temperature": 0.8839219572686001,
+      "temperature": 0.8997788038125604,
       "settlement": {
         "name": "Deepmine of Oakhaven",
         "faction": "Oakhaven",
-        "size": 1098,
+        "size": 1341,
         "type": "town",
         "resources": [],
         "happiness": 68,
@@ -1290,14 +1311,14 @@
       "realm": "underworld",
       "biome": "deep_lake",
       "elevation": 0.2416688581148519,
-      "temperature": 0.5860348669053012,
+      "temperature": 0.6018917134492614,
       "settlement": {
         "name": "Aethercliff of Grimwallow",
         "faction": "Grimwallow",
-        "size": 555,
+        "size": 629,
         "type": "village",
         "resources": [],
-        "happiness": 84,
+        "happiness": 83,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -1310,7 +1331,7 @@
       "resources": [],
       "ruin": null,
       "wildlife": [],
-      "vegetation": 0.17600000000000005,
+      "vegetation": 0.19100000000000006,
       "history": []
     },
     "overworld:-2,-3": {
@@ -1319,11 +1340,11 @@
       "realm": "overworld",
       "biome": "plains",
       "elevation": 0.32286864329848924,
-      "temperature": 0.9407741556297149,
+      "temperature": 0.9566310021736751,
       "settlement": {
         "name": "Crossroads of Oakhaven",
         "faction": "Oakhaven",
-        "size": 995,
+        "size": 1230,
         "type": "town",
         "resources": [],
         "happiness": 68,
@@ -1339,7 +1360,7 @@
       "resources": [],
       "ruin": null,
       "wildlife": [],
-      "vegetation": 0.4110000000000001,
+      "vegetation": 0.4260000000000001,
       "history": []
     },
     "overworld:0,-3": {
@@ -1348,12 +1369,12 @@
       "realm": "overworld",
       "biome": "forest",
       "elevation": 0.3350950892911227,
-      "temperature": 0.9258635375364151,
+      "temperature": 0.9417203840803754,
       "settlement": {
         "name": "Deepmine of Oakhaven",
         "faction": "Oakhaven",
-        "size": 753,
-        "type": "village",
+        "size": 969,
+        "type": "town",
         "resources": [],
         "happiness": 67,
         "classes": {
@@ -1377,12 +1398,12 @@
       "realm": "overworld",
       "biome": "forest",
       "elevation": 0.329544265846474,
-      "temperature": 0.8807673803246638,
+      "temperature": 0.8966242268686241,
       "settlement": {
         "name": "Crossroads of Oakhaven",
         "faction": "Oakhaven",
-        "size": 751,
-        "type": "village",
+        "size": 967,
+        "type": "town",
         "resources": [],
         "happiness": 67,
         "classes": {
@@ -1405,14 +1426,14 @@
       "realm": "overworld",
       "biome": "forest",
       "elevation": 0.38676471477941987,
-      "temperature": 0.9362665479914867,
+      "temperature": 0.9521233945354469,
       "settlement": {
         "name": "Goldpeak of Oakhaven rebels",
         "faction": "Oakhaven rebels",
-        "size": 603,
+        "size": 789,
         "type": "village",
         "resources": [],
-        "happiness": 64,
+        "happiness": 63,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -1433,11 +1454,11 @@
       "realm": "overworld",
       "biome": "plains",
       "elevation": 0.3255531709741172,
-      "temperature": 0.8564407352439193,
+      "temperature": 0.8722975817878795,
       "settlement": {
         "name": "Goldpeak of Oakhaven",
         "faction": "Oakhaven",
-        "size": 613,
+        "size": 818,
         "type": "village",
         "resources": [],
         "happiness": 68,
@@ -1457,7 +1478,7 @@
           "count": 22
         }
       ],
-      "vegetation": 0.36300000000000004,
+      "vegetation": 0.37800000000000006,
       "history": []
     },
     "underworld:13,12": {
@@ -1466,14 +1487,14 @@
       "realm": "underworld",
       "biome": "deep_lake",
       "elevation": 0.21567675030053632,
-      "temperature": 0.5239761766985395,
+      "temperature": 0.5398330232424997,
       "settlement": {
         "name": "Deepmine of Players",
         "faction": "Players",
-        "size": 143,
+        "size": 166,
         "type": "village",
         "resources": [],
-        "happiness": 66,
+        "happiness": 65,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -1485,7 +1506,7 @@
       "resources": [],
       "ruin": null,
       "wildlife": [],
-      "vegetation": 0.098,
+      "vegetation": 0.113,
       "history": []
     },
     "overworld:-2,-4": {
@@ -1494,11 +1515,11 @@
       "realm": "overworld",
       "biome": "plains",
       "elevation": 0.32221377917437144,
-      "temperature": 0.8372281223997016,
+      "temperature": 0.8530849689436618,
       "settlement": {
         "name": "Riverbend of Oakhaven",
         "faction": "Oakhaven",
-        "size": 248,
+        "size": 423,
         "type": "village",
         "resources": [
           "shadowore"
@@ -1522,7 +1543,7 @@
           "count": 18
         }
       ],
-      "vegetation": 0.34800000000000003,
+      "vegetation": 0.36300000000000004,
       "history": []
     },
     "overworld:-3,-2": {
@@ -1531,11 +1552,11 @@
       "realm": "overworld",
       "biome": "coast",
       "elevation": 0.3165783162147146,
-      "temperature": 0.8613892219890892,
+      "temperature": 0.8772460685330494,
       "settlement": {
         "name": "OrbitStation of Ironclad",
         "faction": "Ironclad",
-        "size": 882,
+        "size": 1126,
         "type": "town",
         "resources": [
           "fish"
@@ -1554,7 +1575,7 @@
       ],
       "ruin": null,
       "wildlife": [],
-      "vegetation": 0.098,
+      "vegetation": 0.113,
       "history": []
     },
     "overworld:1,-2": {
@@ -1563,17 +1584,17 @@
       "realm": "overworld",
       "biome": "forest",
       "elevation": 0.35123747456810783,
-      "temperature": 0.8372504979381659,
+      "temperature": 0.8531073444821261,
       "settlement": {
         "name": "OrbitStation of Valoria",
         "faction": "Valoria",
-        "size": 943,
+        "size": 1281,
         "type": "town",
         "resources": [
           "timber",
           "astralore"
         ],
-        "happiness": 91,
+        "happiness": 90,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -1593,7 +1614,91 @@
           "count": 18
         }
       ],
-      "vegetation": 0.9040000000000001,
+      "vegetation": 0.9440000000000002,
+      "history": []
+    },
+    "overworld:-3,1": {
+      "x": -3,
+      "y": 1,
+      "realm": "overworld",
+      "biome": "coast",
+      "elevation": 0.31712263438682625,
+      "temperature": 0.8688185637562736,
+      "settlement": {
+        "name": "Crossroads of Valoria",
+        "faction": "Valoria",
+        "size": 300,
+        "type": "village",
+        "resources": []
+      },
+      "fireTicksLeft": 0,
+      "resources": [],
+      "ruin": null,
+      "wildlife": [],
+      "vegetation": 0.05,
+      "history": []
+    },
+    "overworld:1,-4": {
+      "x": 1,
+      "y": -4,
+      "realm": "overworld",
+      "biome": "forest",
+      "elevation": 0.33429298643897537,
+      "temperature": 0.830563363556045,
+      "settlement": {
+        "name": "Stonefort of Oakhaven",
+        "faction": "Oakhaven",
+        "size": 216,
+        "type": "village",
+        "resources": []
+      },
+      "fireTicksLeft": 0,
+      "resources": [],
+      "ruin": null,
+      "wildlife": [],
+      "vegetation": 0.8,
+      "history": []
+    },
+    "overworld:-2,-5": {
+      "x": -2,
+      "y": -5,
+      "realm": "overworld",
+      "biome": "plains",
+      "elevation": 0.3220816894250727,
+      "temperature": 0.8301369836441134,
+      "settlement": {
+        "name": "Deepmine of Oakhaven",
+        "faction": "Oakhaven",
+        "size": 216,
+        "type": "village",
+        "resources": []
+      },
+      "fireTicksLeft": 0,
+      "resources": [],
+      "ruin": null,
+      "wildlife": [],
+      "vegetation": 0.3,
+      "history": []
+    },
+    "overworld:-4,-1": {
+      "x": -4,
+      "y": -1,
+      "realm": "overworld",
+      "biome": "coast",
+      "elevation": 0.30665479409950924,
+      "temperature": 0.8533957946320059,
+      "settlement": {
+        "name": "OrbitStation of Ironclad",
+        "faction": "Ironclad",
+        "size": 234,
+        "type": "village",
+        "resources": []
+      },
+      "fireTicksLeft": 0,
+      "resources": [],
+      "ruin": null,
+      "wildlife": [],
+      "vegetation": 0.05,
       "history": []
     }
   },
@@ -1813,6 +1918,30 @@
       "x": 1,
       "y": -2,
       "radius": 6
+    },
+    {
+      "realm": "overworld",
+      "x": -3,
+      "y": 1,
+      "radius": 6
+    },
+    {
+      "realm": "overworld",
+      "x": 1,
+      "y": -4,
+      "radius": 6
+    },
+    {
+      "realm": "overworld",
+      "x": -2,
+      "y": -5,
+      "radius": 6
+    },
+    {
+      "realm": "overworld",
+      "x": -4,
+      "y": -1,
+      "radius": 6
     }
   ],
   "chronicle": [
@@ -2031,7 +2160,15 @@
     "[Year 76] DIPLOMACY: Alliances forged between Sunspire and Aethelgard!",
     "[Year 77] GOVERNMENT SHIFT: Faction Valoria shifted state ideology from Pacifism to Militarism due to civil pressures.",
     "[Year 77] DIPLOMACY: Alliances forged between Ironclad and Grimwallow!",
-    "[Year 77] CLIMATE: A scorching heatwave swept the lands, drying up cavern reservoirs."
+    "[Year 77] CLIMATE: A scorching heatwave swept the lands, drying up cavern reservoirs.",
+    "[Year 78] EXPANSION: Valoria expanded to [-3, 1] in overworld, building Crossroads of Valoria.",
+    "[Year 78] GOVERNMENT SHIFT: Faction Valoria shifted state ideology from Militarism to Scholasticism due to civil pressures.",
+    "[Year 78] RESEARCH: Valoria unlocked technology [Cosmic Spaceflight]!",
+    "[Year 78] EXPANSION: Oakhaven expanded to [1, -4] in overworld, building Stonefort of Oakhaven.",
+    "[Year 78] EXPANSION: Oakhaven expanded to [-2, -5] in overworld, building Deepmine of Oakhaven.",
+    "[Year 78] EXPANSION: Ironclad expanded to [-4, -1] in overworld, building OrbitStation of Ironclad.",
+    "[Year 78] GOVERNMENT SHIFT: Faction Ironclad shifted state ideology from Industrialism to Scholasticism due to civil pressures.",
+    "[Year 78] DIPLOMACY: Alliances forged between Valoria and Aethelgard!"
   ],
   "tradeRoutes": [
     {
@@ -2120,6 +2257,30 @@
     },
     {
       "from": {
+        "x": 0,
+        "y": -1
+      },
+      "to": {
+        "x": 1,
+        "y": -4
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven"
+    },
+    {
+      "from": {
+        "x": 0,
+        "y": -1
+      },
+      "to": {
+        "x": -2,
+        "y": -5
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven"
+    },
+    {
+      "from": {
         "x": -2,
         "y": 0
       },
@@ -2204,6 +2365,30 @@
     },
     {
       "from": {
+        "x": -2,
+        "y": 0
+      },
+      "to": {
+        "x": 1,
+        "y": -4
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven"
+    },
+    {
+      "from": {
+        "x": -2,
+        "y": 0
+      },
+      "to": {
+        "x": -2,
+        "y": -5
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven"
+    },
+    {
+      "from": {
         "x": 1,
         "y": -2
       },
@@ -2288,6 +2473,30 @@
     },
     {
       "from": {
+        "x": 1,
+        "y": -2
+      },
+      "to": {
+        "x": 1,
+        "y": -4
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven"
+    },
+    {
+      "from": {
+        "x": 1,
+        "y": -2
+      },
+      "to": {
+        "x": -2,
+        "y": -5
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven"
+    },
+    {
+      "from": {
         "x": -1,
         "y": 0
       },
@@ -2366,6 +2575,138 @@
       "to": {
         "x": -2,
         "y": -4
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven"
+    },
+    {
+      "from": {
+        "x": -1,
+        "y": 0
+      },
+      "to": {
+        "x": 1,
+        "y": -4
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven"
+    },
+    {
+      "from": {
+        "x": -1,
+        "y": 0
+      },
+      "to": {
+        "x": -2,
+        "y": -5
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven"
+    },
+    {
+      "from": {
+        "x": -3,
+        "y": 1
+      },
+      "to": {
+        "x": -1,
+        "y": -3
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven"
+    },
+    {
+      "from": {
+        "x": -3,
+        "y": 1
+      },
+      "to": {
+        "x": 1,
+        "y": -3
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven"
+    },
+    {
+      "from": {
+        "x": -3,
+        "y": 1
+      },
+      "to": {
+        "x": -2,
+        "y": -3
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven"
+    },
+    {
+      "from": {
+        "x": -3,
+        "y": 1
+      },
+      "to": {
+        "x": 0,
+        "y": -3
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven"
+    },
+    {
+      "from": {
+        "x": -3,
+        "y": 1
+      },
+      "to": {
+        "x": 0,
+        "y": -4
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven"
+    },
+    {
+      "from": {
+        "x": -3,
+        "y": 1
+      },
+      "to": {
+        "x": -1,
+        "y": -4
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven"
+    },
+    {
+      "from": {
+        "x": -3,
+        "y": 1
+      },
+      "to": {
+        "x": -2,
+        "y": -4
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven"
+    },
+    {
+      "from": {
+        "x": -3,
+        "y": 1
+      },
+      "to": {
+        "x": 1,
+        "y": -4
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven"
+    },
+    {
+      "from": {
+        "x": -3,
+        "y": 1
+      },
+      "to": {
+        "x": -2,
+        "y": -5
       },
       "f1": "Valoria",
       "f2": "Oakhaven"
@@ -2432,6 +2773,18 @@
     },
     {
       "from": {
+        "x": 0,
+        "y": -1
+      },
+      "to": {
+        "x": -4,
+        "y": -1
+      },
+      "f1": "Valoria",
+      "f2": "Ironclad"
+    },
+    {
+      "from": {
         "x": -2,
         "y": 0
       },
@@ -2492,6 +2845,18 @@
     },
     {
       "from": {
+        "x": -2,
+        "y": 0
+      },
+      "to": {
+        "x": -4,
+        "y": -1
+      },
+      "f1": "Valoria",
+      "f2": "Ironclad"
+    },
+    {
+      "from": {
         "x": 1,
         "y": -2
       },
@@ -2552,6 +2917,18 @@
     },
     {
       "from": {
+        "x": 1,
+        "y": -2
+      },
+      "to": {
+        "x": -4,
+        "y": -1
+      },
+      "f1": "Valoria",
+      "f2": "Ironclad"
+    },
+    {
+      "from": {
         "x": -1,
         "y": 0
       },
@@ -2612,6 +2989,90 @@
     },
     {
       "from": {
+        "x": -1,
+        "y": 0
+      },
+      "to": {
+        "x": -4,
+        "y": -1
+      },
+      "f1": "Valoria",
+      "f2": "Ironclad"
+    },
+    {
+      "from": {
+        "x": -3,
+        "y": 1
+      },
+      "to": {
+        "x": -2,
+        "y": -1
+      },
+      "f1": "Valoria",
+      "f2": "Ironclad"
+    },
+    {
+      "from": {
+        "x": -3,
+        "y": 1
+      },
+      "to": {
+        "x": 0,
+        "y": 1
+      },
+      "f1": "Valoria",
+      "f2": "Ironclad"
+    },
+    {
+      "from": {
+        "x": -3,
+        "y": 1
+      },
+      "to": {
+        "x": -3,
+        "y": -1
+      },
+      "f1": "Valoria",
+      "f2": "Ironclad"
+    },
+    {
+      "from": {
+        "x": -3,
+        "y": 1
+      },
+      "to": {
+        "x": -3,
+        "y": -2
+      },
+      "f1": "Valoria",
+      "f2": "Ironclad"
+    },
+    {
+      "from": {
+        "x": -3,
+        "y": 1
+      },
+      "to": {
+        "x": -3,
+        "y": 0
+      },
+      "f1": "Valoria",
+      "f2": "Ironclad"
+    },
+    {
+      "from": {
+        "x": -3,
+        "y": 1
+      },
+      "to": {
+        "x": -4,
+        "y": -1
+      },
+      "f1": "Valoria",
+      "f2": "Ironclad"
+    },
+    {
+      "from": {
         "x": 0,
         "y": -1
       },
@@ -2746,6 +3207,42 @@
       "from": {
         "x": -1,
         "y": 0
+      },
+      "to": {
+        "x": -2,
+        "y": -2
+      },
+      "f1": "Valoria",
+      "f2": "Sunspire"
+    },
+    {
+      "from": {
+        "x": -3,
+        "y": 1
+      },
+      "to": {
+        "x": -1,
+        "y": -1
+      },
+      "f1": "Valoria",
+      "f2": "Sunspire"
+    },
+    {
+      "from": {
+        "x": -3,
+        "y": 1
+      },
+      "to": {
+        "x": 0,
+        "y": 0
+      },
+      "f1": "Valoria",
+      "f2": "Sunspire"
+    },
+    {
+      "from": {
+        "x": -3,
+        "y": 1
       },
       "to": {
         "x": -2,
@@ -2938,6 +3435,54 @@
       "from": {
         "x": -1,
         "y": 0
+      },
+      "to": {
+        "x": 2,
+        "y": 0
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -3,
+        "y": 1
+      },
+      "to": {
+        "x": 0,
+        "y": -2
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -3,
+        "y": 1
+      },
+      "to": {
+        "x": -1,
+        "y": -2
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -3,
+        "y": 1
+      },
+      "to": {
+        "x": 1,
+        "y": -1
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -3,
+        "y": 1
       },
       "to": {
         "x": 2,
@@ -3128,6 +3673,18 @@
     },
     {
       "from": {
+        "x": -1,
+        "y": -3
+      },
+      "to": {
+        "x": -4,
+        "y": -1
+      },
+      "f1": "Oakhaven",
+      "f2": "Ironclad"
+    },
+    {
+      "from": {
         "x": 1,
         "y": -3
       },
@@ -3188,6 +3745,18 @@
     },
     {
       "from": {
+        "x": 1,
+        "y": -3
+      },
+      "to": {
+        "x": -4,
+        "y": -1
+      },
+      "f1": "Oakhaven",
+      "f2": "Ironclad"
+    },
+    {
+      "from": {
         "x": -2,
         "y": -3
       },
@@ -3248,6 +3817,18 @@
     },
     {
       "from": {
+        "x": -2,
+        "y": -3
+      },
+      "to": {
+        "x": -4,
+        "y": -1
+      },
+      "f1": "Oakhaven",
+      "f2": "Ironclad"
+    },
+    {
+      "from": {
         "x": 0,
         "y": -3
       },
@@ -3309,6 +3890,18 @@
     {
       "from": {
         "x": 0,
+        "y": -3
+      },
+      "to": {
+        "x": -4,
+        "y": -1
+      },
+      "f1": "Oakhaven",
+      "f2": "Ironclad"
+    },
+    {
+      "from": {
+        "x": 0,
         "y": -4
       },
       "to": {
@@ -3362,6 +3955,18 @@
       "to": {
         "x": -3,
         "y": 0
+      },
+      "f1": "Oakhaven",
+      "f2": "Ironclad"
+    },
+    {
+      "from": {
+        "x": 0,
+        "y": -4
+      },
+      "to": {
+        "x": -4,
+        "y": -1
       },
       "f1": "Oakhaven",
       "f2": "Ironclad"
@@ -3428,6 +4033,18 @@
     },
     {
       "from": {
+        "x": -1,
+        "y": -4
+      },
+      "to": {
+        "x": -4,
+        "y": -1
+      },
+      "f1": "Oakhaven",
+      "f2": "Ironclad"
+    },
+    {
+      "from": {
         "x": -2,
         "y": -4
       },
@@ -3482,6 +4099,162 @@
       "to": {
         "x": -3,
         "y": 0
+      },
+      "f1": "Oakhaven",
+      "f2": "Ironclad"
+    },
+    {
+      "from": {
+        "x": -2,
+        "y": -4
+      },
+      "to": {
+        "x": -4,
+        "y": -1
+      },
+      "f1": "Oakhaven",
+      "f2": "Ironclad"
+    },
+    {
+      "from": {
+        "x": 1,
+        "y": -4
+      },
+      "to": {
+        "x": -2,
+        "y": -1
+      },
+      "f1": "Oakhaven",
+      "f2": "Ironclad"
+    },
+    {
+      "from": {
+        "x": 1,
+        "y": -4
+      },
+      "to": {
+        "x": 0,
+        "y": 1
+      },
+      "f1": "Oakhaven",
+      "f2": "Ironclad"
+    },
+    {
+      "from": {
+        "x": 1,
+        "y": -4
+      },
+      "to": {
+        "x": -3,
+        "y": -1
+      },
+      "f1": "Oakhaven",
+      "f2": "Ironclad"
+    },
+    {
+      "from": {
+        "x": 1,
+        "y": -4
+      },
+      "to": {
+        "x": -3,
+        "y": -2
+      },
+      "f1": "Oakhaven",
+      "f2": "Ironclad"
+    },
+    {
+      "from": {
+        "x": 1,
+        "y": -4
+      },
+      "to": {
+        "x": -3,
+        "y": 0
+      },
+      "f1": "Oakhaven",
+      "f2": "Ironclad"
+    },
+    {
+      "from": {
+        "x": 1,
+        "y": -4
+      },
+      "to": {
+        "x": -4,
+        "y": -1
+      },
+      "f1": "Oakhaven",
+      "f2": "Ironclad"
+    },
+    {
+      "from": {
+        "x": -2,
+        "y": -5
+      },
+      "to": {
+        "x": -2,
+        "y": -1
+      },
+      "f1": "Oakhaven",
+      "f2": "Ironclad"
+    },
+    {
+      "from": {
+        "x": -2,
+        "y": -5
+      },
+      "to": {
+        "x": 0,
+        "y": 1
+      },
+      "f1": "Oakhaven",
+      "f2": "Ironclad"
+    },
+    {
+      "from": {
+        "x": -2,
+        "y": -5
+      },
+      "to": {
+        "x": -3,
+        "y": -1
+      },
+      "f1": "Oakhaven",
+      "f2": "Ironclad"
+    },
+    {
+      "from": {
+        "x": -2,
+        "y": -5
+      },
+      "to": {
+        "x": -3,
+        "y": -2
+      },
+      "f1": "Oakhaven",
+      "f2": "Ironclad"
+    },
+    {
+      "from": {
+        "x": -2,
+        "y": -5
+      },
+      "to": {
+        "x": -3,
+        "y": 0
+      },
+      "f1": "Oakhaven",
+      "f2": "Ironclad"
+    },
+    {
+      "from": {
+        "x": -2,
+        "y": -5
+      },
+      "to": {
+        "x": -4,
+        "y": -1
       },
       "f1": "Oakhaven",
       "f2": "Ironclad"
@@ -3730,6 +4503,78 @@
       "from": {
         "x": -2,
         "y": -4
+      },
+      "to": {
+        "x": -2,
+        "y": -2
+      },
+      "f1": "Oakhaven",
+      "f2": "Sunspire"
+    },
+    {
+      "from": {
+        "x": 1,
+        "y": -4
+      },
+      "to": {
+        "x": -1,
+        "y": -1
+      },
+      "f1": "Oakhaven",
+      "f2": "Sunspire"
+    },
+    {
+      "from": {
+        "x": 1,
+        "y": -4
+      },
+      "to": {
+        "x": 0,
+        "y": 0
+      },
+      "f1": "Oakhaven",
+      "f2": "Sunspire"
+    },
+    {
+      "from": {
+        "x": 1,
+        "y": -4
+      },
+      "to": {
+        "x": -2,
+        "y": -2
+      },
+      "f1": "Oakhaven",
+      "f2": "Sunspire"
+    },
+    {
+      "from": {
+        "x": -2,
+        "y": -5
+      },
+      "to": {
+        "x": -1,
+        "y": -1
+      },
+      "f1": "Oakhaven",
+      "f2": "Sunspire"
+    },
+    {
+      "from": {
+        "x": -2,
+        "y": -5
+      },
+      "to": {
+        "x": 0,
+        "y": 0
+      },
+      "f1": "Oakhaven",
+      "f2": "Sunspire"
+    },
+    {
+      "from": {
+        "x": -2,
+        "y": -5
       },
       "to": {
         "x": -2,
@@ -4076,6 +4921,102 @@
     },
     {
       "from": {
+        "x": 1,
+        "y": -4
+      },
+      "to": {
+        "x": 0,
+        "y": -2
+      },
+      "f1": "Oakhaven",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 1,
+        "y": -4
+      },
+      "to": {
+        "x": -1,
+        "y": -2
+      },
+      "f1": "Oakhaven",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 1,
+        "y": -4
+      },
+      "to": {
+        "x": 1,
+        "y": -1
+      },
+      "f1": "Oakhaven",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 1,
+        "y": -4
+      },
+      "to": {
+        "x": 2,
+        "y": 0
+      },
+      "f1": "Oakhaven",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -2,
+        "y": -5
+      },
+      "to": {
+        "x": 0,
+        "y": -2
+      },
+      "f1": "Oakhaven",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -2,
+        "y": -5
+      },
+      "to": {
+        "x": -1,
+        "y": -2
+      },
+      "f1": "Oakhaven",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -2,
+        "y": -5
+      },
+      "to": {
+        "x": 1,
+        "y": -1
+      },
+      "f1": "Oakhaven",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -2,
+        "y": -5
+      },
+      "to": {
+        "x": 2,
+        "y": 0
+      },
+      "f1": "Oakhaven",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
         "x": -2,
         "y": -1
       },
@@ -4246,6 +5187,42 @@
       "from": {
         "x": -3,
         "y": 0
+      },
+      "to": {
+        "x": -2,
+        "y": -2
+      },
+      "f1": "Ironclad",
+      "f2": "Sunspire"
+    },
+    {
+      "from": {
+        "x": -4,
+        "y": -1
+      },
+      "to": {
+        "x": -1,
+        "y": -1
+      },
+      "f1": "Ironclad",
+      "f2": "Sunspire"
+    },
+    {
+      "from": {
+        "x": -4,
+        "y": -1
+      },
+      "to": {
+        "x": 0,
+        "y": 0
+      },
+      "f1": "Ironclad",
+      "f2": "Sunspire"
+    },
+    {
+      "from": {
+        "x": -4,
+        "y": -1
       },
       "to": {
         "x": -2,
@@ -4486,6 +5463,54 @@
       "from": {
         "x": -3,
         "y": 0
+      },
+      "to": {
+        "x": 2,
+        "y": 0
+      },
+      "f1": "Ironclad",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -4,
+        "y": -1
+      },
+      "to": {
+        "x": 0,
+        "y": -2
+      },
+      "f1": "Ironclad",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -4,
+        "y": -1
+      },
+      "to": {
+        "x": -1,
+        "y": -2
+      },
+      "f1": "Ironclad",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -4,
+        "y": -1
+      },
+      "to": {
+        "x": 1,
+        "y": -1
+      },
+      "f1": "Ironclad",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -4,
+        "y": -1
       },
       "to": {
         "x": 2,
@@ -4639,6 +5664,6 @@
       "f2": "Oakhaven rebels"
     }
   ],
-  "globalTempOffset": 0.16521506743505596,
-  "season": "Summer"
+  "globalTempOffset": 0.1585684654396027,
+  "season": "Autumn"
 }
