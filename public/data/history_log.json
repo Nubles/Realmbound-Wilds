@@ -94643,5 +94643,7218 @@
         }
       ]
     }
+  },
+  {
+    "year": 85,
+    "globalTempOffset": 0.28,
+    "stats": {
+      "deer": 171,
+      "wolf": 0,
+      "elk": 0,
+      "bear": 0,
+      "beasts": 0,
+      "population": 273989
+    },
+    "factions": {
+      "Valoria": 35778,
+      "Players": 878,
+      "Oakhaven": 29335,
+      "Ironclad": 29332,
+      "Sunspire": 112392,
+      "Grimwallow": 25636,
+      "Aethelgard": 0,
+      "Oakhaven rebels": 32373,
+      "Players rebels": 3328,
+      "Oakhaven rebels rebels": 0
+    },
+    "events": [
+      "[Year 84] EXPANSION: Oakhaven rebels expanded to [2, -2] in overworld, building OrbitStation of Oakhaven rebels.",
+      "[Year 84] DIPLOMACY: Alliances forged between Players and Oakhaven rebels!",
+      "[Year 84] PEACE TREATY: Armistice signed between Oakhaven and Aethelgard.",
+      "[Year 85] CONSTRUCTION: Goldpeak of Oakhaven built an Apothecary to protect citizens from plagues.",
+      "[Year 85] GOVERNMENT SHIFT: Faction Oakhaven rebels shifted state ideology from Pacifism to Industrialism due to civil pressures.",
+      "[Year 85] CIVIL WAR: Ideological split in Oakhaven rebels! Rebel faction Oakhaven rebels rebels seized control of 2 settlements.",
+      "[Year 85] EXPANSION: Players rebels expanded to [15, 12] in underworld, building Goldpeak of Players rebels.",
+      "[Year 85] DIPLOMACY: Alliances forged between Ironclad and Aethelgard!",
+      "[Year 85] DIPLOMACY: Alliances forged between Sunspire and Players rebels!",
+      "[Year 85] CLIMATE: A scorching heatwave swept the lands, drying up cavern reservoirs."
+    ],
+    "discoveredCenters": [
+      {
+        "realm": "overworld",
+        "x": -1,
+        "y": -1,
+        "radius": 7
+      },
+      {
+        "realm": "overworld",
+        "x": 5,
+        "y": 5,
+        "radius": 4
+      },
+      {
+        "realm": "underworld",
+        "x": 0,
+        "y": 0,
+        "radius": 4
+      },
+      {
+        "realm": "overworld",
+        "x": -15,
+        "y": 10,
+        "radius": 4
+      },
+      {
+        "realm": "aether",
+        "x": 0,
+        "y": 0,
+        "radius": 4
+      },
+      {
+        "realm": "overworld",
+        "x": 20,
+        "y": -15,
+        "radius": 4
+      },
+      {
+        "realm": "space",
+        "x": 0,
+        "y": 0,
+        "radius": 4
+      },
+      {
+        "realm": "underworld",
+        "x": 15,
+        "y": 10,
+        "radius": 6
+      },
+      {
+        "realm": "overworld",
+        "x": 0,
+        "y": -2,
+        "radius": 6
+      },
+      {
+        "realm": "overworld",
+        "x": -1,
+        "y": 0,
+        "radius": 6
+      },
+      {
+        "realm": "overworld",
+        "x": -2,
+        "y": -1,
+        "radius": 6
+      },
+      {
+        "realm": "overworld",
+        "x": -2,
+        "y": -2,
+        "radius": 6
+      },
+      {
+        "realm": "underworld",
+        "x": 14,
+        "y": 11,
+        "radius": 6
+      },
+      {
+        "realm": "overworld",
+        "x": -1,
+        "y": -2,
+        "radius": 6
+      },
+      {
+        "realm": "overworld",
+        "x": 0,
+        "y": -1,
+        "radius": 6
+      },
+      {
+        "realm": "overworld",
+        "x": -2,
+        "y": 0,
+        "radius": 6
+      },
+      {
+        "realm": "overworld",
+        "x": 0,
+        "y": 0,
+        "radius": 6
+      },
+      {
+        "realm": "overworld",
+        "x": -3,
+        "y": 0,
+        "radius": 6
+      },
+      {
+        "realm": "underworld",
+        "x": 16,
+        "y": 10,
+        "radius": 6
+      },
+      {
+        "realm": "overworld",
+        "x": 1,
+        "y": -1,
+        "radius": 6
+      },
+      {
+        "realm": "underworld",
+        "x": 15,
+        "y": 9,
+        "radius": 6
+      },
+      {
+        "realm": "overworld",
+        "x": -1,
+        "y": -3,
+        "radius": 6
+      },
+      {
+        "realm": "underworld",
+        "x": 14,
+        "y": 10,
+        "radius": 6
+      },
+      {
+        "realm": "overworld",
+        "x": 0,
+        "y": 1,
+        "radius": 6
+      },
+      {
+        "realm": "overworld",
+        "x": -3,
+        "y": -1,
+        "radius": 6
+      },
+      {
+        "realm": "overworld",
+        "x": 1,
+        "y": -3,
+        "radius": 6
+      },
+      {
+        "realm": "underworld",
+        "x": 15,
+        "y": 11,
+        "radius": 6
+      },
+      {
+        "realm": "overworld",
+        "x": -2,
+        "y": -3,
+        "radius": 6
+      },
+      {
+        "realm": "overworld",
+        "x": 0,
+        "y": -3,
+        "radius": 6
+      },
+      {
+        "realm": "overworld",
+        "x": 0,
+        "y": -4,
+        "radius": 6
+      },
+      {
+        "realm": "overworld",
+        "x": 2,
+        "y": 0,
+        "radius": 6
+      },
+      {
+        "realm": "overworld",
+        "x": -1,
+        "y": -4,
+        "radius": 6
+      },
+      {
+        "realm": "underworld",
+        "x": 13,
+        "y": 12,
+        "radius": 6
+      },
+      {
+        "realm": "overworld",
+        "x": -2,
+        "y": -4,
+        "radius": 6
+      },
+      {
+        "realm": "overworld",
+        "x": -3,
+        "y": -2,
+        "radius": 6
+      },
+      {
+        "realm": "overworld",
+        "x": 1,
+        "y": -2,
+        "radius": 6
+      },
+      {
+        "realm": "overworld",
+        "x": -3,
+        "y": 1,
+        "radius": 6
+      },
+      {
+        "realm": "overworld",
+        "x": 1,
+        "y": -4,
+        "radius": 6
+      },
+      {
+        "realm": "overworld",
+        "x": -2,
+        "y": -5,
+        "radius": 6
+      },
+      {
+        "realm": "overworld",
+        "x": -4,
+        "y": -1,
+        "radius": 6
+      },
+      {
+        "realm": "overworld",
+        "x": 1,
+        "y": 0,
+        "radius": 6
+      },
+      {
+        "realm": "overworld",
+        "x": -2,
+        "y": 1,
+        "radius": 6
+      },
+      {
+        "realm": "overworld",
+        "x": -1,
+        "y": 1,
+        "radius": 6
+      },
+      {
+        "realm": "underworld",
+        "x": 16,
+        "y": 12,
+        "radius": 6
+      },
+      {
+        "realm": "overworld",
+        "x": 1,
+        "y": 1,
+        "radius": 6
+      },
+      {
+        "realm": "overworld",
+        "x": -3,
+        "y": -3,
+        "radius": 6
+      },
+      {
+        "realm": "overworld",
+        "x": -3,
+        "y": -4,
+        "radius": 6
+      },
+      {
+        "realm": "underworld",
+        "x": 17,
+        "y": 10,
+        "radius": 6
+      },
+      {
+        "realm": "underworld",
+        "x": 16,
+        "y": 9,
+        "radius": 6
+      },
+      {
+        "realm": "overworld",
+        "x": 0,
+        "y": -5,
+        "radius": 6
+      },
+      {
+        "realm": "overworld",
+        "x": -4,
+        "y": -3,
+        "radius": 6
+      },
+      {
+        "realm": "overworld",
+        "x": 2,
+        "y": -2,
+        "radius": 6
+      },
+      {
+        "realm": "underworld",
+        "x": 15,
+        "y": 12,
+        "radius": 6
+      }
+    ],
+    "mapState": {
+      "modifiedCells": [
+        {
+          "r": "overworld",
+          "x": -1,
+          "y": -1,
+          "f": "Sunspire",
+          "t": "city",
+          "s": 102911,
+          "ruin": null,
+          "fire": false
+        },
+        {
+          "r": "overworld",
+          "x": 5,
+          "y": 5,
+          "f": null,
+          "t": null,
+          "s": 0,
+          "ruin": {
+            "name": "Ancient Cavern Portal",
+            "portalTarget": {
+              "realm": "underworld",
+              "x": 0,
+              "y": 0
+            }
+          },
+          "fire": false
+        },
+        {
+          "r": "underworld",
+          "x": 0,
+          "y": 0,
+          "f": null,
+          "t": null,
+          "s": 0,
+          "ruin": {
+            "name": "Ancient Cavern Portal Link",
+            "portalTarget": {
+              "realm": "overworld",
+              "x": 5,
+              "y": 5
+            }
+          },
+          "fire": false
+        },
+        {
+          "r": "overworld",
+          "x": -15,
+          "y": 10,
+          "f": null,
+          "t": null,
+          "s": 0,
+          "ruin": {
+            "name": "Sky Gate of Aether",
+            "portalTarget": {
+              "realm": "aether",
+              "x": 0,
+              "y": 0
+            }
+          },
+          "fire": false
+        },
+        {
+          "r": "aether",
+          "x": 0,
+          "y": 0,
+          "f": null,
+          "t": null,
+          "s": 0,
+          "ruin": {
+            "name": "Sky Gate of Aether Link",
+            "portalTarget": {
+              "realm": "overworld",
+              "x": -15,
+              "y": 10
+            }
+          },
+          "fire": false
+        },
+        {
+          "r": "overworld",
+          "x": 20,
+          "y": -15,
+          "f": null,
+          "t": null,
+          "s": 0,
+          "ruin": {
+            "name": "Celestial Launchpad",
+            "portalTarget": {
+              "realm": "space",
+              "x": 0,
+              "y": 0
+            }
+          },
+          "fire": false
+        },
+        {
+          "r": "space",
+          "x": 0,
+          "y": 0,
+          "f": null,
+          "t": null,
+          "s": 0,
+          "ruin": {
+            "name": "Smoking Crater Outpost"
+          },
+          "fire": false
+        },
+        {
+          "r": "underworld",
+          "x": 15,
+          "y": 10,
+          "f": "Grimwallow",
+          "t": "city",
+          "s": 23871,
+          "ruin": null,
+          "fire": false
+        },
+        {
+          "r": "aether",
+          "x": 1,
+          "y": -2,
+          "f": null,
+          "t": null,
+          "s": 0,
+          "ruin": {
+            "name": "Smoking Crater Outpost"
+          },
+          "fire": false
+        },
+        {
+          "r": "overworld",
+          "x": 0,
+          "y": -2,
+          "f": "Oakhaven rebels rebels",
+          "t": "city",
+          "s": 15639,
+          "ruin": null,
+          "fire": false
+        },
+        {
+          "r": "overworld",
+          "x": -1,
+          "y": 0,
+          "f": "Valoria",
+          "t": "city",
+          "s": 3951,
+          "ruin": {
+            "name": "Ruins of Aethelgard Breakaway"
+          },
+          "fire": false
+        },
+        {
+          "r": "overworld",
+          "x": -2,
+          "y": -1,
+          "f": "Ironclad",
+          "t": "city",
+          "s": 9861,
+          "ruin": null,
+          "fire": false
+        },
+        {
+          "r": "overworld",
+          "x": -2,
+          "y": -2,
+          "f": "Sunspire",
+          "t": "city",
+          "s": 5098,
+          "ruin": {
+            "name": "Ruins of Evergreen of Valoria"
+          },
+          "fire": false
+        },
+        {
+          "r": "underworld",
+          "x": 14,
+          "y": 11,
+          "f": "Players rebels",
+          "t": "city",
+          "s": 2152,
+          "ruin": null,
+          "fire": false
+        },
+        {
+          "r": "overworld",
+          "x": -1,
+          "y": -2,
+          "f": "Oakhaven rebels rebels",
+          "t": "city",
+          "s": 4758,
+          "ruin": null,
+          "fire": false
+        },
+        {
+          "r": "overworld",
+          "x": 0,
+          "y": -1,
+          "f": "Valoria",
+          "t": "city",
+          "s": 7680,
+          "ruin": null,
+          "fire": false
+        },
+        {
+          "r": "overworld",
+          "x": -2,
+          "y": 0,
+          "f": "Valoria",
+          "t": "city",
+          "s": 9071,
+          "ruin": null,
+          "fire": false
+        },
+        {
+          "r": "overworld",
+          "x": 0,
+          "y": 0,
+          "f": "Sunspire",
+          "t": "city",
+          "s": 5535,
+          "ruin": {
+            "name": "Smoking Crater Outpost"
+          },
+          "fire": false
+        },
+        {
+          "r": "overworld",
+          "x": -3,
+          "y": 0,
+          "f": "Ironclad",
+          "t": "city",
+          "s": 2860,
+          "ruin": {
+            "name": "Ruins of OrbitStation of Valoria"
+          },
+          "fire": false
+        },
+        {
+          "r": "underworld",
+          "x": 16,
+          "y": 10,
+          "f": "Players rebels",
+          "t": "town",
+          "s": 1035,
+          "ruin": null,
+          "fire": false
+        },
+        {
+          "r": "overworld",
+          "x": 1,
+          "y": -1,
+          "f": "Oakhaven rebels",
+          "t": "city",
+          "s": 4649,
+          "ruin": null,
+          "fire": false
+        },
+        {
+          "r": "underworld",
+          "x": 15,
+          "y": 9,
+          "f": "Players",
+          "t": "village",
+          "s": 438,
+          "ruin": null,
+          "fire": false
+        },
+        {
+          "r": "overworld",
+          "x": -1,
+          "y": -3,
+          "f": "Oakhaven",
+          "t": "city",
+          "s": 5253,
+          "ruin": null,
+          "fire": false
+        },
+        {
+          "r": "underworld",
+          "x": 14,
+          "y": 10,
+          "f": "Players",
+          "t": "village",
+          "s": 272,
+          "ruin": null,
+          "fire": false
+        },
+        {
+          "r": "overworld",
+          "x": 0,
+          "y": 1,
+          "f": "Ironclad",
+          "t": "city",
+          "s": 5867,
+          "ruin": null,
+          "fire": false
+        },
+        {
+          "r": "overworld",
+          "x": -3,
+          "y": -1,
+          "f": "Ironclad",
+          "t": "city",
+          "s": 5867,
+          "ruin": null,
+          "fire": false
+        },
+        {
+          "r": "overworld",
+          "x": 1,
+          "y": -3,
+          "f": "Oakhaven",
+          "t": "city",
+          "s": 3792,
+          "ruin": null,
+          "fire": false
+        },
+        {
+          "r": "underworld",
+          "x": 15,
+          "y": 11,
+          "f": "Grimwallow",
+          "t": "town",
+          "s": 1313,
+          "ruin": null,
+          "fire": false
+        },
+        {
+          "r": "overworld",
+          "x": -2,
+          "y": -3,
+          "f": "Oakhaven",
+          "t": "city",
+          "s": 3622,
+          "ruin": null,
+          "fire": false
+        },
+        {
+          "r": "overworld",
+          "x": 0,
+          "y": -3,
+          "f": "Oakhaven",
+          "t": "city",
+          "s": 3223,
+          "ruin": null,
+          "fire": false
+        },
+        {
+          "r": "overworld",
+          "x": 0,
+          "y": -4,
+          "f": "Oakhaven",
+          "t": "city",
+          "s": 3221,
+          "ruin": null,
+          "fire": false
+        },
+        {
+          "r": "overworld",
+          "x": 2,
+          "y": 0,
+          "f": "Oakhaven rebels",
+          "t": "city",
+          "s": 3113,
+          "ruin": null,
+          "fire": false
+        },
+        {
+          "r": "overworld",
+          "x": -1,
+          "y": -4,
+          "f": "Oakhaven",
+          "t": "city",
+          "s": 2993,
+          "ruin": null,
+          "fire": false
+        },
+        {
+          "r": "underworld",
+          "x": 13,
+          "y": 12,
+          "f": "Players",
+          "t": "village",
+          "s": 120,
+          "ruin": null,
+          "fire": false
+        },
+        {
+          "r": "overworld",
+          "x": -2,
+          "y": -4,
+          "f": "Oakhaven",
+          "t": "city",
+          "s": 2388,
+          "ruin": null,
+          "fire": false
+        },
+        {
+          "r": "overworld",
+          "x": -3,
+          "y": -2,
+          "f": "Ironclad",
+          "t": "city",
+          "s": 3694,
+          "ruin": null,
+          "fire": false
+        },
+        {
+          "r": "overworld",
+          "x": 1,
+          "y": -2,
+          "f": "Valoria",
+          "t": "city",
+          "s": 4807,
+          "ruin": null,
+          "fire": false
+        },
+        {
+          "r": "overworld",
+          "x": -3,
+          "y": 1,
+          "f": "Valoria",
+          "t": "city",
+          "s": 3112,
+          "ruin": null,
+          "fire": false
+        },
+        {
+          "r": "overworld",
+          "x": 1,
+          "y": -4,
+          "f": "Oakhaven",
+          "t": "town",
+          "s": 2072,
+          "ruin": null,
+          "fire": false
+        },
+        {
+          "r": "overworld",
+          "x": -2,
+          "y": -5,
+          "f": "Oakhaven",
+          "t": "town",
+          "s": 2072,
+          "ruin": null,
+          "fire": false
+        },
+        {
+          "r": "overworld",
+          "x": -4,
+          "y": -1,
+          "f": "Ironclad",
+          "t": "city",
+          "s": 2329,
+          "ruin": null,
+          "fire": false
+        },
+        {
+          "r": "overworld",
+          "x": 1,
+          "y": 0,
+          "f": "Valoria",
+          "t": "city",
+          "s": 2697,
+          "ruin": null,
+          "fire": false
+        },
+        {
+          "r": "overworld",
+          "x": -2,
+          "y": 1,
+          "f": "Valoria",
+          "t": "city",
+          "s": 2697,
+          "ruin": null,
+          "fire": false
+        },
+        {
+          "r": "overworld",
+          "x": -1,
+          "y": 1,
+          "f": "Valoria",
+          "t": "city",
+          "s": 2697,
+          "ruin": null,
+          "fire": false
+        },
+        {
+          "r": "underworld",
+          "x": 16,
+          "y": 12,
+          "f": "Grimwallow",
+          "t": "village",
+          "s": 385,
+          "ruin": null,
+          "fire": false
+        },
+        {
+          "r": "overworld",
+          "x": 1,
+          "y": 1,
+          "f": "Valoria",
+          "t": "town",
+          "s": 1874,
+          "ruin": null,
+          "fire": false
+        },
+        {
+          "r": "overworld",
+          "x": -3,
+          "y": -3,
+          "f": "Oakhaven",
+          "t": "town",
+          "s": 1267,
+          "ruin": null,
+          "fire": false
+        },
+        {
+          "r": "overworld",
+          "x": -3,
+          "y": -4,
+          "f": "Oakhaven",
+          "t": "town",
+          "s": 1267,
+          "ruin": null,
+          "fire": false
+        },
+        {
+          "r": "underworld",
+          "x": 17,
+          "y": 10,
+          "f": "Players rebels",
+          "t": "village",
+          "s": 213,
+          "ruin": null,
+          "fire": false
+        },
+        {
+          "r": "underworld",
+          "x": 16,
+          "y": 9,
+          "f": "Grimwallow",
+          "t": "village",
+          "s": 235,
+          "ruin": null,
+          "fire": false
+        },
+        {
+          "r": "overworld",
+          "x": 0,
+          "y": -5,
+          "f": "Oakhaven",
+          "t": "village",
+          "s": 757,
+          "ruin": null,
+          "fire": false
+        },
+        {
+          "r": "overworld",
+          "x": -4,
+          "y": -3,
+          "f": "Ironclad",
+          "t": "village",
+          "s": 576,
+          "ruin": null,
+          "fire": false
+        },
+        {
+          "r": "overworld",
+          "x": 2,
+          "y": -2,
+          "f": "Oakhaven rebels",
+          "t": "village",
+          "s": 601,
+          "ruin": null,
+          "fire": false
+        },
+        {
+          "r": "underworld",
+          "x": 15,
+          "y": 12,
+          "f": "Players rebels",
+          "t": "village",
+          "s": 84,
+          "ruin": null,
+          "fire": false
+        }
+      ],
+      "tradeRoutes": [
+        {
+          "from": {
+            "x": 0,
+            "y": -1
+          },
+          "to": {
+            "x": -1,
+            "y": -3
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": -1
+          },
+          "to": {
+            "x": 1,
+            "y": -3
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": -1
+          },
+          "to": {
+            "x": -2,
+            "y": -3
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": -1
+          },
+          "to": {
+            "x": 0,
+            "y": -3
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": -1
+          },
+          "to": {
+            "x": 0,
+            "y": -4
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": -1
+          },
+          "to": {
+            "x": -1,
+            "y": -4
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": -1
+          },
+          "to": {
+            "x": -2,
+            "y": -4
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": -1
+          },
+          "to": {
+            "x": 1,
+            "y": -4
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": -1
+          },
+          "to": {
+            "x": -2,
+            "y": -5
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": -1
+          },
+          "to": {
+            "x": -3,
+            "y": -3
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": -1
+          },
+          "to": {
+            "x": -3,
+            "y": -4
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": -1
+          },
+          "to": {
+            "x": 0,
+            "y": -5
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": 0
+          },
+          "to": {
+            "x": -1,
+            "y": -3
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": 0
+          },
+          "to": {
+            "x": 1,
+            "y": -3
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": 0
+          },
+          "to": {
+            "x": -2,
+            "y": -3
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": 0
+          },
+          "to": {
+            "x": 0,
+            "y": -3
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": 0
+          },
+          "to": {
+            "x": 0,
+            "y": -4
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": 0
+          },
+          "to": {
+            "x": -1,
+            "y": -4
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": 0
+          },
+          "to": {
+            "x": -2,
+            "y": -4
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": 0
+          },
+          "to": {
+            "x": 1,
+            "y": -4
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": 0
+          },
+          "to": {
+            "x": -2,
+            "y": -5
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": 0
+          },
+          "to": {
+            "x": -3,
+            "y": -3
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": 0
+          },
+          "to": {
+            "x": -3,
+            "y": -4
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": 0
+          },
+          "to": {
+            "x": 0,
+            "y": -5
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": -2
+          },
+          "to": {
+            "x": -1,
+            "y": -3
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": -2
+          },
+          "to": {
+            "x": 1,
+            "y": -3
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": -2
+          },
+          "to": {
+            "x": -2,
+            "y": -3
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": -2
+          },
+          "to": {
+            "x": 0,
+            "y": -3
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": -2
+          },
+          "to": {
+            "x": 0,
+            "y": -4
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": -2
+          },
+          "to": {
+            "x": -1,
+            "y": -4
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": -2
+          },
+          "to": {
+            "x": -2,
+            "y": -4
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": -2
+          },
+          "to": {
+            "x": 1,
+            "y": -4
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": -2
+          },
+          "to": {
+            "x": -2,
+            "y": -5
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": -2
+          },
+          "to": {
+            "x": -3,
+            "y": -3
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": -2
+          },
+          "to": {
+            "x": -3,
+            "y": -4
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": -2
+          },
+          "to": {
+            "x": 0,
+            "y": -5
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": 0
+          },
+          "to": {
+            "x": -1,
+            "y": -3
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": 0
+          },
+          "to": {
+            "x": 1,
+            "y": -3
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": 0
+          },
+          "to": {
+            "x": -2,
+            "y": -3
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": 0
+          },
+          "to": {
+            "x": 0,
+            "y": -3
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": 0
+          },
+          "to": {
+            "x": 0,
+            "y": -4
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": 0
+          },
+          "to": {
+            "x": -1,
+            "y": -4
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": 0
+          },
+          "to": {
+            "x": -2,
+            "y": -4
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": 0
+          },
+          "to": {
+            "x": 1,
+            "y": -4
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": 0
+          },
+          "to": {
+            "x": -2,
+            "y": -5
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": 0
+          },
+          "to": {
+            "x": -3,
+            "y": -3
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": 0
+          },
+          "to": {
+            "x": -3,
+            "y": -4
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": 0
+          },
+          "to": {
+            "x": 0,
+            "y": -5
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": 1
+          },
+          "to": {
+            "x": -1,
+            "y": -3
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": 1
+          },
+          "to": {
+            "x": 1,
+            "y": -3
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": 1
+          },
+          "to": {
+            "x": -2,
+            "y": -3
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": 1
+          },
+          "to": {
+            "x": 0,
+            "y": -3
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": 1
+          },
+          "to": {
+            "x": 0,
+            "y": -4
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": 1
+          },
+          "to": {
+            "x": -1,
+            "y": -4
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": 1
+          },
+          "to": {
+            "x": -2,
+            "y": -4
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": 1
+          },
+          "to": {
+            "x": 1,
+            "y": -4
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": 1
+          },
+          "to": {
+            "x": -2,
+            "y": -5
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": 1
+          },
+          "to": {
+            "x": -3,
+            "y": -3
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": 1
+          },
+          "to": {
+            "x": -3,
+            "y": -4
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": 1
+          },
+          "to": {
+            "x": 0,
+            "y": -5
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": 0
+          },
+          "to": {
+            "x": -1,
+            "y": -3
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": 0
+          },
+          "to": {
+            "x": 1,
+            "y": -3
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": 0
+          },
+          "to": {
+            "x": -2,
+            "y": -3
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": 0
+          },
+          "to": {
+            "x": 0,
+            "y": -3
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": 0
+          },
+          "to": {
+            "x": 0,
+            "y": -4
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": 0
+          },
+          "to": {
+            "x": -1,
+            "y": -4
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": 0
+          },
+          "to": {
+            "x": -2,
+            "y": -4
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": 0
+          },
+          "to": {
+            "x": 1,
+            "y": -4
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": 0
+          },
+          "to": {
+            "x": -2,
+            "y": -5
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": 0
+          },
+          "to": {
+            "x": -3,
+            "y": -3
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": 0
+          },
+          "to": {
+            "x": -3,
+            "y": -4
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": 0
+          },
+          "to": {
+            "x": 0,
+            "y": -5
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": 1
+          },
+          "to": {
+            "x": -1,
+            "y": -3
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": 1
+          },
+          "to": {
+            "x": 1,
+            "y": -3
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": 1
+          },
+          "to": {
+            "x": -2,
+            "y": -3
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": 1
+          },
+          "to": {
+            "x": 0,
+            "y": -3
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": 1
+          },
+          "to": {
+            "x": 0,
+            "y": -4
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": 1
+          },
+          "to": {
+            "x": -1,
+            "y": -4
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": 1
+          },
+          "to": {
+            "x": -2,
+            "y": -4
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": 1
+          },
+          "to": {
+            "x": 1,
+            "y": -4
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": 1
+          },
+          "to": {
+            "x": -2,
+            "y": -5
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": 1
+          },
+          "to": {
+            "x": -3,
+            "y": -3
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": 1
+          },
+          "to": {
+            "x": -3,
+            "y": -4
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": 1
+          },
+          "to": {
+            "x": 0,
+            "y": -5
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": 1
+          },
+          "to": {
+            "x": -1,
+            "y": -3
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": 1
+          },
+          "to": {
+            "x": 1,
+            "y": -3
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": 1
+          },
+          "to": {
+            "x": -2,
+            "y": -3
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": 1
+          },
+          "to": {
+            "x": 0,
+            "y": -3
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": 1
+          },
+          "to": {
+            "x": 0,
+            "y": -4
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": 1
+          },
+          "to": {
+            "x": -1,
+            "y": -4
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": 1
+          },
+          "to": {
+            "x": -2,
+            "y": -4
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": 1
+          },
+          "to": {
+            "x": 1,
+            "y": -4
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": 1
+          },
+          "to": {
+            "x": -2,
+            "y": -5
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": 1
+          },
+          "to": {
+            "x": -3,
+            "y": -3
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": 1
+          },
+          "to": {
+            "x": -3,
+            "y": -4
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": 1
+          },
+          "to": {
+            "x": 0,
+            "y": -5
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": 1
+          },
+          "to": {
+            "x": -1,
+            "y": -3
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": 1
+          },
+          "to": {
+            "x": 1,
+            "y": -3
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": 1
+          },
+          "to": {
+            "x": -2,
+            "y": -3
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": 1
+          },
+          "to": {
+            "x": 0,
+            "y": -3
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": 1
+          },
+          "to": {
+            "x": 0,
+            "y": -4
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": 1
+          },
+          "to": {
+            "x": -1,
+            "y": -4
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": 1
+          },
+          "to": {
+            "x": -2,
+            "y": -4
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": 1
+          },
+          "to": {
+            "x": 1,
+            "y": -4
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": 1
+          },
+          "to": {
+            "x": -2,
+            "y": -5
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": 1
+          },
+          "to": {
+            "x": -3,
+            "y": -3
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": 1
+          },
+          "to": {
+            "x": -3,
+            "y": -4
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": 1
+          },
+          "to": {
+            "x": 0,
+            "y": -5
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": -1
+          },
+          "to": {
+            "x": -2,
+            "y": -1
+          },
+          "f1": "Valoria",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": -1
+          },
+          "to": {
+            "x": 0,
+            "y": 1
+          },
+          "f1": "Valoria",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": -1
+          },
+          "to": {
+            "x": -3,
+            "y": -1
+          },
+          "f1": "Valoria",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": -1
+          },
+          "to": {
+            "x": -3,
+            "y": -2
+          },
+          "f1": "Valoria",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": -1
+          },
+          "to": {
+            "x": -3,
+            "y": 0
+          },
+          "f1": "Valoria",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": -1
+          },
+          "to": {
+            "x": -4,
+            "y": -1
+          },
+          "f1": "Valoria",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": -1
+          },
+          "to": {
+            "x": -4,
+            "y": -3
+          },
+          "f1": "Valoria",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": 0
+          },
+          "to": {
+            "x": -2,
+            "y": -1
+          },
+          "f1": "Valoria",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": 0
+          },
+          "to": {
+            "x": 0,
+            "y": 1
+          },
+          "f1": "Valoria",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": 0
+          },
+          "to": {
+            "x": -3,
+            "y": -1
+          },
+          "f1": "Valoria",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": 0
+          },
+          "to": {
+            "x": -3,
+            "y": -2
+          },
+          "f1": "Valoria",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": 0
+          },
+          "to": {
+            "x": -3,
+            "y": 0
+          },
+          "f1": "Valoria",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": 0
+          },
+          "to": {
+            "x": -4,
+            "y": -1
+          },
+          "f1": "Valoria",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": 0
+          },
+          "to": {
+            "x": -4,
+            "y": -3
+          },
+          "f1": "Valoria",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": -2
+          },
+          "to": {
+            "x": -2,
+            "y": -1
+          },
+          "f1": "Valoria",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": -2
+          },
+          "to": {
+            "x": 0,
+            "y": 1
+          },
+          "f1": "Valoria",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": -2
+          },
+          "to": {
+            "x": -3,
+            "y": -1
+          },
+          "f1": "Valoria",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": -2
+          },
+          "to": {
+            "x": -3,
+            "y": -2
+          },
+          "f1": "Valoria",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": -2
+          },
+          "to": {
+            "x": -3,
+            "y": 0
+          },
+          "f1": "Valoria",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": -2
+          },
+          "to": {
+            "x": -4,
+            "y": -1
+          },
+          "f1": "Valoria",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": -2
+          },
+          "to": {
+            "x": -4,
+            "y": -3
+          },
+          "f1": "Valoria",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": 0
+          },
+          "to": {
+            "x": -2,
+            "y": -1
+          },
+          "f1": "Valoria",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": 0
+          },
+          "to": {
+            "x": 0,
+            "y": 1
+          },
+          "f1": "Valoria",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": 0
+          },
+          "to": {
+            "x": -3,
+            "y": -1
+          },
+          "f1": "Valoria",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": 0
+          },
+          "to": {
+            "x": -3,
+            "y": -2
+          },
+          "f1": "Valoria",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": 0
+          },
+          "to": {
+            "x": -3,
+            "y": 0
+          },
+          "f1": "Valoria",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": 0
+          },
+          "to": {
+            "x": -4,
+            "y": -1
+          },
+          "f1": "Valoria",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": 0
+          },
+          "to": {
+            "x": -4,
+            "y": -3
+          },
+          "f1": "Valoria",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": 1
+          },
+          "to": {
+            "x": -2,
+            "y": -1
+          },
+          "f1": "Valoria",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": 1
+          },
+          "to": {
+            "x": 0,
+            "y": 1
+          },
+          "f1": "Valoria",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": 1
+          },
+          "to": {
+            "x": -3,
+            "y": -1
+          },
+          "f1": "Valoria",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": 1
+          },
+          "to": {
+            "x": -3,
+            "y": -2
+          },
+          "f1": "Valoria",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": 1
+          },
+          "to": {
+            "x": -3,
+            "y": 0
+          },
+          "f1": "Valoria",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": 1
+          },
+          "to": {
+            "x": -4,
+            "y": -1
+          },
+          "f1": "Valoria",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": 1
+          },
+          "to": {
+            "x": -4,
+            "y": -3
+          },
+          "f1": "Valoria",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": 0
+          },
+          "to": {
+            "x": -2,
+            "y": -1
+          },
+          "f1": "Valoria",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": 0
+          },
+          "to": {
+            "x": 0,
+            "y": 1
+          },
+          "f1": "Valoria",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": 0
+          },
+          "to": {
+            "x": -3,
+            "y": -1
+          },
+          "f1": "Valoria",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": 0
+          },
+          "to": {
+            "x": -3,
+            "y": -2
+          },
+          "f1": "Valoria",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": 0
+          },
+          "to": {
+            "x": -3,
+            "y": 0
+          },
+          "f1": "Valoria",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": 0
+          },
+          "to": {
+            "x": -4,
+            "y": -1
+          },
+          "f1": "Valoria",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": 0
+          },
+          "to": {
+            "x": -4,
+            "y": -3
+          },
+          "f1": "Valoria",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": 1
+          },
+          "to": {
+            "x": -2,
+            "y": -1
+          },
+          "f1": "Valoria",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": 1
+          },
+          "to": {
+            "x": 0,
+            "y": 1
+          },
+          "f1": "Valoria",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": 1
+          },
+          "to": {
+            "x": -3,
+            "y": -1
+          },
+          "f1": "Valoria",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": 1
+          },
+          "to": {
+            "x": -3,
+            "y": -2
+          },
+          "f1": "Valoria",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": 1
+          },
+          "to": {
+            "x": -3,
+            "y": 0
+          },
+          "f1": "Valoria",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": 1
+          },
+          "to": {
+            "x": -4,
+            "y": -1
+          },
+          "f1": "Valoria",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": 1
+          },
+          "to": {
+            "x": -4,
+            "y": -3
+          },
+          "f1": "Valoria",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": 1
+          },
+          "to": {
+            "x": -2,
+            "y": -1
+          },
+          "f1": "Valoria",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": 1
+          },
+          "to": {
+            "x": 0,
+            "y": 1
+          },
+          "f1": "Valoria",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": 1
+          },
+          "to": {
+            "x": -3,
+            "y": -1
+          },
+          "f1": "Valoria",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": 1
+          },
+          "to": {
+            "x": -3,
+            "y": -2
+          },
+          "f1": "Valoria",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": 1
+          },
+          "to": {
+            "x": -3,
+            "y": 0
+          },
+          "f1": "Valoria",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": 1
+          },
+          "to": {
+            "x": -4,
+            "y": -1
+          },
+          "f1": "Valoria",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": 1
+          },
+          "to": {
+            "x": -4,
+            "y": -3
+          },
+          "f1": "Valoria",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": 1
+          },
+          "to": {
+            "x": -2,
+            "y": -1
+          },
+          "f1": "Valoria",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": 1
+          },
+          "to": {
+            "x": 0,
+            "y": 1
+          },
+          "f1": "Valoria",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": 1
+          },
+          "to": {
+            "x": -3,
+            "y": -1
+          },
+          "f1": "Valoria",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": 1
+          },
+          "to": {
+            "x": -3,
+            "y": -2
+          },
+          "f1": "Valoria",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": 1
+          },
+          "to": {
+            "x": -3,
+            "y": 0
+          },
+          "f1": "Valoria",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": 1
+          },
+          "to": {
+            "x": -4,
+            "y": -1
+          },
+          "f1": "Valoria",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": 1
+          },
+          "to": {
+            "x": -4,
+            "y": -3
+          },
+          "f1": "Valoria",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": -1
+          },
+          "to": {
+            "x": -1,
+            "y": -1
+          },
+          "f1": "Valoria",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": -1
+          },
+          "to": {
+            "x": 0,
+            "y": 0
+          },
+          "f1": "Valoria",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": -1
+          },
+          "to": {
+            "x": -2,
+            "y": -2
+          },
+          "f1": "Valoria",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": 0
+          },
+          "to": {
+            "x": -1,
+            "y": -1
+          },
+          "f1": "Valoria",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": 0
+          },
+          "to": {
+            "x": 0,
+            "y": 0
+          },
+          "f1": "Valoria",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": 0
+          },
+          "to": {
+            "x": -2,
+            "y": -2
+          },
+          "f1": "Valoria",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": -2
+          },
+          "to": {
+            "x": -1,
+            "y": -1
+          },
+          "f1": "Valoria",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": -2
+          },
+          "to": {
+            "x": 0,
+            "y": 0
+          },
+          "f1": "Valoria",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": -2
+          },
+          "to": {
+            "x": -2,
+            "y": -2
+          },
+          "f1": "Valoria",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": 0
+          },
+          "to": {
+            "x": -1,
+            "y": -1
+          },
+          "f1": "Valoria",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": 0
+          },
+          "to": {
+            "x": 0,
+            "y": 0
+          },
+          "f1": "Valoria",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": 0
+          },
+          "to": {
+            "x": -2,
+            "y": -2
+          },
+          "f1": "Valoria",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": 1
+          },
+          "to": {
+            "x": -1,
+            "y": -1
+          },
+          "f1": "Valoria",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": 1
+          },
+          "to": {
+            "x": 0,
+            "y": 0
+          },
+          "f1": "Valoria",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": 1
+          },
+          "to": {
+            "x": -2,
+            "y": -2
+          },
+          "f1": "Valoria",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": 0
+          },
+          "to": {
+            "x": -1,
+            "y": -1
+          },
+          "f1": "Valoria",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": 0
+          },
+          "to": {
+            "x": 0,
+            "y": 0
+          },
+          "f1": "Valoria",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": 0
+          },
+          "to": {
+            "x": -2,
+            "y": -2
+          },
+          "f1": "Valoria",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": 1
+          },
+          "to": {
+            "x": -1,
+            "y": -1
+          },
+          "f1": "Valoria",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": 1
+          },
+          "to": {
+            "x": 0,
+            "y": 0
+          },
+          "f1": "Valoria",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": 1
+          },
+          "to": {
+            "x": -2,
+            "y": -2
+          },
+          "f1": "Valoria",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": 1
+          },
+          "to": {
+            "x": -1,
+            "y": -1
+          },
+          "f1": "Valoria",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": 1
+          },
+          "to": {
+            "x": 0,
+            "y": 0
+          },
+          "f1": "Valoria",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": 1
+          },
+          "to": {
+            "x": -2,
+            "y": -2
+          },
+          "f1": "Valoria",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": 1
+          },
+          "to": {
+            "x": -1,
+            "y": -1
+          },
+          "f1": "Valoria",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": 1
+          },
+          "to": {
+            "x": 0,
+            "y": 0
+          },
+          "f1": "Valoria",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": 1
+          },
+          "to": {
+            "x": -2,
+            "y": -2
+          },
+          "f1": "Valoria",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": -1
+          },
+          "to": {
+            "x": 1,
+            "y": -1
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": -1
+          },
+          "to": {
+            "x": 2,
+            "y": 0
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": -1
+          },
+          "to": {
+            "x": 2,
+            "y": -2
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": 0
+          },
+          "to": {
+            "x": 1,
+            "y": -1
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": 0
+          },
+          "to": {
+            "x": 2,
+            "y": 0
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": 0
+          },
+          "to": {
+            "x": 2,
+            "y": -2
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": -2
+          },
+          "to": {
+            "x": 1,
+            "y": -1
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": -2
+          },
+          "to": {
+            "x": 2,
+            "y": 0
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": -2
+          },
+          "to": {
+            "x": 2,
+            "y": -2
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": 0
+          },
+          "to": {
+            "x": 1,
+            "y": -1
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": 0
+          },
+          "to": {
+            "x": 2,
+            "y": 0
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": 0
+          },
+          "to": {
+            "x": 2,
+            "y": -2
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": 1
+          },
+          "to": {
+            "x": 1,
+            "y": -1
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": 1
+          },
+          "to": {
+            "x": 2,
+            "y": 0
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": 1
+          },
+          "to": {
+            "x": 2,
+            "y": -2
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": 0
+          },
+          "to": {
+            "x": 1,
+            "y": -1
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": 0
+          },
+          "to": {
+            "x": 2,
+            "y": 0
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": 0
+          },
+          "to": {
+            "x": 2,
+            "y": -2
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": 1
+          },
+          "to": {
+            "x": 1,
+            "y": -1
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": 1
+          },
+          "to": {
+            "x": 2,
+            "y": 0
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": 1
+          },
+          "to": {
+            "x": 2,
+            "y": -2
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": 1
+          },
+          "to": {
+            "x": 1,
+            "y": -1
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": 1
+          },
+          "to": {
+            "x": 2,
+            "y": 0
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": 1
+          },
+          "to": {
+            "x": 2,
+            "y": -2
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": 1
+          },
+          "to": {
+            "x": 1,
+            "y": -1
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": 1
+          },
+          "to": {
+            "x": 2,
+            "y": 0
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": 1
+          },
+          "to": {
+            "x": 2,
+            "y": -2
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": -1
+          },
+          "to": {
+            "x": 0,
+            "y": -2
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven rebels rebels"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": -1
+          },
+          "to": {
+            "x": -1,
+            "y": -2
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven rebels rebels"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": 0
+          },
+          "to": {
+            "x": 0,
+            "y": -2
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven rebels rebels"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": 0
+          },
+          "to": {
+            "x": -1,
+            "y": -2
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven rebels rebels"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": -2
+          },
+          "to": {
+            "x": 0,
+            "y": -2
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven rebels rebels"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": -2
+          },
+          "to": {
+            "x": -1,
+            "y": -2
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven rebels rebels"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": 0
+          },
+          "to": {
+            "x": 0,
+            "y": -2
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven rebels rebels"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": 0
+          },
+          "to": {
+            "x": -1,
+            "y": -2
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven rebels rebels"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": 1
+          },
+          "to": {
+            "x": 0,
+            "y": -2
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven rebels rebels"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": 1
+          },
+          "to": {
+            "x": -1,
+            "y": -2
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven rebels rebels"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": 0
+          },
+          "to": {
+            "x": 0,
+            "y": -2
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven rebels rebels"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": 0
+          },
+          "to": {
+            "x": -1,
+            "y": -2
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven rebels rebels"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": 1
+          },
+          "to": {
+            "x": 0,
+            "y": -2
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven rebels rebels"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": 1
+          },
+          "to": {
+            "x": -1,
+            "y": -2
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven rebels rebels"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": 1
+          },
+          "to": {
+            "x": 0,
+            "y": -2
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven rebels rebels"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": 1
+          },
+          "to": {
+            "x": -1,
+            "y": -2
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven rebels rebels"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": 1
+          },
+          "to": {
+            "x": 0,
+            "y": -2
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven rebels rebels"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": 1
+          },
+          "to": {
+            "x": -1,
+            "y": -2
+          },
+          "f1": "Valoria",
+          "f2": "Oakhaven rebels rebels"
+        },
+        {
+          "from": {
+            "x": 15,
+            "y": 9
+          },
+          "to": {
+            "x": 15,
+            "y": 10
+          },
+          "f1": "Players",
+          "f2": "Grimwallow"
+        },
+        {
+          "from": {
+            "x": 15,
+            "y": 9
+          },
+          "to": {
+            "x": 15,
+            "y": 11
+          },
+          "f1": "Players",
+          "f2": "Grimwallow"
+        },
+        {
+          "from": {
+            "x": 15,
+            "y": 9
+          },
+          "to": {
+            "x": 16,
+            "y": 12
+          },
+          "f1": "Players",
+          "f2": "Grimwallow"
+        },
+        {
+          "from": {
+            "x": 15,
+            "y": 9
+          },
+          "to": {
+            "x": 16,
+            "y": 9
+          },
+          "f1": "Players",
+          "f2": "Grimwallow"
+        },
+        {
+          "from": {
+            "x": 14,
+            "y": 10
+          },
+          "to": {
+            "x": 15,
+            "y": 10
+          },
+          "f1": "Players",
+          "f2": "Grimwallow"
+        },
+        {
+          "from": {
+            "x": 14,
+            "y": 10
+          },
+          "to": {
+            "x": 15,
+            "y": 11
+          },
+          "f1": "Players",
+          "f2": "Grimwallow"
+        },
+        {
+          "from": {
+            "x": 14,
+            "y": 10
+          },
+          "to": {
+            "x": 16,
+            "y": 12
+          },
+          "f1": "Players",
+          "f2": "Grimwallow"
+        },
+        {
+          "from": {
+            "x": 14,
+            "y": 10
+          },
+          "to": {
+            "x": 16,
+            "y": 9
+          },
+          "f1": "Players",
+          "f2": "Grimwallow"
+        },
+        {
+          "from": {
+            "x": 13,
+            "y": 12
+          },
+          "to": {
+            "x": 15,
+            "y": 10
+          },
+          "f1": "Players",
+          "f2": "Grimwallow"
+        },
+        {
+          "from": {
+            "x": 13,
+            "y": 12
+          },
+          "to": {
+            "x": 15,
+            "y": 11
+          },
+          "f1": "Players",
+          "f2": "Grimwallow"
+        },
+        {
+          "from": {
+            "x": 13,
+            "y": 12
+          },
+          "to": {
+            "x": 16,
+            "y": 12
+          },
+          "f1": "Players",
+          "f2": "Grimwallow"
+        },
+        {
+          "from": {
+            "x": 13,
+            "y": 12
+          },
+          "to": {
+            "x": 16,
+            "y": 9
+          },
+          "f1": "Players",
+          "f2": "Grimwallow"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": -3
+          },
+          "to": {
+            "x": -2,
+            "y": -1
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": -3
+          },
+          "to": {
+            "x": 0,
+            "y": 1
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": -3
+          },
+          "to": {
+            "x": -3,
+            "y": -1
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": -3
+          },
+          "to": {
+            "x": -3,
+            "y": -2
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": -3
+          },
+          "to": {
+            "x": -3,
+            "y": 0
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": -3
+          },
+          "to": {
+            "x": -4,
+            "y": -1
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": -3
+          },
+          "to": {
+            "x": -4,
+            "y": -3
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": -3
+          },
+          "to": {
+            "x": -2,
+            "y": -1
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": -3
+          },
+          "to": {
+            "x": 0,
+            "y": 1
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": -3
+          },
+          "to": {
+            "x": -3,
+            "y": -1
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": -3
+          },
+          "to": {
+            "x": -3,
+            "y": -2
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": -3
+          },
+          "to": {
+            "x": -3,
+            "y": 0
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": -3
+          },
+          "to": {
+            "x": -4,
+            "y": -1
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": -3
+          },
+          "to": {
+            "x": -4,
+            "y": -3
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": -3
+          },
+          "to": {
+            "x": -2,
+            "y": -1
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": -3
+          },
+          "to": {
+            "x": 0,
+            "y": 1
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": -3
+          },
+          "to": {
+            "x": -3,
+            "y": -1
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": -3
+          },
+          "to": {
+            "x": -3,
+            "y": -2
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": -3
+          },
+          "to": {
+            "x": -3,
+            "y": 0
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": -3
+          },
+          "to": {
+            "x": -4,
+            "y": -1
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": -3
+          },
+          "to": {
+            "x": -4,
+            "y": -3
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": -3
+          },
+          "to": {
+            "x": -2,
+            "y": -1
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": -3
+          },
+          "to": {
+            "x": 0,
+            "y": 1
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": -3
+          },
+          "to": {
+            "x": -3,
+            "y": -1
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": -3
+          },
+          "to": {
+            "x": -3,
+            "y": -2
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": -3
+          },
+          "to": {
+            "x": -3,
+            "y": 0
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": -3
+          },
+          "to": {
+            "x": -4,
+            "y": -1
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": -3
+          },
+          "to": {
+            "x": -4,
+            "y": -3
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": -4
+          },
+          "to": {
+            "x": -2,
+            "y": -1
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": -4
+          },
+          "to": {
+            "x": 0,
+            "y": 1
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": -4
+          },
+          "to": {
+            "x": -3,
+            "y": -1
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": -4
+          },
+          "to": {
+            "x": -3,
+            "y": -2
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": -4
+          },
+          "to": {
+            "x": -3,
+            "y": 0
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": -4
+          },
+          "to": {
+            "x": -4,
+            "y": -1
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": -4
+          },
+          "to": {
+            "x": -4,
+            "y": -3
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": -4
+          },
+          "to": {
+            "x": -2,
+            "y": -1
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": -4
+          },
+          "to": {
+            "x": 0,
+            "y": 1
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": -4
+          },
+          "to": {
+            "x": -3,
+            "y": -1
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": -4
+          },
+          "to": {
+            "x": -3,
+            "y": -2
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": -4
+          },
+          "to": {
+            "x": -3,
+            "y": 0
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": -4
+          },
+          "to": {
+            "x": -4,
+            "y": -1
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": -4
+          },
+          "to": {
+            "x": -4,
+            "y": -3
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": -4
+          },
+          "to": {
+            "x": -2,
+            "y": -1
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": -4
+          },
+          "to": {
+            "x": 0,
+            "y": 1
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": -4
+          },
+          "to": {
+            "x": -3,
+            "y": -1
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": -4
+          },
+          "to": {
+            "x": -3,
+            "y": -2
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": -4
+          },
+          "to": {
+            "x": -3,
+            "y": 0
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": -4
+          },
+          "to": {
+            "x": -4,
+            "y": -1
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": -4
+          },
+          "to": {
+            "x": -4,
+            "y": -3
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": -4
+          },
+          "to": {
+            "x": -2,
+            "y": -1
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": -4
+          },
+          "to": {
+            "x": 0,
+            "y": 1
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": -4
+          },
+          "to": {
+            "x": -3,
+            "y": -1
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": -4
+          },
+          "to": {
+            "x": -3,
+            "y": -2
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": -4
+          },
+          "to": {
+            "x": -3,
+            "y": 0
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": -4
+          },
+          "to": {
+            "x": -4,
+            "y": -1
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": -4
+          },
+          "to": {
+            "x": -4,
+            "y": -3
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": -5
+          },
+          "to": {
+            "x": -2,
+            "y": -1
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": -5
+          },
+          "to": {
+            "x": 0,
+            "y": 1
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": -5
+          },
+          "to": {
+            "x": -3,
+            "y": -1
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": -5
+          },
+          "to": {
+            "x": -3,
+            "y": -2
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": -5
+          },
+          "to": {
+            "x": -3,
+            "y": 0
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": -5
+          },
+          "to": {
+            "x": -4,
+            "y": -1
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": -5
+          },
+          "to": {
+            "x": -4,
+            "y": -3
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": -3
+          },
+          "to": {
+            "x": -2,
+            "y": -1
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": -3
+          },
+          "to": {
+            "x": 0,
+            "y": 1
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": -3
+          },
+          "to": {
+            "x": -3,
+            "y": -1
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": -3
+          },
+          "to": {
+            "x": -3,
+            "y": -2
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": -3
+          },
+          "to": {
+            "x": -3,
+            "y": 0
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": -3
+          },
+          "to": {
+            "x": -4,
+            "y": -1
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": -3
+          },
+          "to": {
+            "x": -4,
+            "y": -3
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": -4
+          },
+          "to": {
+            "x": -2,
+            "y": -1
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": -4
+          },
+          "to": {
+            "x": 0,
+            "y": 1
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": -4
+          },
+          "to": {
+            "x": -3,
+            "y": -1
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": -4
+          },
+          "to": {
+            "x": -3,
+            "y": -2
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": -4
+          },
+          "to": {
+            "x": -3,
+            "y": 0
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": -4
+          },
+          "to": {
+            "x": -4,
+            "y": -1
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": -4
+          },
+          "to": {
+            "x": -4,
+            "y": -3
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": -5
+          },
+          "to": {
+            "x": -2,
+            "y": -1
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": -5
+          },
+          "to": {
+            "x": 0,
+            "y": 1
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": -5
+          },
+          "to": {
+            "x": -3,
+            "y": -1
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": -5
+          },
+          "to": {
+            "x": -3,
+            "y": -2
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": -5
+          },
+          "to": {
+            "x": -3,
+            "y": 0
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": -5
+          },
+          "to": {
+            "x": -4,
+            "y": -1
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": -5
+          },
+          "to": {
+            "x": -4,
+            "y": -3
+          },
+          "f1": "Oakhaven",
+          "f2": "Ironclad"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": -3
+          },
+          "to": {
+            "x": -1,
+            "y": -1
+          },
+          "f1": "Oakhaven",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": -3
+          },
+          "to": {
+            "x": 0,
+            "y": 0
+          },
+          "f1": "Oakhaven",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": -3
+          },
+          "to": {
+            "x": -2,
+            "y": -2
+          },
+          "f1": "Oakhaven",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": -3
+          },
+          "to": {
+            "x": -1,
+            "y": -1
+          },
+          "f1": "Oakhaven",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": -3
+          },
+          "to": {
+            "x": 0,
+            "y": 0
+          },
+          "f1": "Oakhaven",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": -3
+          },
+          "to": {
+            "x": -2,
+            "y": -2
+          },
+          "f1": "Oakhaven",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": -3
+          },
+          "to": {
+            "x": -1,
+            "y": -1
+          },
+          "f1": "Oakhaven",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": -3
+          },
+          "to": {
+            "x": 0,
+            "y": 0
+          },
+          "f1": "Oakhaven",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": -3
+          },
+          "to": {
+            "x": -2,
+            "y": -2
+          },
+          "f1": "Oakhaven",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": -3
+          },
+          "to": {
+            "x": -1,
+            "y": -1
+          },
+          "f1": "Oakhaven",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": -3
+          },
+          "to": {
+            "x": 0,
+            "y": 0
+          },
+          "f1": "Oakhaven",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": -3
+          },
+          "to": {
+            "x": -2,
+            "y": -2
+          },
+          "f1": "Oakhaven",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": -4
+          },
+          "to": {
+            "x": -1,
+            "y": -1
+          },
+          "f1": "Oakhaven",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": -4
+          },
+          "to": {
+            "x": 0,
+            "y": 0
+          },
+          "f1": "Oakhaven",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": -4
+          },
+          "to": {
+            "x": -2,
+            "y": -2
+          },
+          "f1": "Oakhaven",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": -4
+          },
+          "to": {
+            "x": -1,
+            "y": -1
+          },
+          "f1": "Oakhaven",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": -4
+          },
+          "to": {
+            "x": 0,
+            "y": 0
+          },
+          "f1": "Oakhaven",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": -4
+          },
+          "to": {
+            "x": -2,
+            "y": -2
+          },
+          "f1": "Oakhaven",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": -4
+          },
+          "to": {
+            "x": -1,
+            "y": -1
+          },
+          "f1": "Oakhaven",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": -4
+          },
+          "to": {
+            "x": 0,
+            "y": 0
+          },
+          "f1": "Oakhaven",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": -4
+          },
+          "to": {
+            "x": -2,
+            "y": -2
+          },
+          "f1": "Oakhaven",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": -4
+          },
+          "to": {
+            "x": -1,
+            "y": -1
+          },
+          "f1": "Oakhaven",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": -4
+          },
+          "to": {
+            "x": 0,
+            "y": 0
+          },
+          "f1": "Oakhaven",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": -4
+          },
+          "to": {
+            "x": -2,
+            "y": -2
+          },
+          "f1": "Oakhaven",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": -5
+          },
+          "to": {
+            "x": -1,
+            "y": -1
+          },
+          "f1": "Oakhaven",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": -5
+          },
+          "to": {
+            "x": 0,
+            "y": 0
+          },
+          "f1": "Oakhaven",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": -5
+          },
+          "to": {
+            "x": -2,
+            "y": -2
+          },
+          "f1": "Oakhaven",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": -3
+          },
+          "to": {
+            "x": -1,
+            "y": -1
+          },
+          "f1": "Oakhaven",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": -3
+          },
+          "to": {
+            "x": 0,
+            "y": 0
+          },
+          "f1": "Oakhaven",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": -3
+          },
+          "to": {
+            "x": -2,
+            "y": -2
+          },
+          "f1": "Oakhaven",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": -4
+          },
+          "to": {
+            "x": -1,
+            "y": -1
+          },
+          "f1": "Oakhaven",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": -4
+          },
+          "to": {
+            "x": 0,
+            "y": 0
+          },
+          "f1": "Oakhaven",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": -4
+          },
+          "to": {
+            "x": -2,
+            "y": -2
+          },
+          "f1": "Oakhaven",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": -5
+          },
+          "to": {
+            "x": -1,
+            "y": -1
+          },
+          "f1": "Oakhaven",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": -5
+          },
+          "to": {
+            "x": 0,
+            "y": 0
+          },
+          "f1": "Oakhaven",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": -5
+          },
+          "to": {
+            "x": -2,
+            "y": -2
+          },
+          "f1": "Oakhaven",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": -3
+          },
+          "to": {
+            "x": 1,
+            "y": -1
+          },
+          "f1": "Oakhaven",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": -3
+          },
+          "to": {
+            "x": 2,
+            "y": 0
+          },
+          "f1": "Oakhaven",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": -3
+          },
+          "to": {
+            "x": 2,
+            "y": -2
+          },
+          "f1": "Oakhaven",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": -3
+          },
+          "to": {
+            "x": 1,
+            "y": -1
+          },
+          "f1": "Oakhaven",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": -3
+          },
+          "to": {
+            "x": 2,
+            "y": 0
+          },
+          "f1": "Oakhaven",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": -3
+          },
+          "to": {
+            "x": 2,
+            "y": -2
+          },
+          "f1": "Oakhaven",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": -3
+          },
+          "to": {
+            "x": 1,
+            "y": -1
+          },
+          "f1": "Oakhaven",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": -3
+          },
+          "to": {
+            "x": 2,
+            "y": 0
+          },
+          "f1": "Oakhaven",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": -3
+          },
+          "to": {
+            "x": 2,
+            "y": -2
+          },
+          "f1": "Oakhaven",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": -3
+          },
+          "to": {
+            "x": 1,
+            "y": -1
+          },
+          "f1": "Oakhaven",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": -3
+          },
+          "to": {
+            "x": 2,
+            "y": 0
+          },
+          "f1": "Oakhaven",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": -3
+          },
+          "to": {
+            "x": 2,
+            "y": -2
+          },
+          "f1": "Oakhaven",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": -4
+          },
+          "to": {
+            "x": 1,
+            "y": -1
+          },
+          "f1": "Oakhaven",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": -4
+          },
+          "to": {
+            "x": 2,
+            "y": 0
+          },
+          "f1": "Oakhaven",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": -4
+          },
+          "to": {
+            "x": 2,
+            "y": -2
+          },
+          "f1": "Oakhaven",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": -4
+          },
+          "to": {
+            "x": 1,
+            "y": -1
+          },
+          "f1": "Oakhaven",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": -4
+          },
+          "to": {
+            "x": 2,
+            "y": 0
+          },
+          "f1": "Oakhaven",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": -4
+          },
+          "to": {
+            "x": 2,
+            "y": -2
+          },
+          "f1": "Oakhaven",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": -4
+          },
+          "to": {
+            "x": 1,
+            "y": -1
+          },
+          "f1": "Oakhaven",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": -4
+          },
+          "to": {
+            "x": 2,
+            "y": 0
+          },
+          "f1": "Oakhaven",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": -4
+          },
+          "to": {
+            "x": 2,
+            "y": -2
+          },
+          "f1": "Oakhaven",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": -4
+          },
+          "to": {
+            "x": 1,
+            "y": -1
+          },
+          "f1": "Oakhaven",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": -4
+          },
+          "to": {
+            "x": 2,
+            "y": 0
+          },
+          "f1": "Oakhaven",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": -4
+          },
+          "to": {
+            "x": 2,
+            "y": -2
+          },
+          "f1": "Oakhaven",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": -5
+          },
+          "to": {
+            "x": 1,
+            "y": -1
+          },
+          "f1": "Oakhaven",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": -5
+          },
+          "to": {
+            "x": 2,
+            "y": 0
+          },
+          "f1": "Oakhaven",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": -5
+          },
+          "to": {
+            "x": 2,
+            "y": -2
+          },
+          "f1": "Oakhaven",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": -3
+          },
+          "to": {
+            "x": 1,
+            "y": -1
+          },
+          "f1": "Oakhaven",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": -3
+          },
+          "to": {
+            "x": 2,
+            "y": 0
+          },
+          "f1": "Oakhaven",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": -3
+          },
+          "to": {
+            "x": 2,
+            "y": -2
+          },
+          "f1": "Oakhaven",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": -4
+          },
+          "to": {
+            "x": 1,
+            "y": -1
+          },
+          "f1": "Oakhaven",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": -4
+          },
+          "to": {
+            "x": 2,
+            "y": 0
+          },
+          "f1": "Oakhaven",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": -4
+          },
+          "to": {
+            "x": 2,
+            "y": -2
+          },
+          "f1": "Oakhaven",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": -5
+          },
+          "to": {
+            "x": 1,
+            "y": -1
+          },
+          "f1": "Oakhaven",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": -5
+          },
+          "to": {
+            "x": 2,
+            "y": 0
+          },
+          "f1": "Oakhaven",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": -5
+          },
+          "to": {
+            "x": 2,
+            "y": -2
+          },
+          "f1": "Oakhaven",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": -3
+          },
+          "to": {
+            "x": 0,
+            "y": -2
+          },
+          "f1": "Oakhaven",
+          "f2": "Oakhaven rebels rebels"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": -3
+          },
+          "to": {
+            "x": -1,
+            "y": -2
+          },
+          "f1": "Oakhaven",
+          "f2": "Oakhaven rebels rebels"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": -3
+          },
+          "to": {
+            "x": 0,
+            "y": -2
+          },
+          "f1": "Oakhaven",
+          "f2": "Oakhaven rebels rebels"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": -3
+          },
+          "to": {
+            "x": -1,
+            "y": -2
+          },
+          "f1": "Oakhaven",
+          "f2": "Oakhaven rebels rebels"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": -3
+          },
+          "to": {
+            "x": 0,
+            "y": -2
+          },
+          "f1": "Oakhaven",
+          "f2": "Oakhaven rebels rebels"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": -3
+          },
+          "to": {
+            "x": -1,
+            "y": -2
+          },
+          "f1": "Oakhaven",
+          "f2": "Oakhaven rebels rebels"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": -3
+          },
+          "to": {
+            "x": 0,
+            "y": -2
+          },
+          "f1": "Oakhaven",
+          "f2": "Oakhaven rebels rebels"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": -3
+          },
+          "to": {
+            "x": -1,
+            "y": -2
+          },
+          "f1": "Oakhaven",
+          "f2": "Oakhaven rebels rebels"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": -4
+          },
+          "to": {
+            "x": 0,
+            "y": -2
+          },
+          "f1": "Oakhaven",
+          "f2": "Oakhaven rebels rebels"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": -4
+          },
+          "to": {
+            "x": -1,
+            "y": -2
+          },
+          "f1": "Oakhaven",
+          "f2": "Oakhaven rebels rebels"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": -4
+          },
+          "to": {
+            "x": 0,
+            "y": -2
+          },
+          "f1": "Oakhaven",
+          "f2": "Oakhaven rebels rebels"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": -4
+          },
+          "to": {
+            "x": -1,
+            "y": -2
+          },
+          "f1": "Oakhaven",
+          "f2": "Oakhaven rebels rebels"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": -4
+          },
+          "to": {
+            "x": 0,
+            "y": -2
+          },
+          "f1": "Oakhaven",
+          "f2": "Oakhaven rebels rebels"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": -4
+          },
+          "to": {
+            "x": -1,
+            "y": -2
+          },
+          "f1": "Oakhaven",
+          "f2": "Oakhaven rebels rebels"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": -4
+          },
+          "to": {
+            "x": 0,
+            "y": -2
+          },
+          "f1": "Oakhaven",
+          "f2": "Oakhaven rebels rebels"
+        },
+        {
+          "from": {
+            "x": 1,
+            "y": -4
+          },
+          "to": {
+            "x": -1,
+            "y": -2
+          },
+          "f1": "Oakhaven",
+          "f2": "Oakhaven rebels rebels"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": -5
+          },
+          "to": {
+            "x": 0,
+            "y": -2
+          },
+          "f1": "Oakhaven",
+          "f2": "Oakhaven rebels rebels"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": -5
+          },
+          "to": {
+            "x": -1,
+            "y": -2
+          },
+          "f1": "Oakhaven",
+          "f2": "Oakhaven rebels rebels"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": -3
+          },
+          "to": {
+            "x": 0,
+            "y": -2
+          },
+          "f1": "Oakhaven",
+          "f2": "Oakhaven rebels rebels"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": -3
+          },
+          "to": {
+            "x": -1,
+            "y": -2
+          },
+          "f1": "Oakhaven",
+          "f2": "Oakhaven rebels rebels"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": -4
+          },
+          "to": {
+            "x": 0,
+            "y": -2
+          },
+          "f1": "Oakhaven",
+          "f2": "Oakhaven rebels rebels"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": -4
+          },
+          "to": {
+            "x": -1,
+            "y": -2
+          },
+          "f1": "Oakhaven",
+          "f2": "Oakhaven rebels rebels"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": -5
+          },
+          "to": {
+            "x": 0,
+            "y": -2
+          },
+          "f1": "Oakhaven",
+          "f2": "Oakhaven rebels rebels"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": -5
+          },
+          "to": {
+            "x": -1,
+            "y": -2
+          },
+          "f1": "Oakhaven",
+          "f2": "Oakhaven rebels rebels"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": -1
+          },
+          "to": {
+            "x": -1,
+            "y": -1
+          },
+          "f1": "Ironclad",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": -1
+          },
+          "to": {
+            "x": 0,
+            "y": 0
+          },
+          "f1": "Ironclad",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": -1
+          },
+          "to": {
+            "x": -2,
+            "y": -2
+          },
+          "f1": "Ironclad",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": 1
+          },
+          "to": {
+            "x": -1,
+            "y": -1
+          },
+          "f1": "Ironclad",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": 1
+          },
+          "to": {
+            "x": 0,
+            "y": 0
+          },
+          "f1": "Ironclad",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": 1
+          },
+          "to": {
+            "x": -2,
+            "y": -2
+          },
+          "f1": "Ironclad",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": -1
+          },
+          "to": {
+            "x": -1,
+            "y": -1
+          },
+          "f1": "Ironclad",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": -1
+          },
+          "to": {
+            "x": 0,
+            "y": 0
+          },
+          "f1": "Ironclad",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": -1
+          },
+          "to": {
+            "x": -2,
+            "y": -2
+          },
+          "f1": "Ironclad",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": -2
+          },
+          "to": {
+            "x": -1,
+            "y": -1
+          },
+          "f1": "Ironclad",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": -2
+          },
+          "to": {
+            "x": 0,
+            "y": 0
+          },
+          "f1": "Ironclad",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": -2
+          },
+          "to": {
+            "x": -2,
+            "y": -2
+          },
+          "f1": "Ironclad",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": 0
+          },
+          "to": {
+            "x": -1,
+            "y": -1
+          },
+          "f1": "Ironclad",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": 0
+          },
+          "to": {
+            "x": 0,
+            "y": 0
+          },
+          "f1": "Ironclad",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": 0
+          },
+          "to": {
+            "x": -2,
+            "y": -2
+          },
+          "f1": "Ironclad",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": -4,
+            "y": -1
+          },
+          "to": {
+            "x": -1,
+            "y": -1
+          },
+          "f1": "Ironclad",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": -4,
+            "y": -1
+          },
+          "to": {
+            "x": 0,
+            "y": 0
+          },
+          "f1": "Ironclad",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": -4,
+            "y": -1
+          },
+          "to": {
+            "x": -2,
+            "y": -2
+          },
+          "f1": "Ironclad",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": -4,
+            "y": -3
+          },
+          "to": {
+            "x": -1,
+            "y": -1
+          },
+          "f1": "Ironclad",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": -4,
+            "y": -3
+          },
+          "to": {
+            "x": 0,
+            "y": 0
+          },
+          "f1": "Ironclad",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": -4,
+            "y": -3
+          },
+          "to": {
+            "x": -2,
+            "y": -2
+          },
+          "f1": "Ironclad",
+          "f2": "Sunspire"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": -1
+          },
+          "to": {
+            "x": 1,
+            "y": -1
+          },
+          "f1": "Ironclad",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": -1
+          },
+          "to": {
+            "x": 2,
+            "y": 0
+          },
+          "f1": "Ironclad",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": -1
+          },
+          "to": {
+            "x": 2,
+            "y": -2
+          },
+          "f1": "Ironclad",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": 1
+          },
+          "to": {
+            "x": 1,
+            "y": -1
+          },
+          "f1": "Ironclad",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": 1
+          },
+          "to": {
+            "x": 2,
+            "y": 0
+          },
+          "f1": "Ironclad",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": 1
+          },
+          "to": {
+            "x": 2,
+            "y": -2
+          },
+          "f1": "Ironclad",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": -1
+          },
+          "to": {
+            "x": 1,
+            "y": -1
+          },
+          "f1": "Ironclad",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": -1
+          },
+          "to": {
+            "x": 2,
+            "y": 0
+          },
+          "f1": "Ironclad",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": -1
+          },
+          "to": {
+            "x": 2,
+            "y": -2
+          },
+          "f1": "Ironclad",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": -2
+          },
+          "to": {
+            "x": 1,
+            "y": -1
+          },
+          "f1": "Ironclad",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": -2
+          },
+          "to": {
+            "x": 2,
+            "y": 0
+          },
+          "f1": "Ironclad",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": -2
+          },
+          "to": {
+            "x": 2,
+            "y": -2
+          },
+          "f1": "Ironclad",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": 0
+          },
+          "to": {
+            "x": 1,
+            "y": -1
+          },
+          "f1": "Ironclad",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": 0
+          },
+          "to": {
+            "x": 2,
+            "y": 0
+          },
+          "f1": "Ironclad",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": 0
+          },
+          "to": {
+            "x": 2,
+            "y": -2
+          },
+          "f1": "Ironclad",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": -4,
+            "y": -1
+          },
+          "to": {
+            "x": 1,
+            "y": -1
+          },
+          "f1": "Ironclad",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": -4,
+            "y": -1
+          },
+          "to": {
+            "x": 2,
+            "y": 0
+          },
+          "f1": "Ironclad",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": -4,
+            "y": -1
+          },
+          "to": {
+            "x": 2,
+            "y": -2
+          },
+          "f1": "Ironclad",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": -4,
+            "y": -3
+          },
+          "to": {
+            "x": 1,
+            "y": -1
+          },
+          "f1": "Ironclad",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": -4,
+            "y": -3
+          },
+          "to": {
+            "x": 2,
+            "y": 0
+          },
+          "f1": "Ironclad",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": -4,
+            "y": -3
+          },
+          "to": {
+            "x": 2,
+            "y": -2
+          },
+          "f1": "Ironclad",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": -1
+          },
+          "to": {
+            "x": 0,
+            "y": -2
+          },
+          "f1": "Ironclad",
+          "f2": "Oakhaven rebels rebels"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": -1
+          },
+          "to": {
+            "x": -1,
+            "y": -2
+          },
+          "f1": "Ironclad",
+          "f2": "Oakhaven rebels rebels"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": 1
+          },
+          "to": {
+            "x": 0,
+            "y": -2
+          },
+          "f1": "Ironclad",
+          "f2": "Oakhaven rebels rebels"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": 1
+          },
+          "to": {
+            "x": -1,
+            "y": -2
+          },
+          "f1": "Ironclad",
+          "f2": "Oakhaven rebels rebels"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": -1
+          },
+          "to": {
+            "x": 0,
+            "y": -2
+          },
+          "f1": "Ironclad",
+          "f2": "Oakhaven rebels rebels"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": -1
+          },
+          "to": {
+            "x": -1,
+            "y": -2
+          },
+          "f1": "Ironclad",
+          "f2": "Oakhaven rebels rebels"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": -2
+          },
+          "to": {
+            "x": 0,
+            "y": -2
+          },
+          "f1": "Ironclad",
+          "f2": "Oakhaven rebels rebels"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": -2
+          },
+          "to": {
+            "x": -1,
+            "y": -2
+          },
+          "f1": "Ironclad",
+          "f2": "Oakhaven rebels rebels"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": 0
+          },
+          "to": {
+            "x": 0,
+            "y": -2
+          },
+          "f1": "Ironclad",
+          "f2": "Oakhaven rebels rebels"
+        },
+        {
+          "from": {
+            "x": -3,
+            "y": 0
+          },
+          "to": {
+            "x": -1,
+            "y": -2
+          },
+          "f1": "Ironclad",
+          "f2": "Oakhaven rebels rebels"
+        },
+        {
+          "from": {
+            "x": -4,
+            "y": -1
+          },
+          "to": {
+            "x": 0,
+            "y": -2
+          },
+          "f1": "Ironclad",
+          "f2": "Oakhaven rebels rebels"
+        },
+        {
+          "from": {
+            "x": -4,
+            "y": -1
+          },
+          "to": {
+            "x": -1,
+            "y": -2
+          },
+          "f1": "Ironclad",
+          "f2": "Oakhaven rebels rebels"
+        },
+        {
+          "from": {
+            "x": -4,
+            "y": -3
+          },
+          "to": {
+            "x": 0,
+            "y": -2
+          },
+          "f1": "Ironclad",
+          "f2": "Oakhaven rebels rebels"
+        },
+        {
+          "from": {
+            "x": -4,
+            "y": -3
+          },
+          "to": {
+            "x": -1,
+            "y": -2
+          },
+          "f1": "Ironclad",
+          "f2": "Oakhaven rebels rebels"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": -1
+          },
+          "to": {
+            "x": 1,
+            "y": -1
+          },
+          "f1": "Sunspire",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": -1
+          },
+          "to": {
+            "x": 2,
+            "y": 0
+          },
+          "f1": "Sunspire",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": -1
+          },
+          "to": {
+            "x": 2,
+            "y": -2
+          },
+          "f1": "Sunspire",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": 0
+          },
+          "to": {
+            "x": 1,
+            "y": -1
+          },
+          "f1": "Sunspire",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": 0
+          },
+          "to": {
+            "x": 2,
+            "y": 0
+          },
+          "f1": "Sunspire",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": 0
+          },
+          "to": {
+            "x": 2,
+            "y": -2
+          },
+          "f1": "Sunspire",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": -2
+          },
+          "to": {
+            "x": 1,
+            "y": -1
+          },
+          "f1": "Sunspire",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": -2
+          },
+          "to": {
+            "x": 2,
+            "y": 0
+          },
+          "f1": "Sunspire",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": -2
+          },
+          "to": {
+            "x": 2,
+            "y": -2
+          },
+          "f1": "Sunspire",
+          "f2": "Oakhaven rebels"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": -1
+          },
+          "to": {
+            "x": 0,
+            "y": -2
+          },
+          "f1": "Sunspire",
+          "f2": "Oakhaven rebels rebels"
+        },
+        {
+          "from": {
+            "x": -1,
+            "y": -1
+          },
+          "to": {
+            "x": -1,
+            "y": -2
+          },
+          "f1": "Sunspire",
+          "f2": "Oakhaven rebels rebels"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": 0
+          },
+          "to": {
+            "x": 0,
+            "y": -2
+          },
+          "f1": "Sunspire",
+          "f2": "Oakhaven rebels rebels"
+        },
+        {
+          "from": {
+            "x": 0,
+            "y": 0
+          },
+          "to": {
+            "x": -1,
+            "y": -2
+          },
+          "f1": "Sunspire",
+          "f2": "Oakhaven rebels rebels"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": -2
+          },
+          "to": {
+            "x": 0,
+            "y": -2
+          },
+          "f1": "Sunspire",
+          "f2": "Oakhaven rebels rebels"
+        },
+        {
+          "from": {
+            "x": -2,
+            "y": -2
+          },
+          "to": {
+            "x": -1,
+            "y": -2
+          },
+          "f1": "Sunspire",
+          "f2": "Oakhaven rebels rebels"
+        },
+        {
+          "from": {
+            "x": 15,
+            "y": 10
+          },
+          "to": {
+            "x": 14,
+            "y": 11
+          },
+          "f1": "Grimwallow",
+          "f2": "Players rebels"
+        },
+        {
+          "from": {
+            "x": 15,
+            "y": 10
+          },
+          "to": {
+            "x": 16,
+            "y": 10
+          },
+          "f1": "Grimwallow",
+          "f2": "Players rebels"
+        },
+        {
+          "from": {
+            "x": 15,
+            "y": 10
+          },
+          "to": {
+            "x": 17,
+            "y": 10
+          },
+          "f1": "Grimwallow",
+          "f2": "Players rebels"
+        },
+        {
+          "from": {
+            "x": 15,
+            "y": 10
+          },
+          "to": {
+            "x": 15,
+            "y": 12
+          },
+          "f1": "Grimwallow",
+          "f2": "Players rebels"
+        },
+        {
+          "from": {
+            "x": 15,
+            "y": 11
+          },
+          "to": {
+            "x": 14,
+            "y": 11
+          },
+          "f1": "Grimwallow",
+          "f2": "Players rebels"
+        },
+        {
+          "from": {
+            "x": 15,
+            "y": 11
+          },
+          "to": {
+            "x": 16,
+            "y": 10
+          },
+          "f1": "Grimwallow",
+          "f2": "Players rebels"
+        },
+        {
+          "from": {
+            "x": 15,
+            "y": 11
+          },
+          "to": {
+            "x": 17,
+            "y": 10
+          },
+          "f1": "Grimwallow",
+          "f2": "Players rebels"
+        },
+        {
+          "from": {
+            "x": 15,
+            "y": 11
+          },
+          "to": {
+            "x": 15,
+            "y": 12
+          },
+          "f1": "Grimwallow",
+          "f2": "Players rebels"
+        },
+        {
+          "from": {
+            "x": 16,
+            "y": 12
+          },
+          "to": {
+            "x": 14,
+            "y": 11
+          },
+          "f1": "Grimwallow",
+          "f2": "Players rebels"
+        },
+        {
+          "from": {
+            "x": 16,
+            "y": 12
+          },
+          "to": {
+            "x": 16,
+            "y": 10
+          },
+          "f1": "Grimwallow",
+          "f2": "Players rebels"
+        },
+        {
+          "from": {
+            "x": 16,
+            "y": 12
+          },
+          "to": {
+            "x": 17,
+            "y": 10
+          },
+          "f1": "Grimwallow",
+          "f2": "Players rebels"
+        },
+        {
+          "from": {
+            "x": 16,
+            "y": 12
+          },
+          "to": {
+            "x": 15,
+            "y": 12
+          },
+          "f1": "Grimwallow",
+          "f2": "Players rebels"
+        },
+        {
+          "from": {
+            "x": 16,
+            "y": 9
+          },
+          "to": {
+            "x": 14,
+            "y": 11
+          },
+          "f1": "Grimwallow",
+          "f2": "Players rebels"
+        },
+        {
+          "from": {
+            "x": 16,
+            "y": 9
+          },
+          "to": {
+            "x": 16,
+            "y": 10
+          },
+          "f1": "Grimwallow",
+          "f2": "Players rebels"
+        },
+        {
+          "from": {
+            "x": 16,
+            "y": 9
+          },
+          "to": {
+            "x": 17,
+            "y": 10
+          },
+          "f1": "Grimwallow",
+          "f2": "Players rebels"
+        },
+        {
+          "from": {
+            "x": 16,
+            "y": 9
+          },
+          "to": {
+            "x": 15,
+            "y": 12
+          },
+          "f1": "Grimwallow",
+          "f2": "Players rebels"
+        }
+      ]
+    }
   }
 ]
