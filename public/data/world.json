@@ -1,6 +1,6 @@
 {
   "seed": "1782424979471",
-  "year": 94,
+  "year": 95,
   "factions": [
     {
       "name": "Valoria",
@@ -58,29 +58,30 @@
         }
       ],
       "status": {
-        "Players": "war",
+        "Players": "peace",
         "Oakhaven": "alliance",
         "Ironclad": "alliance",
         "Sunspire": "alliance",
         "Grimwallow": "alliance",
-        "Aethelgard": "war",
-        "Oakhaven rebels": "alliance",
+        "Aethelgard": "peace",
+        "Oakhaven rebels": "peace",
         "Players rebels": "peace",
         "Oakhaven rebels rebels": "alliance",
         "Valoria rebels": "war",
         "Ironclad rebels": "peace"
       },
-      "power": 39215,
+      "power": 43976,
       "resources": {
-        "gold": 31086,
-        "wood": 0,
+        "gold": 33266,
+        "wood": 10,
         "iron": 0,
-        "timber": 1,
+        "timber": 3,
         "novatimber": 2,
         "astralore": 19,
-        "prismaticcrystal": 17,
-        "fish": 6,
-        "magmadust": 6
+        "prismaticcrystal": 18,
+        "fish": 7,
+        "magmadust": 7,
+        "shadowmetal": 1
       },
       "technologies": [
         "stone_tools",
@@ -119,22 +120,22 @@
         }
       ],
       "status": {
-        "Valoria": "war",
+        "Valoria": "peace",
         "Oakhaven": "war",
         "Ironclad": "peace",
         "Sunspire": "war",
         "Grimwallow": "alliance",
         "Aethelgard": "peace",
-        "Oakhaven rebels": "war",
+        "Oakhaven rebels": "peace",
         "Players rebels": "peace",
         "Oakhaven rebels rebels": "peace",
         "Valoria rebels": "peace",
         "Ironclad rebels": "peace"
       },
-      "power": 2223,
+      "power": 2653,
       "resources": {
-        "gold": 8115,
-        "wood": 10,
+        "gold": 8179,
+        "wood": 14,
         "iron": 10,
         "shadowgem": 110,
         "magmametal": 110
@@ -159,36 +160,6 @@
         "y": -1
       },
       "settlements": [
-        {
-          "realm": "overworld",
-          "x": -2,
-          "y": -4
-        },
-        {
-          "realm": "overworld",
-          "x": 1,
-          "y": -4
-        },
-        {
-          "realm": "overworld",
-          "x": -2,
-          "y": -5
-        },
-        {
-          "realm": "overworld",
-          "x": -3,
-          "y": -3
-        },
-        {
-          "realm": "overworld",
-          "x": -3,
-          "y": -4
-        },
-        {
-          "realm": "overworld",
-          "x": 0,
-          "y": -5
-        },
         {
           "realm": "overworld",
           "x": -3,
@@ -227,26 +198,26 @@
         "Sunspire": "alliance",
         "Grimwallow": "peace",
         "Aethelgard": "war",
-        "Oakhaven rebels": "peace",
+        "Oakhaven rebels": "war",
         "Players rebels": "peace",
         "Oakhaven rebels rebels": "peace",
-        "Valoria rebels": "war",
+        "Valoria rebels": "peace",
         "Ironclad rebels": "peace"
       },
-      "power": 43770,
+      "power": 48606,
       "resources": {
-        "gold": 23583,
-        "wood": 0,
+        "gold": 25618,
+        "wood": 10,
         "iron": 0,
         "timber": 2,
         "astralgem": 14,
         "prismaticdust": 37,
         "shadowore": 23,
-        "fish": 43,
-        "prismaticgem": 19,
-        "novacrystal": 19,
-        "caverntimber": 8,
-        "cavernweave": 5
+        "fish": 49,
+        "prismaticgem": 21,
+        "novacrystal": 21,
+        "caverntimber": 10,
+        "cavernweave": 7
       },
       "technologies": [
         "stone_tools",
@@ -257,7 +228,7 @@
         "sky_ships",
         "starflight"
       ],
-      "ideology": "Industrialism"
+      "ideology": "Scholasticism"
     },
     {
       "name": "Ironclad",
@@ -299,21 +270,21 @@
         "Sunspire": "alliance",
         "Grimwallow": "alliance",
         "Aethelgard": "alliance",
-        "Oakhaven rebels": "alliance",
+        "Oakhaven rebels": "peace",
         "Players rebels": "peace",
         "Oakhaven rebels rebels": "peace",
         "Valoria rebels": "war",
         "Ironclad rebels": "war",
         "Players": "peace"
       },
-      "power": 21001,
+      "power": 22674,
       "resources": {
-        "gold": 27570,
-        "wood": 0,
+        "gold": 29139,
+        "wood": 10,
         "iron": 0,
-        "fish": 38,
-        "shadowtimber": 10,
-        "deepmetal": 7
+        "fish": 40,
+        "shadowtimber": 11,
+        "deepmetal": 8
       },
       "technologies": [
         "stone_tools",
@@ -358,21 +329,21 @@
         "Grimwallow": "war",
         "Valoria": "alliance",
         "Aethelgard": "war",
-        "Oakhaven rebels": "alliance",
+        "Oakhaven rebels": "peace",
         "Players rebels": "alliance",
         "Oakhaven rebels rebels": "peace",
-        "Valoria rebels": "war",
+        "Valoria rebels": "peace",
         "Ironclad rebels": "peace"
       },
-      "power": 229721,
+      "power": 249828,
       "resources": {
-        "gold": 162033,
-        "wood": 10,
+        "gold": 179519,
+        "wood": 4,
         "iron": 5,
-        "timber": 60,
-        "astralmetal": 21,
-        "obsidian": 21,
-        "novatimber": 20
+        "timber": 62,
+        "astralmetal": 22,
+        "obsidian": 22,
+        "novatimber": 21
       },
       "technologies": [
         "stone_tools",
@@ -423,6 +394,16 @@
           "realm": "underworld",
           "x": 16,
           "y": 8
+        },
+        {
+          "realm": "underworld",
+          "x": 14,
+          "y": 12
+        },
+        {
+          "realm": "underworld",
+          "x": 17,
+          "y": 13
         }
       ],
       "status": {
@@ -438,15 +419,15 @@
         "Valoria rebels": "peace",
         "Ironclad rebels": "peace"
       },
-      "power": 47967,
+      "power": 49351,
       "resources": {
-        "gold": 24577,
+        "gold": 27042,
         "wood": 0,
         "iron": 5,
-        "shadowgem": 45,
-        "magmametal": 31,
-        "astralweave": 12,
-        "aethertimber": 2
+        "shadowgem": 51,
+        "magmametal": 33,
+        "astralweave": 14,
+        "aethertimber": 4
       },
       "technologies": [
         "stone_tools",
@@ -457,7 +438,7 @@
         "sky_ships",
         "starflight"
       ],
-      "ideology": "Pacifism"
+      "ideology": "Industrialism"
     },
     {
       "name": "Aethelgard",
@@ -470,16 +451,16 @@
       "settlements": [],
       "status": {
         "Grimwallow": "peace",
-        "Oakhaven rebels": "alliance",
+        "Oakhaven rebels": "peace",
         "Players": "peace",
         "Ironclad": "alliance",
         "Sunspire": "war",
-        "Valoria": "war",
+        "Valoria": "peace",
         "Players rebels": "peace",
         "Oakhaven": "war",
         "Oakhaven rebels rebels": "alliance",
         "Valoria rebels": "peace",
-        "Ironclad rebels": "peace"
+        "Ironclad rebels": "war"
       },
       "power": 0,
       "resources": {
@@ -524,7 +505,7 @@
         }
       ],
       "status": {
-        "Oakhaven": "peace",
+        "Oakhaven": "war",
         "Valoria": "alliance",
         "Players rebels": "alliance",
         "Sunspire": "alliance",
@@ -534,9 +515,9 @@
         "Valoria rebels": "peace",
         "Ironclad rebels": "peace"
       },
-      "power": 12909,
+      "power": 12906,
       "resources": {
-        "gold": 15930,
+        "gold": 15976,
         "wood": 0,
         "iron": 0
       },
@@ -604,14 +585,14 @@
         "Valoria rebels": "peace",
         "Ironclad rebels": "peace"
       },
-      "power": 9155,
+      "power": 9782,
       "resources": {
-        "gold": 4892,
+        "gold": 5574,
         "wood": 0,
         "iron": 10,
-        "shadowgem": 20,
-        "novaore": 13,
-        "chronocrystal": 7
+        "shadowgem": 22,
+        "novaore": 14,
+        "chronocrystal": 8
       },
       "technologies": [
         "stone_tools",
@@ -645,17 +626,17 @@
         }
       ],
       "status": {
-        "Oakhaven rebels": "alliance",
+        "Oakhaven rebels": "peace",
         "Valoria rebels": "peace",
-        "Ironclad rebels": "peace",
+        "Ironclad rebels": "war",
         "Aethelgard": "alliance",
         "Grimwallow": "alliance",
         "Valoria": "alliance"
       },
-      "power": 47470,
+      "power": 52096,
       "resources": {
-        "gold": 21132,
-        "wood": 52,
+        "gold": 24778,
+        "wood": 48,
         "iron": 0
       },
       "technologies": [
@@ -728,16 +709,16 @@
         "Aethelgard": "alliance",
         "Ironclad": "alliance",
         "Valoria rebels": "peace",
-        "Ironclad rebels": "peace"
+        "Ironclad rebels": "war"
       },
-      "power": 62466,
+      "power": 67236,
       "resources": {
-        "gold": 22894,
+        "gold": 27595,
         "wood": 0,
         "iron": 10,
-        "timber": 0,
-        "prismaticdust": 8,
-        "prismaticshards": 7
+        "timber": 2,
+        "prismaticdust": 9,
+        "prismaticshards": 8
       },
       "technologies": [
         "stone_tools",
@@ -793,19 +774,19 @@
       "status": {
         "Valoria": "war",
         "Ironclad rebels": "peace",
-        "Sunspire": "war",
-        "Oakhaven": "war",
+        "Sunspire": "peace",
+        "Oakhaven": "peace",
         "Ironclad": "war",
-        "Oakhaven rebels": "peace",
+        "Oakhaven rebels": "alliance",
         "Players rebels": "peace"
       },
-      "power": 74654,
+      "power": 77576,
       "resources": {
-        "gold": 9991,
+        "gold": 15419,
         "wood": 0,
         "iron": 0,
-        "timber": 2,
-        "astralore": 2
+        "timber": 3,
+        "astralore": 3
       },
       "technologies": [
         "stone_tools",
@@ -854,14 +835,17 @@
         }
       ],
       "status": {
-        "Ironclad": "war"
+        "Ironclad": "war",
+        "Oakhaven rebels": "war",
+        "Aethelgard": "war",
+        "Oakhaven rebels rebels": "war"
       },
-      "power": 63084,
+      "power": 69555,
       "resources": {
-        "gold": 4425,
-        "wood": 10,
+        "gold": 8000,
+        "wood": 0,
         "iron": 0,
-        "fish": 2
+        "fish": 3
       },
       "technologies": [
         "stone_tools",
@@ -872,7 +856,67 @@
         "sky_ships",
         "starflight"
       ],
-      "ideology": "Scholasticism"
+      "ideology": "Militarism"
+    },
+    {
+      "name": "Oakhaven rebels",
+      "color": "#10b981",
+      "capital": {
+        "realm": "overworld",
+        "x": -2,
+        "y": -4
+      },
+      "settlements": [
+        {
+          "realm": "overworld",
+          "x": -2,
+          "y": -4
+        },
+        {
+          "realm": "overworld",
+          "x": 1,
+          "y": -4
+        },
+        {
+          "realm": "overworld",
+          "x": -2,
+          "y": -5
+        },
+        {
+          "realm": "overworld",
+          "x": -3,
+          "y": -3
+        },
+        {
+          "realm": "overworld",
+          "x": -3,
+          "y": -4
+        },
+        {
+          "realm": "overworld",
+          "x": 0,
+          "y": -5
+        }
+      ],
+      "status": {
+        "Valoria rebels": "alliance"
+      },
+      "power": 0,
+      "resources": {
+        "gold": 210,
+        "wood": 60,
+        "iron": 20
+      },
+      "technologies": [
+        "stone_tools",
+        "stone_shelter",
+        "sailing_boats",
+        "carriage_vehicles",
+        "steam_engine",
+        "sky_ships",
+        "starflight"
+      ],
+      "ideology": "Militarism"
     }
   ],
   "modifiedCells": {
@@ -882,16 +926,16 @@
       "realm": "overworld",
       "biome": "forest",
       "elevation": 0.33695322429137475,
-      "temperature": 0.35136438384342866,
+      "temperature": 0.3560924799001582,
       "settlement": {
         "name": "Sunspire Breakaway",
         "faction": "Sunspire",
-        "size": 199943,
+        "size": 216328,
         "type": "city",
         "resources": [
           "timber"
         ],
-        "happiness": 29,
+        "happiness": 28,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -925,7 +969,7 @@
       "realm": "overworld",
       "biome": "plains",
       "elevation": 0.5249701008440653,
-      "temperature": 0.3501834957804531,
+      "temperature": 0.3549115918371826,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -954,7 +998,7 @@
       "realm": "underworld",
       "biome": "deep_lake",
       "elevation": 0.21318443796895772,
-      "temperature": 0.3501834957804531,
+      "temperature": 0.3549115918371826,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -978,7 +1022,7 @@
       "realm": "overworld",
       "biome": "ocean",
       "elevation": 0.03447570636113438,
-      "temperature": 0.3908999591518594,
+      "temperature": 0.39562805520858896,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -1007,7 +1051,7 @@
       "realm": "aether",
       "biome": "void",
       "elevation": 0.18900273544403365,
-      "temperature": 0.3501834957804531,
+      "temperature": 0.3549115918371826,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -1031,7 +1075,7 @@
       "realm": "overworld",
       "biome": "ocean",
       "elevation": 0.2740765277329316,
-      "temperature": 0.3501834957804531,
+      "temperature": 0.3549115918371826,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [],
@@ -1068,7 +1112,7 @@
         "age": 68
       },
       "wildlife": [],
-      "vegetation": 0.31800000000000017,
+      "vegetation": 0.3210000000000002,
       "history": []
     },
     "underworld:15,10": {
@@ -1077,17 +1121,17 @@
       "realm": "underworld",
       "biome": "crystal_cave",
       "elevation": 0.2551693100415643,
-      "temperature": 0.3501834957804531,
+      "temperature": 0.3549115918371826,
       "settlement": {
         "name": "Grimwallow Breakaway",
         "faction": "Grimwallow",
-        "size": 43072,
+        "size": 44011,
         "type": "city",
         "resources": [
           "shadowgem",
           "magmametal"
         ],
-        "happiness": 23,
+        "happiness": 8,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -1115,7 +1159,7 @@
       "realm": "aether",
       "biome": "crater",
       "elevation": 0.15,
-      "temperature": 0.3800613772822543,
+      "temperature": 0.3847894733389839,
       "settlement": null,
       "fireTicksLeft": 0,
       "resources": [
@@ -1137,14 +1181,14 @@
       "realm": "overworld",
       "biome": "forest",
       "elevation": 0.34143143133174064,
-      "temperature": 0.6396947431204567,
+      "temperature": 0.6444228391771863,
       "settlement": {
         "name": "Stonefort of Valoria",
         "faction": "Oakhaven rebels rebels",
-        "size": 34994,
+        "size": 38177,
         "type": "city",
         "resources": [],
-        "happiness": 66,
+        "happiness": 65,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -1173,14 +1217,14 @@
       "realm": "overworld",
       "biome": "forest",
       "elevation": 0.34226261980870737,
-      "temperature": 0.6673851090863645,
+      "temperature": 0.6721132051430941,
       "settlement": {
         "name": "Deepmine of Valoria",
         "faction": "Valoria rebels",
-        "size": 11934,
+        "size": 6161,
         "type": "city",
         "resources": [],
-        "happiness": 73,
+        "happiness": 57,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -1206,11 +1250,11 @@
       "realm": "overworld",
       "biome": "forest",
       "elevation": 0.3261202345317221,
-      "temperature": 0.7237391365452115,
+      "temperature": 0.7284672326019411,
       "settlement": {
         "name": "Aethercliff of Valoria",
         "faction": "Ironclad rebels",
-        "size": 21248,
+        "size": 23211,
         "type": "city",
         "resources": [],
         "happiness": 79,
@@ -1239,17 +1283,17 @@
       "realm": "overworld",
       "biome": "forest",
       "elevation": 0.32414535996050137,
-      "temperature": 0.6948034076466688,
+      "temperature": 0.6995315037033984,
       "settlement": {
         "name": "Aethercliff of Sunspire",
         "faction": "Sunspire",
-        "size": 15277,
+        "size": 16889,
         "type": "city",
         "resources": [
           "timber",
           "novatimber"
         ],
-        "happiness": 53,
+        "happiness": 52,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -1283,14 +1327,14 @@
       "realm": "underworld",
       "biome": "deep_lake",
       "elevation": 0.23385834767391267,
-      "temperature": 0.4527330167960424,
+      "temperature": 0.45746111285277197,
       "settlement": {
         "name": "Riverbend of Players",
         "faction": "Players rebels",
-        "size": 4528,
+        "size": 4684,
         "type": "city",
         "resources": [],
-        "happiness": 46,
+        "happiness": 30,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -1317,10 +1361,10 @@
       "settlement": {
         "name": "Deepmine of Oakhaven",
         "faction": "Oakhaven rebels rebels",
-        "size": 13244,
+        "size": 7343,
         "type": "city",
         "resources": [],
-        "happiness": 66,
+        "happiness": 65,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -1348,10 +1392,10 @@
       "settlement": {
         "name": "Riverbend of Valoria",
         "faction": "Valoria rebels",
-        "size": 19445,
+        "size": 19983,
         "type": "city",
         "resources": [],
-        "happiness": 73,
+        "happiness": 57,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -1379,11 +1423,11 @@
       "settlement": {
         "name": "Evergreen of Valoria",
         "faction": "Valoria rebels",
-        "size": 11366,
+        "size": 11743,
         "type": "city",
         "resources": [],
         "plagued": false,
-        "happiness": 73,
+        "happiness": 57,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -1410,13 +1454,13 @@
       "settlement": {
         "name": "Goldpeak of Sunspire",
         "faction": "Sunspire",
-        "size": 16103,
+        "size": 17781,
         "type": "city",
         "resources": [
           "astralmetal",
           "obsidian"
         ],
-        "happiness": 55,
+        "happiness": 54,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -1442,7 +1486,7 @@
           "count": 12
         }
       ],
-      "vegetation": 0.3510000000000002,
+      "vegetation": 0.3540000000000002,
       "history": []
     },
     "overworld:-3,0": {
@@ -1455,10 +1499,10 @@
       "settlement": {
         "name": "Goldpeak of Ironclad",
         "faction": "Ironclad rebels",
-        "size": 4652,
+        "size": 5288,
         "type": "city",
         "resources": [],
-        "happiness": 76,
+        "happiness": 75,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -1484,14 +1528,14 @@
       "realm": "underworld",
       "biome": "crystal_cave",
       "elevation": 0.2644151303615582,
-      "temperature": 0.9116432439946075,
+      "temperature": 0.9163713400513371,
       "settlement": {
         "name": "Aethercliff of Players",
         "faction": "Players rebels",
-        "size": 2419,
+        "size": 2533,
         "type": "city",
         "resources": [],
-        "happiness": 46,
+        "happiness": 30,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -1517,10 +1561,10 @@
       "settlement": {
         "name": "Riverbend of Oakhaven",
         "faction": "Oakhaven rebels",
-        "size": 7654,
+        "size": 8089,
         "type": "city",
         "resources": [],
-        "happiness": 9,
+        "happiness": 5,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -1544,11 +1588,11 @@
       "realm": "underworld",
       "biome": "crystal_cave",
       "elevation": 0.2701113475351626,
-      "temperature": 0.8750189712589619,
+      "temperature": 0.8797470673156915,
       "settlement": {
         "name": "Aethercliff of Players",
         "faction": "Players",
-        "size": 1289,
+        "size": 1530,
         "type": "town",
         "resources": [],
         "happiness": 26,
@@ -1564,7 +1608,7 @@
       "resources": [],
       "ruin": null,
       "wildlife": [],
-      "vegetation": 0.4790000000000003,
+      "vegetation": 0.4820000000000003,
       "history": []
     },
     "overworld:-1,-3": {
@@ -1577,13 +1621,13 @@
       "settlement": {
         "name": "Evergreen of Oakhaven",
         "faction": "Oakhaven rebels",
-        "size": 13413,
+        "size": 13915,
         "type": "city",
         "resources": [
           "timber",
           "prismaticdust"
         ],
-        "happiness": 52,
+        "happiness": 36,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -1614,11 +1658,11 @@
       "realm": "underworld",
       "biome": "deep_lake",
       "elevation": 0.2473650752884562,
-      "temperature": 0.9054690909829453,
+      "temperature": 0.9101971870396749,
       "settlement": {
         "name": "Deepmine of Players",
         "faction": "Players",
-        "size": 975,
+        "size": 1044,
         "type": "town",
         "resources": [],
         "happiness": 24,
@@ -1635,7 +1679,7 @@
       "resources": [],
       "ruin": null,
       "wildlife": [],
-      "vegetation": 0.4640000000000003,
+      "vegetation": 0.4670000000000003,
       "history": []
     },
     "overworld:0,1": {
@@ -1648,7 +1692,7 @@
       "settlement": {
         "name": "Goldpeak of Ironclad",
         "faction": "Ironclad rebels",
-        "size": 14126,
+        "size": 15520,
         "type": "city",
         "resources": [],
         "happiness": 76,
@@ -1677,7 +1721,7 @@
       "settlement": {
         "name": "Evergreen of Ironclad",
         "faction": "Ironclad rebels",
-        "size": 14126,
+        "size": 15520,
         "type": "city",
         "resources": [],
         "happiness": 76,
@@ -1699,7 +1743,7 @@
           "count": 1
         }
       ],
-      "vegetation": 0.41600000000000026,
+      "vegetation": 0.41900000000000026,
       "history": []
     },
     "overworld:1,-3": {
@@ -1712,10 +1756,10 @@
       "settlement": {
         "name": "Deepmine of Oakhaven",
         "faction": "Oakhaven rebels",
-        "size": 10654,
+        "size": 11101,
         "type": "city",
         "resources": [],
-        "happiness": 52,
+        "happiness": 36,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -1737,14 +1781,14 @@
       "realm": "underworld",
       "biome": "deep_lake",
       "elevation": 0.2416688581148519,
-      "temperature": 0.8732907823654781,
+      "temperature": 0.8780188784222077,
       "settlement": {
         "name": "Aethercliff of Grimwallow",
         "faction": "Grimwallow",
-        "size": 2849,
+        "size": 2983,
         "type": "city",
         "resources": [],
-        "happiness": 58,
+        "happiness": 43,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -1757,7 +1801,7 @@
       "resources": [],
       "ruin": null,
       "wildlife": [],
-      "vegetation": 0.38300000000000023,
+      "vegetation": 0.38600000000000023,
       "history": []
     },
     "overworld:-2,-3": {
@@ -1770,10 +1814,10 @@
       "settlement": {
         "name": "Crossroads of Oakhaven",
         "faction": "Oakhaven rebels",
-        "size": 10331,
+        "size": 10771,
         "type": "city",
         "resources": [],
-        "happiness": 52,
+        "happiness": 36,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -1799,10 +1843,10 @@
       "settlement": {
         "name": "Deepmine of Oakhaven",
         "faction": "Oakhaven rebels",
-        "size": 9580,
+        "size": 10005,
         "type": "city",
         "resources": [],
-        "happiness": 52,
+        "happiness": 36,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -1828,10 +1872,10 @@
       "settlement": {
         "name": "Crossroads of Oakhaven",
         "faction": "Oakhaven rebels",
-        "size": 6406,
+        "size": 6768,
         "type": "city",
         "resources": [],
-        "happiness": 52,
+        "happiness": 36,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -1857,10 +1901,10 @@
       "settlement": {
         "name": "Goldpeak of Oakhaven rebels",
         "faction": "Oakhaven rebels",
-        "size": 3486,
+        "size": 3837,
         "type": "city",
         "resources": [],
-        "happiness": 10,
+        "happiness": 5,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -1887,10 +1931,10 @@
       "settlement": {
         "name": "Goldpeak of Oakhaven",
         "faction": "Oakhaven rebels",
-        "size": 9146,
+        "size": 9562,
         "type": "city",
         "resources": [],
-        "happiness": 52,
+        "happiness": 36,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -1917,11 +1961,11 @@
       "realm": "underworld",
       "biome": "deep_lake",
       "elevation": 0.21567675030053632,
-      "temperature": 0.8112320921587164,
+      "temperature": 0.815960188215446,
       "settlement": {
         "name": "Deepmine of Players",
         "faction": "Players",
-        "size": 193,
+        "size": 346,
         "type": "village",
         "resources": [],
         "happiness": 36,
@@ -1936,7 +1980,7 @@
       "resources": [],
       "ruin": null,
       "wildlife": [],
-      "vegetation": 0.30500000000000016,
+      "vegetation": 0.30800000000000016,
       "history": []
     },
     "overworld:-2,-4": {
@@ -1948,13 +1992,13 @@
       "temperature": 1,
       "settlement": {
         "name": "Riverbend of Oakhaven",
-        "faction": "Oakhaven",
-        "size": 7364,
+        "faction": "Oakhaven rebels",
+        "size": 7763,
         "type": "city",
         "resources": [
           "shadowore"
         ],
-        "happiness": 14,
+        "happiness": 60,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -1989,7 +2033,7 @@
       "settlement": {
         "name": "OrbitStation of Ironclad",
         "faction": "Ironclad rebels",
-        "size": 10252,
+        "size": 11336,
         "type": "city",
         "resources": [
           "fish"
@@ -2010,7 +2054,7 @@
       ],
       "ruin": null,
       "wildlife": [],
-      "vegetation": 0.30500000000000016,
+      "vegetation": 0.30800000000000016,
       "history": []
     },
     "overworld:1,-2": {
@@ -2023,13 +2067,13 @@
       "settlement": {
         "name": "OrbitStation of Valoria",
         "faction": "Valoria rebels",
-        "size": 13658,
+        "size": 14081,
         "type": "city",
         "resources": [
           "timber",
           "astralore"
         ],
-        "happiness": 73,
+        "happiness": 57,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -2063,10 +2107,10 @@
       "settlement": {
         "name": "Crossroads of Valoria",
         "faction": "Valoria rebels",
-        "size": 10246,
+        "size": 10600,
         "type": "city",
         "resources": [],
-        "happiness": 73,
+        "happiness": 57,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -2079,7 +2123,7 @@
       "resources": [],
       "ruin": null,
       "wildlife": [],
-      "vegetation": 0.2420000000000001,
+      "vegetation": 0.2450000000000001,
       "history": []
     },
     "overworld:1,-4": {
@@ -2091,11 +2135,11 @@
       "temperature": 1,
       "settlement": {
         "name": "Stonefort of Oakhaven",
-        "faction": "Oakhaven",
-        "size": 6799,
+        "faction": "Oakhaven rebels",
+        "size": 7186,
         "type": "city",
         "resources": [],
-        "happiness": 28,
+        "happiness": 60,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -2120,11 +2164,11 @@
       "temperature": 1,
       "settlement": {
         "name": "Deepmine of Oakhaven",
-        "faction": "Oakhaven",
-        "size": 6799,
+        "faction": "Oakhaven rebels",
+        "size": 7186,
         "type": "city",
         "resources": [],
-        "happiness": 30,
+        "happiness": 60,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -2136,7 +2180,7 @@
       "resources": [],
       "ruin": null,
       "wildlife": [],
-      "vegetation": 0.49200000000000016,
+      "vegetation": 0.49500000000000016,
       "history": []
     },
     "overworld:-4,-1": {
@@ -2149,10 +2193,10 @@
       "settlement": {
         "name": "OrbitStation of Ironclad",
         "faction": "Ironclad",
-        "size": 8266,
+        "size": 8731,
         "type": "city",
         "resources": [],
-        "happiness": 32,
+        "happiness": 16,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -2165,7 +2209,7 @@
       "resources": [],
       "ruin": null,
       "wildlife": [],
-      "vegetation": 0.2420000000000001,
+      "vegetation": 0.2450000000000001,
       "history": []
     },
     "overworld:1,0": {
@@ -2178,10 +2222,10 @@
       "settlement": {
         "name": "Aethercliff of Valoria",
         "faction": "Valoria rebels",
-        "size": 9409,
+        "size": 9747,
         "type": "city",
         "resources": [],
-        "happiness": 73,
+        "happiness": 57,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -2207,10 +2251,10 @@
       "settlement": {
         "name": "Goldpeak of Valoria",
         "faction": "Valoria",
-        "size": 10453,
+        "size": 11054,
         "type": "city",
         "resources": [],
-        "happiness": 46,
+        "happiness": 31,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -2236,13 +2280,13 @@
       "settlement": {
         "name": "Deepmine of Valoria",
         "faction": "Valoria",
-        "size": 10453,
+        "size": 11054,
         "type": "city",
         "resources": [
           "timber",
           "prismaticcrystal"
         ],
-        "happiness": 45,
+        "happiness": 30,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -2272,14 +2316,14 @@
       "realm": "underworld",
       "biome": "deep_lake",
       "elevation": 0.2388241132806605,
-      "temperature": 0.7774965776639653,
+      "temperature": 0.7822246737206949,
       "settlement": {
         "name": "Goldpeak of Grimwallow",
         "faction": "Grimwallow",
-        "size": 1192,
+        "size": 1293,
         "type": "town",
         "resources": [],
-        "happiness": 61,
+        "happiness": 46,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -2292,7 +2336,7 @@
       "resources": [],
       "ruin": null,
       "wildlife": [],
-      "vegetation": 0.2390000000000001,
+      "vegetation": 0.2420000000000001,
       "history": []
     },
     "overworld:1,1": {
@@ -2305,10 +2349,10 @@
       "settlement": {
         "name": "Crossroads of Valoria",
         "faction": "Valoria",
-        "size": 8720,
+        "size": 9276,
         "type": "city",
         "resources": [],
-        "happiness": 46,
+        "happiness": 31,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -2333,14 +2377,14 @@
       "temperature": 1,
       "settlement": {
         "name": "Riverbend of Oakhaven",
-        "faction": "Oakhaven",
-        "size": 5366,
+        "faction": "Oakhaven rebels",
+        "size": 2862,
         "type": "city",
         "resources": [
           "fish",
           "prismaticgem"
         ],
-        "happiness": 45,
+        "happiness": 60,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -2355,7 +2399,7 @@
       ],
       "ruin": null,
       "wildlife": [],
-      "vegetation": 0.20900000000000007,
+      "vegetation": 0.21200000000000008,
       "history": []
     },
     "overworld:-3,-4": {
@@ -2367,14 +2411,14 @@
       "temperature": 1,
       "settlement": {
         "name": "Stonefort of Oakhaven",
-        "faction": "Oakhaven",
-        "size": 5366,
+        "faction": "Oakhaven rebels",
+        "size": 5725,
         "type": "city",
         "resources": [
           "fish",
           "novacrystal"
         ],
-        "happiness": 48,
+        "happiness": 60,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -2389,7 +2433,7 @@
       ],
       "ruin": null,
       "wildlife": [],
-      "vegetation": 0.20900000000000007,
+      "vegetation": 0.21200000000000008,
       "history": []
     },
     "underworld:17,10": {
@@ -2398,17 +2442,17 @@
       "realm": "underworld",
       "biome": "crystal_cave",
       "elevation": 0.2750233938725812,
-      "temperature": 0.7321960289634453,
+      "temperature": 0.7369241250201749,
       "settlement": {
         "name": "Crossroads of Players rebels",
         "faction": "Players rebels",
-        "size": 868,
+        "size": 951,
         "type": "town",
         "resources": [
           "shadowgem",
           "novaore"
         ],
-        "happiness": 57,
+        "happiness": 41,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -2423,7 +2467,7 @@
       ],
       "ruin": null,
       "wildlife": [],
-      "vegetation": 0.20900000000000007,
+      "vegetation": 0.21200000000000008,
       "history": []
     },
     "underworld:16,9": {
@@ -2432,17 +2476,17 @@
       "realm": "underworld",
       "biome": "crystal_cave",
       "elevation": 0.279251971804823,
-      "temperature": 0.7110686623654543,
+      "temperature": 0.7157967584221839,
       "settlement": {
         "name": "Riverbend of Grimwallow",
         "faction": "Grimwallow",
-        "size": 925,
+        "size": 1021,
         "type": "town",
         "resources": [
           "shadowgem",
           "astralweave"
         ],
-        "happiness": 64,
+        "happiness": 49,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -2457,7 +2501,7 @@
       ],
       "ruin": null,
       "wildlife": [],
-      "vegetation": 0.19400000000000006,
+      "vegetation": 0.19700000000000006,
       "history": []
     },
     "overworld:0,-5": {
@@ -2469,11 +2513,11 @@
       "temperature": 1,
       "settlement": {
         "name": "Deepmine of Oakhaven",
-        "faction": "Oakhaven",
-        "size": 4457,
+        "faction": "Oakhaven rebels",
+        "size": 2399,
         "type": "city",
         "resources": [],
-        "happiness": 63,
+        "happiness": 60,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -2485,7 +2529,7 @@
       "resources": [],
       "ruin": null,
       "wildlife": [],
-      "vegetation": 0.4410000000000001,
+      "vegetation": 0.4440000000000001,
       "history": []
     },
     "overworld:-4,-3": {
@@ -2494,17 +2538,17 @@
       "realm": "overworld",
       "biome": "coast",
       "elevation": 0.31310683466567013,
-      "temperature": 0.9759745562194724,
+      "temperature": 0.980702652276202,
       "settlement": {
         "name": "Goldpeak of Ironclad",
         "faction": "Ironclad",
-        "size": 5138,
+        "size": 5540,
         "type": "city",
         "resources": [
           "fish",
           "shadowtimber"
         ],
-        "happiness": 58,
+        "happiness": 42,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -2519,7 +2563,7 @@
       ],
       "ruin": null,
       "wildlife": [],
-      "vegetation": 0.17600000000000005,
+      "vegetation": 0.17900000000000005,
       "history": []
     },
     "overworld:2,-2": {
@@ -2528,14 +2572,14 @@
       "realm": "overworld",
       "biome": "forest",
       "elevation": 0.3618285521555578,
-      "temperature": 0.9882896195410611,
+      "temperature": 0.9930177155977907,
       "settlement": {
         "name": "OrbitStation of Oakhaven rebels",
         "faction": "Oakhaven rebels",
-        "size": 1514,
-        "type": "city",
+        "size": 913,
+        "type": "town",
         "resources": [],
-        "happiness": 59,
+        "happiness": 46,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -2557,14 +2601,14 @@
       "realm": "underworld",
       "biome": "deep_lake",
       "elevation": 0.2296297697416705,
-      "temperature": 0.711607690726266,
+      "temperature": 0.7163357867829956,
       "settlement": {
         "name": "Goldpeak of Players rebels",
         "faction": "Players rebels",
-        "size": 624,
+        "size": 702,
         "type": "village",
         "resources": [],
-        "happiness": 61,
+        "happiness": 45,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -2576,7 +2620,7 @@
       "resources": [],
       "ruin": null,
       "wildlife": [],
-      "vegetation": 0.16100000000000003,
+      "vegetation": 0.16400000000000003,
       "history": []
     },
     "overworld:0,2": {
@@ -2585,14 +2629,14 @@
       "realm": "overworld",
       "biome": "forest",
       "elevation": 0.37417719012081635,
-      "temperature": 0.9764221217345372,
+      "temperature": 0.9811502177912669,
       "settlement": {
         "name": "OrbitStation of Ironclad",
         "faction": "Ironclad",
-        "size": 4213,
+        "size": 4597,
         "type": "city",
         "resources": [],
-        "happiness": 54,
+        "happiness": 38,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -2613,16 +2657,16 @@
       "realm": "overworld",
       "biome": "plains",
       "elevation": 0.323699001890505,
-      "temperature": 0.8879824349305071,
+      "temperature": 0.8927105309872367,
       "settlement": {
         "name": "Aethercliff of Oakhaven",
         "faction": "Oakhaven",
-        "size": 2869,
+        "size": 3142,
         "type": "city",
         "resources": [
           "caverntimber"
         ],
-        "happiness": 78,
+        "happiness": 63,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -2641,7 +2685,7 @@
           "count": 13
         }
       ],
-      "vegetation": 0.39300000000000007,
+      "vegetation": 0.3960000000000001,
       "history": []
     },
     "overworld:-4,-4": {
@@ -2650,14 +2694,14 @@
       "realm": "overworld",
       "biome": "coast",
       "elevation": 0.31695507743600565,
-      "temperature": 0.9269932654426626,
+      "temperature": 0.9317213614993922,
       "settlement": {
         "name": "Deepmine of Oakhaven",
         "faction": "Oakhaven",
-        "size": 2650,
+        "size": 2919,
         "type": "city",
         "resources": [],
-        "happiness": 78,
+        "happiness": 63,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -2669,7 +2713,7 @@
       "resources": [],
       "ruin": null,
       "wildlife": [],
-      "vegetation": 0.14300000000000002,
+      "vegetation": 0.14600000000000002,
       "history": []
     },
     "overworld:-4,0": {
@@ -2678,17 +2722,17 @@
       "realm": "overworld",
       "biome": "coast",
       "elevation": 0.3043147700559551,
-      "temperature": 0.9475822428213352,
+      "temperature": 0.9523103388780648,
       "settlement": {
         "name": "OrbitStation of Ironclad",
         "faction": "Ironclad",
-        "size": 3804,
+        "size": 4180,
         "type": "city",
         "resources": [
           "fish",
           "deepmetal"
         ],
-        "happiness": 66,
+        "happiness": 50,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -2703,7 +2747,7 @@
       ],
       "ruin": null,
       "wildlife": [],
-      "vegetation": 0.14300000000000002,
+      "vegetation": 0.14600000000000002,
       "history": []
     },
     "underworld:13,10": {
@@ -2712,14 +2756,14 @@
       "realm": "underworld",
       "biome": "deep_lake",
       "elevation": 0.24104688993789827,
-      "temperature": 0.6778681361289495,
+      "temperature": 0.6825962321856791,
       "settlement": {
         "name": "Stonefort of Players rebels",
         "faction": "Players rebels",
-        "size": 520,
+        "size": 596,
         "type": "village",
         "resources": [],
-        "happiness": 63,
+        "happiness": 47,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -2732,7 +2776,7 @@
       "resources": [],
       "ruin": null,
       "wildlife": [],
-      "vegetation": 0.14300000000000002,
+      "vegetation": 0.14600000000000002,
       "history": []
     },
     "underworld:17,9": {
@@ -2741,17 +2785,17 @@
       "realm": "underworld",
       "biome": "crystal_cave",
       "elevation": 0.28972648083161795,
-      "temperature": 0.6296565870108987,
+      "temperature": 0.6343846830676283,
       "settlement": {
         "name": "Deepmine of Players rebels",
         "faction": "Players rebels",
-        "size": 520,
+        "size": 596,
         "type": "village",
         "resources": [
           "shadowgem",
           "chronocrystal"
         ],
-        "happiness": 63,
+        "happiness": 47,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -2766,7 +2810,7 @@
       ],
       "ruin": null,
       "wildlife": [],
-      "vegetation": 0.14300000000000002,
+      "vegetation": 0.14600000000000002,
       "history": []
     },
     "overworld:-1,-5": {
@@ -2775,16 +2819,16 @@
       "realm": "overworld",
       "biome": "plains",
       "elevation": 0.323134478019976,
-      "temperature": 0.8942876999959509,
+      "temperature": 0.8990157960526806,
       "settlement": {
         "name": "Goldpeak of Oakhaven rebels",
         "faction": "Oakhaven rebels",
-        "size": 3332,
+        "size": 3632,
         "type": "city",
         "resources": [
           "prismaticshards"
         ],
-        "happiness": 63,
+        "happiness": 47,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -2804,7 +2848,7 @@
           "count": 11
         }
       ],
-      "vegetation": 0.39300000000000007,
+      "vegetation": 0.3960000000000001,
       "history": []
     },
     "overworld:2,-1": {
@@ -2813,14 +2857,14 @@
       "realm": "overworld",
       "biome": "forest",
       "elevation": 0.3739760848869787,
-      "temperature": 0.9151616204543325,
+      "temperature": 0.9198897165110621,
       "settlement": {
         "name": "Stonefort of Valoria",
         "faction": "Valoria",
-        "size": 3790,
+        "size": 4218,
         "type": "city",
         "resources": [],
-        "happiness": 72,
+        "happiness": 57,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -2841,17 +2885,17 @@
       "realm": "overworld",
       "biome": "coast",
       "elevation": 0.3027057496387481,
-      "temperature": 0.9226845158711461,
+      "temperature": 0.9274126119278757,
       "settlement": {
         "name": "Stonefort of Valoria",
         "faction": "Valoria",
-        "size": 3790,
+        "size": 4218,
         "type": "city",
         "resources": [
           "fish",
           "magmadust"
         ],
-        "happiness": 71,
+        "happiness": 56,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -2866,7 +2910,7 @@
       ],
       "ruin": null,
       "wildlife": [],
-      "vegetation": 0.128,
+      "vegetation": 0.131,
       "history": []
     },
     "overworld:-3,-5": {
@@ -2875,14 +2919,14 @@
       "realm": "overworld",
       "biome": "plains",
       "elevation": 0.32143328447637376,
-      "temperature": 0.9298140808360753,
+      "temperature": 0.9345421768928049,
       "settlement": {
         "name": "Evergreen of Oakhaven",
         "faction": "Oakhaven",
-        "size": 2018,
-        "type": "town",
+        "size": 2274,
+        "type": "city",
         "resources": [],
-        "happiness": 78,
+        "happiness": 63,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -2894,7 +2938,7 @@
       "resources": [],
       "ruin": null,
       "wildlife": [],
-      "vegetation": 0.37800000000000006,
+      "vegetation": 0.38100000000000006,
       "history": []
     },
     "overworld:-2,2": {
@@ -2903,14 +2947,14 @@
       "realm": "overworld",
       "biome": "forest",
       "elevation": 0.33659905636503773,
-      "temperature": 0.9014866730130932,
+      "temperature": 0.9062147690698228,
       "settlement": {
         "name": "OrbitStation of Valoria",
         "faction": "Valoria",
-        "size": 3235,
+        "size": 3649,
         "type": "city",
         "resources": [],
-        "happiness": 69,
+        "happiness": 54,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -2922,7 +2966,7 @@
       "resources": [],
       "ruin": null,
       "wildlife": [],
-      "vegetation": 0.9840000000000002,
+      "vegetation": 0.9880000000000002,
       "history": []
     },
     "overworld:-1,2": {
@@ -2931,14 +2975,14 @@
       "realm": "overworld",
       "biome": "forest",
       "elevation": 0.35507770801236693,
-      "temperature": 0.9194019301820777,
+      "temperature": 0.9241300262388074,
       "settlement": {
         "name": "OrbitStation of Ironclad",
         "faction": "Ironclad",
-        "size": 810,
+        "size": 281,
         "type": "town",
         "resources": [],
-        "happiness": 66,
+        "happiness": 50,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -2950,7 +2994,7 @@
       "resources": [],
       "ruin": null,
       "wildlife": [],
-      "vegetation": 0.9840000000000002,
+      "vegetation": 0.9880000000000002,
       "history": []
     },
     "overworld:-4,-2": {
@@ -2959,17 +3003,17 @@
       "realm": "overworld",
       "biome": "coast",
       "elevation": 0.3096262545157701,
-      "temperature": 0.8723452756546247,
+      "temperature": 0.8770733717113544,
       "settlement": {
         "name": "Crossroads of Oakhaven",
         "faction": "Oakhaven",
-        "size": 1810,
+        "size": 2062,
         "type": "town",
         "resources": [
           "fish",
           "cavernweave"
         ],
-        "happiness": 73,
+        "happiness": 58,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -2984,7 +3028,7 @@
       ],
       "ruin": null,
       "wildlife": [],
-      "vegetation": 0.098,
+      "vegetation": 0.101,
       "history": []
     },
     "overworld:-1,-6": {
@@ -2993,14 +3037,14 @@
       "realm": "overworld",
       "biome": "plains",
       "elevation": 0.3212795865729254,
-      "temperature": 0.8811329523675968,
+      "temperature": 0.8858610484243264,
       "settlement": {
         "name": "Crossroads of Oakhaven rebels",
         "faction": "Oakhaven rebels",
-        "size": 1785,
+        "size": 2054,
         "type": "town",
         "resources": [],
-        "happiness": 82,
+        "happiness": 66,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -3012,7 +3056,7 @@
       "resources": [],
       "ruin": null,
       "wildlife": [],
-      "vegetation": 0.34500000000000003,
+      "vegetation": 0.34800000000000003,
       "history": []
     },
     "overworld:-3,2": {
@@ -3021,14 +3065,14 @@
       "realm": "overworld",
       "biome": "coast",
       "elevation": 0.3188481349157333,
-      "temperature": 0.9236902169237219,
+      "temperature": 0.9284183129804515,
       "settlement": {
         "name": "Riverbend of Valoria",
         "faction": "Valoria",
-        "size": 1488,
+        "size": 1856,
         "type": "town",
         "resources": [],
-        "happiness": 85,
+        "happiness": 70,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -3040,7 +3084,7 @@
       "resources": [],
       "ruin": null,
       "wildlife": [],
-      "vegetation": 0.08,
+      "vegetation": 0.083,
       "history": []
     },
     "overworld:1,-6": {
@@ -3049,14 +3093,14 @@
       "realm": "overworld",
       "biome": "plains",
       "elevation": 0.32066955697487665,
-      "temperature": 0.8540129644507632,
+      "temperature": 0.8587410605074929,
       "settlement": {
         "name": "OrbitStation of Oakhaven",
         "faction": "Oakhaven",
-        "size": 1080,
+        "size": 658,
         "type": "town",
         "resources": [],
-        "happiness": 87,
+        "happiness": 72,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -3068,7 +3112,7 @@
       "resources": [],
       "ruin": null,
       "wildlife": [],
-      "vegetation": 0.33,
+      "vegetation": 0.333,
       "history": []
     },
     "overworld:-5,-3": {
@@ -3077,14 +3121,14 @@
       "realm": "overworld",
       "biome": "coast",
       "elevation": 0.30884575981777235,
-      "temperature": 0.8755424655111876,
+      "temperature": 0.8802705615679173,
       "settlement": {
         "name": "Aethercliff of Oakhaven",
         "faction": "Oakhaven",
-        "size": 1080,
+        "size": 658,
         "type": "town",
         "resources": [],
-        "happiness": 87,
+        "happiness": 72,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -3096,7 +3140,7 @@
       "resources": [],
       "ruin": null,
       "wildlife": [],
-      "vegetation": 0.08,
+      "vegetation": 0.083,
       "history": []
     },
     "underworld:16,11": {
@@ -3105,17 +3149,17 @@
       "realm": "underworld",
       "biome": "crystal_cave",
       "elevation": 0.25094073210932205,
-      "temperature": 0.5341346384933064,
+      "temperature": 0.5388627345500361,
       "settlement": {
         "name": "Stonefort of Grimwallow",
         "faction": "Grimwallow",
-        "size": 229,
+        "size": 311,
         "type": "village",
         "resources": [
           "shadowgem",
           "aethertimber"
         ],
-        "happiness": 89,
+        "happiness": 74,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -3130,7 +3174,7 @@
       ],
       "ruin": null,
       "wildlife": [],
-      "vegetation": 0.08,
+      "vegetation": 0.083,
       "history": []
     },
     "overworld:2,-4": {
@@ -3139,16 +3183,16 @@
       "realm": "overworld",
       "biome": "forest",
       "elevation": 0.33987912470198606,
-      "temperature": 0.8447230218399189,
+      "temperature": 0.8494511178966485,
       "settlement": {
         "name": "Riverbend of Oakhaven rebels",
         "faction": "Oakhaven rebels",
-        "size": 1275,
+        "size": 767,
         "type": "town",
         "resources": [
           "timber"
         ],
-        "happiness": 83,
+        "happiness": 67,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -3168,7 +3212,7 @@
           "count": 27
         }
       ],
-      "vegetation": 0.9000000000000001,
+      "vegetation": 0.9040000000000001,
       "history": []
     },
     "overworld:1,2": {
@@ -3177,14 +3221,14 @@
       "realm": "overworld",
       "biome": "forest",
       "elevation": 0.3937612034715022,
-      "temperature": 0.8493254074683688,
+      "temperature": 0.8540535035250985,
       "settlement": {
         "name": "Aethercliff of Valoria",
         "faction": "Valoria",
-        "size": 694,
-        "type": "village",
+        "size": 1042,
+        "type": "town",
         "resources": [],
-        "happiness": 85,
+        "happiness": 70,
         "classes": {
           "nobles": 5,
           "merchants": 20,
@@ -3196,7 +3240,7 @@
       "resources": [],
       "ruin": null,
       "wildlife": [],
-      "vegetation": 0.8400000000000001,
+      "vegetation": 0.8440000000000001,
       "history": []
     },
     "overworld:-2,3": {
@@ -3205,16 +3249,23 @@
       "realm": "overworld",
       "biome": "forest",
       "elevation": 0.34158674523460014,
-      "temperature": 0.8032048390424166,
+      "temperature": 0.8079329350991462,
       "settlement": {
         "name": "Evergreen of Valoria",
         "faction": "Valoria",
-        "size": 243,
+        "size": 289,
         "type": "village",
         "resources": [
           "timber",
           "shadowmetal"
-        ]
+        ],
+        "happiness": 70,
+        "classes": {
+          "nobles": 5,
+          "merchants": 20,
+          "peasants": 75
+        },
+        "dominTrait": "Giant Strength"
       },
       "fireTicksLeft": 0,
       "resources": [
@@ -3228,7 +3279,7 @@
           "count": 15
         }
       ],
-      "vegetation": 0.8,
+      "vegetation": 0.804,
       "history": []
     },
     "underworld:16,8": {
@@ -3237,11 +3288,67 @@
       "realm": "underworld",
       "biome": "crystal_cave",
       "elevation": 0.29542269800522397,
-      "temperature": 0.5961692186238731,
+      "temperature": 0.6008973146806027,
       "settlement": {
         "name": "Deepmine of Grimwallow",
         "faction": "Grimwallow",
-        "size": 120,
+        "size": 200,
+        "type": "village",
+        "resources": [],
+        "happiness": 70,
+        "classes": {
+          "nobles": 5,
+          "merchants": 20,
+          "peasants": 75
+        },
+        "dominTrait": "Intellectual"
+      },
+      "fireTicksLeft": 0,
+      "resources": [],
+      "ruin": null,
+      "wildlife": [],
+      "vegetation": 0.053000000000000005,
+      "history": []
+    },
+    "underworld:13,11": {
+      "x": 13,
+      "y": 11,
+      "realm": "underworld",
+      "biome": "deep_lake",
+      "elevation": 0.22757897187956466,
+      "temperature": 0.511058906332593,
+      "settlement": {
+        "name": "Aethercliff of Players rebels",
+        "faction": "Players rebels",
+        "size": 182,
+        "type": "village",
+        "resources": [],
+        "happiness": 69,
+        "classes": {
+          "nobles": 5,
+          "merchants": 20,
+          "peasants": 75
+        },
+        "dominTrait": "Intellectual"
+      },
+      "fireTicksLeft": 0,
+      "resources": [],
+      "ruin": null,
+      "wildlife": [],
+      "vegetation": 0.053000000000000005,
+      "history": []
+    },
+    "underworld:14,12": {
+      "x": 14,
+      "y": 12,
+      "realm": "underworld",
+      "biome": "deep_lake",
+      "elevation": 0.22188275470596036,
+      "temperature": 0.5423122833490829,
+      "settlement": {
+        "name": "Goldpeak of Grimwallow",
+        "faction": "Grimwallow",
+        "size": 138,
         "type": "village",
         "resources": []
       },
@@ -3252,17 +3359,17 @@
       "vegetation": 0.05,
       "history": []
     },
-    "underworld:13,11": {
-      "x": 13,
-      "y": 11,
+    "underworld:17,13": {
+      "x": 17,
+      "y": 13,
       "realm": "underworld",
       "biome": "deep_lake",
-      "elevation": 0.22757897187956466,
-      "temperature": 0.5063308102758634,
+      "elevation": 0.23827568296712848,
+      "temperature": 0.5267243505712488,
       "settlement": {
-        "name": "Aethercliff of Players rebels",
-        "faction": "Players rebels",
-        "size": 114,
+        "name": "Deepmine of Grimwallow",
+        "faction": "Grimwallow",
+        "size": 138,
         "type": "village",
         "resources": []
       },
@@ -3730,6 +3837,18 @@
       "x": 13,
       "y": 11,
       "radius": 6
+    },
+    {
+      "realm": "underworld",
+      "x": 14,
+      "y": 12,
+      "radius": 6
+    },
+    {
+      "realm": "underworld",
+      "x": 17,
+      "y": 13,
+      "radius": 6
     }
   ],
   "chronicle": [
@@ -4142,7 +4261,30 @@
     "[Year 94] PEACE TREATY: Armistice signed between Oakhaven rebels and Valoria rebels.",
     "[Year 94] PEACE TREATY: Armistice signed between Players rebels and Valoria rebels.",
     "[Year 94] PLAGUE OUTBREAK: Outbreak center detected at Deepmine of Players in underworld [14, 10]! Sickness is spreading.",
-    "[Year 94] CONTAGION: The plague has spread to Stonefort of Players rebels at [13, 10] in underworld!"
+    "[Year 94] CONTAGION: The plague has spread to Stonefort of Players rebels at [13, 10] in underworld!",
+    "[Year 95] Winter Crisis: Citizens in Crossroads of Valoria are freezing due to lack of timber reserves!",
+    "[Year 95] Winter Crisis: Citizens in Aethercliff of Valoria are freezing due to lack of timber reserves!",
+    "[Year 95] CIVIL WAR: Ideological split in Oakhaven! Rebel faction Oakhaven rebels seized control of 6 settlements.",
+    "[Year 95] Winter Crisis: Citizens in Stonefort of Oakhaven are freezing due to lack of timber reserves!",
+    "[Year 95] Winter Crisis: Citizens in Aethercliff of Oakhaven are freezing due to lack of timber reserves!",
+    "[Year 95] GOVERNMENT SHIFT: Faction Oakhaven shifted state ideology from Industrialism to Scholasticism due to civil pressures.",
+    "[Year 95] GOVERNMENT SHIFT: Faction Grimwallow shifted state ideology from Pacifism to Industrialism due to civil pressures.",
+    "[Year 95] EXPANSION: Grimwallow expanded to [14, 12] in underworld, building Goldpeak of Grimwallow.",
+    "[Year 95] EXPANSION: Grimwallow expanded to [17, 13] in underworld, building Deepmine of Grimwallow.",
+    "[Year 95] Winter Crisis: Citizens in Goldpeak of Oakhaven rebels are freezing due to lack of timber reserves!",
+    "[Year 95] Winter Crisis: Citizens in Crossroads of Oakhaven are freezing due to lack of timber reserves!",
+    "[Year 95] Winter Crisis: Citizens in Crossroads of Oakhaven rebels are freezing due to lack of timber reserves!",
+    "[Year 95] Winter Crisis: Citizens in OrbitStation of Valoria are freezing due to lack of timber reserves!",
+    "[Year 95] GOVERNMENT SHIFT: Faction Ironclad rebels shifted state ideology from Scholasticism to Militarism due to civil pressures.",
+    "[Year 95] PEACE TREATY: Armistice signed between Valoria and Players.",
+    "[Year 95] PEACE TREATY: Armistice signed between Valoria and Aethelgard.",
+    "[Year 95] PEACE TREATY: Armistice signed between Oakhaven and Valoria rebels.",
+    "[Year 95] PEACE TREATY: Armistice signed between Sunspire and Valoria rebels.",
+    "[Year 95] DECLARATION OF WAR: Aethelgard declared war on Ironclad rebels!",
+    "[Year 95] CALL TO ARMS: Oakhaven rebels rebels joins war against Ironclad rebels to defend ally Aethelgard.",
+    "[Year 95] CALL TO ARMS: Oakhaven rebels joins war against Ironclad rebels to defend ally Aethelgard.",
+    "[Year 95] DIPLOMACY: Alliances forged between Valoria rebels and Oakhaven rebels!",
+    "[Year 95] PLAGUE TOLL: Sickness claimed 147 citizens in Deepmine of Players. An Apothecary is urgently needed!"
   ],
   "tradeRoutes": [
     {
@@ -4151,78 +4293,6 @@
         "y": 1
       },
       "to": {
-        "x": -2,
-        "y": -4
-      },
-      "f1": "Valoria",
-      "f2": "Oakhaven"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": 1
-      },
-      "to": {
-        "x": 1,
-        "y": -4
-      },
-      "f1": "Valoria",
-      "f2": "Oakhaven"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": 1
-      },
-      "to": {
-        "x": -2,
-        "y": -5
-      },
-      "f1": "Valoria",
-      "f2": "Oakhaven"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": 1
-      },
-      "to": {
-        "x": -3,
-        "y": -3
-      },
-      "f1": "Valoria",
-      "f2": "Oakhaven"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": 1
-      },
-      "to": {
-        "x": -3,
-        "y": -4
-      },
-      "f1": "Valoria",
-      "f2": "Oakhaven"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": 1
-      },
-      "to": {
-        "x": 0,
-        "y": -5
-      },
-      "f1": "Valoria",
-      "f2": "Oakhaven"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": 1
-      },
-      "to": {
         "x": -3,
         "y": -6
       },
@@ -4285,78 +4355,6 @@
       "to": {
         "x": -5,
         "y": -3
-      },
-      "f1": "Valoria",
-      "f2": "Oakhaven"
-    },
-    {
-      "from": {
-        "x": -1,
-        "y": 1
-      },
-      "to": {
-        "x": -2,
-        "y": -4
-      },
-      "f1": "Valoria",
-      "f2": "Oakhaven"
-    },
-    {
-      "from": {
-        "x": -1,
-        "y": 1
-      },
-      "to": {
-        "x": 1,
-        "y": -4
-      },
-      "f1": "Valoria",
-      "f2": "Oakhaven"
-    },
-    {
-      "from": {
-        "x": -1,
-        "y": 1
-      },
-      "to": {
-        "x": -2,
-        "y": -5
-      },
-      "f1": "Valoria",
-      "f2": "Oakhaven"
-    },
-    {
-      "from": {
-        "x": -1,
-        "y": 1
-      },
-      "to": {
-        "x": -3,
-        "y": -3
-      },
-      "f1": "Valoria",
-      "f2": "Oakhaven"
-    },
-    {
-      "from": {
-        "x": -1,
-        "y": 1
-      },
-      "to": {
-        "x": -3,
-        "y": -4
-      },
-      "f1": "Valoria",
-      "f2": "Oakhaven"
-    },
-    {
-      "from": {
-        "x": -1,
-        "y": 1
-      },
-      "to": {
-        "x": 0,
-        "y": -5
       },
       "f1": "Valoria",
       "f2": "Oakhaven"
@@ -4439,78 +4437,6 @@
         "y": 1
       },
       "to": {
-        "x": -2,
-        "y": -4
-      },
-      "f1": "Valoria",
-      "f2": "Oakhaven"
-    },
-    {
-      "from": {
-        "x": 1,
-        "y": 1
-      },
-      "to": {
-        "x": 1,
-        "y": -4
-      },
-      "f1": "Valoria",
-      "f2": "Oakhaven"
-    },
-    {
-      "from": {
-        "x": 1,
-        "y": 1
-      },
-      "to": {
-        "x": -2,
-        "y": -5
-      },
-      "f1": "Valoria",
-      "f2": "Oakhaven"
-    },
-    {
-      "from": {
-        "x": 1,
-        "y": 1
-      },
-      "to": {
-        "x": -3,
-        "y": -3
-      },
-      "f1": "Valoria",
-      "f2": "Oakhaven"
-    },
-    {
-      "from": {
-        "x": 1,
-        "y": 1
-      },
-      "to": {
-        "x": -3,
-        "y": -4
-      },
-      "f1": "Valoria",
-      "f2": "Oakhaven"
-    },
-    {
-      "from": {
-        "x": 1,
-        "y": 1
-      },
-      "to": {
-        "x": 0,
-        "y": -5
-      },
-      "f1": "Valoria",
-      "f2": "Oakhaven"
-    },
-    {
-      "from": {
-        "x": 1,
-        "y": 1
-      },
-      "to": {
         "x": -3,
         "y": -6
       },
@@ -4573,78 +4499,6 @@
       "to": {
         "x": -5,
         "y": -3
-      },
-      "f1": "Valoria",
-      "f2": "Oakhaven"
-    },
-    {
-      "from": {
-        "x": 2,
-        "y": -1
-      },
-      "to": {
-        "x": -2,
-        "y": -4
-      },
-      "f1": "Valoria",
-      "f2": "Oakhaven"
-    },
-    {
-      "from": {
-        "x": 2,
-        "y": -1
-      },
-      "to": {
-        "x": 1,
-        "y": -4
-      },
-      "f1": "Valoria",
-      "f2": "Oakhaven"
-    },
-    {
-      "from": {
-        "x": 2,
-        "y": -1
-      },
-      "to": {
-        "x": -2,
-        "y": -5
-      },
-      "f1": "Valoria",
-      "f2": "Oakhaven"
-    },
-    {
-      "from": {
-        "x": 2,
-        "y": -1
-      },
-      "to": {
-        "x": -3,
-        "y": -3
-      },
-      "f1": "Valoria",
-      "f2": "Oakhaven"
-    },
-    {
-      "from": {
-        "x": 2,
-        "y": -1
-      },
-      "to": {
-        "x": -3,
-        "y": -4
-      },
-      "f1": "Valoria",
-      "f2": "Oakhaven"
-    },
-    {
-      "from": {
-        "x": 2,
-        "y": -1
-      },
-      "to": {
-        "x": 0,
-        "y": -5
       },
       "f1": "Valoria",
       "f2": "Oakhaven"
@@ -4727,78 +4581,6 @@
         "y": 1
       },
       "to": {
-        "x": -2,
-        "y": -4
-      },
-      "f1": "Valoria",
-      "f2": "Oakhaven"
-    },
-    {
-      "from": {
-        "x": -4,
-        "y": 1
-      },
-      "to": {
-        "x": 1,
-        "y": -4
-      },
-      "f1": "Valoria",
-      "f2": "Oakhaven"
-    },
-    {
-      "from": {
-        "x": -4,
-        "y": 1
-      },
-      "to": {
-        "x": -2,
-        "y": -5
-      },
-      "f1": "Valoria",
-      "f2": "Oakhaven"
-    },
-    {
-      "from": {
-        "x": -4,
-        "y": 1
-      },
-      "to": {
-        "x": -3,
-        "y": -3
-      },
-      "f1": "Valoria",
-      "f2": "Oakhaven"
-    },
-    {
-      "from": {
-        "x": -4,
-        "y": 1
-      },
-      "to": {
-        "x": -3,
-        "y": -4
-      },
-      "f1": "Valoria",
-      "f2": "Oakhaven"
-    },
-    {
-      "from": {
-        "x": -4,
-        "y": 1
-      },
-      "to": {
-        "x": 0,
-        "y": -5
-      },
-      "f1": "Valoria",
-      "f2": "Oakhaven"
-    },
-    {
-      "from": {
-        "x": -4,
-        "y": 1
-      },
-      "to": {
         "x": -3,
         "y": -6
       },
@@ -4861,78 +4643,6 @@
       "to": {
         "x": -5,
         "y": -3
-      },
-      "f1": "Valoria",
-      "f2": "Oakhaven"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": 2
-      },
-      "to": {
-        "x": -2,
-        "y": -4
-      },
-      "f1": "Valoria",
-      "f2": "Oakhaven"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": 2
-      },
-      "to": {
-        "x": 1,
-        "y": -4
-      },
-      "f1": "Valoria",
-      "f2": "Oakhaven"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": 2
-      },
-      "to": {
-        "x": -2,
-        "y": -5
-      },
-      "f1": "Valoria",
-      "f2": "Oakhaven"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": 2
-      },
-      "to": {
-        "x": -3,
-        "y": -3
-      },
-      "f1": "Valoria",
-      "f2": "Oakhaven"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": 2
-      },
-      "to": {
-        "x": -3,
-        "y": -4
-      },
-      "f1": "Valoria",
-      "f2": "Oakhaven"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": 2
-      },
-      "to": {
-        "x": 0,
-        "y": -5
       },
       "f1": "Valoria",
       "f2": "Oakhaven"
@@ -5015,78 +4725,6 @@
         "y": 2
       },
       "to": {
-        "x": -2,
-        "y": -4
-      },
-      "f1": "Valoria",
-      "f2": "Oakhaven"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": 2
-      },
-      "to": {
-        "x": 1,
-        "y": -4
-      },
-      "f1": "Valoria",
-      "f2": "Oakhaven"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": 2
-      },
-      "to": {
-        "x": -2,
-        "y": -5
-      },
-      "f1": "Valoria",
-      "f2": "Oakhaven"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": 2
-      },
-      "to": {
-        "x": -3,
-        "y": -3
-      },
-      "f1": "Valoria",
-      "f2": "Oakhaven"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": 2
-      },
-      "to": {
-        "x": -3,
-        "y": -4
-      },
-      "f1": "Valoria",
-      "f2": "Oakhaven"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": 2
-      },
-      "to": {
-        "x": 0,
-        "y": -5
-      },
-      "f1": "Valoria",
-      "f2": "Oakhaven"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": 2
-      },
-      "to": {
         "x": -3,
         "y": -6
       },
@@ -5159,78 +4797,6 @@
         "y": 2
       },
       "to": {
-        "x": -2,
-        "y": -4
-      },
-      "f1": "Valoria",
-      "f2": "Oakhaven"
-    },
-    {
-      "from": {
-        "x": 1,
-        "y": 2
-      },
-      "to": {
-        "x": 1,
-        "y": -4
-      },
-      "f1": "Valoria",
-      "f2": "Oakhaven"
-    },
-    {
-      "from": {
-        "x": 1,
-        "y": 2
-      },
-      "to": {
-        "x": -2,
-        "y": -5
-      },
-      "f1": "Valoria",
-      "f2": "Oakhaven"
-    },
-    {
-      "from": {
-        "x": 1,
-        "y": 2
-      },
-      "to": {
-        "x": -3,
-        "y": -3
-      },
-      "f1": "Valoria",
-      "f2": "Oakhaven"
-    },
-    {
-      "from": {
-        "x": 1,
-        "y": 2
-      },
-      "to": {
-        "x": -3,
-        "y": -4
-      },
-      "f1": "Valoria",
-      "f2": "Oakhaven"
-    },
-    {
-      "from": {
-        "x": 1,
-        "y": 2
-      },
-      "to": {
-        "x": 0,
-        "y": -5
-      },
-      "f1": "Valoria",
-      "f2": "Oakhaven"
-    },
-    {
-      "from": {
-        "x": 1,
-        "y": 2
-      },
-      "to": {
         "x": -3,
         "y": -6
       },
@@ -5293,78 +4859,6 @@
       "to": {
         "x": -5,
         "y": -3
-      },
-      "f1": "Valoria",
-      "f2": "Oakhaven"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": 3
-      },
-      "to": {
-        "x": -2,
-        "y": -4
-      },
-      "f1": "Valoria",
-      "f2": "Oakhaven"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": 3
-      },
-      "to": {
-        "x": 1,
-        "y": -4
-      },
-      "f1": "Valoria",
-      "f2": "Oakhaven"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": 3
-      },
-      "to": {
-        "x": -2,
-        "y": -5
-      },
-      "f1": "Valoria",
-      "f2": "Oakhaven"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": 3
-      },
-      "to": {
-        "x": -3,
-        "y": -3
-      },
-      "f1": "Valoria",
-      "f2": "Oakhaven"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": 3
-      },
-      "to": {
-        "x": -3,
-        "y": -4
-      },
-      "f1": "Valoria",
-      "f2": "Oakhaven"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": 3
-      },
-      "to": {
-        "x": 0,
-        "y": -5
       },
       "f1": "Valoria",
       "f2": "Oakhaven"
@@ -8356,6 +7850,654 @@
       },
       "f1": "Valoria",
       "f2": "Ironclad rebels"
+    },
+    {
+      "from": {
+        "x": -2,
+        "y": 1
+      },
+      "to": {
+        "x": -2,
+        "y": -4
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -2,
+        "y": 1
+      },
+      "to": {
+        "x": 1,
+        "y": -4
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -2,
+        "y": 1
+      },
+      "to": {
+        "x": -2,
+        "y": -5
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -2,
+        "y": 1
+      },
+      "to": {
+        "x": -3,
+        "y": -3
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -2,
+        "y": 1
+      },
+      "to": {
+        "x": -3,
+        "y": -4
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -2,
+        "y": 1
+      },
+      "to": {
+        "x": 0,
+        "y": -5
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -1,
+        "y": 1
+      },
+      "to": {
+        "x": -2,
+        "y": -4
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -1,
+        "y": 1
+      },
+      "to": {
+        "x": 1,
+        "y": -4
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -1,
+        "y": 1
+      },
+      "to": {
+        "x": -2,
+        "y": -5
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -1,
+        "y": 1
+      },
+      "to": {
+        "x": -3,
+        "y": -3
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -1,
+        "y": 1
+      },
+      "to": {
+        "x": -3,
+        "y": -4
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -1,
+        "y": 1
+      },
+      "to": {
+        "x": 0,
+        "y": -5
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 1,
+        "y": 1
+      },
+      "to": {
+        "x": -2,
+        "y": -4
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 1,
+        "y": 1
+      },
+      "to": {
+        "x": 1,
+        "y": -4
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 1,
+        "y": 1
+      },
+      "to": {
+        "x": -2,
+        "y": -5
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 1,
+        "y": 1
+      },
+      "to": {
+        "x": -3,
+        "y": -3
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 1,
+        "y": 1
+      },
+      "to": {
+        "x": -3,
+        "y": -4
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 1,
+        "y": 1
+      },
+      "to": {
+        "x": 0,
+        "y": -5
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 2,
+        "y": -1
+      },
+      "to": {
+        "x": -2,
+        "y": -4
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 2,
+        "y": -1
+      },
+      "to": {
+        "x": 1,
+        "y": -4
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 2,
+        "y": -1
+      },
+      "to": {
+        "x": -2,
+        "y": -5
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 2,
+        "y": -1
+      },
+      "to": {
+        "x": -3,
+        "y": -3
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 2,
+        "y": -1
+      },
+      "to": {
+        "x": -3,
+        "y": -4
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 2,
+        "y": -1
+      },
+      "to": {
+        "x": 0,
+        "y": -5
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -4,
+        "y": 1
+      },
+      "to": {
+        "x": -2,
+        "y": -4
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -4,
+        "y": 1
+      },
+      "to": {
+        "x": 1,
+        "y": -4
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -4,
+        "y": 1
+      },
+      "to": {
+        "x": -2,
+        "y": -5
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -4,
+        "y": 1
+      },
+      "to": {
+        "x": -3,
+        "y": -3
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -4,
+        "y": 1
+      },
+      "to": {
+        "x": -3,
+        "y": -4
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -4,
+        "y": 1
+      },
+      "to": {
+        "x": 0,
+        "y": -5
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -2,
+        "y": 2
+      },
+      "to": {
+        "x": -2,
+        "y": -4
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -2,
+        "y": 2
+      },
+      "to": {
+        "x": 1,
+        "y": -4
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -2,
+        "y": 2
+      },
+      "to": {
+        "x": -2,
+        "y": -5
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -2,
+        "y": 2
+      },
+      "to": {
+        "x": -3,
+        "y": -3
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -2,
+        "y": 2
+      },
+      "to": {
+        "x": -3,
+        "y": -4
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -2,
+        "y": 2
+      },
+      "to": {
+        "x": 0,
+        "y": -5
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -3,
+        "y": 2
+      },
+      "to": {
+        "x": -2,
+        "y": -4
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -3,
+        "y": 2
+      },
+      "to": {
+        "x": 1,
+        "y": -4
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -3,
+        "y": 2
+      },
+      "to": {
+        "x": -2,
+        "y": -5
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -3,
+        "y": 2
+      },
+      "to": {
+        "x": -3,
+        "y": -3
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -3,
+        "y": 2
+      },
+      "to": {
+        "x": -3,
+        "y": -4
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -3,
+        "y": 2
+      },
+      "to": {
+        "x": 0,
+        "y": -5
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 1,
+        "y": 2
+      },
+      "to": {
+        "x": -2,
+        "y": -4
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 1,
+        "y": 2
+      },
+      "to": {
+        "x": 1,
+        "y": -4
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 1,
+        "y": 2
+      },
+      "to": {
+        "x": -2,
+        "y": -5
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 1,
+        "y": 2
+      },
+      "to": {
+        "x": -3,
+        "y": -3
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 1,
+        "y": 2
+      },
+      "to": {
+        "x": -3,
+        "y": -4
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 1,
+        "y": 2
+      },
+      "to": {
+        "x": 0,
+        "y": -5
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -2,
+        "y": 3
+      },
+      "to": {
+        "x": -2,
+        "y": -4
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -2,
+        "y": 3
+      },
+      "to": {
+        "x": 1,
+        "y": -4
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -2,
+        "y": 3
+      },
+      "to": {
+        "x": -2,
+        "y": -5
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -2,
+        "y": 3
+      },
+      "to": {
+        "x": -3,
+        "y": -3
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -2,
+        "y": 3
+      },
+      "to": {
+        "x": -3,
+        "y": -4
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -2,
+        "y": 3
+      },
+      "to": {
+        "x": 0,
+        "y": -5
+      },
+      "f1": "Valoria",
+      "f2": "Oakhaven rebels"
     },
     {
       "from": {
@@ -8431,6 +8573,30 @@
     },
     {
       "from": {
+        "x": 15,
+        "y": 9
+      },
+      "to": {
+        "x": 14,
+        "y": 12
+      },
+      "f1": "Players",
+      "f2": "Grimwallow"
+    },
+    {
+      "from": {
+        "x": 15,
+        "y": 9
+      },
+      "to": {
+        "x": 17,
+        "y": 13
+      },
+      "f1": "Players",
+      "f2": "Grimwallow"
+    },
+    {
+      "from": {
         "x": 14,
         "y": 10
       },
@@ -8503,6 +8669,30 @@
     },
     {
       "from": {
+        "x": 14,
+        "y": 10
+      },
+      "to": {
+        "x": 14,
+        "y": 12
+      },
+      "f1": "Players",
+      "f2": "Grimwallow"
+    },
+    {
+      "from": {
+        "x": 14,
+        "y": 10
+      },
+      "to": {
+        "x": 17,
+        "y": 13
+      },
+      "f1": "Players",
+      "f2": "Grimwallow"
+    },
+    {
+      "from": {
         "x": 13,
         "y": 12
       },
@@ -8575,6 +8765,30 @@
     },
     {
       "from": {
+        "x": 13,
+        "y": 12
+      },
+      "to": {
+        "x": 14,
+        "y": 12
+      },
+      "f1": "Players",
+      "f2": "Grimwallow"
+    },
+    {
+      "from": {
+        "x": 13,
+        "y": 12
+      },
+      "to": {
+        "x": 17,
+        "y": 13
+      },
+      "f1": "Players",
+      "f2": "Grimwallow"
+    },
+    {
+      "from": {
         "x": 15,
         "y": 9
       },
@@ -8827,366 +9041,6 @@
     },
     {
       "from": {
-        "x": -2,
-        "y": -4
-      },
-      "to": {
-        "x": -4,
-        "y": -1
-      },
-      "f1": "Oakhaven",
-      "f2": "Ironclad"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": -4
-      },
-      "to": {
-        "x": -4,
-        "y": -3
-      },
-      "f1": "Oakhaven",
-      "f2": "Ironclad"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": -4
-      },
-      "to": {
-        "x": 0,
-        "y": 2
-      },
-      "f1": "Oakhaven",
-      "f2": "Ironclad"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": -4
-      },
-      "to": {
-        "x": -4,
-        "y": 0
-      },
-      "f1": "Oakhaven",
-      "f2": "Ironclad"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": -4
-      },
-      "to": {
-        "x": -1,
-        "y": 2
-      },
-      "f1": "Oakhaven",
-      "f2": "Ironclad"
-    },
-    {
-      "from": {
-        "x": 1,
-        "y": -4
-      },
-      "to": {
-        "x": -4,
-        "y": -1
-      },
-      "f1": "Oakhaven",
-      "f2": "Ironclad"
-    },
-    {
-      "from": {
-        "x": 1,
-        "y": -4
-      },
-      "to": {
-        "x": -4,
-        "y": -3
-      },
-      "f1": "Oakhaven",
-      "f2": "Ironclad"
-    },
-    {
-      "from": {
-        "x": 1,
-        "y": -4
-      },
-      "to": {
-        "x": 0,
-        "y": 2
-      },
-      "f1": "Oakhaven",
-      "f2": "Ironclad"
-    },
-    {
-      "from": {
-        "x": 1,
-        "y": -4
-      },
-      "to": {
-        "x": -4,
-        "y": 0
-      },
-      "f1": "Oakhaven",
-      "f2": "Ironclad"
-    },
-    {
-      "from": {
-        "x": 1,
-        "y": -4
-      },
-      "to": {
-        "x": -1,
-        "y": 2
-      },
-      "f1": "Oakhaven",
-      "f2": "Ironclad"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": -5
-      },
-      "to": {
-        "x": -4,
-        "y": -1
-      },
-      "f1": "Oakhaven",
-      "f2": "Ironclad"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": -5
-      },
-      "to": {
-        "x": -4,
-        "y": -3
-      },
-      "f1": "Oakhaven",
-      "f2": "Ironclad"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": -5
-      },
-      "to": {
-        "x": 0,
-        "y": 2
-      },
-      "f1": "Oakhaven",
-      "f2": "Ironclad"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": -5
-      },
-      "to": {
-        "x": -4,
-        "y": 0
-      },
-      "f1": "Oakhaven",
-      "f2": "Ironclad"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": -5
-      },
-      "to": {
-        "x": -1,
-        "y": 2
-      },
-      "f1": "Oakhaven",
-      "f2": "Ironclad"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -3
-      },
-      "to": {
-        "x": -4,
-        "y": -1
-      },
-      "f1": "Oakhaven",
-      "f2": "Ironclad"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -3
-      },
-      "to": {
-        "x": -4,
-        "y": -3
-      },
-      "f1": "Oakhaven",
-      "f2": "Ironclad"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -3
-      },
-      "to": {
-        "x": 0,
-        "y": 2
-      },
-      "f1": "Oakhaven",
-      "f2": "Ironclad"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -3
-      },
-      "to": {
-        "x": -4,
-        "y": 0
-      },
-      "f1": "Oakhaven",
-      "f2": "Ironclad"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -3
-      },
-      "to": {
-        "x": -1,
-        "y": 2
-      },
-      "f1": "Oakhaven",
-      "f2": "Ironclad"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -4
-      },
-      "to": {
-        "x": -4,
-        "y": -1
-      },
-      "f1": "Oakhaven",
-      "f2": "Ironclad"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -4
-      },
-      "to": {
-        "x": -4,
-        "y": -3
-      },
-      "f1": "Oakhaven",
-      "f2": "Ironclad"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -4
-      },
-      "to": {
-        "x": 0,
-        "y": 2
-      },
-      "f1": "Oakhaven",
-      "f2": "Ironclad"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -4
-      },
-      "to": {
-        "x": -4,
-        "y": 0
-      },
-      "f1": "Oakhaven",
-      "f2": "Ironclad"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -4
-      },
-      "to": {
-        "x": -1,
-        "y": 2
-      },
-      "f1": "Oakhaven",
-      "f2": "Ironclad"
-    },
-    {
-      "from": {
-        "x": 0,
-        "y": -5
-      },
-      "to": {
-        "x": -4,
-        "y": -1
-      },
-      "f1": "Oakhaven",
-      "f2": "Ironclad"
-    },
-    {
-      "from": {
-        "x": 0,
-        "y": -5
-      },
-      "to": {
-        "x": -4,
-        "y": -3
-      },
-      "f1": "Oakhaven",
-      "f2": "Ironclad"
-    },
-    {
-      "from": {
-        "x": 0,
-        "y": -5
-      },
-      "to": {
-        "x": 0,
-        "y": 2
-      },
-      "f1": "Oakhaven",
-      "f2": "Ironclad"
-    },
-    {
-      "from": {
-        "x": 0,
-        "y": -5
-      },
-      "to": {
-        "x": -4,
-        "y": 0
-      },
-      "f1": "Oakhaven",
-      "f2": "Ironclad"
-    },
-    {
-      "from": {
-        "x": 0,
-        "y": -5
-      },
-      "to": {
-        "x": -1,
-        "y": 2
-      },
-      "f1": "Oakhaven",
-      "f2": "Ironclad"
-    },
-    {
-      "from": {
         "x": -3,
         "y": -6
       },
@@ -9547,222 +9401,6 @@
     },
     {
       "from": {
-        "x": -2,
-        "y": -4
-      },
-      "to": {
-        "x": -1,
-        "y": -1
-      },
-      "f1": "Oakhaven",
-      "f2": "Sunspire"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": -4
-      },
-      "to": {
-        "x": 0,
-        "y": 0
-      },
-      "f1": "Oakhaven",
-      "f2": "Sunspire"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": -4
-      },
-      "to": {
-        "x": -2,
-        "y": -2
-      },
-      "f1": "Oakhaven",
-      "f2": "Sunspire"
-    },
-    {
-      "from": {
-        "x": 1,
-        "y": -4
-      },
-      "to": {
-        "x": -1,
-        "y": -1
-      },
-      "f1": "Oakhaven",
-      "f2": "Sunspire"
-    },
-    {
-      "from": {
-        "x": 1,
-        "y": -4
-      },
-      "to": {
-        "x": 0,
-        "y": 0
-      },
-      "f1": "Oakhaven",
-      "f2": "Sunspire"
-    },
-    {
-      "from": {
-        "x": 1,
-        "y": -4
-      },
-      "to": {
-        "x": -2,
-        "y": -2
-      },
-      "f1": "Oakhaven",
-      "f2": "Sunspire"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": -5
-      },
-      "to": {
-        "x": -1,
-        "y": -1
-      },
-      "f1": "Oakhaven",
-      "f2": "Sunspire"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": -5
-      },
-      "to": {
-        "x": 0,
-        "y": 0
-      },
-      "f1": "Oakhaven",
-      "f2": "Sunspire"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": -5
-      },
-      "to": {
-        "x": -2,
-        "y": -2
-      },
-      "f1": "Oakhaven",
-      "f2": "Sunspire"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -3
-      },
-      "to": {
-        "x": -1,
-        "y": -1
-      },
-      "f1": "Oakhaven",
-      "f2": "Sunspire"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -3
-      },
-      "to": {
-        "x": 0,
-        "y": 0
-      },
-      "f1": "Oakhaven",
-      "f2": "Sunspire"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -3
-      },
-      "to": {
-        "x": -2,
-        "y": -2
-      },
-      "f1": "Oakhaven",
-      "f2": "Sunspire"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -4
-      },
-      "to": {
-        "x": -1,
-        "y": -1
-      },
-      "f1": "Oakhaven",
-      "f2": "Sunspire"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -4
-      },
-      "to": {
-        "x": 0,
-        "y": 0
-      },
-      "f1": "Oakhaven",
-      "f2": "Sunspire"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -4
-      },
-      "to": {
-        "x": -2,
-        "y": -2
-      },
-      "f1": "Oakhaven",
-      "f2": "Sunspire"
-    },
-    {
-      "from": {
-        "x": 0,
-        "y": -5
-      },
-      "to": {
-        "x": -1,
-        "y": -1
-      },
-      "f1": "Oakhaven",
-      "f2": "Sunspire"
-    },
-    {
-      "from": {
-        "x": 0,
-        "y": -5
-      },
-      "to": {
-        "x": 0,
-        "y": 0
-      },
-      "f1": "Oakhaven",
-      "f2": "Sunspire"
-    },
-    {
-      "from": {
-        "x": 0,
-        "y": -5
-      },
-      "to": {
-        "x": -2,
-        "y": -2
-      },
-      "f1": "Oakhaven",
-      "f2": "Sunspire"
-    },
-    {
-      "from": {
         "x": -3,
         "y": -6
       },
@@ -9979,582 +9617,6 @@
     },
     {
       "from": {
-        "x": -2,
-        "y": -4
-      },
-      "to": {
-        "x": 1,
-        "y": -1
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": -4
-      },
-      "to": {
-        "x": 2,
-        "y": 0
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": -4
-      },
-      "to": {
-        "x": 2,
-        "y": -2
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": 1,
-        "y": -4
-      },
-      "to": {
-        "x": 1,
-        "y": -1
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": 1,
-        "y": -4
-      },
-      "to": {
-        "x": 2,
-        "y": 0
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": 1,
-        "y": -4
-      },
-      "to": {
-        "x": 2,
-        "y": -2
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": -5
-      },
-      "to": {
-        "x": 1,
-        "y": -1
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": -5
-      },
-      "to": {
-        "x": 2,
-        "y": 0
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": -5
-      },
-      "to": {
-        "x": 2,
-        "y": -2
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -3
-      },
-      "to": {
-        "x": 1,
-        "y": -1
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -3
-      },
-      "to": {
-        "x": 2,
-        "y": 0
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -3
-      },
-      "to": {
-        "x": 2,
-        "y": -2
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -4
-      },
-      "to": {
-        "x": 1,
-        "y": -1
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -4
-      },
-      "to": {
-        "x": 2,
-        "y": 0
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -4
-      },
-      "to": {
-        "x": 2,
-        "y": -2
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": 0,
-        "y": -5
-      },
-      "to": {
-        "x": 1,
-        "y": -1
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": 0,
-        "y": -5
-      },
-      "to": {
-        "x": 2,
-        "y": 0
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": 0,
-        "y": -5
-      },
-      "to": {
-        "x": 2,
-        "y": -2
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -6
-      },
-      "to": {
-        "x": 1,
-        "y": -1
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -6
-      },
-      "to": {
-        "x": 2,
-        "y": 0
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -6
-      },
-      "to": {
-        "x": 2,
-        "y": -2
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -4,
-        "y": -4
-      },
-      "to": {
-        "x": 1,
-        "y": -1
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -4,
-        "y": -4
-      },
-      "to": {
-        "x": 2,
-        "y": 0
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -4,
-        "y": -4
-      },
-      "to": {
-        "x": 2,
-        "y": -2
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -5
-      },
-      "to": {
-        "x": 1,
-        "y": -1
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -5
-      },
-      "to": {
-        "x": 2,
-        "y": 0
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -5
-      },
-      "to": {
-        "x": 2,
-        "y": -2
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -4,
-        "y": -2
-      },
-      "to": {
-        "x": 1,
-        "y": -1
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -4,
-        "y": -2
-      },
-      "to": {
-        "x": 2,
-        "y": 0
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -4,
-        "y": -2
-      },
-      "to": {
-        "x": 2,
-        "y": -2
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": 1,
-        "y": -6
-      },
-      "to": {
-        "x": 1,
-        "y": -1
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": 1,
-        "y": -6
-      },
-      "to": {
-        "x": 2,
-        "y": 0
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": 1,
-        "y": -6
-      },
-      "to": {
-        "x": 2,
-        "y": -2
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -5,
-        "y": -3
-      },
-      "to": {
-        "x": 1,
-        "y": -1
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -5,
-        "y": -3
-      },
-      "to": {
-        "x": 2,
-        "y": 0
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -5,
-        "y": -3
-      },
-      "to": {
-        "x": 2,
-        "y": -2
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": -4
-      },
-      "to": {
-        "x": 0,
-        "y": -2
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels rebels"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": -4
-      },
-      "to": {
-        "x": -1,
-        "y": -2
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels rebels"
-    },
-    {
-      "from": {
-        "x": 1,
-        "y": -4
-      },
-      "to": {
-        "x": 0,
-        "y": -2
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels rebels"
-    },
-    {
-      "from": {
-        "x": 1,
-        "y": -4
-      },
-      "to": {
-        "x": -1,
-        "y": -2
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels rebels"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": -5
-      },
-      "to": {
-        "x": 0,
-        "y": -2
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels rebels"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": -5
-      },
-      "to": {
-        "x": -1,
-        "y": -2
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -3
-      },
-      "to": {
-        "x": 0,
-        "y": -2
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -3
-      },
-      "to": {
-        "x": -1,
-        "y": -2
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -4
-      },
-      "to": {
-        "x": 0,
-        "y": -2
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -4
-      },
-      "to": {
-        "x": -1,
-        "y": -2
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels rebels"
-    },
-    {
-      "from": {
-        "x": 0,
-        "y": -5
-      },
-      "to": {
-        "x": 0,
-        "y": -2
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels rebels"
-    },
-    {
-      "from": {
-        "x": 0,
-        "y": -5
-      },
-      "to": {
-        "x": -1,
-        "y": -2
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels rebels"
-    },
-    {
-      "from": {
         "x": -3,
         "y": -6
       },
@@ -10696,2526 +9758,6 @@
       },
       "f1": "Oakhaven",
       "f2": "Oakhaven rebels rebels"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": -4
-      },
-      "to": {
-        "x": -1,
-        "y": -3
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": -4
-      },
-      "to": {
-        "x": 1,
-        "y": -3
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": -4
-      },
-      "to": {
-        "x": -2,
-        "y": -3
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": -4
-      },
-      "to": {
-        "x": 0,
-        "y": -3
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": -4
-      },
-      "to": {
-        "x": 0,
-        "y": -4
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": -4
-      },
-      "to": {
-        "x": -1,
-        "y": -4
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": -4
-      },
-      "to": {
-        "x": -1,
-        "y": -5
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": -4
-      },
-      "to": {
-        "x": -1,
-        "y": -6
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": -4
-      },
-      "to": {
-        "x": 2,
-        "y": -4
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": 1,
-        "y": -4
-      },
-      "to": {
-        "x": -1,
-        "y": -3
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": 1,
-        "y": -4
-      },
-      "to": {
-        "x": 1,
-        "y": -3
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": 1,
-        "y": -4
-      },
-      "to": {
-        "x": -2,
-        "y": -3
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": 1,
-        "y": -4
-      },
-      "to": {
-        "x": 0,
-        "y": -3
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": 1,
-        "y": -4
-      },
-      "to": {
-        "x": 0,
-        "y": -4
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": 1,
-        "y": -4
-      },
-      "to": {
-        "x": -1,
-        "y": -4
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": 1,
-        "y": -4
-      },
-      "to": {
-        "x": -1,
-        "y": -5
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": 1,
-        "y": -4
-      },
-      "to": {
-        "x": -1,
-        "y": -6
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": 1,
-        "y": -4
-      },
-      "to": {
-        "x": 2,
-        "y": -4
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": -5
-      },
-      "to": {
-        "x": -1,
-        "y": -3
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": -5
-      },
-      "to": {
-        "x": 1,
-        "y": -3
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": -5
-      },
-      "to": {
-        "x": -2,
-        "y": -3
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": -5
-      },
-      "to": {
-        "x": 0,
-        "y": -3
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": -5
-      },
-      "to": {
-        "x": 0,
-        "y": -4
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": -5
-      },
-      "to": {
-        "x": -1,
-        "y": -4
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": -5
-      },
-      "to": {
-        "x": -1,
-        "y": -5
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": -5
-      },
-      "to": {
-        "x": -1,
-        "y": -6
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": -5
-      },
-      "to": {
-        "x": 2,
-        "y": -4
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -3
-      },
-      "to": {
-        "x": -1,
-        "y": -3
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -3
-      },
-      "to": {
-        "x": 1,
-        "y": -3
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -3
-      },
-      "to": {
-        "x": -2,
-        "y": -3
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -3
-      },
-      "to": {
-        "x": 0,
-        "y": -3
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -3
-      },
-      "to": {
-        "x": 0,
-        "y": -4
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -3
-      },
-      "to": {
-        "x": -1,
-        "y": -4
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -3
-      },
-      "to": {
-        "x": -1,
-        "y": -5
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -3
-      },
-      "to": {
-        "x": -1,
-        "y": -6
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -3
-      },
-      "to": {
-        "x": 2,
-        "y": -4
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -4
-      },
-      "to": {
-        "x": -1,
-        "y": -3
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -4
-      },
-      "to": {
-        "x": 1,
-        "y": -3
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -4
-      },
-      "to": {
-        "x": -2,
-        "y": -3
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -4
-      },
-      "to": {
-        "x": 0,
-        "y": -3
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -4
-      },
-      "to": {
-        "x": 0,
-        "y": -4
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -4
-      },
-      "to": {
-        "x": -1,
-        "y": -4
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -4
-      },
-      "to": {
-        "x": -1,
-        "y": -5
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -4
-      },
-      "to": {
-        "x": -1,
-        "y": -6
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -4
-      },
-      "to": {
-        "x": 2,
-        "y": -4
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": 0,
-        "y": -5
-      },
-      "to": {
-        "x": -1,
-        "y": -3
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": 0,
-        "y": -5
-      },
-      "to": {
-        "x": 1,
-        "y": -3
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": 0,
-        "y": -5
-      },
-      "to": {
-        "x": -2,
-        "y": -3
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": 0,
-        "y": -5
-      },
-      "to": {
-        "x": 0,
-        "y": -3
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": 0,
-        "y": -5
-      },
-      "to": {
-        "x": 0,
-        "y": -4
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": 0,
-        "y": -5
-      },
-      "to": {
-        "x": -1,
-        "y": -4
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": 0,
-        "y": -5
-      },
-      "to": {
-        "x": -1,
-        "y": -5
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": 0,
-        "y": -5
-      },
-      "to": {
-        "x": -1,
-        "y": -6
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": 0,
-        "y": -5
-      },
-      "to": {
-        "x": 2,
-        "y": -4
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -6
-      },
-      "to": {
-        "x": -1,
-        "y": -3
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -6
-      },
-      "to": {
-        "x": 1,
-        "y": -3
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -6
-      },
-      "to": {
-        "x": -2,
-        "y": -3
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -6
-      },
-      "to": {
-        "x": 0,
-        "y": -3
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -6
-      },
-      "to": {
-        "x": 0,
-        "y": -4
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -6
-      },
-      "to": {
-        "x": -1,
-        "y": -4
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -6
-      },
-      "to": {
-        "x": -1,
-        "y": -5
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -6
-      },
-      "to": {
-        "x": -1,
-        "y": -6
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -6
-      },
-      "to": {
-        "x": 2,
-        "y": -4
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -4,
-        "y": -4
-      },
-      "to": {
-        "x": -1,
-        "y": -3
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -4,
-        "y": -4
-      },
-      "to": {
-        "x": 1,
-        "y": -3
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -4,
-        "y": -4
-      },
-      "to": {
-        "x": -2,
-        "y": -3
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -4,
-        "y": -4
-      },
-      "to": {
-        "x": 0,
-        "y": -3
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -4,
-        "y": -4
-      },
-      "to": {
-        "x": 0,
-        "y": -4
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -4,
-        "y": -4
-      },
-      "to": {
-        "x": -1,
-        "y": -4
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -4,
-        "y": -4
-      },
-      "to": {
-        "x": -1,
-        "y": -5
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -4,
-        "y": -4
-      },
-      "to": {
-        "x": -1,
-        "y": -6
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -4,
-        "y": -4
-      },
-      "to": {
-        "x": 2,
-        "y": -4
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -5
-      },
-      "to": {
-        "x": -1,
-        "y": -3
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -5
-      },
-      "to": {
-        "x": 1,
-        "y": -3
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -5
-      },
-      "to": {
-        "x": -2,
-        "y": -3
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -5
-      },
-      "to": {
-        "x": 0,
-        "y": -3
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -5
-      },
-      "to": {
-        "x": 0,
-        "y": -4
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -5
-      },
-      "to": {
-        "x": -1,
-        "y": -4
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -5
-      },
-      "to": {
-        "x": -1,
-        "y": -5
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -5
-      },
-      "to": {
-        "x": -1,
-        "y": -6
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -5
-      },
-      "to": {
-        "x": 2,
-        "y": -4
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -4,
-        "y": -2
-      },
-      "to": {
-        "x": -1,
-        "y": -3
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -4,
-        "y": -2
-      },
-      "to": {
-        "x": 1,
-        "y": -3
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -4,
-        "y": -2
-      },
-      "to": {
-        "x": -2,
-        "y": -3
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -4,
-        "y": -2
-      },
-      "to": {
-        "x": 0,
-        "y": -3
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -4,
-        "y": -2
-      },
-      "to": {
-        "x": 0,
-        "y": -4
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -4,
-        "y": -2
-      },
-      "to": {
-        "x": -1,
-        "y": -4
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -4,
-        "y": -2
-      },
-      "to": {
-        "x": -1,
-        "y": -5
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -4,
-        "y": -2
-      },
-      "to": {
-        "x": -1,
-        "y": -6
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -4,
-        "y": -2
-      },
-      "to": {
-        "x": 2,
-        "y": -4
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": 1,
-        "y": -6
-      },
-      "to": {
-        "x": -1,
-        "y": -3
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": 1,
-        "y": -6
-      },
-      "to": {
-        "x": 1,
-        "y": -3
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": 1,
-        "y": -6
-      },
-      "to": {
-        "x": -2,
-        "y": -3
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": 1,
-        "y": -6
-      },
-      "to": {
-        "x": 0,
-        "y": -3
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": 1,
-        "y": -6
-      },
-      "to": {
-        "x": 0,
-        "y": -4
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": 1,
-        "y": -6
-      },
-      "to": {
-        "x": -1,
-        "y": -4
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": 1,
-        "y": -6
-      },
-      "to": {
-        "x": -1,
-        "y": -5
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": 1,
-        "y": -6
-      },
-      "to": {
-        "x": -1,
-        "y": -6
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": 1,
-        "y": -6
-      },
-      "to": {
-        "x": 2,
-        "y": -4
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -5,
-        "y": -3
-      },
-      "to": {
-        "x": -1,
-        "y": -3
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -5,
-        "y": -3
-      },
-      "to": {
-        "x": 1,
-        "y": -3
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -5,
-        "y": -3
-      },
-      "to": {
-        "x": -2,
-        "y": -3
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -5,
-        "y": -3
-      },
-      "to": {
-        "x": 0,
-        "y": -3
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -5,
-        "y": -3
-      },
-      "to": {
-        "x": 0,
-        "y": -4
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -5,
-        "y": -3
-      },
-      "to": {
-        "x": -1,
-        "y": -4
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -5,
-        "y": -3
-      },
-      "to": {
-        "x": -1,
-        "y": -5
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -5,
-        "y": -3
-      },
-      "to": {
-        "x": -1,
-        "y": -6
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -5,
-        "y": -3
-      },
-      "to": {
-        "x": 2,
-        "y": -4
-      },
-      "f1": "Oakhaven",
-      "f2": "Oakhaven rebels"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": -4
-      },
-      "to": {
-        "x": 0,
-        "y": -1
-      },
-      "f1": "Oakhaven",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": -4
-      },
-      "to": {
-        "x": -2,
-        "y": 0
-      },
-      "f1": "Oakhaven",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": -4
-      },
-      "to": {
-        "x": 1,
-        "y": -2
-      },
-      "f1": "Oakhaven",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": -4
-      },
-      "to": {
-        "x": -1,
-        "y": 0
-      },
-      "f1": "Oakhaven",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": -4
-      },
-      "to": {
-        "x": -3,
-        "y": 1
-      },
-      "f1": "Oakhaven",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": -4
-      },
-      "to": {
-        "x": 1,
-        "y": 0
-      },
-      "f1": "Oakhaven",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": 1,
-        "y": -4
-      },
-      "to": {
-        "x": 0,
-        "y": -1
-      },
-      "f1": "Oakhaven",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": 1,
-        "y": -4
-      },
-      "to": {
-        "x": -2,
-        "y": 0
-      },
-      "f1": "Oakhaven",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": 1,
-        "y": -4
-      },
-      "to": {
-        "x": 1,
-        "y": -2
-      },
-      "f1": "Oakhaven",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": 1,
-        "y": -4
-      },
-      "to": {
-        "x": -1,
-        "y": 0
-      },
-      "f1": "Oakhaven",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": 1,
-        "y": -4
-      },
-      "to": {
-        "x": -3,
-        "y": 1
-      },
-      "f1": "Oakhaven",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": 1,
-        "y": -4
-      },
-      "to": {
-        "x": 1,
-        "y": 0
-      },
-      "f1": "Oakhaven",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": -5
-      },
-      "to": {
-        "x": 0,
-        "y": -1
-      },
-      "f1": "Oakhaven",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": -5
-      },
-      "to": {
-        "x": -2,
-        "y": 0
-      },
-      "f1": "Oakhaven",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": -5
-      },
-      "to": {
-        "x": 1,
-        "y": -2
-      },
-      "f1": "Oakhaven",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": -5
-      },
-      "to": {
-        "x": -1,
-        "y": 0
-      },
-      "f1": "Oakhaven",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": -5
-      },
-      "to": {
-        "x": -3,
-        "y": 1
-      },
-      "f1": "Oakhaven",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": -5
-      },
-      "to": {
-        "x": 1,
-        "y": 0
-      },
-      "f1": "Oakhaven",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -3
-      },
-      "to": {
-        "x": 0,
-        "y": -1
-      },
-      "f1": "Oakhaven",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -3
-      },
-      "to": {
-        "x": -2,
-        "y": 0
-      },
-      "f1": "Oakhaven",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -3
-      },
-      "to": {
-        "x": 1,
-        "y": -2
-      },
-      "f1": "Oakhaven",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -3
-      },
-      "to": {
-        "x": -1,
-        "y": 0
-      },
-      "f1": "Oakhaven",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -3
-      },
-      "to": {
-        "x": -3,
-        "y": 1
-      },
-      "f1": "Oakhaven",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -3
-      },
-      "to": {
-        "x": 1,
-        "y": 0
-      },
-      "f1": "Oakhaven",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -4
-      },
-      "to": {
-        "x": 0,
-        "y": -1
-      },
-      "f1": "Oakhaven",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -4
-      },
-      "to": {
-        "x": -2,
-        "y": 0
-      },
-      "f1": "Oakhaven",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -4
-      },
-      "to": {
-        "x": 1,
-        "y": -2
-      },
-      "f1": "Oakhaven",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -4
-      },
-      "to": {
-        "x": -1,
-        "y": 0
-      },
-      "f1": "Oakhaven",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -4
-      },
-      "to": {
-        "x": -3,
-        "y": 1
-      },
-      "f1": "Oakhaven",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -4
-      },
-      "to": {
-        "x": 1,
-        "y": 0
-      },
-      "f1": "Oakhaven",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": 0,
-        "y": -5
-      },
-      "to": {
-        "x": 0,
-        "y": -1
-      },
-      "f1": "Oakhaven",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": 0,
-        "y": -5
-      },
-      "to": {
-        "x": -2,
-        "y": 0
-      },
-      "f1": "Oakhaven",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": 0,
-        "y": -5
-      },
-      "to": {
-        "x": 1,
-        "y": -2
-      },
-      "f1": "Oakhaven",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": 0,
-        "y": -5
-      },
-      "to": {
-        "x": -1,
-        "y": 0
-      },
-      "f1": "Oakhaven",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": 0,
-        "y": -5
-      },
-      "to": {
-        "x": -3,
-        "y": 1
-      },
-      "f1": "Oakhaven",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": 0,
-        "y": -5
-      },
-      "to": {
-        "x": 1,
-        "y": 0
-      },
-      "f1": "Oakhaven",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -6
-      },
-      "to": {
-        "x": 0,
-        "y": -1
-      },
-      "f1": "Oakhaven",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -6
-      },
-      "to": {
-        "x": -2,
-        "y": 0
-      },
-      "f1": "Oakhaven",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -6
-      },
-      "to": {
-        "x": 1,
-        "y": -2
-      },
-      "f1": "Oakhaven",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -6
-      },
-      "to": {
-        "x": -1,
-        "y": 0
-      },
-      "f1": "Oakhaven",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -6
-      },
-      "to": {
-        "x": -3,
-        "y": 1
-      },
-      "f1": "Oakhaven",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -6
-      },
-      "to": {
-        "x": 1,
-        "y": 0
-      },
-      "f1": "Oakhaven",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": -4,
-        "y": -4
-      },
-      "to": {
-        "x": 0,
-        "y": -1
-      },
-      "f1": "Oakhaven",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": -4,
-        "y": -4
-      },
-      "to": {
-        "x": -2,
-        "y": 0
-      },
-      "f1": "Oakhaven",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": -4,
-        "y": -4
-      },
-      "to": {
-        "x": 1,
-        "y": -2
-      },
-      "f1": "Oakhaven",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": -4,
-        "y": -4
-      },
-      "to": {
-        "x": -1,
-        "y": 0
-      },
-      "f1": "Oakhaven",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": -4,
-        "y": -4
-      },
-      "to": {
-        "x": -3,
-        "y": 1
-      },
-      "f1": "Oakhaven",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": -4,
-        "y": -4
-      },
-      "to": {
-        "x": 1,
-        "y": 0
-      },
-      "f1": "Oakhaven",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -5
-      },
-      "to": {
-        "x": 0,
-        "y": -1
-      },
-      "f1": "Oakhaven",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -5
-      },
-      "to": {
-        "x": -2,
-        "y": 0
-      },
-      "f1": "Oakhaven",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -5
-      },
-      "to": {
-        "x": 1,
-        "y": -2
-      },
-      "f1": "Oakhaven",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -5
-      },
-      "to": {
-        "x": -1,
-        "y": 0
-      },
-      "f1": "Oakhaven",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -5
-      },
-      "to": {
-        "x": -3,
-        "y": 1
-      },
-      "f1": "Oakhaven",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -5
-      },
-      "to": {
-        "x": 1,
-        "y": 0
-      },
-      "f1": "Oakhaven",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": -4,
-        "y": -2
-      },
-      "to": {
-        "x": 0,
-        "y": -1
-      },
-      "f1": "Oakhaven",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": -4,
-        "y": -2
-      },
-      "to": {
-        "x": -2,
-        "y": 0
-      },
-      "f1": "Oakhaven",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": -4,
-        "y": -2
-      },
-      "to": {
-        "x": 1,
-        "y": -2
-      },
-      "f1": "Oakhaven",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": -4,
-        "y": -2
-      },
-      "to": {
-        "x": -1,
-        "y": 0
-      },
-      "f1": "Oakhaven",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": -4,
-        "y": -2
-      },
-      "to": {
-        "x": -3,
-        "y": 1
-      },
-      "f1": "Oakhaven",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": -4,
-        "y": -2
-      },
-      "to": {
-        "x": 1,
-        "y": 0
-      },
-      "f1": "Oakhaven",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": 1,
-        "y": -6
-      },
-      "to": {
-        "x": 0,
-        "y": -1
-      },
-      "f1": "Oakhaven",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": 1,
-        "y": -6
-      },
-      "to": {
-        "x": -2,
-        "y": 0
-      },
-      "f1": "Oakhaven",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": 1,
-        "y": -6
-      },
-      "to": {
-        "x": 1,
-        "y": -2
-      },
-      "f1": "Oakhaven",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": 1,
-        "y": -6
-      },
-      "to": {
-        "x": -1,
-        "y": 0
-      },
-      "f1": "Oakhaven",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": 1,
-        "y": -6
-      },
-      "to": {
-        "x": -3,
-        "y": 1
-      },
-      "f1": "Oakhaven",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": 1,
-        "y": -6
-      },
-      "to": {
-        "x": 1,
-        "y": 0
-      },
-      "f1": "Oakhaven",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": -5,
-        "y": -3
-      },
-      "to": {
-        "x": 0,
-        "y": -1
-      },
-      "f1": "Oakhaven",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": -5,
-        "y": -3
-      },
-      "to": {
-        "x": -2,
-        "y": 0
-      },
-      "f1": "Oakhaven",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": -5,
-        "y": -3
-      },
-      "to": {
-        "x": 1,
-        "y": -2
-      },
-      "f1": "Oakhaven",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": -5,
-        "y": -3
-      },
-      "to": {
-        "x": -1,
-        "y": 0
-      },
-      "f1": "Oakhaven",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": -5,
-        "y": -3
-      },
-      "to": {
-        "x": -3,
-        "y": 1
-      },
-      "f1": "Oakhaven",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": -5,
-        "y": -3
-      },
-      "to": {
-        "x": 1,
-        "y": 0
-      },
-      "f1": "Oakhaven",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": -4
-      },
-      "to": {
-        "x": -2,
-        "y": -1
-      },
-      "f1": "Oakhaven",
-      "f2": "Ironclad rebels"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": -4
-      },
-      "to": {
-        "x": 0,
-        "y": 1
-      },
-      "f1": "Oakhaven",
-      "f2": "Ironclad rebels"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": -4
-      },
-      "to": {
-        "x": -3,
-        "y": -1
-      },
-      "f1": "Oakhaven",
-      "f2": "Ironclad rebels"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": -4
-      },
-      "to": {
-        "x": -3,
-        "y": -2
-      },
-      "f1": "Oakhaven",
-      "f2": "Ironclad rebels"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": -4
-      },
-      "to": {
-        "x": -3,
-        "y": 0
-      },
-      "f1": "Oakhaven",
-      "f2": "Ironclad rebels"
-    },
-    {
-      "from": {
-        "x": 1,
-        "y": -4
-      },
-      "to": {
-        "x": -2,
-        "y": -1
-      },
-      "f1": "Oakhaven",
-      "f2": "Ironclad rebels"
-    },
-    {
-      "from": {
-        "x": 1,
-        "y": -4
-      },
-      "to": {
-        "x": 0,
-        "y": 1
-      },
-      "f1": "Oakhaven",
-      "f2": "Ironclad rebels"
-    },
-    {
-      "from": {
-        "x": 1,
-        "y": -4
-      },
-      "to": {
-        "x": -3,
-        "y": -1
-      },
-      "f1": "Oakhaven",
-      "f2": "Ironclad rebels"
-    },
-    {
-      "from": {
-        "x": 1,
-        "y": -4
-      },
-      "to": {
-        "x": -3,
-        "y": -2
-      },
-      "f1": "Oakhaven",
-      "f2": "Ironclad rebels"
-    },
-    {
-      "from": {
-        "x": 1,
-        "y": -4
-      },
-      "to": {
-        "x": -3,
-        "y": 0
-      },
-      "f1": "Oakhaven",
-      "f2": "Ironclad rebels"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": -5
-      },
-      "to": {
-        "x": -2,
-        "y": -1
-      },
-      "f1": "Oakhaven",
-      "f2": "Ironclad rebels"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": -5
-      },
-      "to": {
-        "x": 0,
-        "y": 1
-      },
-      "f1": "Oakhaven",
-      "f2": "Ironclad rebels"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": -5
-      },
-      "to": {
-        "x": -3,
-        "y": -1
-      },
-      "f1": "Oakhaven",
-      "f2": "Ironclad rebels"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": -5
-      },
-      "to": {
-        "x": -3,
-        "y": -2
-      },
-      "f1": "Oakhaven",
-      "f2": "Ironclad rebels"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": -5
-      },
-      "to": {
-        "x": -3,
-        "y": 0
-      },
-      "f1": "Oakhaven",
-      "f2": "Ironclad rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -3
-      },
-      "to": {
-        "x": -2,
-        "y": -1
-      },
-      "f1": "Oakhaven",
-      "f2": "Ironclad rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -3
-      },
-      "to": {
-        "x": 0,
-        "y": 1
-      },
-      "f1": "Oakhaven",
-      "f2": "Ironclad rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -3
-      },
-      "to": {
-        "x": -3,
-        "y": -1
-      },
-      "f1": "Oakhaven",
-      "f2": "Ironclad rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -3
-      },
-      "to": {
-        "x": -3,
-        "y": -2
-      },
-      "f1": "Oakhaven",
-      "f2": "Ironclad rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -3
-      },
-      "to": {
-        "x": -3,
-        "y": 0
-      },
-      "f1": "Oakhaven",
-      "f2": "Ironclad rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -4
-      },
-      "to": {
-        "x": -2,
-        "y": -1
-      },
-      "f1": "Oakhaven",
-      "f2": "Ironclad rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -4
-      },
-      "to": {
-        "x": 0,
-        "y": 1
-      },
-      "f1": "Oakhaven",
-      "f2": "Ironclad rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -4
-      },
-      "to": {
-        "x": -3,
-        "y": -1
-      },
-      "f1": "Oakhaven",
-      "f2": "Ironclad rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -4
-      },
-      "to": {
-        "x": -3,
-        "y": -2
-      },
-      "f1": "Oakhaven",
-      "f2": "Ironclad rebels"
-    },
-    {
-      "from": {
-        "x": -3,
-        "y": -4
-      },
-      "to": {
-        "x": -3,
-        "y": 0
-      },
-      "f1": "Oakhaven",
-      "f2": "Ironclad rebels"
-    },
-    {
-      "from": {
-        "x": 0,
-        "y": -5
-      },
-      "to": {
-        "x": -2,
-        "y": -1
-      },
-      "f1": "Oakhaven",
-      "f2": "Ironclad rebels"
-    },
-    {
-      "from": {
-        "x": 0,
-        "y": -5
-      },
-      "to": {
-        "x": 0,
-        "y": 1
-      },
-      "f1": "Oakhaven",
-      "f2": "Ironclad rebels"
-    },
-    {
-      "from": {
-        "x": 0,
-        "y": -5
-      },
-      "to": {
-        "x": -3,
-        "y": -1
-      },
-      "f1": "Oakhaven",
-      "f2": "Ironclad rebels"
-    },
-    {
-      "from": {
-        "x": 0,
-        "y": -5
-      },
-      "to": {
-        "x": -3,
-        "y": -2
-      },
-      "f1": "Oakhaven",
-      "f2": "Ironclad rebels"
-    },
-    {
-      "from": {
-        "x": 0,
-        "y": -5
-      },
-      "to": {
-        "x": -3,
-        "y": 0
-      },
-      "f1": "Oakhaven",
-      "f2": "Ironclad rebels"
     },
     {
       "from": {
@@ -14603,11 +11145,23 @@
         "y": -1
       },
       "to": {
-        "x": 0,
-        "y": -1
+        "x": -2,
+        "y": -4
       },
       "f1": "Ironclad",
-      "f2": "Valoria rebels"
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -4,
+        "y": -1
+      },
+      "to": {
+        "x": 1,
+        "y": -4
+      },
+      "f1": "Ironclad",
+      "f2": "Oakhaven rebels"
     },
     {
       "from": {
@@ -14616,34 +11170,10 @@
       },
       "to": {
         "x": -2,
-        "y": 0
+        "y": -5
       },
       "f1": "Ironclad",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": -4,
-        "y": -1
-      },
-      "to": {
-        "x": 1,
-        "y": -2
-      },
-      "f1": "Ironclad",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": -4,
-        "y": -1
-      },
-      "to": {
-        "x": -1,
-        "y": 0
-      },
-      "f1": "Ironclad",
-      "f2": "Valoria rebels"
+      "f2": "Oakhaven rebels"
     },
     {
       "from": {
@@ -14652,10 +11182,10 @@
       },
       "to": {
         "x": -3,
-        "y": 1
+        "y": -3
       },
       "f1": "Ironclad",
-      "f2": "Valoria rebels"
+      "f2": "Oakhaven rebels"
     },
     {
       "from": {
@@ -14663,23 +11193,23 @@
         "y": -1
       },
       "to": {
-        "x": 1,
-        "y": 0
+        "x": -3,
+        "y": -4
       },
       "f1": "Ironclad",
-      "f2": "Valoria rebels"
+      "f2": "Oakhaven rebels"
     },
     {
       "from": {
         "x": -4,
-        "y": -3
+        "y": -1
       },
       "to": {
         "x": 0,
-        "y": -1
+        "y": -5
       },
       "f1": "Ironclad",
-      "f2": "Valoria rebels"
+      "f2": "Oakhaven rebels"
     },
     {
       "from": {
@@ -14688,10 +11218,10 @@
       },
       "to": {
         "x": -2,
-        "y": 0
+        "y": -4
       },
       "f1": "Ironclad",
-      "f2": "Valoria rebels"
+      "f2": "Oakhaven rebels"
     },
     {
       "from": {
@@ -14700,10 +11230,10 @@
       },
       "to": {
         "x": 1,
-        "y": -2
+        "y": -4
       },
       "f1": "Ironclad",
-      "f2": "Valoria rebels"
+      "f2": "Oakhaven rebels"
     },
     {
       "from": {
@@ -14711,11 +11241,11 @@
         "y": -3
       },
       "to": {
-        "x": -1,
-        "y": 0
+        "x": -2,
+        "y": -5
       },
       "f1": "Ironclad",
-      "f2": "Valoria rebels"
+      "f2": "Oakhaven rebels"
     },
     {
       "from": {
@@ -14724,10 +11254,10 @@
       },
       "to": {
         "x": -3,
-        "y": 1
+        "y": -3
       },
       "f1": "Ironclad",
-      "f2": "Valoria rebels"
+      "f2": "Oakhaven rebels"
     },
     {
       "from": {
@@ -14735,23 +11265,23 @@
         "y": -3
       },
       "to": {
-        "x": 1,
-        "y": 0
+        "x": -3,
+        "y": -4
       },
       "f1": "Ironclad",
-      "f2": "Valoria rebels"
+      "f2": "Oakhaven rebels"
     },
     {
       "from": {
-        "x": 0,
-        "y": 2
+        "x": -4,
+        "y": -3
       },
       "to": {
         "x": 0,
-        "y": -1
+        "y": -5
       },
       "f1": "Ironclad",
-      "f2": "Valoria rebels"
+      "f2": "Oakhaven rebels"
     },
     {
       "from": {
@@ -14760,10 +11290,10 @@
       },
       "to": {
         "x": -2,
-        "y": 0
+        "y": -4
       },
       "f1": "Ironclad",
-      "f2": "Valoria rebels"
+      "f2": "Oakhaven rebels"
     },
     {
       "from": {
@@ -14772,10 +11302,10 @@
       },
       "to": {
         "x": 1,
-        "y": -2
+        "y": -4
       },
       "f1": "Ironclad",
-      "f2": "Valoria rebels"
+      "f2": "Oakhaven rebels"
     },
     {
       "from": {
@@ -14783,11 +11313,11 @@
         "y": 2
       },
       "to": {
-        "x": -1,
-        "y": 0
+        "x": -2,
+        "y": -5
       },
       "f1": "Ironclad",
-      "f2": "Valoria rebels"
+      "f2": "Oakhaven rebels"
     },
     {
       "from": {
@@ -14796,10 +11326,10 @@
       },
       "to": {
         "x": -3,
-        "y": 1
+        "y": -3
       },
       "f1": "Ironclad",
-      "f2": "Valoria rebels"
+      "f2": "Oakhaven rebels"
     },
     {
       "from": {
@@ -14807,23 +11337,23 @@
         "y": 2
       },
       "to": {
-        "x": 1,
-        "y": 0
+        "x": -3,
+        "y": -4
       },
       "f1": "Ironclad",
-      "f2": "Valoria rebels"
+      "f2": "Oakhaven rebels"
     },
     {
       "from": {
-        "x": -4,
-        "y": 0
+        "x": 0,
+        "y": 2
       },
       "to": {
         "x": 0,
-        "y": -1
+        "y": -5
       },
       "f1": "Ironclad",
-      "f2": "Valoria rebels"
+      "f2": "Oakhaven rebels"
     },
     {
       "from": {
@@ -14832,10 +11362,10 @@
       },
       "to": {
         "x": -2,
-        "y": 0
+        "y": -4
       },
       "f1": "Ironclad",
-      "f2": "Valoria rebels"
+      "f2": "Oakhaven rebels"
     },
     {
       "from": {
@@ -14844,10 +11374,10 @@
       },
       "to": {
         "x": 1,
-        "y": -2
+        "y": -4
       },
       "f1": "Ironclad",
-      "f2": "Valoria rebels"
+      "f2": "Oakhaven rebels"
     },
     {
       "from": {
@@ -14855,11 +11385,11 @@
         "y": 0
       },
       "to": {
-        "x": -1,
-        "y": 0
+        "x": -2,
+        "y": -5
       },
       "f1": "Ironclad",
-      "f2": "Valoria rebels"
+      "f2": "Oakhaven rebels"
     },
     {
       "from": {
@@ -14868,10 +11398,10 @@
       },
       "to": {
         "x": -3,
-        "y": 1
+        "y": -3
       },
       "f1": "Ironclad",
-      "f2": "Valoria rebels"
+      "f2": "Oakhaven rebels"
     },
     {
       "from": {
@@ -14879,23 +11409,23 @@
         "y": 0
       },
       "to": {
-        "x": 1,
-        "y": 0
+        "x": -3,
+        "y": -4
       },
       "f1": "Ironclad",
-      "f2": "Valoria rebels"
+      "f2": "Oakhaven rebels"
     },
     {
       "from": {
-        "x": -1,
-        "y": 2
+        "x": -4,
+        "y": 0
       },
       "to": {
         "x": 0,
-        "y": -1
+        "y": -5
       },
       "f1": "Ironclad",
-      "f2": "Valoria rebels"
+      "f2": "Oakhaven rebels"
     },
     {
       "from": {
@@ -14904,10 +11434,10 @@
       },
       "to": {
         "x": -2,
-        "y": 0
+        "y": -4
       },
       "f1": "Ironclad",
-      "f2": "Valoria rebels"
+      "f2": "Oakhaven rebels"
     },
     {
       "from": {
@@ -14916,10 +11446,10 @@
       },
       "to": {
         "x": 1,
-        "y": -2
+        "y": -4
       },
       "f1": "Ironclad",
-      "f2": "Valoria rebels"
+      "f2": "Oakhaven rebels"
     },
     {
       "from": {
@@ -14927,11 +11457,11 @@
         "y": 2
       },
       "to": {
-        "x": -1,
-        "y": 0
+        "x": -2,
+        "y": -5
       },
       "f1": "Ironclad",
-      "f2": "Valoria rebels"
+      "f2": "Oakhaven rebels"
     },
     {
       "from": {
@@ -14940,10 +11470,10 @@
       },
       "to": {
         "x": -3,
-        "y": 1
+        "y": -3
       },
       "f1": "Ironclad",
-      "f2": "Valoria rebels"
+      "f2": "Oakhaven rebels"
     },
     {
       "from": {
@@ -14951,11 +11481,23 @@
         "y": 2
       },
       "to": {
-        "x": 1,
-        "y": 0
+        "x": -3,
+        "y": -4
       },
       "f1": "Ironclad",
-      "f2": "Valoria rebels"
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -1,
+        "y": 2
+      },
+      "to": {
+        "x": 0,
+        "y": -5
+      },
+      "f1": "Ironclad",
+      "f2": "Oakhaven rebels"
     },
     {
       "from": {
@@ -15467,222 +12009,6 @@
         "y": -1
       },
       "to": {
-        "x": 0,
-        "y": -1
-      },
-      "f1": "Sunspire",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": -1,
-        "y": -1
-      },
-      "to": {
-        "x": -2,
-        "y": 0
-      },
-      "f1": "Sunspire",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": -1,
-        "y": -1
-      },
-      "to": {
-        "x": 1,
-        "y": -2
-      },
-      "f1": "Sunspire",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": -1,
-        "y": -1
-      },
-      "to": {
-        "x": -1,
-        "y": 0
-      },
-      "f1": "Sunspire",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": -1,
-        "y": -1
-      },
-      "to": {
-        "x": -3,
-        "y": 1
-      },
-      "f1": "Sunspire",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": -1,
-        "y": -1
-      },
-      "to": {
-        "x": 1,
-        "y": 0
-      },
-      "f1": "Sunspire",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": 0,
-        "y": 0
-      },
-      "to": {
-        "x": 0,
-        "y": -1
-      },
-      "f1": "Sunspire",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": 0,
-        "y": 0
-      },
-      "to": {
-        "x": -2,
-        "y": 0
-      },
-      "f1": "Sunspire",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": 0,
-        "y": 0
-      },
-      "to": {
-        "x": 1,
-        "y": -2
-      },
-      "f1": "Sunspire",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": 0,
-        "y": 0
-      },
-      "to": {
-        "x": -1,
-        "y": 0
-      },
-      "f1": "Sunspire",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": 0,
-        "y": 0
-      },
-      "to": {
-        "x": -3,
-        "y": 1
-      },
-      "f1": "Sunspire",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": 0,
-        "y": 0
-      },
-      "to": {
-        "x": 1,
-        "y": 0
-      },
-      "f1": "Sunspire",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": -2
-      },
-      "to": {
-        "x": 0,
-        "y": -1
-      },
-      "f1": "Sunspire",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": -2
-      },
-      "to": {
-        "x": -2,
-        "y": 0
-      },
-      "f1": "Sunspire",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": -2
-      },
-      "to": {
-        "x": 1,
-        "y": -2
-      },
-      "f1": "Sunspire",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": -2
-      },
-      "to": {
-        "x": -1,
-        "y": 0
-      },
-      "f1": "Sunspire",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": -2
-      },
-      "to": {
-        "x": -3,
-        "y": 1
-      },
-      "f1": "Sunspire",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": -2,
-        "y": -2
-      },
-      "to": {
-        "x": 1,
-        "y": 0
-      },
-      "f1": "Sunspire",
-      "f2": "Valoria rebels"
-    },
-    {
-      "from": {
-        "x": -1,
-        "y": -1
-      },
-      "to": {
         "x": -2,
         "y": -1
       },
@@ -15856,6 +12182,222 @@
       },
       "f1": "Sunspire",
       "f2": "Ironclad rebels"
+    },
+    {
+      "from": {
+        "x": -1,
+        "y": -1
+      },
+      "to": {
+        "x": -2,
+        "y": -4
+      },
+      "f1": "Sunspire",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -1,
+        "y": -1
+      },
+      "to": {
+        "x": 1,
+        "y": -4
+      },
+      "f1": "Sunspire",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -1,
+        "y": -1
+      },
+      "to": {
+        "x": -2,
+        "y": -5
+      },
+      "f1": "Sunspire",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -1,
+        "y": -1
+      },
+      "to": {
+        "x": -3,
+        "y": -3
+      },
+      "f1": "Sunspire",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -1,
+        "y": -1
+      },
+      "to": {
+        "x": -3,
+        "y": -4
+      },
+      "f1": "Sunspire",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -1,
+        "y": -1
+      },
+      "to": {
+        "x": 0,
+        "y": -5
+      },
+      "f1": "Sunspire",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 0,
+        "y": 0
+      },
+      "to": {
+        "x": -2,
+        "y": -4
+      },
+      "f1": "Sunspire",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 0,
+        "y": 0
+      },
+      "to": {
+        "x": 1,
+        "y": -4
+      },
+      "f1": "Sunspire",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 0,
+        "y": 0
+      },
+      "to": {
+        "x": -2,
+        "y": -5
+      },
+      "f1": "Sunspire",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 0,
+        "y": 0
+      },
+      "to": {
+        "x": -3,
+        "y": -3
+      },
+      "f1": "Sunspire",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 0,
+        "y": 0
+      },
+      "to": {
+        "x": -3,
+        "y": -4
+      },
+      "f1": "Sunspire",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 0,
+        "y": 0
+      },
+      "to": {
+        "x": 0,
+        "y": -5
+      },
+      "f1": "Sunspire",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -2,
+        "y": -2
+      },
+      "to": {
+        "x": -2,
+        "y": -4
+      },
+      "f1": "Sunspire",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -2,
+        "y": -2
+      },
+      "to": {
+        "x": 1,
+        "y": -4
+      },
+      "f1": "Sunspire",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -2,
+        "y": -2
+      },
+      "to": {
+        "x": -2,
+        "y": -5
+      },
+      "f1": "Sunspire",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -2,
+        "y": -2
+      },
+      "to": {
+        "x": -3,
+        "y": -3
+      },
+      "f1": "Sunspire",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -2,
+        "y": -2
+      },
+      "to": {
+        "x": -3,
+        "y": -4
+      },
+      "f1": "Sunspire",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -2,
+        "y": -2
+      },
+      "to": {
+        "x": 0,
+        "y": -5
+      },
+      "f1": "Sunspire",
+      "f2": "Oakhaven rebels"
     },
     {
       "from": {
@@ -16363,6 +12905,174 @@
     },
     {
       "from": {
+        "x": 14,
+        "y": 12
+      },
+      "to": {
+        "x": 14,
+        "y": 11
+      },
+      "f1": "Grimwallow",
+      "f2": "Players rebels"
+    },
+    {
+      "from": {
+        "x": 14,
+        "y": 12
+      },
+      "to": {
+        "x": 16,
+        "y": 10
+      },
+      "f1": "Grimwallow",
+      "f2": "Players rebels"
+    },
+    {
+      "from": {
+        "x": 14,
+        "y": 12
+      },
+      "to": {
+        "x": 17,
+        "y": 10
+      },
+      "f1": "Grimwallow",
+      "f2": "Players rebels"
+    },
+    {
+      "from": {
+        "x": 14,
+        "y": 12
+      },
+      "to": {
+        "x": 15,
+        "y": 12
+      },
+      "f1": "Grimwallow",
+      "f2": "Players rebels"
+    },
+    {
+      "from": {
+        "x": 14,
+        "y": 12
+      },
+      "to": {
+        "x": 13,
+        "y": 10
+      },
+      "f1": "Grimwallow",
+      "f2": "Players rebels"
+    },
+    {
+      "from": {
+        "x": 14,
+        "y": 12
+      },
+      "to": {
+        "x": 17,
+        "y": 9
+      },
+      "f1": "Grimwallow",
+      "f2": "Players rebels"
+    },
+    {
+      "from": {
+        "x": 14,
+        "y": 12
+      },
+      "to": {
+        "x": 13,
+        "y": 11
+      },
+      "f1": "Grimwallow",
+      "f2": "Players rebels"
+    },
+    {
+      "from": {
+        "x": 17,
+        "y": 13
+      },
+      "to": {
+        "x": 14,
+        "y": 11
+      },
+      "f1": "Grimwallow",
+      "f2": "Players rebels"
+    },
+    {
+      "from": {
+        "x": 17,
+        "y": 13
+      },
+      "to": {
+        "x": 16,
+        "y": 10
+      },
+      "f1": "Grimwallow",
+      "f2": "Players rebels"
+    },
+    {
+      "from": {
+        "x": 17,
+        "y": 13
+      },
+      "to": {
+        "x": 17,
+        "y": 10
+      },
+      "f1": "Grimwallow",
+      "f2": "Players rebels"
+    },
+    {
+      "from": {
+        "x": 17,
+        "y": 13
+      },
+      "to": {
+        "x": 15,
+        "y": 12
+      },
+      "f1": "Grimwallow",
+      "f2": "Players rebels"
+    },
+    {
+      "from": {
+        "x": 17,
+        "y": 13
+      },
+      "to": {
+        "x": 13,
+        "y": 10
+      },
+      "f1": "Grimwallow",
+      "f2": "Players rebels"
+    },
+    {
+      "from": {
+        "x": 17,
+        "y": 13
+      },
+      "to": {
+        "x": 17,
+        "y": 9
+      },
+      "f1": "Grimwallow",
+      "f2": "Players rebels"
+    },
+    {
+      "from": {
+        "x": 17,
+        "y": 13
+      },
+      "to": {
+        "x": 13,
+        "y": 11
+      },
+      "f1": "Grimwallow",
+      "f2": "Players rebels"
+    },
+    {
+      "from": {
         "x": 1,
         "y": -1
       },
@@ -17155,6 +13865,222 @@
     },
     {
       "from": {
+        "x": 1,
+        "y": -1
+      },
+      "to": {
+        "x": -2,
+        "y": -4
+      },
+      "f1": "Oakhaven rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 1,
+        "y": -1
+      },
+      "to": {
+        "x": 1,
+        "y": -4
+      },
+      "f1": "Oakhaven rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 1,
+        "y": -1
+      },
+      "to": {
+        "x": -2,
+        "y": -5
+      },
+      "f1": "Oakhaven rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 1,
+        "y": -1
+      },
+      "to": {
+        "x": -3,
+        "y": -3
+      },
+      "f1": "Oakhaven rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 1,
+        "y": -1
+      },
+      "to": {
+        "x": -3,
+        "y": -4
+      },
+      "f1": "Oakhaven rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 1,
+        "y": -1
+      },
+      "to": {
+        "x": 0,
+        "y": -5
+      },
+      "f1": "Oakhaven rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 2,
+        "y": 0
+      },
+      "to": {
+        "x": -2,
+        "y": -4
+      },
+      "f1": "Oakhaven rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 2,
+        "y": 0
+      },
+      "to": {
+        "x": 1,
+        "y": -4
+      },
+      "f1": "Oakhaven rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 2,
+        "y": 0
+      },
+      "to": {
+        "x": -2,
+        "y": -5
+      },
+      "f1": "Oakhaven rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 2,
+        "y": 0
+      },
+      "to": {
+        "x": -3,
+        "y": -3
+      },
+      "f1": "Oakhaven rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 2,
+        "y": 0
+      },
+      "to": {
+        "x": -3,
+        "y": -4
+      },
+      "f1": "Oakhaven rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 2,
+        "y": 0
+      },
+      "to": {
+        "x": 0,
+        "y": -5
+      },
+      "f1": "Oakhaven rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 2,
+        "y": -2
+      },
+      "to": {
+        "x": -2,
+        "y": -4
+      },
+      "f1": "Oakhaven rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 2,
+        "y": -2
+      },
+      "to": {
+        "x": 1,
+        "y": -4
+      },
+      "f1": "Oakhaven rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 2,
+        "y": -2
+      },
+      "to": {
+        "x": -2,
+        "y": -5
+      },
+      "f1": "Oakhaven rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 2,
+        "y": -2
+      },
+      "to": {
+        "x": -3,
+        "y": -3
+      },
+      "f1": "Oakhaven rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 2,
+        "y": -2
+      },
+      "to": {
+        "x": -3,
+        "y": -4
+      },
+      "f1": "Oakhaven rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 2,
+        "y": -2
+      },
+      "to": {
+        "x": 0,
+        "y": -5
+      },
+      "f1": "Oakhaven rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
         "x": 0,
         "y": -2
       },
@@ -17635,6 +14561,150 @@
     },
     {
       "from": {
+        "x": 0,
+        "y": -2
+      },
+      "to": {
+        "x": -2,
+        "y": -4
+      },
+      "f1": "Oakhaven rebels rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 0,
+        "y": -2
+      },
+      "to": {
+        "x": 1,
+        "y": -4
+      },
+      "f1": "Oakhaven rebels rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 0,
+        "y": -2
+      },
+      "to": {
+        "x": -2,
+        "y": -5
+      },
+      "f1": "Oakhaven rebels rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 0,
+        "y": -2
+      },
+      "to": {
+        "x": -3,
+        "y": -3
+      },
+      "f1": "Oakhaven rebels rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 0,
+        "y": -2
+      },
+      "to": {
+        "x": -3,
+        "y": -4
+      },
+      "f1": "Oakhaven rebels rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 0,
+        "y": -2
+      },
+      "to": {
+        "x": 0,
+        "y": -5
+      },
+      "f1": "Oakhaven rebels rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -1,
+        "y": -2
+      },
+      "to": {
+        "x": -2,
+        "y": -4
+      },
+      "f1": "Oakhaven rebels rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -1,
+        "y": -2
+      },
+      "to": {
+        "x": 1,
+        "y": -4
+      },
+      "f1": "Oakhaven rebels rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -1,
+        "y": -2
+      },
+      "to": {
+        "x": -2,
+        "y": -5
+      },
+      "f1": "Oakhaven rebels rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -1,
+        "y": -2
+      },
+      "to": {
+        "x": -3,
+        "y": -3
+      },
+      "f1": "Oakhaven rebels rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -1,
+        "y": -2
+      },
+      "to": {
+        "x": -3,
+        "y": -4
+      },
+      "f1": "Oakhaven rebels rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -1,
+        "y": -2
+      },
+      "to": {
+        "x": 0,
+        "y": -5
+      },
+      "f1": "Oakhaven rebels rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
         "x": -1,
         "y": -3
       },
@@ -18823,6 +15893,654 @@
     },
     {
       "from": {
+        "x": -1,
+        "y": -3
+      },
+      "to": {
+        "x": -2,
+        "y": -4
+      },
+      "f1": "Oakhaven rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -1,
+        "y": -3
+      },
+      "to": {
+        "x": 1,
+        "y": -4
+      },
+      "f1": "Oakhaven rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -1,
+        "y": -3
+      },
+      "to": {
+        "x": -2,
+        "y": -5
+      },
+      "f1": "Oakhaven rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -1,
+        "y": -3
+      },
+      "to": {
+        "x": -3,
+        "y": -3
+      },
+      "f1": "Oakhaven rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -1,
+        "y": -3
+      },
+      "to": {
+        "x": -3,
+        "y": -4
+      },
+      "f1": "Oakhaven rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -1,
+        "y": -3
+      },
+      "to": {
+        "x": 0,
+        "y": -5
+      },
+      "f1": "Oakhaven rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 1,
+        "y": -3
+      },
+      "to": {
+        "x": -2,
+        "y": -4
+      },
+      "f1": "Oakhaven rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 1,
+        "y": -3
+      },
+      "to": {
+        "x": 1,
+        "y": -4
+      },
+      "f1": "Oakhaven rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 1,
+        "y": -3
+      },
+      "to": {
+        "x": -2,
+        "y": -5
+      },
+      "f1": "Oakhaven rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 1,
+        "y": -3
+      },
+      "to": {
+        "x": -3,
+        "y": -3
+      },
+      "f1": "Oakhaven rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 1,
+        "y": -3
+      },
+      "to": {
+        "x": -3,
+        "y": -4
+      },
+      "f1": "Oakhaven rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 1,
+        "y": -3
+      },
+      "to": {
+        "x": 0,
+        "y": -5
+      },
+      "f1": "Oakhaven rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -2,
+        "y": -3
+      },
+      "to": {
+        "x": -2,
+        "y": -4
+      },
+      "f1": "Oakhaven rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -2,
+        "y": -3
+      },
+      "to": {
+        "x": 1,
+        "y": -4
+      },
+      "f1": "Oakhaven rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -2,
+        "y": -3
+      },
+      "to": {
+        "x": -2,
+        "y": -5
+      },
+      "f1": "Oakhaven rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -2,
+        "y": -3
+      },
+      "to": {
+        "x": -3,
+        "y": -3
+      },
+      "f1": "Oakhaven rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -2,
+        "y": -3
+      },
+      "to": {
+        "x": -3,
+        "y": -4
+      },
+      "f1": "Oakhaven rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -2,
+        "y": -3
+      },
+      "to": {
+        "x": 0,
+        "y": -5
+      },
+      "f1": "Oakhaven rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 0,
+        "y": -3
+      },
+      "to": {
+        "x": -2,
+        "y": -4
+      },
+      "f1": "Oakhaven rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 0,
+        "y": -3
+      },
+      "to": {
+        "x": 1,
+        "y": -4
+      },
+      "f1": "Oakhaven rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 0,
+        "y": -3
+      },
+      "to": {
+        "x": -2,
+        "y": -5
+      },
+      "f1": "Oakhaven rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 0,
+        "y": -3
+      },
+      "to": {
+        "x": -3,
+        "y": -3
+      },
+      "f1": "Oakhaven rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 0,
+        "y": -3
+      },
+      "to": {
+        "x": -3,
+        "y": -4
+      },
+      "f1": "Oakhaven rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 0,
+        "y": -3
+      },
+      "to": {
+        "x": 0,
+        "y": -5
+      },
+      "f1": "Oakhaven rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 0,
+        "y": -4
+      },
+      "to": {
+        "x": -2,
+        "y": -4
+      },
+      "f1": "Oakhaven rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 0,
+        "y": -4
+      },
+      "to": {
+        "x": 1,
+        "y": -4
+      },
+      "f1": "Oakhaven rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 0,
+        "y": -4
+      },
+      "to": {
+        "x": -2,
+        "y": -5
+      },
+      "f1": "Oakhaven rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 0,
+        "y": -4
+      },
+      "to": {
+        "x": -3,
+        "y": -3
+      },
+      "f1": "Oakhaven rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 0,
+        "y": -4
+      },
+      "to": {
+        "x": -3,
+        "y": -4
+      },
+      "f1": "Oakhaven rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 0,
+        "y": -4
+      },
+      "to": {
+        "x": 0,
+        "y": -5
+      },
+      "f1": "Oakhaven rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -1,
+        "y": -4
+      },
+      "to": {
+        "x": -2,
+        "y": -4
+      },
+      "f1": "Oakhaven rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -1,
+        "y": -4
+      },
+      "to": {
+        "x": 1,
+        "y": -4
+      },
+      "f1": "Oakhaven rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -1,
+        "y": -4
+      },
+      "to": {
+        "x": -2,
+        "y": -5
+      },
+      "f1": "Oakhaven rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -1,
+        "y": -4
+      },
+      "to": {
+        "x": -3,
+        "y": -3
+      },
+      "f1": "Oakhaven rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -1,
+        "y": -4
+      },
+      "to": {
+        "x": -3,
+        "y": -4
+      },
+      "f1": "Oakhaven rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -1,
+        "y": -4
+      },
+      "to": {
+        "x": 0,
+        "y": -5
+      },
+      "f1": "Oakhaven rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -1,
+        "y": -5
+      },
+      "to": {
+        "x": -2,
+        "y": -4
+      },
+      "f1": "Oakhaven rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -1,
+        "y": -5
+      },
+      "to": {
+        "x": 1,
+        "y": -4
+      },
+      "f1": "Oakhaven rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -1,
+        "y": -5
+      },
+      "to": {
+        "x": -2,
+        "y": -5
+      },
+      "f1": "Oakhaven rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -1,
+        "y": -5
+      },
+      "to": {
+        "x": -3,
+        "y": -3
+      },
+      "f1": "Oakhaven rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -1,
+        "y": -5
+      },
+      "to": {
+        "x": -3,
+        "y": -4
+      },
+      "f1": "Oakhaven rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -1,
+        "y": -5
+      },
+      "to": {
+        "x": 0,
+        "y": -5
+      },
+      "f1": "Oakhaven rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -1,
+        "y": -6
+      },
+      "to": {
+        "x": -2,
+        "y": -4
+      },
+      "f1": "Oakhaven rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -1,
+        "y": -6
+      },
+      "to": {
+        "x": 1,
+        "y": -4
+      },
+      "f1": "Oakhaven rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -1,
+        "y": -6
+      },
+      "to": {
+        "x": -2,
+        "y": -5
+      },
+      "f1": "Oakhaven rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -1,
+        "y": -6
+      },
+      "to": {
+        "x": -3,
+        "y": -3
+      },
+      "f1": "Oakhaven rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -1,
+        "y": -6
+      },
+      "to": {
+        "x": -3,
+        "y": -4
+      },
+      "f1": "Oakhaven rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -1,
+        "y": -6
+      },
+      "to": {
+        "x": 0,
+        "y": -5
+      },
+      "f1": "Oakhaven rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 2,
+        "y": -4
+      },
+      "to": {
+        "x": -2,
+        "y": -4
+      },
+      "f1": "Oakhaven rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 2,
+        "y": -4
+      },
+      "to": {
+        "x": 1,
+        "y": -4
+      },
+      "f1": "Oakhaven rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 2,
+        "y": -4
+      },
+      "to": {
+        "x": -2,
+        "y": -5
+      },
+      "f1": "Oakhaven rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 2,
+        "y": -4
+      },
+      "to": {
+        "x": -3,
+        "y": -3
+      },
+      "f1": "Oakhaven rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 2,
+        "y": -4
+      },
+      "to": {
+        "x": -3,
+        "y": -4
+      },
+      "f1": "Oakhaven rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 2,
+        "y": -4
+      },
+      "to": {
+        "x": 0,
+        "y": -5
+      },
+      "f1": "Oakhaven rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
         "x": 0,
         "y": -1
       },
@@ -19180,8 +16898,800 @@
       },
       "f1": "Valoria rebels",
       "f2": "Ironclad rebels"
+    },
+    {
+      "from": {
+        "x": 0,
+        "y": -1
+      },
+      "to": {
+        "x": -2,
+        "y": -4
+      },
+      "f1": "Valoria rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 0,
+        "y": -1
+      },
+      "to": {
+        "x": 1,
+        "y": -4
+      },
+      "f1": "Valoria rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 0,
+        "y": -1
+      },
+      "to": {
+        "x": -2,
+        "y": -5
+      },
+      "f1": "Valoria rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 0,
+        "y": -1
+      },
+      "to": {
+        "x": -3,
+        "y": -3
+      },
+      "f1": "Valoria rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 0,
+        "y": -1
+      },
+      "to": {
+        "x": -3,
+        "y": -4
+      },
+      "f1": "Valoria rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 0,
+        "y": -1
+      },
+      "to": {
+        "x": 0,
+        "y": -5
+      },
+      "f1": "Valoria rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -2,
+        "y": 0
+      },
+      "to": {
+        "x": -2,
+        "y": -4
+      },
+      "f1": "Valoria rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -2,
+        "y": 0
+      },
+      "to": {
+        "x": 1,
+        "y": -4
+      },
+      "f1": "Valoria rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -2,
+        "y": 0
+      },
+      "to": {
+        "x": -2,
+        "y": -5
+      },
+      "f1": "Valoria rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -2,
+        "y": 0
+      },
+      "to": {
+        "x": -3,
+        "y": -3
+      },
+      "f1": "Valoria rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -2,
+        "y": 0
+      },
+      "to": {
+        "x": -3,
+        "y": -4
+      },
+      "f1": "Valoria rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -2,
+        "y": 0
+      },
+      "to": {
+        "x": 0,
+        "y": -5
+      },
+      "f1": "Valoria rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 1,
+        "y": -2
+      },
+      "to": {
+        "x": -2,
+        "y": -4
+      },
+      "f1": "Valoria rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 1,
+        "y": -2
+      },
+      "to": {
+        "x": 1,
+        "y": -4
+      },
+      "f1": "Valoria rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 1,
+        "y": -2
+      },
+      "to": {
+        "x": -2,
+        "y": -5
+      },
+      "f1": "Valoria rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 1,
+        "y": -2
+      },
+      "to": {
+        "x": -3,
+        "y": -3
+      },
+      "f1": "Valoria rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 1,
+        "y": -2
+      },
+      "to": {
+        "x": -3,
+        "y": -4
+      },
+      "f1": "Valoria rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 1,
+        "y": -2
+      },
+      "to": {
+        "x": 0,
+        "y": -5
+      },
+      "f1": "Valoria rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -1,
+        "y": 0
+      },
+      "to": {
+        "x": -2,
+        "y": -4
+      },
+      "f1": "Valoria rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -1,
+        "y": 0
+      },
+      "to": {
+        "x": 1,
+        "y": -4
+      },
+      "f1": "Valoria rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -1,
+        "y": 0
+      },
+      "to": {
+        "x": -2,
+        "y": -5
+      },
+      "f1": "Valoria rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -1,
+        "y": 0
+      },
+      "to": {
+        "x": -3,
+        "y": -3
+      },
+      "f1": "Valoria rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -1,
+        "y": 0
+      },
+      "to": {
+        "x": -3,
+        "y": -4
+      },
+      "f1": "Valoria rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -1,
+        "y": 0
+      },
+      "to": {
+        "x": 0,
+        "y": -5
+      },
+      "f1": "Valoria rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -3,
+        "y": 1
+      },
+      "to": {
+        "x": -2,
+        "y": -4
+      },
+      "f1": "Valoria rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -3,
+        "y": 1
+      },
+      "to": {
+        "x": 1,
+        "y": -4
+      },
+      "f1": "Valoria rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -3,
+        "y": 1
+      },
+      "to": {
+        "x": -2,
+        "y": -5
+      },
+      "f1": "Valoria rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -3,
+        "y": 1
+      },
+      "to": {
+        "x": -3,
+        "y": -3
+      },
+      "f1": "Valoria rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -3,
+        "y": 1
+      },
+      "to": {
+        "x": -3,
+        "y": -4
+      },
+      "f1": "Valoria rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -3,
+        "y": 1
+      },
+      "to": {
+        "x": 0,
+        "y": -5
+      },
+      "f1": "Valoria rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 1,
+        "y": 0
+      },
+      "to": {
+        "x": -2,
+        "y": -4
+      },
+      "f1": "Valoria rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 1,
+        "y": 0
+      },
+      "to": {
+        "x": 1,
+        "y": -4
+      },
+      "f1": "Valoria rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 1,
+        "y": 0
+      },
+      "to": {
+        "x": -2,
+        "y": -5
+      },
+      "f1": "Valoria rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 1,
+        "y": 0
+      },
+      "to": {
+        "x": -3,
+        "y": -3
+      },
+      "f1": "Valoria rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 1,
+        "y": 0
+      },
+      "to": {
+        "x": -3,
+        "y": -4
+      },
+      "f1": "Valoria rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 1,
+        "y": 0
+      },
+      "to": {
+        "x": 0,
+        "y": -5
+      },
+      "f1": "Valoria rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -2,
+        "y": -1
+      },
+      "to": {
+        "x": -2,
+        "y": -4
+      },
+      "f1": "Ironclad rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -2,
+        "y": -1
+      },
+      "to": {
+        "x": 1,
+        "y": -4
+      },
+      "f1": "Ironclad rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -2,
+        "y": -1
+      },
+      "to": {
+        "x": -2,
+        "y": -5
+      },
+      "f1": "Ironclad rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -2,
+        "y": -1
+      },
+      "to": {
+        "x": -3,
+        "y": -3
+      },
+      "f1": "Ironclad rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -2,
+        "y": -1
+      },
+      "to": {
+        "x": -3,
+        "y": -4
+      },
+      "f1": "Ironclad rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -2,
+        "y": -1
+      },
+      "to": {
+        "x": 0,
+        "y": -5
+      },
+      "f1": "Ironclad rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 0,
+        "y": 1
+      },
+      "to": {
+        "x": -2,
+        "y": -4
+      },
+      "f1": "Ironclad rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 0,
+        "y": 1
+      },
+      "to": {
+        "x": 1,
+        "y": -4
+      },
+      "f1": "Ironclad rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 0,
+        "y": 1
+      },
+      "to": {
+        "x": -2,
+        "y": -5
+      },
+      "f1": "Ironclad rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 0,
+        "y": 1
+      },
+      "to": {
+        "x": -3,
+        "y": -3
+      },
+      "f1": "Ironclad rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 0,
+        "y": 1
+      },
+      "to": {
+        "x": -3,
+        "y": -4
+      },
+      "f1": "Ironclad rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": 0,
+        "y": 1
+      },
+      "to": {
+        "x": 0,
+        "y": -5
+      },
+      "f1": "Ironclad rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -3,
+        "y": -1
+      },
+      "to": {
+        "x": -2,
+        "y": -4
+      },
+      "f1": "Ironclad rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -3,
+        "y": -1
+      },
+      "to": {
+        "x": 1,
+        "y": -4
+      },
+      "f1": "Ironclad rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -3,
+        "y": -1
+      },
+      "to": {
+        "x": -2,
+        "y": -5
+      },
+      "f1": "Ironclad rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -3,
+        "y": -1
+      },
+      "to": {
+        "x": -3,
+        "y": -3
+      },
+      "f1": "Ironclad rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -3,
+        "y": -1
+      },
+      "to": {
+        "x": -3,
+        "y": -4
+      },
+      "f1": "Ironclad rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -3,
+        "y": -1
+      },
+      "to": {
+        "x": 0,
+        "y": -5
+      },
+      "f1": "Ironclad rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -3,
+        "y": -2
+      },
+      "to": {
+        "x": -2,
+        "y": -4
+      },
+      "f1": "Ironclad rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -3,
+        "y": -2
+      },
+      "to": {
+        "x": 1,
+        "y": -4
+      },
+      "f1": "Ironclad rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -3,
+        "y": -2
+      },
+      "to": {
+        "x": -2,
+        "y": -5
+      },
+      "f1": "Ironclad rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -3,
+        "y": -2
+      },
+      "to": {
+        "x": -3,
+        "y": -3
+      },
+      "f1": "Ironclad rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -3,
+        "y": -2
+      },
+      "to": {
+        "x": -3,
+        "y": -4
+      },
+      "f1": "Ironclad rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -3,
+        "y": -2
+      },
+      "to": {
+        "x": 0,
+        "y": -5
+      },
+      "f1": "Ironclad rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -3,
+        "y": 0
+      },
+      "to": {
+        "x": -2,
+        "y": -4
+      },
+      "f1": "Ironclad rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -3,
+        "y": 0
+      },
+      "to": {
+        "x": 1,
+        "y": -4
+      },
+      "f1": "Ironclad rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -3,
+        "y": 0
+      },
+      "to": {
+        "x": -2,
+        "y": -5
+      },
+      "f1": "Ironclad rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -3,
+        "y": 0
+      },
+      "to": {
+        "x": -3,
+        "y": -3
+      },
+      "f1": "Ironclad rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -3,
+        "y": 0
+      },
+      "to": {
+        "x": -3,
+        "y": -4
+      },
+      "f1": "Ironclad rebels",
+      "f2": "Oakhaven rebels"
+    },
+    {
+      "from": {
+        "x": -3,
+        "y": 0
+      },
+      "to": {
+        "x": 0,
+        "y": -5
+      },
+      "f1": "Ironclad rebels",
+      "f2": "Oakhaven rebels"
     }
   ],
-  "globalTempOffset": 0.12228838718496265,
-  "season": "Autumn"
+  "globalTempOffset": 0.12228096056729558,
+  "season": "Winter"
 }
