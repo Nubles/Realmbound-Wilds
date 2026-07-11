@@ -578,8 +578,13 @@ async function onTimelineTravel(year) {
         chronicleBoxEl.appendChild(entry);
       });
 
-      // Trigger map updates with historical state
-      renderer.setHistoricalState(histState);
+      // Reuse the nearest earlier sparse map snapshot for historical rendering.
+      const mapSnapshot = historyLog.slice(0, index + 1).reverse().find(entry => entry.mapState);
+      renderer.setHistoricalState({
+        ...histState,
+        discoveredCenters: mapSnapshot?.discoveredCenters || currentWorld.discoveredCenters || [],
+        mapState: mapSnapshot?.mapState || { modifiedCells: [], tradeRoutes: [] }
+      });
     }
   }
 }

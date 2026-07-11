@@ -23,16 +23,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Set up Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: 20
           cache: 'npm'
 
       - name: Install Dependencies
-        run: npm ci || npm install
+        run: npm ci
 
       - name: Run Simulation Tick
         run: npm run tick
@@ -45,7 +45,12 @@ jobs:
           git config --global user.name "Realmbound Wilds Bot"
           git config --global user.email "bot@realmboundwilds.local"
           git add public/data/world.json public/data/history_log.json
-          git diff-index --quiet HEAD || (git commit -m "Simulation Tick: Year $(node -e "import('fs').then(fs => console.log(JSON.parse(fs.readFileSync('public/data/world.json')).year))")" && git push)
+          if ! git diff-index --quiet HEAD; then
+            year=$(node -e "import('fs').then(fs => console.log(JSON.parse(fs.readFileSync('public/data/world.json')).year))")
+            git commit -m "Simulation Tick: Year $year"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
