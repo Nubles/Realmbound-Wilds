@@ -5,6 +5,8 @@ import { createNewWorld, advanceSimulation, getCell } from './engine.js';
 const DATA_DIR = path.resolve('public/data');
 const WORLD_FILE = path.join(DATA_DIR, 'world.json');
 const HISTORY_FILE = path.join(DATA_DIR, 'history_log.json');
+const HISTORY_LIMIT = 48;
+const MAP_SNAPSHOT_INTERVAL = 12;
 
 // Ensure data directory exists
 if (!fs.existsSync(DATA_DIR)) {
@@ -51,14 +53,18 @@ function getSummary(world) {
     });
   });
 
-  return {
+  const summary = {
     year: world.year,
     globalTempOffset: world.globalTempOffset,
     stats: { deer, wolf, elk, bear, beasts, population },
     factions: factionPowers,
-    events: [...world.chronicle.slice(-10)], // Grab recent events
-    discoveredCenters: world.discoveredCenters,
-    mapState: {
+    events: [...world.chronicle.slice(-10)]
+  };
+
+  // Full map snapshots grow quickly, so retain one every twelve years.
+  if (world.year % MAP_SNAPSHOT_INTERVAL === 0) {
+    summary.discoveredCenters = world.discoveredCenters;
+    summary.mapState = {
       modifiedCells: compressedCells,
       tradeRoutes: (world.tradeRoutes || []).map(tr => ({
         from: tr.from,
@@ -66,8 +72,20 @@ function getSummary(world) {
         f1: tr.f1,
         f2: tr.f2
       }))
-    }
-  };
+    };
+  }
+
+  return summary;
+}
+
+function compactHistory(history) {
+  return history.slice(-HISTORY_LIMIT).map(entry => {
+    if (entry.year % MAP_SNAPSHOT_INTERVAL === 0) return entry;
+    const compactEntry = { ...entry };
+    delete compactEntry.discoveredCenters;
+    delete compactEntry.mapState;
+    return compactEntry;
+  });
 }
 
 async function run() {
@@ -153,7 +171,7 @@ async function run() {
   if (fs.existsSync(HISTORY_FILE)) {
     try {
       const rawHistory = fs.readFileSync(HISTORY_FILE, 'utf8');
-      history = JSON.parse(rawHistory);
+      history = compactHistory(JSON.parse(rawHistory));
     } catch (e) {
       console.warn('Failed to parse history log, starting fresh history.');
     }
@@ -162,9 +180,7 @@ async function run() {
   // Append new history summary
   const summary = getSummary(world);
   history.push(summary);
-  if (history.length > 200) {
-    history.shift();
-  }
+  history = compactHistory(history);
 
   // Save files
   fs.writeFileSync(WORLD_FILE, JSON.stringify(world, null, 2), 'utf8');
