@@ -1,44 +1,5 @@
 [
   {
-    "year": 100,
-    "globalTempOffset": 0.15199540953151883,
-    "stats": {
-      "deer": 277,
-      "wolf": 0,
-      "elk": 0,
-      "bear": 0,
-      "beasts": 0,
-      "population": 1028052
-    },
-    "factions": {
-      "Valoria": 85802,
-      "Players": 1166,
-      "Oakhaven": 25981,
-      "Ironclad": 14046,
-      "Sunspire": 375322,
-      "Grimwallow": 72452,
-      "Aethelgard": 0,
-      "Oakhaven rebels": 32940,
-      "Players rebels": 3262,
-      "Oakhaven rebels rebels": 0,
-      "Valoria rebels": 107946,
-      "Ironclad rebels": 18908,
-      "Grimwallow rebels": 0
-    },
-    "events": [
-      "[Year 100] DIPLOMACY: Alliances forged between Grimwallow and Oakhaven rebels!",
-      "[Year 100] DIPLOMACY: Alliances forged between Oakhaven rebels and Grimwallow rebels!",
-      "[Year 100] DIPLOMACY: Alliances forged between Valoria rebels and Oakhaven rebels rebels!",
-      "[Year 100] PEACE TREATY: Armistice signed between Ironclad rebels and Oakhaven rebels.",
-      "[Year 100] PEACE TREATY: Armistice signed between Ironclad rebels and Grimwallow rebels.",
-      "[Year 100] DIPLOMACY: Alliances forged between Players rebels and Oakhaven rebels rebels!",
-      "[Year 100] MEDICAL RELIEF: Apothecary structure successfully cured the plague outbreak in Deepmine of Players.",
-      "[Year 100] CONTAGION: The plague has spread to Riverbend of Players rebels at [12, 11] in underworld!",
-      "[Year 100] CONTAGION: The plague has spread to Deepmine of Players at [14, 10] in underworld!",
-      "[Year 100] MARKET TRADE: Oakhaven rebels purchased 10 units of wood from Oakhaven rebels rebels for 15 gold."
-    ]
-  },
-  {
     "year": 101,
     "globalTempOffset": 0.23696795671246945,
     "stats": {
@@ -531600,6 +531561,55 @@
       "[Year 147] MEDICAL RELIEF: Apothecary structure successfully cured the plague outbreak in Goldpeak of Valoria rebels rebels.",
       "[Year 147] MARKET TRADE: Oakhaven purchased 10 units of wood from Oakhaven rebels for 15 gold.",
       "[Year 147] MARKET TRADE: Ironclad purchased 10 units of wood from Oakhaven rebels for 15 gold."
+    ]
+  },
+  {
+    "year": 148,
+    "globalTempOffset": 0.08533016701228918,
+    "stats": {
+      "deer": 792,
+      "wolf": 0,
+      "elk": 0,
+      "bear": 0,
+      "beasts": 0,
+      "population": 21460609
+    },
+    "factions": {
+      "Valoria": 68758,
+      "Players": 107343,
+      "Oakhaven": 22538,
+      "Ironclad": 0,
+      "Sunspire": 16284289,
+      "Grimwallow": 0,
+      "Aethelgard": 0,
+      "Oakhaven rebels": 28669,
+      "Players rebels": 160442,
+      "Oakhaven rebels rebels": 0,
+      "Valoria rebels": 42651,
+      "Ironclad rebels": 129618,
+      "Grimwallow rebels": 8828,
+      "Players rebels rebels": 11332,
+      "Valoria rebels rebels": 0,
+      "Ironclad rebels rebels": 0,
+      "Players rebels rebels rebels": 0,
+      "Oakhaven rebels rebels rebels": 1261,
+      "Grimwallow rebels rebels": 22580,
+      "Valoria rebels rebels rebels": 1338,
+      "Ironclad rebels rebels rebels": 0,
+      "Players rebels rebels rebels rebels": 20618,
+      "Grimwallow rebels rebels rebels": 632
+    },
+    "events": [
+      "[Year 148] BATTLE LOSS: Settlement Aethercliff of Grimwallow rebels was razed during combat.",
+      "[Year 148] PEACE TREATY: Armistice signed between Valoria rebels rebels and Oakhaven rebels rebels.",
+      "[Year 148] DIPLOMACY: Alliances forged between Valoria rebels rebels and Players rebels rebels rebels!",
+      "[Year 148] BATTLE LOSS: Settlement Goldpeak of Oakhaven was razed during combat.",
+      "[Year 148] CONTAGION: The plague has spread to Crossroads of Valoria rebels rebels at [5, 0] in overworld!",
+      "[Year 148] CONTAGION: The plague has spread to Evergreen of Valoria rebels at [8, 0] in overworld!",
+      "[Year 148] CONTAGION: The plague has spread to Riverbend of Valoria rebels at [7, 1] in overworld!",
+      "[Year 148] MARKET TRADE: Oakhaven rebels purchased 10 units of wood from Players rebels rebels rebels for 15 gold.",
+      "[Year 148] MARKET TRADE: Ironclad rebels purchased 10 units of wood from Players rebels rebels rebels for 15 gold.",
+      "[Year 148] MARKET TRADE: Oakhaven rebels rebels purchased 10 units of wood from Players rebels rebels rebels for 15 gold."
     ]
   }
 ]
