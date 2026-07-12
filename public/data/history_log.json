@@ -1,46 +1,5 @@
 [
   {
-    "year": 107,
-    "globalTempOffset": 0.1988950504176319,
-    "stats": {
-      "deer": 329,
-      "wolf": 0,
-      "elk": 0,
-      "bear": 0,
-      "beasts": 0,
-      "population": 1679624
-    },
-    "factions": {
-      "Valoria": 55092,
-      "Players": 1433,
-      "Oakhaven": 82023,
-      "Ironclad": 33130,
-      "Sunspire": 661203,
-      "Grimwallow": 11463,
-      "Aethelgard": 0,
-      "Oakhaven rebels": 678,
-      "Players rebels": 7156,
-      "Oakhaven rebels rebels": 8121,
-      "Valoria rebels": 68706,
-      "Ironclad rebels": 60120,
-      "Grimwallow rebels": 119358,
-      "Players rebels rebels": 13772,
-      "Valoria rebels rebels": 94722
-    },
-    "events": [
-      "[Year 107] PEACE TREATY: Armistice signed between Oakhaven rebels rebels and Oakhaven rebels rebels.",
-      "[Year 107] DECLARATION OF WAR: Oakhaven rebels rebels declared war on Valoria rebels rebels!",
-      "[Year 107] CALL TO ARMS: Aethelgard joins war against Valoria rebels rebels to defend ally Oakhaven rebels rebels.",
-      "[Year 107] CALL TO ARMS: Oakhaven rebels joins war against Valoria rebels rebels to defend ally Oakhaven rebels rebels.",
-      "[Year 107] CALL TO ARMS: Players rebels rebels joins war against Valoria rebels rebels to defend ally Oakhaven rebels rebels.",
-      "[Year 107] CONTAGION: The plague has spread to Aethercliff of Grimwallow at [15, 11] in underworld!",
-      "[Year 107] MEDICAL RELIEF: Apothecary structure successfully cured the plague outbreak in Riverbend of Players.",
-      "[Year 107] MEDICAL RELIEF: Apothecary structure successfully cured the plague outbreak in Riverbend of Players.",
-      "[Year 107] PLAGUE TOLL: Sickness claimed 160 citizens in Evergreen of Grimwallow. An Apothecary is urgently needed!",
-      "[Year 107] PLAGUE TOLL: Sickness claimed 29 citizens in Aethercliff of Grimwallow. An Apothecary is urgently needed!"
-    ]
-  },
-  {
     "year": 108,
     "globalTempOffset": 0.2,
     "stats": {
@@ -531674,6 +531633,57 @@
       "[Year 154] BATTLE LOSS: Settlement Deepmine of Oakhaven rebels was razed during combat.",
       "[Year 154] PEACE TREATY: Armistice signed between Oakhaven rebels rebels rebels and Grimwallow rebels rebels rebels.",
       "[Year 154] MEDICAL RELIEF: Apothecary structure successfully cured the plague outbreak in Stonefort of Valoria rebels rebels."
+    ]
+  },
+  {
+    "year": 155,
+    "globalTempOffset": 0.0016137526556849607,
+    "stats": {
+      "deer": 832,
+      "wolf": 0,
+      "elk": 0,
+      "bear": 0,
+      "beasts": 0,
+      "population": 35867849
+    },
+    "factions": {
+      "Valoria": 162112,
+      "Players": 11125,
+      "Oakhaven": 75191,
+      "Ironclad": 0,
+      "Sunspire": 27951031,
+      "Grimwallow": 0,
+      "Aethelgard": 0,
+      "Oakhaven rebels": 24818,
+      "Players rebels": 69124,
+      "Oakhaven rebels rebels": 202228,
+      "Valoria rebels": 28359,
+      "Ironclad rebels": 16306,
+      "Grimwallow rebels": 5389,
+      "Players rebels rebels": 85745,
+      "Valoria rebels rebels": 87,
+      "Ironclad rebels rebels": 286906,
+      "Players rebels rebels rebels": 1755,
+      "Oakhaven rebels rebels rebels": 0,
+      "Grimwallow rebels rebels": 6232,
+      "Valoria rebels rebels rebels": 0,
+      "Ironclad rebels rebels rebels": 0,
+      "Players rebels rebels rebels rebels": 12517,
+      "Grimwallow rebels rebels rebels": 0,
+      "Oakhaven rebels rebels rebels rebels": 0,
+      "Valoria rebels rebels rebels rebels": 0
+    },
+    "events": [
+      "[Year 155] DIPLOMACY: Alliances forged between Valoria rebels rebels rebels and Oakhaven rebels rebels rebels!",
+      "[Year 155] PEACE TREATY: Armistice signed between Valoria rebels rebels rebels rebels and Valoria rebels rebels.",
+      "[Year 155] BATTLE LOSS: Settlement Aethercliff of Players rebels rebels was razed during combat.",
+      "[Year 155] PEACE TREATY: Armistice signed between Players rebels and Players rebels rebels.",
+      "[Year 155] PEACE TREATY: Armistice signed between Players rebels and Valoria rebels rebels.",
+      "[Year 155] PEACE TREATY: Armistice signed between Players rebels rebels and Valoria rebels rebels.",
+      "[Year 155] PEACE TREATY: Armistice signed between Valoria rebels rebels and Oakhaven rebels rebels rebels.",
+      "[Year 155] PEACE TREATY: Armistice signed between Ironclad rebels rebels and Grimwallow rebels rebels rebels.",
+      "[Year 155] DIPLOMACY: Alliances forged between Grimwallow rebels rebels rebels and Oakhaven rebels rebels rebels rebels!",
+      "[Year 155] SEA MONSTER SIGHTING: A giant kraken was spotted in the oceanic waters at [-3, -3]!"
     ]
   }
 ]
