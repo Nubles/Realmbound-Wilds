@@ -1,46 +1,5 @@
 [
   {
-    "year": 106,
-    "globalTempOffset": 0.2,
-    "stats": {
-      "deer": 329,
-      "wolf": 0,
-      "elk": 0,
-      "bear": 0,
-      "beasts": 0,
-      "population": 1605373
-    },
-    "factions": {
-      "Valoria": 47322,
-      "Players": 1097,
-      "Oakhaven": 74950,
-      "Ironclad": 29321,
-      "Sunspire": 610300,
-      "Grimwallow": 10777,
-      "Aethelgard": 0,
-      "Oakhaven rebels": 13743,
-      "Players rebels": 6743,
-      "Oakhaven rebels rebels": 0,
-      "Valoria rebels": 68429,
-      "Ironclad rebels": 54537,
-      "Grimwallow rebels": 110447,
-      "Players rebels rebels": 15404,
-      "Valoria rebels rebels": 85594
-    },
-    "events": [
-      "[Year 106] DIPLOMACY: Alliances forged between Oakhaven rebels rebels and Valoria rebels rebels!",
-      "[Year 106] PEACE TREATY: Armistice signed between Grimwallow rebels and Players rebels rebels.",
-      "[Year 106] DIPLOMACY: Alliances forged between Oakhaven rebels rebels and Players rebels rebels!",
-      "[Year 106] PEACE TREATY: Armistice signed between Oakhaven rebels rebels and Oakhaven rebels rebels.",
-      "[Year 106] MEDICAL RELIEF: Apothecary structure successfully cured the plague outbreak in Aethercliff of Players rebels.",
-      "[Year 106] CONTAGION: The plague has spread to Riverbend of Players at [14, 11] in underworld!",
-      "[Year 106] MEDICAL RELIEF: Apothecary structure successfully cured the plague outbreak in Goldpeak of Grimwallow.",
-      "[Year 106] CONTAGION: The plague has spread to Riverbend of Players at [13, 9] in underworld!",
-      "[Year 106] PLAGUE TOLL: Sickness claimed 116 citizens in Stonefort of Players rebels. An Apothecary is urgently needed!",
-      "[Year 106] MARKET TRADE: Valoria purchased 10 units of wood from Oakhaven rebels rebels for 15 gold."
-    ]
-  },
-  {
     "year": 107,
     "globalTempOffset": 0.1988950504176319,
     "stats": {
@@ -531664,6 +531623,57 @@
       "[Year 153] PEACE TREATY: Armistice signed between Players rebels rebels rebels and Ironclad rebels rebels.",
       "[Year 153] PEACE TREATY: Armistice signed between Oakhaven rebels rebels rebels and Grimwallow rebels rebels rebels.",
       "[Year 153] PLAGUE TOLL: Sickness claimed 122 citizens in Stonefort of Valoria rebels rebels. An Apothecary is urgently needed!"
+    ]
+  },
+  {
+    "year": 154,
+    "globalTempOffset": -0.017381067266687738,
+    "stats": {
+      "deer": 832,
+      "wolf": 0,
+      "elk": 0,
+      "bear": 0,
+      "beasts": 0,
+      "population": 33376567
+    },
+    "factions": {
+      "Valoria": 155247,
+      "Players": 8335,
+      "Oakhaven": 69478,
+      "Ironclad": 0,
+      "Sunspire": 25875211,
+      "Grimwallow": 0,
+      "Aethelgard": 0,
+      "Oakhaven rebels": 18638,
+      "Players rebels": 59791,
+      "Oakhaven rebels rebels": 192038,
+      "Valoria rebels": 30374,
+      "Ironclad rebels": 12106,
+      "Grimwallow rebels": 4310,
+      "Players rebels rebels": 74866,
+      "Valoria rebels rebels": 225,
+      "Ironclad rebels rebels": 275756,
+      "Players rebels rebels rebels": 2089,
+      "Oakhaven rebels rebels rebels": 34,
+      "Grimwallow rebels rebels": 4416,
+      "Valoria rebels rebels rebels": 1508,
+      "Ironclad rebels rebels rebels": 0,
+      "Players rebels rebels rebels rebels": 9538,
+      "Grimwallow rebels rebels rebels": 5171,
+      "Oakhaven rebels rebels rebels rebels": 0,
+      "Valoria rebels rebels rebels rebels": 0
+    },
+    "events": [
+      "[Year 154] CALL TO ARMS: Oakhaven rebels joins war against Ironclad rebels rebels to defend ally Valoria rebels rebels rebels.",
+      "[Year 154] CALL TO ARMS: Valoria rebels rebels joins war against Ironclad rebels rebels to defend ally Valoria rebels rebels rebels.",
+      "[Year 154] CALL TO ARMS: Oakhaven rebels rebels joins war against Ironclad rebels rebels to defend ally Valoria rebels rebels rebels.",
+      "[Year 154] PEACE TREATY: Armistice signed between Valoria rebels rebels rebels and Oakhaven rebels rebels rebels rebels.",
+      "[Year 154] PEACE TREATY: Armistice signed between Valoria rebels rebels and Valoria rebels rebels.",
+      "[Year 154] DIPLOMACY: Alliances forged between Valoria rebels rebels and Grimwallow rebels rebels rebels!",
+      "[Year 154] PEACE TREATY: Armistice signed between Oakhaven rebels rebels rebels and Players rebels rebels rebels.",
+      "[Year 154] BATTLE LOSS: Settlement Deepmine of Oakhaven rebels was razed during combat.",
+      "[Year 154] PEACE TREATY: Armistice signed between Oakhaven rebels rebels rebels and Grimwallow rebels rebels rebels.",
+      "[Year 154] MEDICAL RELIEF: Apothecary structure successfully cured the plague outbreak in Stonefort of Valoria rebels rebels."
     ]
   }
 ]
