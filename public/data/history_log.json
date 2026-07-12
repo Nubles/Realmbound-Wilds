@@ -1,46 +1,5 @@
 [
   {
-    "year": 109,
-    "globalTempOffset": 0.2,
-    "stats": {
-      "deer": 344,
-      "wolf": 0,
-      "elk": 0,
-      "bear": 0,
-      "beasts": 0,
-      "population": 1921060
-    },
-    "factions": {
-      "Valoria": 74722,
-      "Players": 2043,
-      "Oakhaven": 105957,
-      "Ironclad": 28973,
-      "Sunspire": 775275,
-      "Grimwallow": 16182,
-      "Aethelgard": 0,
-      "Oakhaven rebels": 605,
-      "Players rebels": 9082,
-      "Oakhaven rebels rebels": 0,
-      "Valoria rebels": 84407,
-      "Ironclad rebels": 74683,
-      "Grimwallow rebels": 139806,
-      "Players rebels rebels": 0,
-      "Valoria rebels rebels": 0
-    },
-    "events": [
-      "[Year 109] DECLARATION OF WAR: Grimwallow rebels declared war on Players rebels rebels!",
-      "[Year 109] CALL TO ARMS: Oakhaven rebels joins war against Players rebels rebels to defend ally Grimwallow rebels.",
-      "[Year 109] PEACE TREATY: Armistice signed between Players rebels rebels and Oakhaven rebels rebels.",
-      "[Year 109] DIPLOMACY: Alliances forged between Players rebels rebels and Oakhaven rebels rebels!",
-      "[Year 109] PEACE TREATY: Armistice signed between Oakhaven rebels rebels and Oakhaven rebels rebels.",
-      "[Year 109] DIPLOMACY: Alliances forged between Oakhaven rebels rebels and Valoria rebels rebels!",
-      "[Year 109] CONTAGION: The plague has spread to Riverbend of Grimwallow at [16, 7] in underworld!",
-      "[Year 109] MEDICAL RELIEF: Apothecary structure successfully cured the plague outbreak in Deepmine of Grimwallow.",
-      "[Year 109] CONTAGION: The plague has spread to Riverbend of Players at [13, 9] in underworld!",
-      "[Year 109] PLAGUE TOLL: Sickness claimed 175 citizens in Stonefort of Players rebels. An Apothecary is urgently needed!"
-    ]
-  },
-  {
     "year": 110,
     "globalTempOffset": 0.2,
     "stats": {
@@ -997543,5 +997502,56 @@
         }
       ]
     }
+  },
+  {
+    "year": 157,
+    "globalTempOffset": 0.032029787162318836,
+    "stats": {
+      "deer": 898,
+      "wolf": 0,
+      "elk": 0,
+      "bear": 0,
+      "beasts": 0,
+      "population": 41545596
+    },
+    "factions": {
+      "Valoria": 65720,
+      "Players": 16584,
+      "Oakhaven": 33156,
+      "Ironclad": 0,
+      "Sunspire": 32622536,
+      "Grimwallow": 0,
+      "Aethelgard": 0,
+      "Oakhaven rebels": 16805,
+      "Players rebels": 52666,
+      "Oakhaven rebels rebels": 2367,
+      "Valoria rebels": 71496,
+      "Ironclad rebels": 13917,
+      "Grimwallow rebels": 8967,
+      "Players rebels rebels": 157680,
+      "Valoria rebels rebels": 0,
+      "Ironclad rebels rebels": 104,
+      "Players rebels rebels rebels": 2015,
+      "Oakhaven rebels rebels rebels": 932,
+      "Grimwallow rebels rebels": 330,
+      "Valoria rebels rebels rebels": 380,
+      "Ironclad rebels rebels rebels": 0,
+      "Players rebels rebels rebels rebels": 31844,
+      "Grimwallow rebels rebels rebels": 58,
+      "Oakhaven rebels rebels rebels rebels": 0,
+      "Valoria rebels rebels rebels rebels": 0
+    },
+    "events": [
+      "[Year 157] PEACE TREATY: Armistice signed between Valoria rebels and Ironclad rebels rebels.",
+      "[Year 157] PEACE TREATY: Armistice signed between Ironclad rebels rebels and Valoria rebels rebels.",
+      "[Year 157] PEACE TREATY: Armistice signed between Players rebels rebels and Oakhaven rebels rebels.",
+      "[Year 157] PEACE TREATY: Armistice signed between Oakhaven rebels rebels rebels and Valoria rebels rebels rebels.",
+      "[Year 157] PEACE TREATY: Armistice signed between Oakhaven rebels rebels rebels and Players rebels rebels rebels rebels.",
+      "[Year 157] BATTLE LOSS: Settlement Stonefort of Valoria rebels was razed during combat.",
+      "[Year 157] PEACE TREATY: Armistice signed between Oakhaven rebels rebels rebels and Valoria rebels rebels.",
+      "[Year 157] DIPLOMACY: Alliances forged between Valoria rebels rebels rebels and Valoria rebels rebels!",
+      "[Year 157] CLIMATE: A scorching heatwave swept the lands, drying up cavern reservoirs.",
+      "[Year 157] MARKET TRADE: Valoria purchased 10 units of wood from Valoria rebels rebels for 15 gold."
+    ]
   }
 ]
