@@ -1,45 +1,5 @@
 [
   {
-    "year": 103,
-    "globalTempOffset": 0.2,
-    "stats": {
-      "deer": 293,
-      "wolf": 0,
-      "elk": 0,
-      "bear": 0,
-      "beasts": 0,
-      "population": 1314688
-    },
-    "factions": {
-      "Valoria": 23295,
-      "Players": 1798,
-      "Oakhaven": 43016,
-      "Ironclad": 20935,
-      "Sunspire": 479173,
-      "Grimwallow": 5435,
-      "Aethelgard": 0,
-      "Oakhaven rebels": 41752,
-      "Players rebels": 4668,
-      "Oakhaven rebels rebels": 76596,
-      "Valoria rebels": 75477,
-      "Ironclad rebels": 33362,
-      "Grimwallow rebels": 87110,
-      "Players rebels rebels": 12060
-    },
-    "events": [
-      "[Year 103] CALL TO ARMS: Players rebels rebels joins war against Aethelgard to defend ally Grimwallow.",
-      "[Year 103] PEACE TREATY: Armistice signed between Grimwallow and Players rebels.",
-      "[Year 103] PEACE TREATY: Armistice signed between Aethelgard and Oakhaven rebels.",
-      "[Year 103] DIPLOMACY: Alliances forged between Oakhaven rebels and Oakhaven rebels rebels!",
-      "[Year 103] DIPLOMACY: Alliances forged between Oakhaven rebels and Grimwallow rebels!",
-      "[Year 103] DIPLOMACY: Alliances forged between Ironclad rebels and Players rebels rebels!",
-      "[Year 103] DIPLOMACY: Alliances forged between Oakhaven rebels rebels and Grimwallow rebels!",
-      "[Year 103] DIPLOMACY: Alliances forged between Oakhaven rebels rebels and Valoria rebels!",
-      "[Year 103] PLAGUE TOLL: Sickness claimed 39 citizens in Aethercliff of Players rebels. An Apothecary is urgently needed!",
-      "[Year 103] PLAGUE TOLL: Sickness claimed 116 citizens in Evergreen of Grimwallow. An Apothecary is urgently needed!"
-    ]
-  },
-  {
     "year": 104,
     "globalTempOffset": 0.18502581534907223,
     "stats": {
@@ -531632,6 +531592,57 @@
       "[Year 150] PEACE TREATY: Armistice signed between Valoria rebels rebels rebels rebels and Players rebels.",
       "[Year 150] MEDICAL RELIEF: Apothecary structure successfully cured the plague outbreak in Evergreen of Valoria rebels.",
       "[Year 150] MARKET TRADE: Valoria rebels purchased 10 units of wood from Players rebels for 15 gold."
+    ]
+  },
+  {
+    "year": 151,
+    "globalTempOffset": -0.013775846660137162,
+    "stats": {
+      "deer": 792,
+      "wolf": 0,
+      "elk": 0,
+      "bear": 0,
+      "beasts": 0,
+      "population": 26622726
+    },
+    "factions": {
+      "Valoria": 109491,
+      "Players": 18358,
+      "Oakhaven": 41282,
+      "Ironclad": 0,
+      "Sunspire": 20531025,
+      "Grimwallow": 0,
+      "Aethelgard": 0,
+      "Oakhaven rebels": 16173,
+      "Players rebels": 48788,
+      "Oakhaven rebels rebels": 142544,
+      "Valoria rebels": 32431,
+      "Ironclad rebels": 16724,
+      "Grimwallow rebels": 8857,
+      "Players rebels rebels": 51641,
+      "Valoria rebels rebels": 0,
+      "Ironclad rebels rebels": 124557,
+      "Players rebels rebels rebels": 3285,
+      "Oakhaven rebels rebels rebels": 179,
+      "Grimwallow rebels rebels": 23727,
+      "Valoria rebels rebels rebels": 0,
+      "Ironclad rebels rebels rebels": 0,
+      "Players rebels rebels rebels rebels": 11193,
+      "Grimwallow rebels rebels rebels": 0,
+      "Oakhaven rebels rebels rebels rebels": 709,
+      "Valoria rebels rebels rebels rebels": 342
+    },
+    "events": [
+      "[Year 151] BATTLE LOSS: Settlement Aethercliff of Valoria rebels rebels rebels was razed during combat.",
+      "[Year 151] PEACE TREATY: Armistice signed between Players rebels rebels rebels and Valoria rebels rebels rebels.",
+      "[Year 151] PEACE TREATY: Armistice signed between Valoria rebels rebels rebels and Players rebels rebels rebels.",
+      "[Year 151] PEACE TREATY: Armistice signed between Valoria rebels rebels rebels rebels and Players rebels rebels.",
+      "[Year 151] PEACE TREATY: Armistice signed between Valoria rebels rebels rebels rebels and Valoria rebels rebels.",
+      "[Year 151] DIPLOMACY: Alliances forged between Players rebels and Valoria rebels rebels rebels!",
+      "[Year 151] CLIMATE: A severe blizzard froze outer sectors. Fuel wood consumption doubled.",
+      "[Year 151] CONTAGION: The plague has spread to Crossroads of Valoria rebels rebels at [5, 0] in overworld!",
+      "[Year 151] MEDICAL RELIEF: Apothecary structure successfully cured the plague outbreak in Evergreen of Valoria rebels.",
+      "[Year 151] MARKET TRADE: Ironclad rebels purchased 10 units of wood from Valoria rebels rebels for 15 gold."
     ]
   }
 ]
