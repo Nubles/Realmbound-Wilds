@@ -1,47 +1,5 @@
 [
   {
-    "year": 118,
-    "globalTempOffset": 0.08832233171910045,
-    "stats": {
-      "deer": 469,
-      "wolf": 0,
-      "elk": 0,
-      "bear": 0,
-      "beasts": 0,
-      "population": 3166816
-    },
-    "factions": {
-      "Valoria": 84682,
-      "Players": 8984,
-      "Oakhaven": 29728,
-      "Ironclad": 70042,
-      "Sunspire": 1578497,
-      "Grimwallow": 15031,
-      "Aethelgard": 0,
-      "Oakhaven rebels": 39581,
-      "Players rebels": 16393,
-      "Oakhaven rebels rebels": 2852,
-      "Valoria rebels": 86713,
-      "Ironclad rebels": 205491,
-      "Grimwallow rebels": 21341,
-      "Players rebels rebels": 715,
-      "Valoria rebels rebels": 518,
-      "Ironclad rebels rebels": 0
-    },
-    "events": [
-      "[Year 118] PEACE TREATY: Armistice signed between Valoria rebels rebels and Oakhaven rebels.",
-      "[Year 118] PEACE TREATY: Armistice signed between Oakhaven rebels and Oakhaven rebels rebels.",
-      "[Year 118] DIPLOMACY: Alliances forged between Oakhaven rebels and Valoria rebels rebels!",
-      "[Year 118] PEACE TREATY: Armistice signed between Valoria rebels and Oakhaven rebels rebels.",
-      "[Year 118] PEACE TREATY: Armistice signed between Oakhaven rebels rebels and Valoria rebels rebels.",
-      "[Year 118] PEACE TREATY: Armistice signed between Oakhaven rebels and Ironclad rebels rebels.",
-      "[Year 118] CONTAGION: The plague has spread to Aethercliff of Grimwallow rebels at [14, 8] in underworld!",
-      "[Year 118] CONTAGION: The plague has spread to Evergreen of Grimwallow at [14, 9] in underworld!",
-      "[Year 118] PLAGUE TOLL: Sickness claimed 227 citizens in Aethercliff of Grimwallow. An Apothecary is urgently needed!",
-      "[Year 118] MARKET TRADE: Oakhaven purchased 10 units of wood from Ironclad rebels rebels for 15 gold."
-    ]
-  },
-  {
     "year": 119,
     "globalTempOffset": 0.08768905067816374,
     "stats": {
@@ -997626,6 +997584,58 @@
       "[Year 165] PEACE TREATY: Armistice signed between Ironclad rebels rebels rebels and Valoria rebels rebels rebels rebels.",
       "[Year 165] MARKET TRADE: Grimwallow rebels purchased 10 units of wood from Valoria rebels for 15 gold.",
       "[Year 165] MARKET TRADE: Valoria rebels purchased 10 units of wood from Ironclad rebels rebels for 15 gold."
+    ]
+  },
+  {
+    "year": 166,
+    "globalTempOffset": -0.049845716506242733,
+    "stats": {
+      "deer": 1058,
+      "wolf": 0,
+      "elk": 0,
+      "bear": 0,
+      "beasts": 0,
+      "population": 39981560
+    },
+    "factions": {
+      "Valoria": 28109,
+      "Players": 2141,
+      "Oakhaven": 51382,
+      "Ironclad": 0,
+      "Sunspire": 56509,
+      "Grimwallow": 0,
+      "Aethelgard": 0,
+      "Oakhaven rebels": 20992,
+      "Players rebels": 160286,
+      "Oakhaven rebels rebels": 39870,
+      "Valoria rebels": 30943,
+      "Ironclad rebels": 0,
+      "Grimwallow rebels": 41993,
+      "Players rebels rebels": 69535,
+      "Valoria rebels rebels": 2252,
+      "Ironclad rebels rebels": 1764,
+      "Players rebels rebels rebels": 40576,
+      "Oakhaven rebels rebels rebels": 405,
+      "Grimwallow rebels rebels": 42543,
+      "Valoria rebels rebels rebels": 5164,
+      "Ironclad rebels rebels rebels": 1130,
+      "Players rebels rebels rebels rebels": 28,
+      "Grimwallow rebels rebels rebels": 0,
+      "Oakhaven rebels rebels rebels rebels": 2602,
+      "Valoria rebels rebels rebels rebels": 10853,
+      "Sunspire rebels": 24630397
+    },
+    "events": [
+      "[Year 166] BATTLE LOSS: Settlement Evergreen of Valoria was razed during combat.",
+      "[Year 166] DIPLOMACY: Alliances forged between Valoria rebels rebels rebels and Sunspire rebels!",
+      "[Year 166] DECLARATION OF WAR: Players rebels rebels rebels rebels declared war on Valoria rebels rebels rebels!",
+      "[Year 166] CALL TO ARMS: Ironclad rebels rebels joins war against Valoria rebels rebels rebels to defend ally Players rebels rebels rebels rebels.",
+      "[Year 166] CALL TO ARMS: Oakhaven rebels rebels rebels joins war against Valoria rebels rebels rebels to defend ally Players rebels rebels rebels rebels.",
+      "[Year 166] CALL TO ARMS: Valoria rebels rebels joins war against Valoria rebels rebels rebels to defend ally Players rebels rebels rebels rebels.",
+      "[Year 166] PEACE TREATY: Armistice signed between Valoria rebels rebels rebels and Valoria rebels.",
+      "[Year 166] PEACE TREATY: Armistice signed between Valoria rebels and Valoria rebels rebels rebels rebels.",
+      "[Year 166] PEACE TREATY: Armistice signed between Sunspire rebels and Oakhaven rebels rebels.",
+      "[Year 166] SEA MONSTER SIGHTING: A giant kraken was spotted in the oceanic waters at [-9, -3]!"
     ]
   }
 ]
