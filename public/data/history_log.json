@@ -1,47 +1,5 @@
 [
   {
-    "year": 112,
-    "globalTempOffset": 0.13418221480213105,
-    "stats": {
-      "deer": 355,
-      "wolf": 0,
-      "elk": 0,
-      "bear": 0,
-      "beasts": 0,
-      "population": 2132421
-    },
-    "factions": {
-      "Valoria": 115002,
-      "Players": 4182,
-      "Oakhaven": 38752,
-      "Ironclad": 41857,
-      "Sunspire": 983599,
-      "Grimwallow": 22615,
-      "Aethelgard": 0,
-      "Oakhaven rebels": 73696,
-      "Players rebels": 11779,
-      "Oakhaven rebels rebels": 32747,
-      "Valoria rebels": 101555,
-      "Ironclad rebels": 105854,
-      "Grimwallow rebels": 0,
-      "Players rebels rebels": 6843,
-      "Valoria rebels rebels": 0,
-      "Ironclad rebels rebels": 75235
-    },
-    "events": [
-      "[Year 112] CALL TO ARMS: Players joins war against Grimwallow rebels to defend ally Oakhaven rebels rebels.",
-      "[Year 112] CALL TO ARMS: Sunspire joins war against Grimwallow rebels to defend ally Oakhaven rebels rebels.",
-      "[Year 112] CALL TO ARMS: Ironclad rebels joins war against Grimwallow rebels to defend ally Oakhaven rebels rebels.",
-      "[Year 112] CALL TO ARMS: Ironclad rebels joins war against Grimwallow rebels to defend ally Oakhaven rebels rebels.",
-      "[Year 112] CALL TO ARMS: Players rebels joins war against Grimwallow rebels to defend ally Oakhaven rebels rebels.",
-      "[Year 112] CALL TO ARMS: Players rebels rebels joins war against Grimwallow rebels to defend ally Oakhaven rebels rebels.",
-      "[Year 112] CALL TO ARMS: Oakhaven rebels joins war against Grimwallow rebels to defend ally Oakhaven rebels rebels.",
-      "[Year 112] CLIMATE: Heavy torrential rains triggered a Spring Flood across kingdoms, boosting vegetation growth.",
-      "[Year 112] MEDICAL RELIEF: Apothecary structure successfully cured the plague outbreak in Evergreen of Grimwallow.",
-      "[Year 112] PLAGUE TOLL: Sickness claimed 207 citizens in Riverbend of Grimwallow. An Apothecary is urgently needed!"
-    ]
-  },
-  {
     "year": 113,
     "globalTempOffset": 0.15000980062410235,
     "stats": {
@@ -997571,6 +997529,57 @@
       "[Year 159] CALL TO ARMS: Oakhaven rebels rebels joins war against Valoria rebels rebels rebels rebels to defend ally Grimwallow rebels rebels.",
       "[Year 159] CALL TO ARMS: Players rebels rebels joins war against Valoria rebels rebels rebels rebels to defend ally Grimwallow rebels rebels.",
       "[Year 159] MARKET TRADE: Oakhaven purchased 10 units of wood from Valoria rebels rebels rebels rebels for 15 gold."
+    ]
+  },
+  {
+    "year": 160,
+    "globalTempOffset": -0.012229836294427497,
+    "stats": {
+      "deer": 927,
+      "wolf": 0,
+      "elk": 0,
+      "bear": 0,
+      "beasts": 0,
+      "population": 49180962
+    },
+    "factions": {
+      "Valoria": 83508,
+      "Players": 9769,
+      "Oakhaven": 40281,
+      "Ironclad": 0,
+      "Sunspire": 38835197,
+      "Grimwallow": 0,
+      "Aethelgard": 0,
+      "Oakhaven rebels": 3501,
+      "Players rebels": 77046,
+      "Oakhaven rebels rebels": 0,
+      "Valoria rebels": 0,
+      "Ironclad rebels": 30891,
+      "Grimwallow rebels": 15667,
+      "Players rebels rebels": 205807,
+      "Valoria rebels rebels": 3829,
+      "Ironclad rebels rebels": 81,
+      "Players rebels rebels rebels": 0,
+      "Oakhaven rebels rebels rebels": 317,
+      "Grimwallow rebels rebels": 42021,
+      "Valoria rebels rebels rebels": 64,
+      "Ironclad rebels rebels rebels": 0,
+      "Players rebels rebels rebels rebels": 13722,
+      "Grimwallow rebels rebels rebels": 0,
+      "Oakhaven rebels rebels rebels rebels": 0,
+      "Valoria rebels rebels rebels rebels": 0
+    },
+    "events": [
+      "[Year 160] PEACE TREATY: Armistice signed between Oakhaven rebels rebels rebels rebels and Oakhaven rebels rebels rebels rebels.",
+      "[Year 160] CLIMATE: Heavy torrential rains triggered a Spring Flood across kingdoms, boosting vegetation growth.",
+      "[Year 160] MARKET TRADE: Sunspire purchased 10 units of wood from Valoria rebels for 15 gold.",
+      "[Year 160] MARKET TRADE: Players rebels purchased 10 units of wood from Valoria rebels for 15 gold.",
+      "[Year 160] MARKET TRADE: Oakhaven rebels purchased 10 units of wood from Valoria rebels for 15 gold.",
+      "[Year 160] MARKET TRADE: Valoria rebels purchased 10 units of wood from Players rebels rebels rebels for 15 gold.",
+      "[Year 160] MARKET TRADE: Oakhaven rebels purchased 10 units of wood from Players rebels rebels rebels for 15 gold.",
+      "[Year 160] MARKET TRADE: Oakhaven rebels purchased 10 units of wood from Oakhaven rebels rebels for 15 gold.",
+      "[Year 160] MARKET TRADE: Valoria rebels purchased 10 units of wood from Valoria rebels rebels rebels rebels for 15 gold.",
+      "[Year 160] MARKET TRADE: Valoria rebels rebels purchased 10 units of wood from Valoria rebels rebels rebels rebels for 15 gold."
     ]
   }
 ]
