@@ -1,47 +1,5 @@
 [
   {
-    "year": 113,
-    "globalTempOffset": 0.15000980062410235,
-    "stats": {
-      "deer": 389,
-      "wolf": 0,
-      "elk": 0,
-      "bear": 0,
-      "beasts": 0,
-      "population": 2202977
-    },
-    "factions": {
-      "Valoria": 136177,
-      "Players": 5332,
-      "Oakhaven": 47744,
-      "Ironclad": 46638,
-      "Sunspire": 1064813,
-      "Grimwallow": 6697,
-      "Aethelgard": 0,
-      "Oakhaven rebels": 67583,
-      "Players rebels": 13059,
-      "Oakhaven rebels rebels": 0,
-      "Valoria rebels": 0,
-      "Ironclad rebels": 121486,
-      "Grimwallow rebels": 17396,
-      "Players rebels rebels": 6453,
-      "Valoria rebels rebels": 0,
-      "Ironclad rebels rebels": 56292
-    },
-    "events": [
-      "[Year 113] PEACE TREATY: Armistice signed between Oakhaven rebels rebels and Oakhaven rebels.",
-      "[Year 113] DIPLOMACY: Alliances forged between Players rebels rebels and Oakhaven rebels rebels!",
-      "[Year 113] PEACE TREATY: Armistice signed between Oakhaven rebels rebels and Oakhaven rebels.",
-      "[Year 113] PEACE TREATY: Armistice signed between Valoria rebels rebels and Valoria rebels rebels.",
-      "[Year 113] PLAGUE TOLL: Sickness claimed 8 citizens in OrbitStation of Players rebels. An Apothecary is urgently needed!",
-      "[Year 113] MEDICAL RELIEF: Apothecary structure successfully cured the plague outbreak in Riverbend of Players rebels.",
-      "[Year 113] PLAGUE TOLL: Sickness claimed 118 citizens in Aethercliff of Grimwallow. An Apothecary is urgently needed!",
-      "[Year 113] MARKET TRADE: Valoria rebels purchased 10 units of wood from Oakhaven rebels rebels for 15 gold.",
-      "[Year 113] MARKET TRADE: Ironclad rebels purchased 10 units of wood from Oakhaven rebels rebels for 15 gold.",
-      "[Year 113] MARKET TRADE: Oakhaven rebels rebels purchased 10 units of wood from Valoria rebels rebels for 15 gold."
-    ]
-  },
-  {
     "year": 114,
     "globalTempOffset": 0.1358416508231312,
     "stats": {
@@ -997580,6 +997538,57 @@
       "[Year 160] MARKET TRADE: Oakhaven rebels purchased 10 units of wood from Oakhaven rebels rebels for 15 gold.",
       "[Year 160] MARKET TRADE: Valoria rebels purchased 10 units of wood from Valoria rebels rebels rebels rebels for 15 gold.",
       "[Year 160] MARKET TRADE: Valoria rebels rebels purchased 10 units of wood from Valoria rebels rebels rebels rebels for 15 gold."
+    ]
+  },
+  {
+    "year": 161,
+    "globalTempOffset": -0.028032855130732042,
+    "stats": {
+      "deer": 927,
+      "wolf": 0,
+      "elk": 0,
+      "bear": 0,
+      "beasts": 0,
+      "population": 52824254
+    },
+    "factions": {
+      "Valoria": 18651,
+      "Players": 12170,
+      "Oakhaven": 44488,
+      "Ironclad": 0,
+      "Sunspire": 41952113,
+      "Grimwallow": 0,
+      "Aethelgard": 0,
+      "Oakhaven rebels": 5505,
+      "Players rebels": 87379,
+      "Oakhaven rebels rebels": 0,
+      "Valoria rebels": 20008,
+      "Ironclad rebels": 42412,
+      "Grimwallow rebels": 19771,
+      "Players rebels rebels": 0,
+      "Valoria rebels rebels": 7436,
+      "Ironclad rebels rebels": 131,
+      "Players rebels rebels rebels": 27666,
+      "Oakhaven rebels rebels rebels": 0,
+      "Grimwallow rebels rebels": 38525,
+      "Valoria rebels rebels rebels": 0,
+      "Ironclad rebels rebels rebels": 0,
+      "Players rebels rebels rebels rebels": 15676,
+      "Grimwallow rebels rebels rebels": 0,
+      "Oakhaven rebels rebels rebels rebels": 4055,
+      "Valoria rebels rebels rebels rebels": 41
+    },
+    "events": [
+      "[Year 161] PEACE TREATY: Armistice signed between Players rebels rebels rebels and Oakhaven rebels rebels.",
+      "[Year 161] PEACE TREATY: Armistice signed between Players rebels rebels rebels and Oakhaven rebels rebels rebels.",
+      "[Year 161] PEACE TREATY: Armistice signed between Oakhaven rebels rebels rebels rebels and Oakhaven rebels rebels rebels rebels.",
+      "[Year 161] PEACE TREATY: Armistice signed between Oakhaven rebels rebels rebels rebels and Oakhaven rebels rebels.",
+      "[Year 161] PEACE TREATY: Armistice signed between Players rebels rebels and Oakhaven rebels rebels rebels.",
+      "[Year 161] PEACE TREATY: Armistice signed between Oakhaven rebels rebels and Oakhaven rebels rebels.",
+      "[Year 161] PEACE TREATY: Armistice signed between Oakhaven rebels rebels and Oakhaven rebels rebels rebels.",
+      "[Year 161] MARKET TRADE: Oakhaven rebels rebels purchased 10 units of wood from Oakhaven rebels rebels rebels for 15 gold.",
+      "[Year 161] MARKET TRADE: Players rebels rebels rebels rebels purchased 10 units of wood from Oakhaven rebels rebels rebels for 15 gold.",
+      "[Year 161] MARKET TRADE: Players rebels rebels rebels rebels purchased 10 units of wood from Oakhaven rebels rebels rebels for 15 gold."
     ]
   }
 ]
