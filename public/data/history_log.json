@@ -1,47 +1,5 @@
 [
   {
-    "year": 114,
-    "globalTempOffset": 0.1358416508231312,
-    "stats": {
-      "deer": 389,
-      "wolf": 0,
-      "elk": 0,
-      "bear": 0,
-      "beasts": 0,
-      "population": 2309545
-    },
-    "factions": {
-      "Valoria": 43422,
-      "Players": 5512,
-      "Oakhaven": 57509,
-      "Ironclad": 51941,
-      "Sunspire": 1152466,
-      "Grimwallow": 7416,
-      "Aethelgard": 0,
-      "Oakhaven rebels": 66335,
-      "Players rebels": 14172,
-      "Oakhaven rebels rebels": 825,
-      "Valoria rebels": 94915,
-      "Ironclad rebels": 137216,
-      "Grimwallow rebels": 18005,
-      "Players rebels rebels": 3222,
-      "Valoria rebels rebels": 5013,
-      "Ironclad rebels rebels": 54460
-    },
-    "events": [
-      "[Year 114] CALL TO ARMS: Oakhaven rebels rebels joins war against Valoria rebels to defend ally Players rebels rebels.",
-      "[Year 114] CALL TO ARMS: Oakhaven rebels rebels joins war against Valoria rebels to defend ally Players rebels rebels.",
-      "[Year 114] DIPLOMACY: Alliances forged between Oakhaven rebels rebels and Valoria rebels rebels!",
-      "[Year 114] DIPLOMACY: Alliances forged between Oakhaven rebels rebels and Oakhaven rebels!",
-      "[Year 114] PEACE TREATY: Armistice signed between Valoria rebels rebels and Valoria rebels.",
-      "[Year 114] MEDICAL RELIEF: Apothecary structure successfully cured the plague outbreak in OrbitStation of Players rebels.",
-      "[Year 114] MEDICAL RELIEF: Apothecary structure successfully cured the plague outbreak in Riverbend of Grimwallow.",
-      "[Year 114] CONTAGION: The plague has spread to OrbitStation of Players rebels at [14, 8] in underworld!",
-      "[Year 114] CONTAGION: The plague has spread to Deepmine of Grimwallow at [16, 8] in underworld!",
-      "[Year 114] CONTAGION: The plague has spread to Evergreen of Grimwallow at [14, 9] in underworld!"
-    ]
-  },
-  {
     "year": 115,
     "globalTempOffset": 0.13323510848917067,
     "stats": {
@@ -997589,6 +997547,57 @@
       "[Year 161] MARKET TRADE: Oakhaven rebels rebels purchased 10 units of wood from Oakhaven rebels rebels rebels for 15 gold.",
       "[Year 161] MARKET TRADE: Players rebels rebels rebels rebels purchased 10 units of wood from Oakhaven rebels rebels rebels for 15 gold.",
       "[Year 161] MARKET TRADE: Players rebels rebels rebels rebels purchased 10 units of wood from Oakhaven rebels rebels rebels for 15 gold."
+    ]
+  },
+  {
+    "year": 162,
+    "globalTempOffset": -0.03090698721818624,
+    "stats": {
+      "deer": 950,
+      "wolf": 0,
+      "elk": 0,
+      "bear": 0,
+      "beasts": 0,
+      "population": 57027203
+    },
+    "factions": {
+      "Valoria": 30974,
+      "Players": 14893,
+      "Oakhaven": 53474,
+      "Ironclad": 0,
+      "Sunspire": 45319839,
+      "Grimwallow": 0,
+      "Aethelgard": 0,
+      "Oakhaven rebels": 5943,
+      "Players rebels": 99855,
+      "Oakhaven rebels rebels": 3361,
+      "Valoria rebels": 23940,
+      "Ironclad rebels": 55587,
+      "Grimwallow rebels": 23866,
+      "Players rebels rebels": 1423,
+      "Valoria rebels rebels": 13783,
+      "Ironclad rebels rebels": 1612,
+      "Players rebels rebels rebels": 27192,
+      "Oakhaven rebels rebels rebels": 172789,
+      "Grimwallow rebels rebels": 38885,
+      "Valoria rebels rebels rebels": 12123,
+      "Ironclad rebels rebels rebels": 0,
+      "Players rebels rebels rebels rebels": 15995,
+      "Grimwallow rebels rebels rebels": 0,
+      "Oakhaven rebels rebels rebels rebels": 3711,
+      "Valoria rebels rebels rebels rebels": 64
+    },
+    "events": [
+      "[Year 162] PEACE TREATY: Armistice signed between Players rebels rebels rebels and Oakhaven rebels rebels rebels.",
+      "[Year 162] PEACE TREATY: Armistice signed between Oakhaven rebels rebels and Valoria rebels rebels rebels rebels.",
+      "[Year 162] PEACE TREATY: Armistice signed between Oakhaven rebels rebels and Oakhaven rebels rebels rebels rebels.",
+      "[Year 162] PEACE TREATY: Armistice signed between Valoria rebels rebels rebels rebels and Valoria rebels rebels rebels rebels.",
+      "[Year 162] PEACE TREATY: Armistice signed between Valoria rebels and Valoria rebels rebels rebels.",
+      "[Year 162] PEACE TREATY: Armistice signed between Players rebels rebels rebels and Oakhaven rebels rebels rebels.",
+      "[Year 162] DIPLOMACY: Alliances forged between Oakhaven rebels rebels rebels rebels and Oakhaven rebels rebels!",
+      "[Year 162] PEACE TREATY: Armistice signed between Oakhaven rebels rebels and Oakhaven rebels rebels.",
+      "[Year 162] PEACE TREATY: Armistice signed between Valoria rebels rebels rebels rebels and Valoria rebels rebels rebels.",
+      "[Year 162] PEACE TREATY: Armistice signed between Players rebels rebels and Oakhaven rebels rebels."
     ]
   }
 ]
