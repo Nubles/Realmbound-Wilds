@@ -1,47 +1,5 @@
 [
   {
-    "year": 119,
-    "globalTempOffset": 0.08768905067816374,
-    "stats": {
-      "deer": 469,
-      "wolf": 0,
-      "elk": 0,
-      "bear": 0,
-      "beasts": 0,
-      "population": 3344521
-    },
-    "factions": {
-      "Valoria": 95024,
-      "Players": 10054,
-      "Oakhaven": 37527,
-      "Ironclad": 78337,
-      "Sunspire": 1707925,
-      "Grimwallow": 15896,
-      "Aethelgard": 0,
-      "Oakhaven rebels": 45161,
-      "Players rebels": 17263,
-      "Oakhaven rebels rebels": 2484,
-      "Valoria rebels": 90510,
-      "Ironclad rebels": 62695,
-      "Grimwallow rebels": 22014,
-      "Players rebels rebels": 960,
-      "Valoria rebels rebels": 888,
-      "Ironclad rebels rebels": 79352
-    },
-    "events": [
-      "[Year 119] PEACE TREATY: Armistice signed between Valoria rebels rebels and Valoria rebels.",
-      "[Year 119] PEACE TREATY: Armistice signed between Valoria rebels rebels and Oakhaven rebels rebels.",
-      "[Year 119] DIPLOMACY: Alliances forged between Valoria rebels rebels and Valoria rebels rebels!",
-      "[Year 119] BATTLE LOSS: Settlement Deepmine of Valoria rebels rebels was razed during combat.",
-      "[Year 119] DIPLOMACY: Alliances forged between Valoria rebels rebels and Ironclad rebels rebels!",
-      "[Year 119] DIPLOMACY: Alliances forged between Valoria rebels and Oakhaven rebels!",
-      "[Year 119] PEACE TREATY: Armistice signed between Oakhaven rebels rebels and Oakhaven rebels.",
-      "[Year 119] MEDICAL RELIEF: Apothecary structure successfully cured the plague outbreak in Evergreen of Grimwallow.",
-      "[Year 119] CONTAGION: The plague has spread to Evergreen of Grimwallow at [14, 9] in underworld!",
-      "[Year 119] PLAGUE TOLL: Sickness claimed 208 citizens in Aethercliff of Grimwallow. An Apothecary is urgently needed!"
-    ]
-  },
-  {
     "year": 120,
     "globalTempOffset": 0.10760867697186766,
     "stats": {
@@ -997636,6 +997594,58 @@
       "[Year 166] PEACE TREATY: Armistice signed between Valoria rebels and Valoria rebels rebels rebels rebels.",
       "[Year 166] PEACE TREATY: Armistice signed between Sunspire rebels and Oakhaven rebels rebels.",
       "[Year 166] SEA MONSTER SIGHTING: A giant kraken was spotted in the oceanic waters at [-9, -3]!"
+    ]
+  },
+  {
+    "year": 167,
+    "globalTempOffset": -0.06798337349668143,
+    "stats": {
+      "deer": 1103,
+      "wolf": 0,
+      "elk": 0,
+      "bear": 0,
+      "beasts": 0,
+      "population": 42990243
+    },
+    "factions": {
+      "Valoria": 26893,
+      "Players": 41,
+      "Oakhaven": 48181,
+      "Ironclad": 0,
+      "Sunspire": 47378,
+      "Grimwallow": 0,
+      "Aethelgard": 0,
+      "Oakhaven rebels": 24750,
+      "Players rebels": 173329,
+      "Oakhaven rebels rebels": 29369,
+      "Valoria rebels": 27437,
+      "Ironclad rebels": 0,
+      "Grimwallow rebels": 47438,
+      "Players rebels rebels": 73581,
+      "Valoria rebels rebels": 1403,
+      "Ironclad rebels rebels": 0,
+      "Players rebels rebels rebels": 39562,
+      "Oakhaven rebels rebels rebels": 55,
+      "Grimwallow rebels rebels": 33686,
+      "Valoria rebels rebels rebels": 1608,
+      "Ironclad rebels rebels rebels": 228,
+      "Players rebels rebels rebels rebels": 0,
+      "Grimwallow rebels rebels rebels": 0,
+      "Oakhaven rebels rebels rebels rebels": 1453,
+      "Valoria rebels rebels rebels rebels": 1231,
+      "Sunspire rebels": 26610565
+    },
+    "events": [
+      "[Year 167] PEACE TREATY: Armistice signed between Valoria rebels rebels rebels and Valoria rebels rebels rebels.",
+      "[Year 167] DIPLOMACY: Alliances forged between Valoria rebels rebels rebels and Valoria rebels rebels rebels rebels!",
+      "[Year 167] PEACE TREATY: Armistice signed between Ironclad rebels rebels rebels and Valoria rebels.",
+      "[Year 167] PEACE TREATY: Armistice signed between Valoria rebels and Ironclad rebels rebels.",
+      "[Year 167] DIPLOMACY: Alliances forged between Sunspire rebels and Ironclad rebels rebels!",
+      "[Year 167] PEACE TREATY: Armistice signed between Sunspire rebels and Grimwallow rebels rebels rebels.",
+      "[Year 167] PEACE TREATY: Armistice signed between Oakhaven rebels rebels and Valoria rebels rebels rebels.",
+      "[Year 167] METEOR IMPACT: A roaring meteorite obliterated the settlement Crossroads of Players rebels at [9, 12] in underworld!",
+      "[Year 167] MARKET TRADE: Valoria purchased 10 units of wood from Grimwallow rebels rebels rebels for 15 gold.",
+      "[Year 167] MARKET TRADE: Ironclad rebels purchased 10 units of wood from Players rebels rebels rebels rebels for 15 gold."
     ]
   }
 ]
