@@ -113,6 +113,27 @@ export class CosmicSynth {
     });
   }
 
+  playSwirl() {
+    this.init();
+    if (this.muted || !this.ctx) return;
+
+    const osc = this.ctx.createOscillator();
+    const gainNode = this.ctx.createGain();
+
+    osc.type = 'sawtooth';
+    osc.frequency.setValueAtTime(620, this.ctx.currentTime);
+    osc.frequency.exponentialRampToValueAtTime(90, this.ctx.currentTime + 0.5);
+
+    gainNode.gain.setValueAtTime(0.12, this.ctx.currentTime);
+    gainNode.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + 0.55);
+
+    osc.connect(gainNode);
+    gainNode.connect(this.ctx.destination);
+
+    osc.start();
+    osc.stop(this.ctx.currentTime + 0.6);
+  }
+
   startAmbientMusic(realm = 'overworld') {
     this.init();
     if (this.musicMuted || !this.ctx) return;
@@ -447,8 +468,9 @@ export class MapRenderer {
       const clickY = e.clientY - rect.top;
       
       const cell = this.screenToCell(clickX, clickY);
+      if (!cell) return;
       this.selectedCell = cell;
-      
+
       // Play a click sound profile when selecting cells
       if (window.synth && !cell.undiscovered) {
         window.synth.playClick();
@@ -1127,8 +1149,9 @@ export class MapRenderer {
               ent2.task = "Battling rival!";
               
               if (!ent1.history) ent1.history = [];
-              if (!ent1.history.includes("Engaged in skirmish")) {
-                ent1.history.push(`Engaged in combat against ${ent2.name} in Year ${this.world.year}`);
+              const combatEntry = `Engaged in combat against ${ent2.name} in Year ${this.world.year}`;
+              if (!ent1.history.includes(combatEntry)) {
+                ent1.history.push(combatEntry);
               }
               
               if (Math.random() < 0.25) {

@@ -78,12 +78,14 @@ Hey @${playerName}, the coordinates you provided **[${x}, ${y}]** are outside th
   };
 
   // Add target coordinate to the global discovery registry to clear Fog of War
-  world.discoveredCenters.push({
-    realm,
-    x,
-    y,
-    radius: 6 // reveal surrounding zone
-  });
+  if (!world.discoveredCenters.some(dc => dc.realm === realm && dc.x === x && dc.y === y)) {
+    world.discoveredCenters.push({
+      realm,
+      x,
+      y,
+      radius: 6 // reveal surrounding zone
+    });
+  }
 
   if (action.includes('explore')) {
     let findMsg = '';
@@ -232,7 +234,7 @@ async function run() {
       for (let y = 0; y < world.grid.length; y++) {
         for (let x = 0; x < world.grid[y].length; x++) {
           const cell = world.grid[y][x];
-          const isModified = cell.settlement || cell.ruin || cell.fireTicksLeft > 0 || cell.history.length > 0;
+          const isModified = cell.settlement || cell.ruin || cell.fireTicksLeft > 0 || (cell.history || []).length > 0;
           if (isModified) {
             const key = `overworld:${x},${y}`;
             migrated.modifiedCells[key] = {
