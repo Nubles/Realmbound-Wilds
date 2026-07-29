@@ -78,14 +78,28 @@ function getSummary(world) {
   return summary;
 }
 
+// Keep the serialized history log comfortably below GitHub's 100 MB push limit
+const MAX_HISTORY_BYTES = 40 * 1024 * 1024;
+
 function compactHistory(history) {
-  return history.slice(-HISTORY_LIMIT).map(entry => {
+  const compacted = history.slice(-HISTORY_LIMIT).map(entry => {
     if (entry.year % MAP_SNAPSHOT_INTERVAL === 0) return entry;
     const compactEntry = { ...entry };
     delete compactEntry.discoveredCenters;
     delete compactEntry.mapState;
     return compactEntry;
   });
+
+  // Safety valve: if retained snapshots still push the payload past the size
+  // budget, strip map snapshots oldest-first until it fits.
+  const snapshots = compacted.filter(entry => entry.mapState);
+  while (snapshots.length > 1 && JSON.stringify(compacted).length > MAX_HISTORY_BYTES) {
+    const oldest = snapshots.shift();
+    delete oldest.discoveredCenters;
+    delete oldest.mapState;
+  }
+
+  return compacted;
 }
 
 async function run() {
@@ -182,9 +196,9 @@ async function run() {
   history.push(summary);
   history = compactHistory(history);
 
-  // Save files
-  fs.writeFileSync(WORLD_FILE, JSON.stringify(world, null, 2), 'utf8');
-  fs.writeFileSync(HISTORY_FILE, JSON.stringify(history, null, 2), 'utf8');
+  // Save files compactly: pretty-printing roughly doubles the payload pushed to the repo
+  fs.writeFileSync(WORLD_FILE, JSON.stringify(world), 'utf8');
+  fs.writeFileSync(HISTORY_FILE, JSON.stringify(history), 'utf8');
 
   console.log(`Tick complete! World is now in Year ${world.year}.`);
 }

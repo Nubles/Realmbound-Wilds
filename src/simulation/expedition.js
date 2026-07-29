@@ -273,8 +273,8 @@ async function run() {
 
   const outcome = generateOutcome(world, parsed);
 
-  // Save changes
-  fs.writeFileSync(WORLD_FILE, JSON.stringify(world, null, 2), 'utf8');
+  // Save changes compactly: pretty-printing roughly doubles the payload pushed to the repo
+  fs.writeFileSync(WORLD_FILE, JSON.stringify(world), 'utf8');
   fs.writeFileSync(OUTCOME_FILE, outcome, 'utf8');
 
   console.log('Expedition processing complete.');

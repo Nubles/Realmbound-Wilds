@@ -41,6 +41,7 @@ function getSmoothNoise(x, y, realm, seed) {
 
 const FACTION_NAMES = ["Valoria", "Oakhaven", "Ironclad", "Sunspire", "Grimwallow", "Aethelgard"];
 const FACTION_COLORS = ["#3b82f6", "#10b981", "#6b7280", "#f59e0b", "#8b5cf6", "#ec4899"];
+const MAX_FACTIONS = 12; // Hard cap on splits; unbounded rebel factions once exploded world state
 
 // Procedural Resource Prefix & Suffix tables
 const RES_PREFIXES = ["Nova", "Shadow", "Stellar", "Cavern", "Astral", "Magma", "Deep", "Prismatic", "Chrono", "Aether"];
@@ -635,54 +636,59 @@ export function advanceSimulation(world) {
       }
 
       // Civil War Breakout Split: If happiness is critically low and faction has at least 4 settlements
-      if (cell.settlement.happiness < 28 && faction.settlements.length >= 4 && random() < 0.25) {
+      if (cell.settlement.happiness < 28 && faction.settlements.length >= 4 && world.factions.length < MAX_FACTIONS && random() < 0.25) {
         const activeNames = world.factions.map(f => f.name);
-        const availableName = FACTION_NAMES.find(n => !activeNames.includes(n)) || `${faction.name} rebels`;
-        const newColor = FACTION_COLORS[world.factions.length % FACTION_COLORS.length];
+        // Derive the rebel name from the root faction name so splits can't compound
+        // into "X rebels rebels ..."; skip the split entirely if no unique name is left
+        const rebelName = `${faction.name.replace(/( rebels)+$/, '')} rebels`;
+        const availableName = FACTION_NAMES.find(n => !activeNames.includes(n)) || (!activeNames.includes(rebelName) ? rebelName : null);
+        if (availableName) {
+          const newColor = FACTION_COLORS[world.factions.length % FACTION_COLORS.length];
         
-        // Split settlements: half stay, half break away
-        const halfCount = Math.floor(faction.settlements.length / 2);
-        const breakawaySettlements = faction.settlements.slice(0, halfCount);
-        faction.settlements = faction.settlements.slice(halfCount);
+          // Split settlements: half stay, half break away
+          const halfCount = Math.floor(faction.settlements.length / 2);
+          const breakawaySettlements = faction.settlements.slice(0, halfCount);
+          faction.settlements = faction.settlements.slice(halfCount);
 
-        // Register new rebel faction
-        const repCapital = breakawaySettlements[0];
-        world.factions.push({
-          name: availableName,
-          color: newColor,
-          capital: repCapital,
-          settlements: breakawaySettlements,
-          status: {},
-          power: 0,
-          resources: { gold: 150, wood: 100, iron: 20 },
-          technologies: [...faction.technologies],
-          ideology: faction.ideology === 'Militarism' ? 'Pacifism' : 'Militarism'
-        });
+          // Register new rebel faction
+          const repCapital = breakawaySettlements[0];
+          world.factions.push({
+            name: availableName,
+            color: newColor,
+            capital: repCapital,
+            settlements: breakawaySettlements,
+            status: {},
+            power: 0,
+            resources: { gold: 150, wood: 100, iron: 20 },
+            technologies: [...faction.technologies],
+            ideology: faction.ideology === 'Militarism' ? 'Pacifism' : 'Militarism'
+          });
 
-        // Update cells to point to new faction
-        breakawaySettlements.forEach(s => {
-          const sc = getCell(world, s.realm, s.x, s.y);
-          if (sc.settlement) {
-            sc.settlement.faction = availableName;
-            sc.settlement.happiness = 75; // reset happiness post-revolution
-            saveCell(world, sc);
-          }
-        });
-
-        // Set initial diplomacy stance to war between parents & rebels
-        world.factions.forEach(fac => {
-          if (fac.name !== availableName) {
-            if (fac.name === faction.name) {
-              fac.status[availableName] = 'war';
-              const rebelFac = world.factions.find(rf => rf.name === availableName);
-              if (rebelFac) rebelFac.status[fac.name] = 'war';
-            } else {
-              fac.status[availableName] = 'peace';
+          // Update cells to point to new faction
+          breakawaySettlements.forEach(s => {
+            const sc = getCell(world, s.realm, s.x, s.y);
+            if (sc.settlement) {
+              sc.settlement.faction = availableName;
+              sc.settlement.happiness = 75; // reset happiness post-revolution
+              saveCell(world, sc);
             }
-          }
-        });
+          });
 
-        world.chronicle.push(`${logPrefix} CIVIL WAR: Ideological split in ${faction.name}! Rebel faction ${availableName} seized control of ${halfCount} settlements.`);
+          // Set initial diplomacy stance to war between parents & rebels
+          world.factions.forEach(fac => {
+            if (fac.name !== availableName) {
+              if (fac.name === faction.name) {
+                fac.status[availableName] = 'war';
+                const rebelFac = world.factions.find(rf => rf.name === availableName);
+                if (rebelFac) rebelFac.status[fac.name] = 'war';
+              } else {
+                fac.status[availableName] = 'peace';
+              }
+            }
+          });
+
+          world.chronicle.push(`${logPrefix} CIVIL WAR: Ideological split in ${faction.name}! Rebel faction ${availableName} seized control of ${halfCount} settlements.`);
+        }
       }
 
       // Space Colonization Ticks
@@ -833,6 +839,9 @@ export function advanceSimulation(world) {
   });
 
   // Calculate Trade Routes
+  // One route per faction pair (their closest settlements): a route per settlement
+  // pair made tradeRoutes grow quadratically, bloating world.json/history_log.json
+  // past GitHub's 100 MB push limit and compounding size boosts every tick.
   world.tradeRoutes = [];
   for (let i = 0; i < world.factions.length; i++) {
     const f1 = world.factions[i];
@@ -840,27 +849,32 @@ export function advanceSimulation(world) {
       const f2 = world.factions[j];
       const rel = f1.status[f2.name] || 'peace';
       if (rel === 'peace' || rel === 'alliance') {
+        let best = null;
         f1.settlements.forEach(s1 => {
           f2.settlements.forEach(s2 => {
             if (s1.realm === s2.realm) {
               const dist = Math.hypot(s1.x - s2.x, s1.y - s2.y);
-              if (dist < 14) {
-                world.tradeRoutes.push({
-                  from: { x: s1.x, y: s1.y },
-                  to: { x: s2.x, y: s2.y },
-                  f1: f1.name,
-                  f2: f2.name
-                });
-                const c1 = getCell(world, s1.realm, s1.x, s1.y);
-                const c2 = getCell(world, s2.realm, s2.x, s2.y);
-                if (c1.settlement) c1.settlement.size += rel === 'alliance' ? 12 : 6;
-                if (c2.settlement) c2.settlement.size += rel === 'alliance' ? 12 : 6;
-                saveCell(world, c1);
-                saveCell(world, c2);
+              if (dist < 14 && (!best || dist < best.dist)) {
+                best = { s1, s2, dist };
               }
             }
           });
         });
+
+        if (best) {
+          world.tradeRoutes.push({
+            from: { x: best.s1.x, y: best.s1.y },
+            to: { x: best.s2.x, y: best.s2.y },
+            f1: f1.name,
+            f2: f2.name
+          });
+          const c1 = getCell(world, best.s1.realm, best.s1.x, best.s1.y);
+          const c2 = getCell(world, best.s2.realm, best.s2.x, best.s2.y);
+          if (c1.settlement) c1.settlement.size += rel === 'alliance' ? 12 : 6;
+          if (c2.settlement) c2.settlement.size += rel === 'alliance' ? 12 : 6;
+          saveCell(world, c1);
+          saveCell(world, c2);
+        }
       }
     }
   }
