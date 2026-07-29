@@ -128,9 +128,12 @@ function updateUI(world) {
   if (world.factions.length === 0) {
     factionListEl.innerHTML = '<div class="placeholder-text">No factions have formed yet.</div>';
   } else {
-    // Sort factions by power descending
-    const sortedFactions = [...world.factions].sort((a, b) => b.power - a.power);
-    sortedFactions.forEach(faction => {
+    // Sort factions by power descending; list only the strongest so the sidebar
+    // stays readable even if the world holds many factions
+    const MAX_LISTED_FACTIONS = 10;
+    const sortedFactions = [...world.factions].sort((a, b) => (b.power || 0) - (a.power || 0));
+    const listedFactions = sortedFactions.slice(0, MAX_LISTED_FACTIONS);
+    listedFactions.forEach(faction => {
       const activeSettlements = faction.settlements.filter(s => {
         const cell = getCell(world, s.realm || 'overworld', s.x, s.y);
         return cell.settlement && cell.settlement.faction === faction.name;
@@ -162,6 +165,13 @@ function updateUI(world) {
       `;
       factionListEl.appendChild(factionItem);
     });
+
+    if (sortedFactions.length > MAX_LISTED_FACTIONS) {
+      const moreNote = document.createElement('div');
+      moreNote.className = 'placeholder-text';
+      moreNote.innerText = `…and ${sortedFactions.length - MAX_LISTED_FACTIONS} smaller factions`;
+      factionListEl.appendChild(moreNote);
+    }
   }
 
   // Chronicle list
@@ -471,29 +481,35 @@ function setupTimeline() {
 
   // Build SVG multi-line charts
   statsSparkline.innerHTML = '';
-  
+
   let svgContent = `<svg viewBox="0 0 500 48" width="100%" height="100%" preserveAspectRatio="none" style="overflow: visible; display: block;">`;
-  
-  const factionNames = ["Valoria", "Oakhaven", "Ironclad", "Sunspire", "Players"];
-  const factionColors = ["#3b82f6", "#10b981", "#6b7280", "#f59e0b", "#ef4444"];
-  
+
+  // Chart the strongest factions of the latest era rather than a hardcoded list,
+  // so the graph tracks whoever actually matters in the current world
+  const latestEntry = historyLog[historyLog.length - 1];
+  const factionNames = Object.entries(latestEntry.factions || {})
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 5)
+    .map(entry => entry[0]);
+  const factionColors = ["#3b82f6", "#10b981", "#f59e0b", "#ec4899", "#8b5cf6"];
+
   // Plot each faction power line
   factionNames.forEach((facName, facIdx) => {
     const points = [];
     let maxVal = 100;
-    
+
     historyLog.forEach(hist => {
       const pVal = hist.factions[facName] || 0;
       if (pVal > maxVal) maxVal = pVal;
     });
-    
+
     historyLog.forEach((hist, index) => {
       const x = (index / (historyLog.length - 1)) * 500;
       const pVal = hist.factions[facName] || 0;
       const y = 48 - (pVal / maxVal) * 40 - 2; // scale y
       points.push(`${x},${y}`);
     });
-    
+
     if (points.length > 1) {
       svgContent += `<polyline fill="none" stroke="${factionColors[facIdx]}" stroke-width="1.5" points="${points.join(' ')}" style="vector-effect: non-scaling-stroke; stroke-linecap: round;" />`;
     }
@@ -512,7 +528,15 @@ function setupTimeline() {
   }
 
   svgContent += `</svg>`;
-  statsSparkline.innerHTML = svgContent;
+
+  // Legend so the chart lines are identifiable at a glance
+  const legendItems = factionNames.map((name, idx) =>
+    `<span style="display: inline-flex; align-items: center; gap: 4px;"><span style="width: 10px; height: 2px; background: ${factionColors[idx]}; display: inline-block;"></span>${name}</span>`
+  );
+  legendItems.push(`<span style="display: inline-flex; align-items: center; gap: 4px;"><span style="width: 10px; height: 0; border-top: 2px dashed #dfb15b; display: inline-block;"></span>World Population</span>`);
+  const legendHtml = `<div style="display: flex; flex-wrap: wrap; gap: 10px; font-size: 0.68rem; color: var(--text-secondary); margin-top: 4px;">${legendItems.join('')}</div>`;
+
+  statsSparkline.innerHTML = svgContent + legendHtml;
 }
 
 // Time-travel action
@@ -546,16 +570,17 @@ async function onTimelineTravel(year) {
       
       globalPopEl.innerText = histState.stats.population.toLocaleString();
 
-      // Show faction power breakdown at that time
+      // Show faction power breakdown at that time (strongest first, top 10)
       factionListEl.innerHTML = '';
-      
-      const factionNames = ["Valoria", "Oakhaven", "Ironclad", "Sunspire", "Players"];
-      const factionColors = ["#3b82f6", "#10b981", "#6b7280", "#f59e0b", "#ef4444"];
-      
-      factionNames.forEach((name, facIdx) => {
-        const power = histState.factions[name] || 0;
-        const color = factionColors[facIdx];
-        
+
+      const factionColors = ["#3b82f6", "#10b981", "#f59e0b", "#ec4899", "#8b5cf6", "#6b7280", "#ef4444", "#38bdf8", "#a78bfa", "#eab308"];
+      const rankedFactions = Object.entries(histState.factions || {})
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 10);
+
+      rankedFactions.forEach(([name, power], facIdx) => {
+        const color = factionColors[facIdx % factionColors.length];
+
         const factionItem = document.createElement('div');
         factionItem.className = 'faction-item';
         factionItem.innerHTML = `

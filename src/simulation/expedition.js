@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import { getCell, saveCell } from './engine.js';
+import { consolidateFactions, getCell, saveCell } from './engine.js';
 
 const DATA_DIR = path.resolve('public/data');
 const WORLD_FILE = path.join(DATA_DIR, 'world.json');
@@ -269,6 +269,10 @@ async function run() {
 
     Object.assign(world, migrated);
     delete world.grid;
+  }
+
+  if (consolidateFactions(world)) {
+    console.log('Consolidated runaway splinter factions from a pre-fix world state.');
   }
 
   const outcome = generateOutcome(world, parsed);

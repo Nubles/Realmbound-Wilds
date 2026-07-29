@@ -1211,15 +1211,18 @@ export class MapRenderer {
       }
     }
 
-    // 1.5. Draw dynamic citizen-worn roads/paths
-    for (let y = startY; y <= endY; y++) {
-      for (let x = startX; x <= endX; x++) {
-        const roadKey = `${this.activeRealm}:${x},${y}`;
-        const traffic = this.roadTraffic[roadKey] || 0;
-        if (traffic > 0 && this.isCoordinateDiscovered(x, y)) {
-          const intensity = Math.min(0.65, traffic * 0.09);
-          this.ctx.fillStyle = `rgba(139, 90, 43, ${intensity})`; // Dirt path brown
-          this.ctx.fillRect(x * ts + ts/4, y * ts + ts/4, ts/2, ts/2);
+    // 1.5. Draw dynamic citizen-worn roads/paths (only at closer zoom — at far
+    // zoom the patches read as random brown speckle noise)
+    if (this.zoom >= 1.2) {
+      for (let y = startY; y <= endY; y++) {
+        for (let x = startX; x <= endX; x++) {
+          const roadKey = `${this.activeRealm}:${x},${y}`;
+          const traffic = this.roadTraffic[roadKey] || 0;
+          if (traffic > 0 && this.isCoordinateDiscovered(x, y)) {
+            const intensity = Math.min(0.35, traffic * 0.05);
+            this.ctx.fillStyle = `rgba(139, 90, 43, ${intensity})`; // Dirt path brown
+            this.ctx.fillRect(x * ts + ts/4, y * ts + ts/4, ts/2, ts/2);
+          }
         }
       }
     }
@@ -1257,6 +1260,8 @@ export class MapRenderer {
 
     // 5.5 Draw moving citizens and animals
     this.entities.forEach(ent => {
+      // At far zoom individual citizens/animals are sub-pixel noise — hide them
+      if ((ent.type === 'citizen' || ent.type === 'wildlife') && this.zoom < 1.25) return;
       // Reconstruct chunk coordinates
       const cx = Math.floor(ent.x / ts);
       const cy = Math.floor(ent.y / ts);
@@ -1440,7 +1445,9 @@ export class MapRenderer {
         const midX = (minCx + maxCx) / 2;
         const midY = (minCy + maxCy) / 2;
 
-        ctx.fillStyle = 'rgba(16, 185, 129, 0.4)';
+        // Low alpha so hundreds of overlapping circles read as a density map
+        // instead of saturating into a solid blob
+        ctx.fillStyle = 'rgba(16, 185, 129, 0.12)';
         relevant.forEach(c => {
           // Map to local minimap coordinates
           const mapLocX = x + size/2 + ((c.x - midX) / maxSpan) * (size - 20);
@@ -1521,7 +1528,8 @@ export class MapRenderer {
 
     if (this.viewMode === 'factions') {
       if (factionIdx !== -1) {
-        const hex = FACTION_COLORS[factionIdx] || '#ef4444';
+        const faction = this.world.factions[factionIdx];
+        const hex = (faction && faction.color) || FACTION_COLORS[factionIdx] || '#ef4444';
         color = this.hexToRgba(hex, 0.4);
       } else {
         color = '#111216';
@@ -1640,6 +1648,8 @@ export class MapRenderer {
     let hasShield = false;
     let hasDome = false;
 
+    let settlementName = '';
+
     if (this.historicalState) {
       const cells = this.historicalState.mapState.modifiedCells || [];
       const keyCell = cells.find(c => c.r === this.activeRealm && c.x === x && c.y === y);
@@ -1648,6 +1658,7 @@ export class MapRenderer {
         if (hasSettlement) {
           factionIdx = keyCell.f === 'Players' ? 4 : this.world.factions.findIndex(f => f.name === keyCell.f);
           type = keyCell.t;
+          settlementName = keyCell.f;
         }
         ruin = keyCell.ruin;
         isFire = keyCell.fire;
@@ -1661,6 +1672,7 @@ export class MapRenderer {
           factionIdx = this.world.factions.findIndex(f => f.name === cell.settlement.faction);
           if (factionIdx === -1 && cell.settlement.faction === 'Players') factionIdx = 4;
           type = cell.settlement.type;
+          settlementName = cell.settlement.name;
           isPlagued = cell.settlement.plagued;
           hasApothecary = cell.settlement.apothecary;
           wonderBlueprint = cell.settlement.wonderBlueprint;
@@ -1709,8 +1721,10 @@ export class MapRenderer {
       return;
     }
 
-    // 3. Draw standard ruins
+    // 3. Draw standard ruins (only when zoomed in — worlds accumulate hundreds
+    // of ruins over the centuries, which litter the far-zoom view)
     if (ruin) {
+      if (this.zoom < 1.2) return;
       ctx.strokeStyle = '#dfb15b';
       ctx.lineWidth = 1.5;
       ctx.beginPath();
@@ -1724,9 +1738,25 @@ export class MapRenderer {
 
     // 4. Draw Settlement buildings
     if (hasSettlement) {
-      const fColor = FACTION_COLORS[factionIdx] || '#ef4444';
+      const factionRef = factionIdx !== -1 ? this.world.factions[factionIdx] : null;
+      const fColor = (factionRef && factionRef.color) || FACTION_COLORS[factionIdx] || '#ef4444';
       ctx.fillStyle = fColor;
       const isCapital = type === 'capital';
+
+      // Name labels make the map legible: capitals label early, everything else
+      // only once zoomed in far enough that labels can't pile onto each other
+      if (settlementName && (this.zoom >= 2.0 || (isCapital && this.zoom >= 0.75))) {
+        const label = settlementName.length > 18 ? `${settlementName.slice(0, 17)}…` : settlementName;
+        ctx.save();
+        ctx.font = 'bold 7px sans-serif';
+        ctx.textAlign = 'center';
+        ctx.lineWidth = 2.5;
+        ctx.strokeStyle = 'rgba(0, 0, 0, 0.8)';
+        ctx.strokeText(label, cx + ts/2, cy - 2);
+        ctx.fillStyle = '#ffffff';
+        ctx.fillText(label, cx + ts/2, cy - 2);
+        ctx.restore();
+      }
 
       if (isCapital) {
         ctx.fillRect(cx + 4, cy + ts - 15, 5, 11);
@@ -1873,41 +1903,65 @@ export class MapRenderer {
   // Draw Trade lines and roads
   drawTradeRoutes(ts) {
     const routes = this.historicalState ? this.historicalState.mapState.tradeRoutes : (this.world.tradeRoutes || []);
-    if (routes.length === 0) return;
+    if (!routes || routes.length === 0) return;
+
+    // Only draw routes touching the visible viewport, and cap the total so dense
+    // worlds don't dissolve into an unreadable hairball of golden lines.
+    const startX = Math.floor(-this.panX / (this.zoom * ts)) - 1;
+    const endX = Math.ceil((this.canvas.width - this.panX) / (this.zoom * ts)) + 1;
+    const startY = Math.floor(-this.panY / (this.zoom * ts)) - 1;
+    const endY = Math.ceil((this.canvas.height - this.panY) / (this.zoom * ts)) + 1;
+    const inView = (p) => p.x >= startX && p.x <= endX && p.y >= startY && p.y <= endY;
+
+    const MAX_DRAWN_ROUTES = 120;
+    const visible = [];
+    for (const route of routes) {
+      if (inView(route.from) || inView(route.to)) {
+        visible.push(route);
+        if (visible.length >= MAX_DRAWN_ROUTES) break;
+      }
+    }
+    if (visible.length === 0) return;
 
     this.ctx.save();
-    
-    // Step 1: Draw solid cobblestone roads underneath trade paths
-    this.ctx.strokeStyle = '#3f3f46';
-    this.ctx.lineWidth = 3.5;
-    this.ctx.lineCap = 'round';
-    this.ctx.lineJoin = 'round';
-    routes.forEach(route => {
-      this.ctx.beginPath();
-      this.ctx.moveTo(route.from.x * ts + ts/2, route.from.y * ts + ts/2);
-      this.ctx.lineTo(route.to.x * ts + ts/2, route.to.y * ts + ts/2);
-      this.ctx.stroke();
-    });
 
-    // Step 2: Overlay golden trade route markers
-    this.ctx.strokeStyle = 'rgba(223, 177, 91, 0.75)';
+    // Step 1: Solid cobblestone roads only when zoomed in enough to read as roads
+    if (this.zoom >= 1.4) {
+      this.ctx.strokeStyle = '#3f3f46';
+      this.ctx.lineWidth = 3.5;
+      this.ctx.lineCap = 'round';
+      this.ctx.lineJoin = 'round';
+      visible.forEach(route => {
+        this.ctx.beginPath();
+        this.ctx.moveTo(route.from.x * ts + ts/2, route.from.y * ts + ts/2);
+        this.ctx.lineTo(route.to.x * ts + ts/2, route.to.y * ts + ts/2);
+        this.ctx.stroke();
+      });
+    }
+
+    // Step 2: Overlay golden trade route markers, fainter the denser they get
+    const alpha = visible.length > 40 ? 0.3 : 0.7;
+    this.ctx.strokeStyle = `rgba(223, 177, 91, ${alpha})`;
     this.ctx.lineWidth = 1.2;
     this.ctx.setLineDash([4, 4]);
     this.ctx.lineDashOffset = -this.animTime * 5;
 
-    routes.forEach(route => {
+    const drawCaravans = visible.length <= 40;
+    visible.forEach(route => {
       this.ctx.beginPath();
       this.ctx.moveTo(route.from.x * ts + ts/2, route.from.y * ts + ts/2);
       this.ctx.lineTo(route.to.x * ts + ts/2, route.to.y * ts + ts/2);
       this.ctx.stroke();
 
-      const p = (this.animTime * 0.15) % 1.0;
-      const cx = route.from.x * ts + ts/2 + (route.to.x - route.from.x) * ts * p;
-      const cy = route.from.y * ts + ts/2 + (route.to.y - route.from.y) * ts * p;
-      this.ctx.fillStyle = '#ffffff';
-      this.ctx.beginPath();
-      this.ctx.arc(cx, cy, 2, 0, Math.PI * 2);
-      this.ctx.fill();
+      if (drawCaravans) {
+        const p = (this.animTime * 0.15) % 1.0;
+        const cx = route.from.x * ts + ts/2 + (route.to.x - route.from.x) * ts * p;
+        const cy = route.from.y * ts + ts/2 + (route.to.y - route.from.y) * ts * p;
+        this.ctx.fillStyle = '#ffffff';
+        this.ctx.beginPath();
+        this.ctx.arc(cx, cy, 2, 0, Math.PI * 2);
+        this.ctx.fill();
+      }
     });
 
     this.ctx.restore();
