@@ -1,5 +1,5 @@
 import { MapRenderer, BIOME_LABELS } from './renderer.js';
-import { generateCell, getCell } from '../simulation/engine.js';
+import { generateCell, getCell, woodStock, spendWood } from '../simulation/engine.js';
 
 let currentWorld = null;
 let historyLog = [];
@@ -395,6 +395,7 @@ function inspectCell(cell) {
   if (listEl && window.renderer && window.renderer.entities) {
     const present = window.renderer.entities.filter(ent => {
       if (ent.type !== 'citizen' && ent.type !== 'leader') return false;
+      if (ent.realm && cell.realm && ent.realm !== cell.realm) return false;
       // Convert canvas coordinate space back to chunk units
       const cx = Math.floor(ent.x / window.renderer.tileSize);
       const cy = Math.floor(ent.y / window.renderer.tileSize);
@@ -595,9 +596,14 @@ async function init() {
   
   const canvas = document.getElementById('world-map');
   renderer = new MapRenderer(canvas);
+  window.renderer = renderer;
 
   // Keyboard navigation listeners (WASD / Arrows to pan, +/- to zoom)
   window.addEventListener('keydown', (e) => {
+    // Don't hijack keystrokes while the user is typing in a form field
+    const tag = e.target.tagName;
+    if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || e.target.isContentEditable) return;
+
     const step = 25 / renderer.zoom;
     let keyHandled = false;
     
@@ -964,8 +970,9 @@ window.unlockTech = function(techId, cost) {
   if (currentWorld) {
     const playerFaction = currentWorld.factions.find(f => f.name === 'Players' || f.name === 'Valoria');
     if (playerFaction && playerResearchPoints >= cost) {
-      playerResearchPoints -= cost;
       if (!playerFaction.technologies) playerFaction.technologies = [];
+      if (playerFaction.technologies.includes(techId)) return;
+      playerResearchPoints -= cost;
       playerFaction.technologies.push(techId);
       
       currentWorld.chronicle.push(`[Research] Player faction successfully unlocked tech: [${techId.toUpperCase()}]!`);
@@ -983,10 +990,9 @@ window.buildApothecary = function(realm, x, y) {
     const cell = currentWorld.modifiedCells[key];
     if (cell && cell.settlement) {
       const faction = currentWorld.factions.find(f => f.name === cell.settlement.faction);
-      if (faction && (faction.resources.gold || 0) >= 30 && (faction.resources.wood || faction.resources.timber || 0) >= 10) {
+      if (faction && (faction.resources.gold || 0) >= 30 && woodStock(faction) >= 10) {
         faction.resources.gold -= 30;
-        if (faction.resources.wood) faction.resources.wood -= 10;
-        else if (faction.resources.timber) faction.resources.timber -= 10;
+        spendWood(faction, 10);
         cell.settlement.apothecary = true;
         currentWorld.chronicle.push(`[Construction] Established Apothecary structure in ${cell.settlement.name} at [${x}, ${y}] to treat sick citizens.`);
         if (window.synth) window.synth.playClick();
@@ -1004,10 +1010,9 @@ window.buildWonderBlueprint = function(realm, x, y) {
     const cell = currentWorld.modifiedCells[key];
     if (cell && cell.settlement) {
       const faction = currentWorld.factions.find(f => f.name === cell.settlement.faction);
-      if (faction && (faction.resources.gold || 0) >= 100 && (faction.resources.wood || faction.resources.timber || 0) >= 50 && (faction.resources.iron || 0) >= 10) {
+      if (faction && (faction.resources.gold || 0) >= 100 && woodStock(faction) >= 50 && (faction.resources.iron || 0) >= 10) {
         faction.resources.gold -= 100;
-        if (faction.resources.wood) faction.resources.wood -= 50;
-        else if (faction.resources.timber) faction.resources.timber -= 50;
+        spendWood(faction, 50);
         faction.resources.iron -= 10;
         
         cell.settlement.wonderBlueprint = { progress: 0 };
@@ -1069,11 +1074,10 @@ window.buildHarbor = function(realm, x, y) {
     const cell = currentWorld.modifiedCells[key];
     if (cell && cell.settlement) {
       const faction = currentWorld.factions.find(f => f.name === cell.settlement.faction);
-      if (faction && (faction.resources.gold || 0) >= 60 && (faction.resources.wood || faction.resources.timber || 0) >= 20) {
+      if (faction && (faction.resources.gold || 0) >= 60 && woodStock(faction) >= 20) {
         faction.resources.gold -= 60;
-        if (faction.resources.wood) faction.resources.wood -= 20;
-        else if (faction.resources.timber) faction.resources.timber -= 20;
-        
+        spendWood(faction, 20);
+
         cell.settlement.harbor = true;
         currentWorld.chronicle.push(`[Naval Expansion] Built Harbor Port in ${cell.settlement.name} at [${x}, ${y}]. Warships are active.`);
         if (window.synth) window.synth.playClick();
@@ -1091,10 +1095,9 @@ window.buildBioLab = function(realm, x, y) {
     const cell = currentWorld.modifiedCells[key];
     if (cell && cell.settlement) {
       const faction = currentWorld.factions.find(f => f.name === cell.settlement.faction);
-      if (faction && (faction.resources.gold || 0) >= 90 && (faction.resources.wood || faction.resources.timber || 0) >= 30 && (faction.resources.iron || 0) >= 10) {
+      if (faction && (faction.resources.gold || 0) >= 90 && woodStock(faction) >= 30 && (faction.resources.iron || 0) >= 10) {
         faction.resources.gold -= 90;
-        if (faction.resources.wood) faction.resources.wood -= 30;
-        else if (faction.resources.timber) faction.resources.timber -= 30;
+        spendWood(faction, 30);
         faction.resources.iron -= 10;
         
         cell.settlement.biolab = true;

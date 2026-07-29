@@ -117,7 +117,7 @@ async function run() {
           for (let y = 0; y < world.grid.length; y++) {
             for (let x = 0; x < world.grid[y].length; x++) {
               const cell = world.grid[y][x];
-              const isModified = cell.settlement || cell.ruin || cell.fireTicksLeft > 0 || cell.history.length > 0;
+              const isModified = cell.settlement || cell.ruin || cell.fireTicksLeft > 0 || (cell.history || []).length > 0;
               if (isModified) {
                 const key = `overworld:${x},${y}`;
                 migrated.modifiedCells[key] = {
