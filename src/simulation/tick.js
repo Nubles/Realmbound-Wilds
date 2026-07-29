@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import { createNewWorld, advanceSimulation, getCell } from './engine.js';
+import { createNewWorld, advanceSimulation, consolidateFactions, getCell } from './engine.js';
 
 const DATA_DIR = path.resolve('public/data');
 const WORLD_FILE = path.join(DATA_DIR, 'world.json');
@@ -177,6 +177,9 @@ async function run() {
     const seed = Date.now().toString();
     world = createNewWorld(seed);
   } else {
+    if (consolidateFactions(world)) {
+      console.log('Consolidated runaway splinter factions from a pre-fix world state.');
+    }
     console.log(`Advancing simulation for Year ${world.year}...`);
     advanceSimulation(world);
   }

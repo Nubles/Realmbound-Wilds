@@ -357,6 +357,62 @@ export function spawnPortal(world, r1, x1, y1, r2, x2, y2, name) {
   world.discoveredCenters.push({ realm: r2, x: x2, y: y2, radius: 4 });
 }
 
+// One-time healing for worlds damaged by the unbounded rebel-split bug: collapse
+// "X rebels rebels ..." offshoots back into their root faction, rebuild diplomacy,
+// and clamp settlement sizes inflated by the quadratic trade-route boost.
+export function consolidateFactions(world) {
+  const MAX_SETTLEMENT_SIZE = 25000;
+  if (world.factions.length <= MAX_FACTIONS) return false;
+
+  const rootOf = (name) => name.replace(/( rebels)+$/, '');
+  const byRoot = new Map();
+  world.factions.forEach(f => {
+    const root = rootOf(f.name);
+    if (!byRoot.has(root)) {
+      f.name = root;
+      if (!f.resources) f.resources = { gold: 50, wood: 50, iron: 10 };
+      if (!f.technologies) f.technologies = [];
+      byRoot.set(root, f);
+    } else {
+      const target = byRoot.get(root);
+      target.settlements.push(...f.settlements);
+      Object.keys(f.resources || {}).forEach(r => {
+        target.resources[r] = (target.resources[r] || 0) + f.resources[r];
+      });
+      (f.technologies || []).forEach(t => {
+        if (!target.technologies.includes(t)) target.technologies.push(t);
+      });
+    }
+  });
+
+  world.factions = [...byRoot.values()];
+  world.factions.forEach(f => {
+    const seen = new Set();
+    f.settlements = f.settlements.filter(s => {
+      const key = `${s.realm}:${s.x},${s.y}`;
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
+    f.status = {};
+    world.factions.forEach(other => {
+      if (other !== f) f.status[other.name] = 'peace';
+    });
+  });
+
+  Object.keys(world.modifiedCells).forEach(key => {
+    const cell = world.modifiedCells[key];
+    if (!cell.settlement) return;
+    cell.settlement.faction = rootOf(cell.settlement.faction);
+    if (cell.settlement.size > MAX_SETTLEMENT_SIZE) {
+      cell.settlement.size = MAX_SETTLEMENT_SIZE;
+    }
+  });
+
+  world.chronicle.push(`[Year ${world.year}] THE GREAT REUNIFICATION: Generations of splinter rebellions collapsed back into their ancestral banners. ${world.factions.length} great factions now stand.`);
+  return true;
+}
+
 // Wood and timber are interchangeable building materials kept in separate stockpiles
 export function woodStock(faction) {
   return (faction.resources.wood || 0) + (faction.resources.timber || 0);

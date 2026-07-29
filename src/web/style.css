@@ -634,3 +634,42 @@ kbd {
   margin: 0 2px;
 }
 
+
+/* Map Symbol Legend */
+.map-legend {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  background: rgba(15, 17, 26, 0.92);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 6px 12px 8px;
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  max-width: 270px;
+  box-shadow: var(--shadow-sm);
+}
+
+.map-legend summary {
+  cursor: pointer;
+  color: var(--gold);
+  font-weight: 600;
+  user-select: none;
+}
+
+.map-legend .legend-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3px 14px;
+  margin-top: 6px;
+  white-space: nowrap;
+}
+
+.legend-swatch {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  margin-right: 5px;
+  vertical-align: -1px;
+}
